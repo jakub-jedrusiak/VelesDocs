@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Veles Documentation",
+    "section": "",
+    "text": "Veles is a free and open source research tool, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoPy (PsychoJS) to create self contained units that can be self-hosted. Veles’ own web service for creating and hosting experiments is planned.\nVeles is in pre-alpha development, but the goal features are:\n\nFree and open source.\nText-based with optional GUI.\nIntegration with GitHub.\nAbility to use JavaScript and CSS drectly.\nSyntax highlighting.\nOpen source documentation.\nCollaboration features.\nVS code extension pack.\nCustom redirection in the end (for panels).\nPsychoPy integration?\nReal logs and debug window with variables.\nReal time JavaScript code preview.\nModifiable themes."
+  }
+]
