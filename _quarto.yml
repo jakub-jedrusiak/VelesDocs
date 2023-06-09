@@ -3,16 +3,22 @@ project:
 
 website:
   title: "Veles Documentation"
+  favicon: ./figs/Veles-rune-gray.svg
   navbar:
+    logo: ./figs/Veles-rune-gray.png
     left:
       - href: index.qmd
         text: Home
   sidebar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: getting-started.qmd
-        text: Getting Started
+    style: "floating"
+    search: true
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Basics"
+        contents:
+          - text: "Getting started"
+            href: getting-started.qmd
   twitter-card: true
   open-graph: true
   repo-url: https://github.com/jakub-jedrusiak/veles-docs

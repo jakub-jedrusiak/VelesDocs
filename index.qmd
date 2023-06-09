@@ -1,6 +1,3 @@
----
-title: "Veles Documentation"
----
 ::: logo
 ::: light-mode
 ![](./figs/Veles-logo.svg)
