@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://jakub-jedrusiak.github.io/veles-docs/getting-started.html</loc>
+    <lastmod>2023-06-09T01:01:37.344Z</lastmod>
+  </url>
+  <url>
     <loc>https://jakub-jedrusiak.github.io/veles-docs/index.html</loc>
-    <lastmod>2023-06-06T20:37:19.679Z</lastmod>
+    <lastmod>2023-06-09T01:04:55.490Z</lastmod>
   </url>
 </urlset>

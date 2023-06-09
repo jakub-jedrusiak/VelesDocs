@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "Getting started",
+    "section": "",
+    "text": "Prerequisites\nVeles is a python library, so before using it, you need to install python. You can download an installation bundle from the official website. During installation, check the box saying to add python to PATH. It will enable you to run python by writing python in the terminal, without the full path.\nUsing an IDE is recommended. You can use any IDE, but I highly recommend Visual Studio Code.\n\n\nInstallation\nTo install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.\n\npip install VelesResearch"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Veles Documentation",
