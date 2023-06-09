@@ -7,11 +7,16 @@ website:
     left:
       - href: index.qmd
         text: Home
+  sidebar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: getting-started.qmd
+        text: Getting Started
   twitter-card: true
   open-graph: true
   repo-url: https://github.com/jakub-jedrusiak/veles-docs
   repo-actions: [edit, issue]
-  
 
 format:
   html:
@@ -20,6 +25,3 @@ format:
       dark: [darkly, ./styles/dark.scss]
     css: ./styles/styles.css
     toc: true
-
-
-
