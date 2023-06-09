@@ -18,14 +18,14 @@
     "href": "getting-started.html#pages",
     "title": "Getting started",
     "section": "Pages",
-    "text": "Pages\nEvery survey needs to have at least one page. You can create it with page().\npage(label, questions, title, description, options)\nPages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page’s title and description. The options argument accepts a PageOptions object. These are different options than in QuestionOptions. The list of available options can be found here.\nintro = page(\"metrics\", gender)\n\nself_esteem = page(\"RSSI\", RSSI)"
+    "text": "Pages\nEvery survey needs to have at least one page. You can create it with page().\nvls.page(label, questions, title, description, options)\nPages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page’s title and description. The options argument accepts a PageOptions object. These are different options than in QuestionOptions. The list of available options can be found here.\nintro = vls.page(\"metrics\", gender)\n\nself_esteem = vls.page(\"RSSI\", RSSI)"
   },
   {
     "objectID": "getting-started.html#survey",
     "href": "getting-started.html#survey",
     "title": "Getting started",
     "section": "Survey",
-    "text": "Survey\nWhen all elements are created, we can combine them into the final survey. We can do this with survey() function. It does two things – returns a Survey object and creates (or updates) survey.json file.\nsurvey(pages, title, description, options)\nsurvey(\n  intro,\n  self_esteem,\n  title = \"Self-esteem and gender\"\n)"
+    "text": "Survey\nWhen all elements are created, we can combine them into the final survey. We can do this with survey() function. It does two things – returns a Survey object and creates (or updates) survey.json file.\nvls.survey(pages, title, description, options)\nvls.survey(\n  intro,\n  self_esteem,\n  title = \"Self-esteem and gender\"\n)"
   },
   {
     "objectID": "index.html",
