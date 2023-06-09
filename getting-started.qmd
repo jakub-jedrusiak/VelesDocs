@@ -162,15 +162,15 @@ Other arguments work as in `question()`. We can also provide `question_type` arg
 Every survey needs to have at least one page. You can create it with `page()`.
 
 ``` python
-page(label, questions, title, description, options)
+vls.page(label, questions, title, description, options)
 ```
 
 Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](functions/PageOptions.qmd).
 
 ``` python
-intro = page("metrics", gender)
+intro = vls.page("metrics", gender)
 
-self_esteem = page("RSSI", RSSI)
+self_esteem = vls.page("RSSI", RSSI)
 ```
 
 ## Survey
@@ -178,11 +178,11 @@ self_esteem = page("RSSI", RSSI)
 When all elements are created, we can combine them into the final survey. We can do this with `survey()` function. It does two things -- returns a `Survey` object and creates (or updates) `survey.json` file.
 
 ``` python
-survey(pages, title, description, options)
+vls.survey(pages, title, description, options)
 ```
 
 ``` python
-survey(
+vls.survey(
   intro,
   self_esteem,
   title = "Self-esteem and gender"
