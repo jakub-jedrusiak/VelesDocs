@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -126,21 +125,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">Veles Documentation</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/jakub-jedrusiak/mtscr">
+            Source code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/jakub-jedrusiak/mtscr/issues">
+            Issues
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -148,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getting-started.html">Basics</a></li><li class="breadcrumb-item"><a href="./getting-started.html">Getting started</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getting-started.html">Getting started</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -171,26 +174,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Getting started</span></a>
   </div>
 </li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -203,6 +195,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#create-project" id="toc-create-project" class="nav-link" data-scroll-target="#create-project">Create project</a></li>
+  <li><a href="#survey-structure" id="toc-survey-structure" class="nav-link" data-scroll-target="#survey-structure">Survey structure</a>
+  <ul class="collapse">
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
+  <ul class="collapse">
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question"><code>question()</code></a></li>
+  <li><a href="#question-options" id="toc-question-options" class="nav-link" data-scroll-target="#question-options">Question options</a></li>
+  <li><a href="#questionnaire" id="toc-questionnaire" class="nav-link" data-scroll-target="#questionnaire"><code>questionnaire()</code></a></li>
+  </ul></li>
+  <li><a href="#pages" id="toc-pages" class="nav-link" data-scroll-target="#pages">Pages</a></li>
+  <li><a href="#survey" id="toc-survey" class="nav-link" data-scroll-target="#survey">Survey</a></li>
+  </ul></li>
+  <li><a href="#psychojs-experiments" id="toc-psychojs-experiments" class="nav-link" data-scroll-target="#psychojs-experiments">PsychoJS experiments</a></li>
+  <li><a href="#hosting" id="toc-hosting" class="nav-link" data-scroll-target="#hosting">Hosting</a></li>
+  <li><a href="#saving-data" id="toc-saving-data" class="nav-link" data-scroll-target="#saving-data">Saving data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/getting-started.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -220,6 +227,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2023-06-09</p>
+    </div>
+  </div>
     
   </div>
   
@@ -230,13 +243,161 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Prerequisites</h1>
 <p>Veles is a python library, so before using it, you need to install python. You can download an installation bundle from <a href="https://www.python.org/">the official website</a>. During installation, check the box saying to add python to PATH. It will enable you to run python by writing <code>python</code> in the terminal, without the full path.</p>
 <p>Using an IDE is recommended. You can use any IDE, but I highly recommend <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</p>
+<p>Some really basic knowledge how to use python is recommended. If you know what’s a variable and how to call functions, you’re good to go.</p>
 </section>
 <section id="installation" class="level1">
 <h1>Installation</h1>
 <p>To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.</p>
-<div id="180994b9" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install VelesResearch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install VelesResearch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-project" class="level1">
+<h1>Create project</h1>
+<p>Veles project is just a folder with a python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with <code>.py</code> extension. It it, we’ll be writing the survey structure.</p>
+<p>The first thing we need to do is to import the <code>VelesResearch</code> library. To do this, at the top of your script write:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> VelesResearch <span class="im">as</span> vls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="survey-structure" class="level1">
+<h1>Survey structure</h1>
+<p>In SurveyJS, which is the base of Veles, surveys consist of pages, panels and questions. We can create them separately and then combine them into a complete survey.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://surveyjs.io/form-library/documentation/images/survey-structure.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Survey structure. Source: SurveyJS documentation.</figcaption>
+</figure>
 </div>
+<p>Veles is a python library, so there are many ways to achieve this in practice. We can put things in separate variables and then combine them or nest appropriate functions. In here I’ll mainly be using the first approach.</p>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>In Veles, questions are a class of objects. There are two main ways of creating them – separately, using <code>question()</code> function or with <code>questionnaire()</code> when we want to convert a whole questionnaire at once.</p>
+<section id="question" class="level3">
+<h3 class="anchored" data-anchor-id="question"><code>question()</code></h3>
+<p>Let’s start with creating some metrical questions with <code>question()</code>. The syntax is as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vls.question(label, question_type, question_text, answers, options, description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first four arguments are required. <code>label</code> is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. <code>question_text</code> is what the participant actually sees as an item in the survey. <code>answers</code> are the options the participant can choose. It can be a list or strings separated by commas. <code>options</code> can change the survey’s behaviour (e.g.&nbsp;make the answer order random), but we’ll provide more details later. <code>description</code> look like a subtitle. Both <code>options</code> and <code>description</code> arguments must be named if used.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.question(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"gender"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"radio"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"What is your gender?"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Woman"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Man"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Other/I don't want to answer"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  description<span class="op">=</span><span class="st">"Choose an answer from options below."</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/getting_started/gender_question_example.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Gender question example</figcaption>
+</figure>
+</div>
+<p>Every question type has its own wrapper functions, so we could also write <code>gender = vls.radio("gender", What is your gender?", ...)</code>. A complete list of available question types can be found <a href="functions/question.qmd">here</a>.</p>
+</section>
+<section id="question-options" class="level3">
+<h3 class="anchored" data-anchor-id="question-options">Question options</h3>
+<p>Each question can have a series of options specified. To make it easier, there’s <code>QuestionOptions</code> object class which has all available options listed. Let’s use it to change answer order to random and add real None and Other options. We can create <code>QuestionOptions</code> outside the question itself, save it in a variable and put the variable in the <code>question()</code> function. We can also nest the <code>QuestionOptions</code> object inside the <code>question()</code> function.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.question(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"gender"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"radio"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"What is your gender?"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Woman"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Man"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  options<span class="op">=</span>QuestionOptions(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    answers_order<span class="op">=</span><span class="st">"random"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    none<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    none_text<span class="op">=</span><span class="st">"I don't want to answer"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    other<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    other_placeholder<span class="op">=</span><span class="st">"Write your gender."</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  description<span class="op">=</span><span class="st">"Choose an answer from options below."</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/getting_started/gender_question_options_example.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Gender questions with options specified</figcaption>
+</figure>
+</div>
+<p>List of available options can be found <a href="functions/QuestionOptions.qmd">here</a>.</p>
+</section>
+<section id="questionnaire" class="level3">
+<h3 class="anchored" data-anchor-id="questionnaire"><code>questionnaire()</code></h3>
+<p>Often in psychological sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles there’s <code>questionnaire()</code> function that allows to convert the whole questionnaire at once.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vls.questionnaire(label, items, answers, question_type, options, description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To do this, we need to have the questionnaire in the form of a python list. We can format it by hand or using <code>split()</code> method. In the second case, we need to have our items separated by some specified separator, e.g.&nbsp;every item in a separate line.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually formatted list</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>RSSI_items <span class="op">=</span> [</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">"I feel that I am a person of worth, at least on an equal plane with others."</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">"I feel that I have a number of good qualities."</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">"All in all, I am inclined to feel that I am a failure."</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">"I am able to do things as well as most other people."</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">"I feel I do not have much to be proud of."</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">"I take a positive attitude toward myself."</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">"On the whole, I am satisfied with myself."</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">"I wish I could have more respect for myself."</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="st">"I certainly feel useless at times."</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="st">"At times I think I am no good at all."</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># list using split()</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>RSSI_items <span class="op">=</span> <span class="st">"""I feel that I am a person of worth, at least on an equal plane with others.</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="st">I feel that I have a number of good qualities.</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="st">All in all, I am inclined to feel that I am a failure.</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="st">I am able to do things as well as most other people.</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="st">I feel I do not have much to be proud of.</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="st">I take a positive attitude toward myself.</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="st">On the whole, I am satisfied with myself.</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="st">I wish I could have more respect for myself.</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="st">I certainly feel useless at times.</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="st">At times I think I am no good at all."""</span>.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co"># scale by the way</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>RSSI_scale <span class="op">=</span> <span class="st">"""Strongly Agree</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="st">Agree</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="st">Disagree</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="st">Strongly Disagree"""</span>.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>"""</code> allows us to write multiple line strings. We end it with <code>.split("\n")</code>. Inside <code>split()</code> method’s parenthesis we provide item separator. In here it’s new line sign denoted as <code>"\n"</code>.</p>
+<p>Using either way, we end up wits <code>RSSI_items</code> list containing our questionnaire and <code>RSSI_scale</code> containing possible answers. We can then use the <code>questionnaire()</code> function to turn it into a list of questions.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>RSSI <span class="op">=</span> vls.questionnaire(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RSSI"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  RSSI,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  RSSI_scale,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  options<span class="op">=</span>QuestionOptions(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    required<span class="op">=</span><span class="va">True</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output is a question list. Each question have the same options, scale and type. The labels are <code>"RSSI_1"</code>, <code>"RSSI_2"</code>, <code>"RSSI_3"</code> etc.</p>
+<p>Other arguments work as in <code>question()</code>. We can also provide <code>question_type</code> argument which have the default value of <code>"radio"</code>.</p>
+</section>
+</section>
+<section id="pages" class="level2">
+<h2 class="anchored" data-anchor-id="pages">Pages</h2>
+<p>Every survey needs to have at least one page. You can create it with <code>page()</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page’s title and description. The <code>options</code> argument accepts a <code>PageOptions</code> object. These are <strong>different options</strong> than in <code>QuestionOptions</code>. The list of available options can be found <a href="functions/PageOptions.qmd">here</a>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> page(<span class="st">"metrics"</span>, gender)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> page(<span class="st">"RSSI"</span>, RSSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="survey" class="level2">
+<h2 class="anchored" data-anchor-id="survey">Survey</h2>
+<p>When all elements are created, we can combine them into the final survey. We can do this with <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and creates (or updates) <code>survey.json</code> file.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>survey(pages, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>survey(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  intro,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  self_esteem,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  title <span class="op">=</span> <span class="st">"Self-esteem and gender"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="psychojs-experiments" class="level1">
+<h1>PsychoJS experiments</h1>
+<p>To be implemented…</p>
+</section>
+<section id="hosting" class="level1">
+<h1>Hosting</h1>
+<p>To be implemented…</p>
+</section>
+<section id="saving-data" class="level1">
+<h1>Saving data</h1>
+<p>To be implemented…</p>
 
 
 </section>
