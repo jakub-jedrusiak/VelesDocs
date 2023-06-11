@@ -1,6 +1,11 @@
 {
     "cSpell.enabled": true,
     "cSpell.words": [
-        "Veles"
-    ]
+        "Veles",
+        "velesresearch"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
 }
