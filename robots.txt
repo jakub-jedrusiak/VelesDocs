@@ -1,1 +1,1 @@
-Sitemap: https://jakub-jedrusiak.github.io/veles-docs/sitemap.xml
+Sitemap: https://jakub-jedrusiak.github.io/VelesDocs/sitemap.xml
