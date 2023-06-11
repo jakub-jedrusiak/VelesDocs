@@ -6,11 +6,11 @@ date-format: iso
 
 # Prerequisites
 
-Veles is a python library, so before using it, you need to install python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add python to PATH. It will enable you to run python by writing `python` in the terminal, without the full path.
+Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing `python` in the terminal, without the full path.
 
 Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/).
 
-Some really basic knowledge how to use python is recommended. If you know what's a variable and how to call functions, you're good to go.
+Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go.
 
 # Installation
 
@@ -22,11 +22,11 @@ pip install VelesResearch
 
 # Create project
 
-Veles project is just a folder with a python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with `.py` extension. It it, we'll be writing the survey structure.
+Veles project is just a folder with a Python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with `.py` extension. It it, we'll be writing the survey structure.
 
 The first thing we need to do is to import the `VelesResearch` library. To do this, at the top of your script write:
 
-``` python
+``` {python}
 import VelesResearch as vls
 ```
 
@@ -36,7 +36,7 @@ In SurveyJS, which is the base of Veles, surveys consist of pages, panels and qu
 
 ![Survey structure. Source: SurveyJS documentation.](https://surveyjs.io/form-library/documentation/images/survey-structure.svg)
 
-Veles is a python library, so there are many ways to achieve this in practice. We can put things in separate variables and then combine them or nest appropriate functions. In here I'll mainly be using the first approach.
+Veles is a Python library, so there are many ways to achieve this in practice. We can put things in separate variables and then combine them or nest appropriate functions. In here I'll mainly be using the first approach.
 
 ## Questions
 
@@ -46,21 +46,21 @@ In Veles, questions are a class of objects. There are two main ways of creating 
 
 Let's start with creating some metrical questions with `question()`. The syntax is as follows:
 
-``` python
+``` {python}
 vls.question(label, question_type, question_text, answers, options, description)
 ```
 
 The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `options` can change the survey's behaviour (e.g. make the answer order random), but we'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used.
 
-``` python
+``` {python}
 gender = vls.question(
-  "gender",
-  "radio",
-  "What is your gender?",
-  "Woman",
-  "Man",
-  "Other/I don't want to answer",
-  description="Choose an answer from options below."
+    "gender",
+    "radio",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    "Other/I don't want to answer",
+    description="Choose an answer from options below.",
 )
 ```
 
@@ -72,21 +72,21 @@ Every question type has its own wrapper functions, so we could also write `gende
 
 Each question can have a series of options specified. To make it easier, there's `QuestionOptions` object class which has all available options listed. Let's use it to change answer order to random and add real None and Other options. We can create `QuestionOptions` outside the question itself, save it in a variable and put the variable in the `question()` function. We can also nest the `QuestionOptions` object inside the `question()` function.
 
-``` python
+``` {python}
 gender = vls.question(
-  "gender",
-  "radio",
-  "What is your gender?",
-  "Woman",
-  "Man",
-  options=QuestionOptions(
-    answers_order="random",
-    none=True,
-    none_text="I don't want to answer",
-    other=True,
-    other_placeholder="Write your gender."
-  ),
-  description="Choose an answer from options below."
+    "gender",
+    "radio",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    options=QuestionOptions(
+        answers_order="random",
+        none=True,
+        none_text="I don't want to answer",
+        other=True,
+        other_placeholder="Write your gender.",
+    ),
+    description="Choose an answer from options below.",
 )
 ```
 
@@ -98,25 +98,25 @@ List of available options can be found [here](functions/QuestionOptions.qmd).
 
 Often in psychological sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles there's `questionnaire()` function that allows to convert the whole questionnaire at once.
 
-``` python
+``` {python}
 vls.questionnaire(label, items, answers, question_type, options, description)
 ```
 
-To do this, we need to have the questionnaire in the form of a python list. We can format it by hand or using `split()` method. In the second case, we need to have our items separated by some specified separator, e.g. every item in a separate line.
+To do this, we need to have the questionnaire in the form of a Python list. We can format it by hand or using `split()` method. In the second case, we need to have our items separated by some specified separator, e.g. every item in a separate line.
 
-``` python
+``` {python}
 # manually formatted list
 RSSI_items = [
-"I feel that I am a person of worth, at least on an equal plane with others.",
-"I feel that I have a number of good qualities.",
-"All in all, I am inclined to feel that I am a failure.",
-"I am able to do things as well as most other people.",
-"I feel I do not have much to be proud of.",
-"I take a positive attitude toward myself.",
-"On the whole, I am satisfied with myself.",
-"I wish I could have more respect for myself.",
-"I certainly feel useless at times.",
-"At times I think I am no good at all."
+    "I feel that I am a person of worth, at least on an equal plane with others.",
+    "I feel that I have a number of good qualities.",
+    "All in all, I am inclined to feel that I am a failure.",
+    "I am able to do things as well as most other people.",
+    "I feel I do not have much to be proud of.",
+    "I take a positive attitude toward myself.",
+    "On the whole, I am satisfied with myself.",
+    "I wish I could have more respect for myself.",
+    "I certainly feel useless at times.",
+    "At times I think I am no good at all.",
 ]
 
 # list using split()
@@ -129,27 +129,26 @@ I take a positive attitude toward myself.
 On the whole, I am satisfied with myself.
 I wish I could have more respect for myself.
 I certainly feel useless at times.
-At times I think I am no good at all.""".split("\n")
+At times I think I am no good at all.""".split(
+    "\n"
+)
 
 # scale by the way
 RSSI_scale = """Strongly Agree
 Agree
 Disagree
-Strongly Disagree""".split("\n")
+Strongly Disagree""".split(
+    "\n"
+)
 ```
 
 The `"""` allows us to write multiple line strings. We end it with `.split("\n")`. Inside `split()` method's parenthesis we provide item separator. In here it's new line sign denoted as `"\n"`.
 
 Using either way, we end up wits `RSSI_items` list containing our questionnaire and `RSSI_scale` containing possible answers. We can then use the `questionnaire()` function to turn it into a list of questions.
 
-``` python
+``` {python}
 RSSI = vls.questionnaire(
-  "RSSI",
-  RSSI,
-  RSSI_scale,
-  options=QuestionOptions(
-    required=True
-  )
+    "RSSI", RSSI, RSSI_scale, options=QuestionOptions(required=True)
 )
 ```
 
@@ -161,13 +160,13 @@ Other arguments work as in `question()`. We can also provide `question_type` arg
 
 Every survey needs to have at least one page. You can create it with `page()`.
 
-``` python
+``` {python}
 vls.page(label, questions, title, description, options)
 ```
 
 Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](functions/PageOptions.qmd).
 
-``` python
+``` {python}
 intro = vls.page("metrics", gender)
 
 self_esteem = vls.page("RSSI", RSSI)
@@ -177,16 +176,12 @@ self_esteem = vls.page("RSSI", RSSI)
 
 When all elements are created, we can combine them into the final survey. We can do this with `survey()` function. It does two things -- returns a `Survey` object and creates (or updates) `survey.json` file.
 
-``` python
+``` {python}
 vls.survey(pages, title, description, options)
 ```
 
-``` python
-vls.survey(
-  intro,
-  self_esteem,
-  title = "Self-esteem and gender"
-)
+``` {python}
+vls.survey(intro, self_esteem, title="Self-esteem and gender")
 ```
 
 # PsychoJS experiments

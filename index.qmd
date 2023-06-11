@@ -8,7 +8,7 @@
 :::
 :::
 
-Veles is a free and open source python research package, primarly for social scientists. It's goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with python interface to create self contained research units that can be self-hosted. Veles' own web service for creating and hosting experiments are planned.
+Veles is a free and open source Python research package, primarly for social scientists. It's goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with Python interface to create self contained research units that can be self-hosted. Veles' own web service for creating and hosting experiments are planned.
 
 Veles is in pre-alpha development, but the goal features are:
 
@@ -22,7 +22,7 @@ Veles is in pre-alpha development, but the goal features are:
 
 -   Open source documentation.
 
--   Python-based, so every python tools work.
+-   Python-based, so every Python tools work.
 
 -   Esay to collaborate through git.
 
