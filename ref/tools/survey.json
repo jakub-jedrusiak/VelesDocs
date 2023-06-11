@@ -1,0 +1,21 @@
+{
+  "title": null,
+  "description": null,
+  "pages": [
+    {
+      "name": "metric",
+      "elements": [
+        {
+          "name": "gender",
+          "type": "radiogroup",
+          "title": "What is your gender?",
+          "choices": [
+            "Woman",
+            "Man",
+            "Other/I don't want to answer"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,3 +8,11 @@
   margin-bottom: 2em;
   margin-top: 2em;
 }
+
+.arg_name {
+  font-weight: bold;
+}
+
+.arg_desc {
+  padding-left: 1em;
+}

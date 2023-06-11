@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Veles Documentation</title>
+<title>Veles Documentation - Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,14 +68,43 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles/styles.css">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Veles Documentation - Overview">
 <meta property="og:site-name" content="Veles Documentation">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Veles Documentation - Overview">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -84,10 +115,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src=".././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Veles Documentation</span>
     </a>
   </div>
@@ -117,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ref/overview.html">Reference</a></li><li class="breadcrumb-item"><a href="../ref/overview.html">Overview</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,13 +170,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
+  <a href="../getting-started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
   </div>
 </li>
@@ -160,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -175,25 +206,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/tools/page.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/tools/page.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>page</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/tools/question.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/tools/question.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>question</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/tools/questionnaire.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/tools/questionnaire.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>questionnaire</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/tools/survey.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/tools/survey.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>survey</code></span></a>
   </div>
 </li>
@@ -212,36 +243,115 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-<div class="logo">
-<div class="light-mode">
-<p><img src="./figs/Veles-logo.svg" class="img-fluid"></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Overview</h1>
 </div>
-<div class="dark-mode">
-<p><img src="./figs/Veles-logo-white.svg" class="img-fluid"></p>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2023-06-11</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+Subtitle
+</th>
+<th>
+Categories
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="`velesresearch`,`velesresearch.tools`" data-listing-file-modified-sort="1686493429513" data-listing-reading-time-sort="1" data-listing-title-sort="`page`" data-listing-filename-sort="page.qmd">
+<td>
+<a href="../ref/tools/page.html" class="title listing-title"><code>page</code></a>
+</td>
+<td>
+<span class="listing-subtitle">Create <code>Page</code> object</span>
+</td>
+<td>
+<span class="listing-categories"><code>velesresearch</code>,<code>velesresearch.tools</code></span>
+</td>
+</tr>
+<tr data-index="1" data-categories="`velesresearch`,`velesresearch.tools`" data-listing-file-modified-sort="1686493796853" data-listing-reading-time-sort="2" data-listing-title-sort="`question`" data-listing-filename-sort="question.qmd">
+<td>
+<a href="../ref/tools/question.html" class="title listing-title"><code>question</code></a>
+</td>
+<td>
+<span class="listing-subtitle">Create <code>Question</code> object</span>
+</td>
+<td>
+<span class="listing-categories"><code>velesresearch</code>,<code>velesresearch.tools</code></span>
+</td>
+</tr>
+<tr data-index="2" data-categories="`velesresearch`,`velesresearch.tools`" data-listing-file-modified-sort="1686497655264" data-listing-reading-time-sort="2" data-listing-title-sort="`questionnaire`" data-listing-filename-sort="questionnaire.qmd">
+<td>
+<a href="../ref/tools/questionnaire.html" class="title listing-title"><code>questionnaire</code></a>
+</td>
+<td>
+<span class="listing-subtitle">Convert a questionnaire to a list of questions</span>
+</td>
+<td>
+<span class="listing-categories"><code>velesresearch</code>,<code>velesresearch.tools</code></span>
+</td>
+</tr>
+<tr data-index="3" data-categories="`velesresearch`,`velesresearch.tools`" data-listing-file-modified-sort="1686493965317" data-listing-reading-time-sort="1" data-listing-title-sort="`survey`" data-listing-filename-sort="survey.qmd">
+<td>
+<a href="../ref/tools/survey.html" class="title listing-title"><code>survey</code></a>
+</td>
+<td>
+<span class="listing-subtitle">Create <code>Survey</code> object and create <code>survey.json</code></span>
+</td>
+<td>
+<span class="listing-categories"><code>velesresearch</code>,<code>velesresearch.tools</code></span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
-<p>Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with Python interface to create self contained research units that can be self-hosted. Veles’ own web service for creating and hosting experiments are planned.</p>
-<p>Veles is in pre-alpha development, but the goal features are:</p>
-<ul>
-<li><p>Free and open source.</p></li>
-<li><p>Text-based, so automatable and easily modifiable.</p></li>
-<li><p>Integration with GitHub.</p></li>
-<li><p>Ability to use JavaScript and CSS directly.</p></li>
-<li><p>Open source documentation.</p></li>
-<li><p>Python-based, so every Python tools work.</p></li>
-<li><p>Esay to collaborate through git.</p></li>
-<li><p>VS code extension pack.</p></li>
-<li><p>Custom redirection in the end (for panels).</p></li>
-<li><p>PsychoPy integration.</p></li>
-<li><p>JavaScript code preview.</p></li>
-<li><p>Modifiable themes.</p></li>
-</ul>
-
-
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -687,4 +797,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/ref/overview.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
