@@ -17,17 +17,18 @@ Some really basic knowledge how to use Python is recommended. If you know what's
 To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.
 
 ``` bash
-pip install VelesResearch
+pip install velesresearch
 ```
 
 # Create project
 
 Veles project is just a folder with a Python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with `.py` extension. It it, we'll be writing the survey structure.
 
-The first thing we need to do is to import the `VelesResearch` library. To do this, at the top of your script write:
+The first thing we need to do is to import the `velesresearch` library. To do this, at the top of your script write:
 
 ``` {python}
-import VelesResearch as vls
+import velesresearch as vls
+
 ```
 
 # Survey structure
@@ -66,7 +67,7 @@ gender = vls.question(
 
 ![Gender question example](figs/getting_started/gender_question_example.png)
 
-Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", What is your gender?", ...)`. A complete list of available question types can be found [here](functions/question.qmd).
+Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", What is your gender?", ...)`. A complete list of available question types can be found [here](ref/tools/question_types.qmd).
 
 ### Question options
 
@@ -92,7 +93,7 @@ gender = vls.question(
 
 ![Gender questions with options specified](figs/getting_started/gender_question_options_example.png)
 
-List of available options can be found [here](functions/QuestionOptions.qmd).
+List of available options can be found [here](ref/options/QuestionOptions.qmd).
 
 ### `questionnaire()`
 
@@ -129,20 +130,13 @@ I take a positive attitude toward myself.
 On the whole, I am satisfied with myself.
 I wish I could have more respect for myself.
 I certainly feel useless at times.
-At times I think I am no good at all.""".split(
-    "\n"
-)
+At times I think I am no good at all.""".split("\n")
 
-# scale by the way
-RSSI_scale = """Strongly Agree
-Agree
-Disagree
-Strongly Disagree""".split(
-    "\n"
-)
+# scale
+RSSI_scale = "Strongly Agree; Agree; Disagree; Strongly Disagree".split("; ")
 ```
 
-The `"""` allows us to write multiple line strings. We end it with `.split("\n")`. Inside `split()` method's parenthesis we provide item separator. In here it's new line sign denoted as `"\n"`.
+The `"""` allows us to write multiple line strings. We end it with `.split("\n")`. Inside `split()` method's parenthesis we provide item separator. In here it's new line sign denoted as `"\n"`. The scale items are separated with a semicolon followed by a space, so we used `split("; ")`.
 
 Using either way, we end up wits `RSSI_items` list containing our questionnaire and `RSSI_scale` containing possible answers. We can then use the `questionnaire()` function to turn it into a list of questions.
 
@@ -164,7 +158,7 @@ Every survey needs to have at least one page. You can create it with `page()`.
 vls.page(label, questions, title, description, options)
 ```
 
-Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](functions/PageOptions.qmd).
+Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](ref/options/PageOptions.qmd).
 
 ``` {python}
 intro = vls.page("metrics", gender)
