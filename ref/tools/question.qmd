@@ -1,0 +1,104 @@
+---
+title: "`question`"
+subtitle: "Create `Question` object"
+description: "A handy wrapper around [`Question()`](../structure/Question). Creates a `Question` object. Most basic function in Veles."
+aliases: 
+  - ../question.html
+categories:
+  - "`velesresearch`"
+  - "`velesresearch.tools`"
+---
+# Modules
+
+`velesresearch`
+
+`velesresearch.tools`
+
+# Usage
+
+``` {python}
+question(label, question_type, question_text, *answers, description=None, options=None)
+```
+
+
+# Arguments
+
+::: arg_name
+label
+:::
+::: arg_desc
+`str`; internal name of the question. Will become column name in the database.
+:::
+
+::: arg_name
+question_type
+:::
+::: arg_desc
+`str`; type of the question. For list of available question types see [Question types](./question_types.qmd).
+:::
+
+::: arg_name
+question_text
+:::
+::: arg_desc
+`str`; text of the question. This is what the participant actually sees.
+:::
+
+::: arg_name
+\*answers
+:::
+::: arg_desc
+`list[str]` or `str`; list of possible answers. Can be given as a `list` object or subsequent `string` objects separated by commas.
+:::
+
+::: arg_name
+options
+:::
+::: arg_desc
+`QuestionOptions`; options object created with [`QuestionOptions()`](../options/QuestionOptions.qmd), changes behaviour of the question (e.g. random answer order or required answer).
+:::
+
+::: arg_name
+description
+:::
+::: arg_desc
+`str`; description of the question. Looks like a subtitle. Can be used to give the participant additional information, e.g. `"in years"` in an age question.
+:::
+
+# Value
+
+A `Question` object.
+
+# See also
+
+- [`questionnaire()`](./questionnaire.qmd) for converting whole questionnaires into a `Questions` list.
+
+- [Question types](./question_types.qmd) for wrappers like `radio()` or `checkbox()` and available question types.
+
+- [`QuestionOptions()`](../options/QuestionOptions) for available question modifications.
+
+- [`page()`](./page.qmd) for composing questions into pages.
+
+# Examples
+
+``` {python}
+# | eval: true
+# | output: false
+from velesresearch import question, QuestionOptions
+
+gender = question(
+    "gender",
+    "radio",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    options=QuestionOptions(
+        answers_order="random",
+        none=True,
+        none_text="I don't want to answer",
+        other=True,
+        other_placeholder="Write your gender.",
+    ),
+    description="Choose an answer from options below.",
+)
+```

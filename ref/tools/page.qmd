@@ -1,0 +1,90 @@
+---
+title: "`page`"
+subtitle: "Create `Page` object"
+description: "A handy wrapper around [`Page()`](../structure/Page). Joins `Question` objects into a page."
+aliases: 
+  - ../page.html
+categories:
+  - "`velesresearch`"
+  - "`velesresearch.tools`"
+---
+# Modules
+
+`velesresearch`
+
+`velesresearch.tools`
+
+# Usage
+
+``` {python}
+page(label, *questions, title, description=None, options=None)
+```
+
+
+# Arguments
+
+::: arg_name
+label
+:::
+::: arg_desc
+`str`; internal name of the page.
+:::
+
+::: arg_name
+*questions
+:::
+::: arg_desc
+`list[Question]` or `Question`; list of `Question` objects to appear on the page. Often created with [`questionnaire()`](./questionnaire.qmd).
+:::
+
+::: arg_name
+title
+:::
+::: arg_desc
+`str`; title of the page. Will be visible in the header.
+:::
+
+::: arg_name
+description
+:::
+::: arg_desc
+`str`; text just under page header.
+:::
+
+::: arg_name
+options
+:::
+::: arg_desc
+`PageOptions`; options object created with [`PageOptions()`](../options/PageOptions.qmd), changes behaviour of the page (e.g. random question order).
+:::
+
+# Value
+
+A `Page` object.
+
+# See also
+
+- [`questionnaire()`](./questionnaire.qmd) for converting whole questionnaires into a `Questions` list.
+
+- [`PageOptions()`](../options/PageOptions) for available page modifications.
+
+- [`survey()`](./survey.qmd) for composing pages into one survey.
+
+# Examples
+
+``` {python}
+# | eval: true
+# | output: false
+from velesresearch import page, question
+
+gender = question(
+    "gender",
+    "radio",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    "Other/I don't want to answer",
+)
+
+metric = page("metric", gender)
+```

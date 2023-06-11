@@ -1,0 +1,96 @@
+---
+title: "`survey`"
+subtitle: "Create `Survey` object and create `survey.json`"
+description: "A handy wrapper around [`Survey()`](../structure/Survey). Joins `Page` objects into a survey and creates `survey.json`."
+aliases: 
+  - ../survey.html
+categories:
+  - "`velesresearch`"
+  - "`velesresearch.tools`"
+---
+# Modules
+
+`velesresearch`
+
+`velesresearch.tools`
+
+# Usage
+
+``` {python}
+survey(*pages, title=None, description=None, options=None, create_file=True)
+```
+
+
+# Arguments
+
+::: arg_name
+\*pages
+:::
+::: arg_desc
+`list[Page]` or `Page`; list of `Page` objects or a single `Page` object that will create a survey.
+:::
+
+::: arg_name
+title
+:::
+::: arg_desc
+`str`; title of the survey. Will be visible in the header.
+:::
+
+::: arg_name
+description
+:::
+::: arg_desc
+`str`; text just under survey header.
+:::
+
+::: arg_name
+options
+:::
+::: arg_desc
+`SurveyOptions`; options object created with [`SurveyOptions()`](../options/SurveyOptions.qmd), changes behaviour of the survey.
+:::
+
+::: arg_name
+create_file
+:::
+::: arg_desc
+`bool`; controls whether `survey.json` is created.  
+:::
+
+# Value
+
+A `Survey` object. Also file `survey.json` is created in the working directory as a side effect if `create_file = True`.
+
+# See also
+
+[`SurveyOptions()`](../options/SurveyOptions) for available survey modifications.
+
+# Examples
+
+``` {python}
+# | eval: true
+# | output: false
+from velesresearch import question, page, survey
+
+gender = question(
+    "gender",
+    "radio",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    "Other/I don't want to answer",
+)
+
+metric = page("metric", gender)
+
+survey(metric)
+```
+
+<!-- delete survey.json -->
+``` {python}
+#| eval: true
+#| include: false
+from os import remove
+remove("survey.json")
+```

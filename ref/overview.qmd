@@ -1,0 +1,7 @@
+---
+title: "Overview"
+listing:
+  contents: "**.qmd"
+  type: "table"
+  fields: [title, subtitle, categories]
+---
