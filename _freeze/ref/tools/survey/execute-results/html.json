@@ -1,0 +1,11 @@
+{
+  "hash": "fa10660ad1150895b59559ba6d87de80",
+  "result": {
+    "markdown": "---\ntitle: \"`survey`\"\nsubtitle: \"Create `Survey` object and create `survey.json`\"\ndescription: \"A handy wrapper around [`Survey()`](../structure/Survey). Joins `Page` objects into a survey and creates `survey.json`.\"\naliases: \n  - ../survey.html\ncategories:\n  - \"`velesresearch`\"\n  - \"`velesresearch.tools`\"\n---\n\n# Modules\n\n`velesresearch`\n\n`velesresearch.tools`\n\n# Usage\n\n::: {#dcef29bc .cell execution_count=1}\n``` {.python .cell-code}\nsurvey(*pages, title=None, description=None, options=None, create_file=True)\n```\n:::\n\n\n# Arguments\n\n::: arg_name\n\\*pages\n:::\n::: arg_desc\n`list[Page]` or `Page`; list of `Page` objects or a single `Page` object that will create a survey.\n:::\n\n::: arg_name\ntitle\n:::\n::: arg_desc\n`str`; title of the survey. Will be visible in the header.\n:::\n\n::: arg_name\ndescription\n:::\n::: arg_desc\n`str`; text just under survey header.\n:::\n\n::: arg_name\noptions\n:::\n::: arg_desc\n`SurveyOptions`; options object created with [`SurveyOptions()`](../options/SurveyOptions.qmd), changes behaviour of the survey.\n:::\n\n::: arg_name\ncreate_file\n:::\n::: arg_desc\n`bool`; controls whether `survey.json` is created.  \n:::\n\n# Value\n\nA `Survey` object. Also file `survey.json` is created in the working directory as a side effect if `create_file = True`.\n\n# See also\n\n[`SurveyOptions()`](../options/SurveyOptions) for available survey modifications.\n\n# Examples\n\n::: {#9f60cd51 .cell execution_count=2}\n``` {.python .cell-code}\nfrom velesresearch import question, page, survey\n\ngender = question(\n    \"gender\",\n    \"radio\",\n    \"What is your gender?\",\n    \"Woman\",\n    \"Man\",\n    \"Other/I don't want to answer\",\n)\n\nmetric = page(\"metric\", gender)\n\nsurvey(metric)\n```\n:::\n\n\n<!-- delete survey.json -->\n\n\n",
+    "supporting": [
+      "survey_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
