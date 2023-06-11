@@ -24,6 +24,7 @@ website:
         href: getting-started.qmd
       - text: "Reference"
         contents: "ref/**"
+    collapse-level: 3
   twitter-card: true
   open-graph: true
   repo-url: https://github.com/jakub-jedrusiak/veles-docs
