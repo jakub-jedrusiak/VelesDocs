@@ -34,7 +34,7 @@ label
 *questions
 :::
 ::: arg_desc
-`list[Question]` or `Question`; list of `Question` objects to appear on the page. Often created with [`questionnaire()`](./questionnaire.qmd).
+`list[Question]` or `Question`; list of `Question` objects to appear on the page.
 :::
 
 ::: arg_name
@@ -64,8 +64,6 @@ A `Page` object.
 
 # See also
 
-- [`questionnaire()`](./questionnaire.qmd) for converting whole questionnaires into a `Questions` list.
-
 - [`PageOptions()`](../options/PageOptions) for available page modifications.
 
 - [`survey()`](./survey.qmd) for composing pages into one survey.
@@ -79,7 +77,6 @@ from velesresearch import page, question
 
 gender = question(
     "gender",
-    "radio",
     "What is your gender?",
     "Woman",
     "Man",

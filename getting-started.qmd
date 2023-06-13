@@ -41,22 +41,21 @@ Veles is a Python library, so there are many ways to achieve this in practice. W
 
 ## Questions
 
-In Veles, questions are a class of objects. There are two main ways of creating them -- separately, using `question()` function or with `questionnaire()` when we want to convert a whole questionnaire at once.
+In Veles, questions are a class of objects. There are two main ways of creating them -- separately or when we want to convert a whole questionnaire at once. In both cases we use the `question()` function.
 
 ### `question()`
 
 Let's start with creating some metrical questions with `question()`. The syntax is as follows:
 
 ``` {python}
-vls.question(label, question_type, question_text, answers, options, description)
+vls.question(label, question_text, answers, question_type, options, description)
 ```
 
-The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `options` can change the survey's behaviour (e.g. make the answer order random), but we'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used.
+The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `question_type` defaults to `"radio"`. `options` can change the survey's behaviour (e.g. make the answer order random), but we'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used.
 
 ``` {python}
 gender = vls.question(
     "gender",
-    "radio",
     "What is your gender?",
     "Woman",
     "Man",
@@ -76,7 +75,6 @@ Each question can have a series of options specified. To make it easier, there's
 ``` {python}
 gender = vls.question(
     "gender",
-    "radio",
     "What is your gender?",
     "Woman",
     "Man",
@@ -95,13 +93,9 @@ gender = vls.question(
 
 List of available options can be found [here](ref/options/QuestionOptions.qmd).
 
-### `questionnaire()`
+### Whole questionnaires
 
-Often in psychological sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles there's `questionnaire()` function that allows to convert the whole questionnaire at once.
-
-``` {python}
-vls.questionnaire(label, items, answers, question_type, options, description)
-```
+Often in psychological sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles the `question()` also allows to convert a whole questionnaire at once.
 
 To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using `split()` method or with `split` arguments. In the second and third cases, we need to have our items separated by some specified separator, e.g. every item in a separate line.
 
@@ -135,18 +129,16 @@ At times I think I am no good at all."""
 # scale
 RSSI_scale = "Strongly Agree; Agree; Disagree; Strongly Disagree"
 
-RSSI = vls.questionnaire(
+RSSI = vls.question(
     "RSSI", RSSI.split("\n"), RSSI_scale.split("; "), options=QuestionOptions(required=True)
 )
 ```
 
 The `"""` allows us to write multiple line strings.
 
-We save our items and answers in variables and treat them with `split()`. In here I've done it inside the `questionnaire()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them.
+We save our items and answers in variables and treat them with `split()`. In here I've done it inside the `question()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them.
 
-Output is a question list. Each question have the same options, scale and type. The labels are `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
-
-Other arguments work as in `question()`. We can also provide `question_type` argument which have the default value of `"radio"`.
+If `question_text` is a list, `question()` output is a question list. Each question have the same options, scale and type. The labels are `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
 
 ## Pages
 

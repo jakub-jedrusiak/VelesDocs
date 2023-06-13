@@ -75,7 +75,6 @@ from velesresearch import question, page, survey
 
 gender = question(
     "gender",
-    "radio",
     "What is your gender?",
     "Woman",
     "Man",
