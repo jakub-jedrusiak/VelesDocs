@@ -120,7 +120,7 @@ RSSI_items = [
     "At times I think I am no good at all.",
 ]
 
-# list using split()
+# triple quotation for multi-line strings
 RSSI_items = """I feel that I am a person of worth, at least on an equal plane with others.
 I feel that I have a number of good qualities.
 All in all, I am inclined to feel that I am a failure.
