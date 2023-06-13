@@ -222,12 +222,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ref/tools/questionnaire.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>questionnaire</code></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../ref/tools/survey.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>survey</code></span></a>
   </div>
@@ -282,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-11</p>
+      <p class="date-modified">2023-06-13</p>
     </div>
   </div>
     
@@ -298,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="usage" class="level1">
 <h1>Usage</h1>
-<div id="61b9f20f" class="cell" data-execution_count="1">
+<div id="a3091b67" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>page(label, <span class="op">*</span>questions, title, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -314,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>*questions</p>
 </div>
 <div class="arg_desc">
-<p><code>list[Question]</code> or <code>Question</code>; list of <code>Question</code> objects to appear on the page. Often created with <a href="../../ref/tools/questionnaire.html"><code>questionnaire()</code></a>.</p>
+<p><code>list[Question]</code> or <code>Question</code>; list of <code>Question</code> objects to appear on the page.</p>
 </div>
 <div class="arg_name">
 <p>title</p>
@@ -342,26 +336,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="see-also" class="level1">
 <h1>See also</h1>
 <ul>
-<li><p><a href="../../ref/tools/questionnaire.html"><code>questionnaire()</code></a> for converting whole questionnaires into a <code>Questions</code> list.</p></li>
 <li><p><a href="../options/PageOptions"><code>PageOptions()</code></a> for available page modifications.</p></li>
 <li><p><a href="../../ref/tools/survey.html"><code>survey()</code></a> for composing pages into one survey.</p></li>
 </ul>
 </section>
 <section id="examples" class="level1">
 <h1>Examples</h1>
-<div id="421b555a" class="cell" data-execution_count="2">
+<div id="d43ffd85" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> page, question</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> question(</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"radio"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Woman"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Man"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Other/I don't want to answer"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> page(<span class="st">"metric"</span>, gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Woman"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Man"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Other/I don't want to answer"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> page(<span class="st">"metric"</span>, gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
