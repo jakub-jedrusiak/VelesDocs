@@ -47,5 +47,5 @@ pip install velesresearch
 
 You can install development version (unstable) with:
 ``` bash
-pip install https://github.com/jakub-jedrusiak/VelesResearch.git
+pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
