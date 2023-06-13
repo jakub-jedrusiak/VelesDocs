@@ -35,7 +35,7 @@ label
 items
 :::
 ::: arg_desc
-`list[str]`; list of questions. Can be easily created with `.split()` method (see [Examples](#sec-examples)).
+`list[str]`; list of questions. Can be easily created with `split()` method (see [Examples](#sec-examples)).
 :::
 
 ::: arg_name
@@ -87,8 +87,7 @@ A list of `Question` objects.
 # | output: false
 from velesresearch import questionnaire, QuestionOptions
 
-# split items by new lines
-# triple-quotation for multi-line strings
+# triple quotation for multi-line strings
 RSSI_items = """I feel that I am a person of worth, at least on an equal plane with others.
 I feel that I have a number of good qualities.
 All in all, I am inclined to feel that I am a failure.
@@ -98,11 +97,10 @@ I take a positive attitude toward myself.
 On the whole, I am satisfied with myself.
 I wish I could have more respect for myself.
 I certainly feel useless at times.
-At times I think I am no good at all.""".split("\n")
+At times I think I am no good at all."""
 
-# split scale by semicolons and spaces
-scale = "Strongly Agree; Agree; Disagree; Strongly Disagree".split("; ")
+scale = "Strongly Agree; Agree; Disagree; Strongly Disagree"
 
 # make it a list of questions
-RRSI = questionnaire("RSSI", RSSI_items, scale, options=QuestionOptions(required=True))
+RRSI = questionnaire("RSSI", RSSI_items.split("\n"), scale.split("; "), options=QuestionOptions(required=True))
 ```
