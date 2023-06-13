@@ -103,7 +103,7 @@ Often in psychological sciences we want to use a whole questionnaire. It's quite
 vls.questionnaire(label, items, answers, question_type, options, description)
 ```
 
-To do this, we need to have the questionnaire in the form of a Python list. We can format it by hand or using `split()` method. In the second case, we need to have our items separated by some specified separator, e.g. every item in a separate line.
+To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using `split()` method or with `split` arguments. In the second and third cases, we need to have our items separated by some specified separator, e.g. every item in a separate line.
 
 ``` {python}
 # manually formatted list
@@ -130,21 +130,19 @@ I take a positive attitude toward myself.
 On the whole, I am satisfied with myself.
 I wish I could have more respect for myself.
 I certainly feel useless at times.
-At times I think I am no good at all.""".split("\n")
+At times I think I am no good at all."""
 
 # scale
-RSSI_scale = "Strongly Agree; Agree; Disagree; Strongly Disagree".split("; ")
-```
+RSSI_scale = "Strongly Agree; Agree; Disagree; Strongly Disagree"
 
-The `"""` allows us to write multiple line strings. We end it with `.split("\n")`. Inside `split()` method's parenthesis we provide item separator. In here it's new line sign denoted as `"\n"`. The scale items are separated with a semicolon followed by a space, so we used `split("; ")`.
-
-Using either way, we end up wits `RSSI_items` list containing our questionnaire and `RSSI_scale` containing possible answers. We can then use the `questionnaire()` function to turn it into a list of questions.
-
-``` {python}
 RSSI = vls.questionnaire(
-    "RSSI", RSSI, RSSI_scale, options=QuestionOptions(required=True)
+    "RSSI", RSSI.split("\n"), RSSI_scale.split("; "), options=QuestionOptions(required=True)
 )
 ```
+
+The `"""` allows us to write multiple line strings.
+
+We save our items and answers in variables and treat them with `split()`. In here I've done it inside the `questionnaire()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them.
 
 Output is a question list. Each question have the same options, scale and type. The labels are `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
 
