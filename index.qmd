@@ -49,3 +49,22 @@ You can install development version (unstable) with:
 ``` bash
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
+
+Note that **`npm` is required** for Veles to work. You can download it from [here](https://nodejs.org/en/download) or use your package manager.
+
+``` {bash}
+# Ubuntu (and other apt distros)
+sudo apt install npm
+
+# Arch
+sudo pacman -S npm
+
+# winget
+winget install OpenJS.NodeJS.LTS
+
+# Chocolatey
+choco install nodejs-lts
+
+# Homebrew
+brew install node
+```

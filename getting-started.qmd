@@ -12,11 +12,36 @@ Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual
 
 Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go.
 
+To actually build (or even preview) your survey, you **must have `npm` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `npm` gets installed with Node.js. If you're a Windows or Mac user, you can download it from [the official website](https://nodejs.org/en/download). If you're a Linux user, chances are you have `npm` already installed. Otherwise you can use one of the following commands:
+
+``` {bash}
+# Ubuntu (and other apt distros)
+sudo apt install npm
+
+# Arch
+sudo pacman -S npm
+
+# winget
+winget install OpenJS.NodeJS.LTS
+
+# Chocolatey
+choco install nodejs-lts
+
+# Homebrew
+brew install node
+```
+
+If everything is OK, you should be able to run this command in your terminal:
+
+``` {bash}
+npm -v
+```
+
 # Installation
 
 To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.
 
-``` bash
+``` {bash}
 pip install velesresearch
 ```
 
@@ -130,7 +155,10 @@ At times I think I am no good at all."""
 RSSI_scale = "Strongly Agree; Agree; Disagree; Strongly Disagree"
 
 RSSI = vls.question(
-    "RSSI", RSSI.split("\n"), RSSI_scale.split("; "), options=QuestionOptions(required=True)
+    "RSSI",
+    RSSI.split("\n"),
+    RSSI_scale.split("; "),
+    options=QuestionOptions(required=True),
 )
 ```
 
@@ -158,24 +186,26 @@ self_esteem = vls.page("RSSI", RSSI)
 
 ## Survey
 
-When all elements are created, we can combine them into the final survey. We can do this with `survey()` function. It does two things -- returns a `Survey` object and creates (or updates) `survey.json` file.
+When all elements are created, we can combine them into the final survey. We can do this with `survey()` function. It does two things -- returns a `Survey` object and builds a website with your survey.
 
 ``` {python}
-vls.survey(pages, title, description, options)
+vls.survey(label, pages, title, description, options, create)
 ```
 
 ``` {python}
-vls.survey(intro, self_esteem, title="Self-esteem and gender")
+vls.survey("My smart research", intro, self_esteem, title="Self-esteem and gender")
 ```
+
+Building a website for the first time might take a few minutes due to `npm` downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section [below](#sec-hosting).
 
 # PsychoJS experiments
 
 To be implemented...
 
-# Hosting
+# Saving data
 
 To be implemented...
 
-# Saving data
+# Hosting {#sec-hosting}
 
 To be implemented...

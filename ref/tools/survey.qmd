@@ -17,11 +17,18 @@ categories:
 # Usage
 
 ``` {python}
-survey(*pages, title=None, description=None, options=None, create_file=True)
+survey(label, *pages, title=None, description=None, options=None, create=True)
 ```
 
 
 # Arguments
+
+::: arg_name
+label
+:::
+::: arg_desc
+`str`; internal label of the survey. Will become webpage title.
+:::
 
 ::: arg_name
 \*pages
@@ -52,15 +59,15 @@ options
 :::
 
 ::: arg_name
-create_file
+create
 :::
 ::: arg_desc
-`bool`; controls whether `survey.json` is created.  
+`bool` or `str` or `Path`; controls whether survey is created and then built. Can be done later with `create()` method. Can be set to `True` but can also be a path to a folder where the survey files will be created. If `False`, no additional files are created.
 :::
 
 # Value
 
-A `Survey` object. Also file `survey.json` is created in the working directory as a side effect if `create_file = True`.
+A `Survey` object. If `create=True` or path, a set of other files and folders are created. Folders `src` and `public` contain webpage raw React code. Folder `build` contains raw, ready to be deployed webpage. `package.json`, `package-lock.json` and `node-libraries` are JavaScript dependencies. When the survey is created for the first time, these dependencies are downloaded from the web.
 
 # See also
 
@@ -83,13 +90,5 @@ gender = question(
 
 metric = page("metric", gender)
 
-survey(metric)
-```
-
-<!-- delete survey.json -->
-``` {python}
-#| eval: true
-#| include: false
-from os import remove
-remove("survey.json")
+survey("Just metric", metric, create=False)
 ```
