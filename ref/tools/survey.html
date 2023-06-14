@@ -276,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-13</p>
+      <p class="date-modified">2023-06-14</p>
     </div>
   </div>
     
@@ -292,12 +292,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="usage" class="level1">
 <h1>Usage</h1>
-<div id="491be628" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>survey(<span class="op">*</span>pages, title<span class="op">=</span><span class="va">None</span>, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>, create_file<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b7f2398b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>survey(label, <span class="op">*</span>pages, title<span class="op">=</span><span class="va">None</span>, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>, create<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments" class="level1">
 <h1>Arguments</h1>
+<div class="arg_name">
+<p>label</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; internal label of the survey. Will become webpage title.</p>
+</div>
 <div class="arg_name">
 <p>*pages</p>
 </div>
@@ -323,15 +329,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>SurveyOptions</code>; options object created with <a href="../options/SurveyOptions.qmd"><code>SurveyOptions()</code></a>, changes behaviour of the survey.</p>
 </div>
 <div class="arg_name">
-<p>create_file</p>
+<p>create</p>
 </div>
 <div class="arg_desc">
-<p><code>bool</code>; controls whether <code>survey.json</code> is created.</p>
+<p><code>bool</code> or <code>str</code> or <code>Path</code>; controls whether survey is created and then built. Can be done later with <code>create()</code> method. Can be set to <code>True</code> but can also be a path to a folder where the survey files will be created. If <code>False</code>, no additional files are created.</p>
 </div>
 </section>
 <section id="value" class="level1">
 <h1>Value</h1>
-<p>A <code>Survey</code> object. Also file <code>survey.json</code> is created in the working directory as a side effect if <code>create_file = True</code>.</p>
+<p>A <code>Survey</code> object. If <code>create=True</code> or path, a set of other files and folders are created. Folders <code>src</code> and <code>public</code> contain webpage raw React code. Folder <code>build</code> contains raw, ready to be deployed webpage. <code>package.json</code>, <code>package-lock.json</code> and <code>node-libraries</code> are JavaScript dependencies. When the survey is created for the first time, these dependencies are downloaded from the web.</p>
 </section>
 <section id="see-also" class="level1">
 <h1>See also</h1>
@@ -339,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level1">
 <h1>Examples</h1>
-<div id="23d9146e" class="cell" data-execution_count="2">
+<div id="61f44ab7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question, page, survey</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> question(</span>
@@ -352,9 +358,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> page(<span class="st">"metric"</span>, gender)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>survey(metric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"Just metric"</span>, metric, create<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- delete survey.json -->
 
 
 </section>
