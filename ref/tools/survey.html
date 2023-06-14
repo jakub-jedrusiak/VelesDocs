@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A handy wrapper around Survey(). Joins Page objects into a survey and creates survey.json.">
+<meta name="description" content="A handy wrapper around Survey(). Joins Page objects into a survey and generates all survey website files.">
 
 <title>Veles Documentation - survey</title>
 <style>
@@ -105,10 +105,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../../styles/styles.css">
 <meta property="og:title" content="Veles Documentation - survey">
-<meta property="og:description" content="A handy wrapper around Survey(). Joins Page objects into a survey and creates survey.json.">
+<meta property="og:description" content="A handy wrapper around Survey(). Joins Page objects into a survey and generates all survey website files.">
 <meta property="og:site-name" content="Veles Documentation">
 <meta name="twitter:title" content="Veles Documentation - survey">
-<meta name="twitter:description" content="A handy wrapper around Survey(). Joins Page objects into a survey and creates survey.json.">
+<meta name="twitter:description" content="A handy wrapper around Survey(). Joins Page objects into a survey and generates all survey website files.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><code>survey</code></h1>
-<p class="subtitle lead">Create <code>Survey</code> object and create <code>survey.json</code></p>
+<p class="subtitle lead">Create <code>Survey</code> object and build website</p>
   <div class="quarto-categories">
     <div class="quarto-category"><code>velesresearch</code></div>
     <div class="quarto-category"><code>velesresearch.tools</code></div>
@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    A handy wrapper around <a href="../structure/Survey"><code>Survey()</code></a>. Joins <code>Page</code> objects into a survey and creates <code>survey.json</code>.
+    A handy wrapper around <a href="../structure/Survey"><code>Survey()</code></a>. Joins <code>Page</code> objects into a survey and generates all survey website files.
   </div>
 </div>
 
@@ -292,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="usage" class="level1">
 <h1>Usage</h1>
-<div id="b7f2398b" class="cell" data-execution_count="1">
+<div id="4a43424a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>survey(label, <span class="op">*</span>pages, title<span class="op">=</span><span class="va">None</span>, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>, create<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -345,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level1">
 <h1>Examples</h1>
-<div id="61f44ab7" class="cell" data-execution_count="2">
+<div id="cb3c5575" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question, page, survey</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> question(</span>

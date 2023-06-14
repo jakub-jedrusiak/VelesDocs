@@ -239,29 +239,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Overview</h1>
-</div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
 
 <div class="logo">
 <div class="light-mode">
@@ -272,6 +258,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with Python interface to create self contained research units that can be self-hosted. Veles’ own web service for creating and hosting experiments are planned.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
 <p>Veles is in pre-alpha development, but the goal features are:</p>
 <ul>
 <li><p>Free and open source.</p></li>
@@ -287,6 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>JavaScript code preview.</p></li>
 <li><p>Modifiable themes.</p></li>
 </ul>
+</section>
 <section id="installation" class="level1">
 <h1>Installation</h1>
 <p>You can install the current version of Veles with:</p>
@@ -294,20 +283,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can install development version (unstable) with:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that <strong><code>npm</code> is required</strong> for Veles to work. You can download it from <a href="https://nodejs.org/en/download">here</a> or use your package manager.</p>
-<pre class="{bash}"><code># Ubuntu (and other apt distros)
-sudo apt install npm
-
-# Arch
-sudo pacman -S npm
-
-# winget
-winget install OpenJS.NodeJS.LTS
-
-# Chocolatey
-choco install nodejs-lts
-
-# Homebrew
-brew install node</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ubuntu (and other apt distros)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install npm</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Arch</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> npm</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># winget</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> install OpenJS.NodeJS.LTS</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Chocolatey</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">choco</span> install nodejs-lts</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Homebrew</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install node</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
