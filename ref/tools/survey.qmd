@@ -1,7 +1,7 @@
 ---
 title: "`survey`"
-subtitle: "Create `Survey` object and create `survey.json`"
-description: "A handy wrapper around [`Survey()`](../structure/Survey). Joins `Page` objects into a survey and creates `survey.json`."
+subtitle: "Create `Survey` object and build website"
+description: "A handy wrapper around [`Survey()`](../structure/Survey). Joins `Page` objects into a survey and generates all survey website files."
 aliases: 
   - ../survey.html
 categories:

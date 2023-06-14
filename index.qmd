@@ -52,7 +52,7 @@ pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.g
 
 Note that **`npm` is required** for Veles to work. You can download it from [here](https://nodejs.org/en/download) or use your package manager.
 
-``` {bash}
+``` bash
 # Ubuntu (and other apt distros)
 sudo apt install npm
 
