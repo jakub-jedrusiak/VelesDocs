@@ -222,11 +222,11 @@ To be implemented...
 
 # Hosting {#sec-hosting}
 
-The main way to host Veles surveys is through [VelesWeb](https://velesweb-bcc5f6eb1df3.herokuapp.com/). Currently in closed alpha. Self-hosting is also possible.
+The main way to host Veles surveys is through [VelesWeb](https://www.velesweb.org/). Currently in closed alpha. Self-hosting is also possible.
 
 ## VelesWeb
 
-When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use [VelesWeb](https://velesweb-bcc5f6eb1df3.herokuapp.com/). The only file that will be interesting, is the archive with `.tar.gz` extension.
+When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use [VelesWeb](https://www.velesweb.org/). The only file that will be interesting, is the archive with `.tar.gz` extension.
 
 Log in to your VelesWeb account, create a new survey, give it a title and -- optionally -- a description. Then choose the `.tar.gz` file from your hard drive. Submit and wait. It might take a minute or two. After that you'll see your survey's overview.
 
