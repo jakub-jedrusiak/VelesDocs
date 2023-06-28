@@ -1,0 +1,160 @@
+---
+title: "`QuestionOptions`"
+subtitle: "Change Question's behaviour"
+description: "A class of options that can be applied to a [Question](/ref/structure/Question.qmd) object. Main possibilities include making question required, setting random answer order, giving space for comments and adding a "None" answer. All currently available options can be found below."
+aliases: 
+  - ../QuestionOptions.html
+categories:
+  - velesresearch
+  - velesresearch.options
+---
+# Modules
+
+`velesresearch`
+
+`velesresearch.options`
+
+# Usage
+
+``` {python}
+QuestionOptions(
+    required=False,
+    answers_order="none",
+    inherit_answers=None,
+    comment=False,
+    comment_text="Other",
+    comment_placeholder="",
+    visible=True,
+    other=False,
+    other_text="Other",
+    other_placeholder="",
+    none=False,
+    none_text="None",
+    clear_button=False,
+)
+```
+
+
+# Arguments
+
+::: arg_name
+required
+:::
+::: arg_desc
+`bool`; make answer mandatory. Defaults to `False`.
+:::
+
+::: arg_name
+answers_order
+:::
+::: arg_desc
+`str`; in what order should the answers be displayed. Possible values are `"none"` (default; doesn't change the order), `"random"`, `"asc"` (ascending), `"desc"` (descending).
+:::
+
+::: arg_name
+inherit_answers
+:::
+::: arg_desc
+`str`; if specified, the question inherits answers from another question. Can be set to inherit selected answers only (see `inherit_answers_mode` argument). Accepts question name.
+:::
+
+::: arg_name
+inherit_answers_mode
+:::
+::: arg_desc
+`str`; changes mode of answers' inheritance. Works only if `inherit_answers=True`. Possible values are `"all"` (inherits all answers), `"selected"` (inherits only selected answers) and `"unselected"` (inherits only unselected answers).
+:::
+
+::: arg_name
+comment
+:::
+::: arg_desc
+`bool`; if `True`, a textbox for a comment appears under the question.
+:::
+
+::: arg_name
+comment_text
+:::
+::: arg_desc
+`str`; text over the comment textbox. Works only if `comment=True`.
+:::
+
+::: arg_name
+comment_placeholder
+:::
+::: arg_desc
+`str`; placeholder in the comment textbox. Works only if `comment=True`.
+:::
+
+::: arg_name
+visible
+:::
+::: arg_desc
+`bool`; should the question be visible? Useful for testing.
+:::
+
+::: arg_name
+other
+:::
+::: arg_desc
+`bool`; add "Other" option.
+:::
+
+::: arg_name
+other_text
+:::
+::: arg_desc
+`str`; text over the other textbox. Works only if `other=True`.
+:::
+
+::: arg_name
+other_placeholder
+:::
+::: arg_desc
+`str`; placeholder in the other textbox. Works only if `other=True`.
+:::
+
+::: arg_name
+none
+:::
+::: arg_desc
+`bool`; add "None" option.
+:::
+
+::: arg_name
+none_text
+:::
+::: arg_desc
+`str`; text for the "None" option. Works only if `none=True`.
+:::
+
+::: arg_name
+clear_button
+:::
+::: arg_desc
+`bool`; should a clear button be visible?
+:::
+
+# Value
+
+An object of class `QuestionOptions`.
+
+# Examples
+
+``` {python}
+# | eval: true
+# | output: false
+from velesresearch import radio, QuestionOptions
+
+radio(
+    "Favourite drink",
+    "Tea",
+    "Coffee",
+    "Water",
+    options=QuestionOptions(
+      other=True
+      none=True
+      required=True
+    )
+)
+```

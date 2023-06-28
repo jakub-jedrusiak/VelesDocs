@@ -12,9 +12,9 @@ Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual
 
 Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go.
 
-To actually build (or even preview) your survey, you **must have `npm` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `npm` gets installed with Node.js. If you're a Windows or Mac user, you can download it from [the official website](https://nodejs.org/en/download). If you're a Linux user, chances are you have `npm` already installed. Otherwise you can use one of the following commands:
+To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` gets installed with Node.js. If you're a Windows or Mac user, you can download it from [the official website](https://nodejs.org/en/download). If you're a Linux user, chances are you have `npm` already installed. Otherwise you can use one of the following commands:
 
-``` {bash}
+``` bash
 # Ubuntu (and other apt distros)
 sudo apt install npm
 
@@ -33,16 +33,30 @@ brew install node
 
 If everything is OK, you should be able to run this command in your terminal:
 
-``` {bash}
+``` bash
 npm -v
 ```
+
+fter installing `node.js`, activate `yarn` with this command in the terminal:
+
+``` bash
+corepack enable
+```
+
+If everything went well, command `yarn -v` should return a version number.
 
 # Installation
 
 To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.
 
-``` {bash}
+``` bash
 pip install velesresearch
+```
+
+You can also choose development version using this command:
+
+```         
+pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
 
 # Create project
@@ -51,7 +65,7 @@ Veles project is just a folder with a Python script. Output will be created in t
 
 The first thing we need to do is to import the `velesresearch` library. To do this, at the top of your script write:
 
-``` {python}
+```{python}
 import velesresearch as vls
 
 ```
@@ -72,13 +86,13 @@ In Veles, questions are a class of objects. There are two main ways of creating 
 
 Let's start with creating some metrical questions with `question()`. The syntax is as follows:
 
-``` {python}
+```{python}
 vls.question(label, question_text, answers, question_type, options, description)
 ```
 
 The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `question_type` defaults to `"radio"`. `options` can change the survey's behaviour (e.g. make the answer order random), but we'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used.
 
-``` {python}
+```{python}
 gender = vls.question(
     "gender",
     "What is your gender?",
@@ -97,7 +111,7 @@ Every question type has its own wrapper functions, so we could also write `gende
 
 Each question can have a series of options specified. To make it easier, there's `QuestionOptions` object class which has all available options listed. Let's use it to change answer order to random and add real None and Other options. We can create `QuestionOptions` outside the question itself, save it in a variable and put the variable in the `question()` function. We can also nest the `QuestionOptions` object inside the `question()` function.
 
-``` {python}
+```{python}
 gender = vls.question(
     "gender",
     "What is your gender?",
@@ -124,7 +138,7 @@ Often in psychological sciences we want to use a whole questionnaire. It's quite
 
 To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using `split()` method or with `split` arguments. In the second and third cases, we need to have our items separated by some specified separator, e.g. every item in a separate line.
 
-``` {python}
+```{python}
 # manually formatted list
 RSSI_items = [
     "I feel that I am a person of worth, at least on an equal plane with others.",
@@ -168,17 +182,21 @@ We save our items and answers in variables and treat them with `split()`. In her
 
 If `question_text` is a list, `question()` output is a question list. Each question have the same options, scale and type. The labels are `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
 
+## Panels
+
+To be implemented...
+
 ## Pages
 
 Every survey needs to have at least one page. You can create it with `page()`.
 
-``` {python}
+```{python}
 vls.page(label, questions, title, description, options)
 ```
 
 Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](ref/options/PageOptions.qmd).
 
-``` {python}
+```{python}
 intro = vls.page("metrics", gender)
 
 self_esteem = vls.page("RSSI", RSSI)
@@ -188,24 +206,34 @@ self_esteem = vls.page("RSSI", RSSI)
 
 When all elements are created, we can combine them into the final survey. We can do this with `survey()` function. It does two things -- returns a `Survey` object and builds a website with your survey.
 
-``` {python}
+```{python}
 vls.survey(label, pages, title, description, options, create)
 ```
 
-``` {python}
+```{python}
 vls.survey("My smart research", intro, self_esteem, title="Self-esteem and gender")
 ```
 
-Building a website for the first time might take a few minutes due to `npm` downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section [below](#sec-hosting).
+Building a website for the first time might take a few minutes due to `yarn` downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section [below](#sec-hosting).
 
 # PsychoJS experiments
 
 To be implemented...
 
-# Saving data
-
-To be implemented...
-
 # Hosting {#sec-hosting}
 
-To be implemented...
+The main way to host Veles surveys is through [VelesWeb](https://velesweb-bcc5f6eb1df3.herokuapp.com/). Currently in closed alpha. Self-hosting is also possible.
+
+## VelesWeb
+
+When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use [VelesWeb](https://velesweb-bcc5f6eb1df3.herokuapp.com/). The only file that will be interesting, is the archive with `.tar.gz` extension.
+
+Log in to your VelesWeb account, create a new survey, give it a title and -- optionally -- a description. Then choose the `.tar.gz` file from your hard drive. Submit and wait. It might take a minute or two. After that you'll see your survey's overview.
+
+![](figs/getting_started/velesweb_overview.png)
+
+From here you can test the survey, make it offline or turn on the real data collection. Each survey has two databases -- the main one and the test one. The test mode is the default. As you can see below, responses from both modes are separated.
+
+## Self-hosting
+
+To be described...

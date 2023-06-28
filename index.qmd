@@ -50,7 +50,7 @@ You can install development version (unstable) with:
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
 
-Note that **`npm` is required** for Veles to work. You can download it from [here](https://nodejs.org/en/download) or use your package manager.
+Note that **`yarn` is required** for Veles to work. You can download it from [here](https://nodejs.org/en/download) or use your package manager.
 
 ``` bash
 # Ubuntu (and other apt distros)
@@ -68,3 +68,11 @@ choco install nodejs-lts
 # Homebrew
 brew install node
 ```
+
+After installing `node.js`, activate `yarn` with this command in the terminal:
+
+``` bash
+corepack enable
+```
+
+If everything went well, command `yarn -v` should return a version number.

@@ -1,0 +1,62 @@
+---
+title: "`SurveyOptions`"
+subtitle: "Change Survey's behaviour"
+description: "A class of options that can be applied to a [Survey](/ref/structure/Survey.qmd) object. Main possibilities include setting a language and redirect URL. All currently available options can be found below."
+aliases: 
+  - ../SurveyOptions.html
+categories:
+  - velesresearch
+  - velesresearch.options
+---
+# Modules
+
+`velesresearch`
+
+`velesresearch.options`
+
+# Usage
+
+``` {python}
+PageOptions(language="en", url_on_complete=None)
+```
+
+
+# Arguments
+
+::: arg_name
+language
+:::
+::: arg_desc
+`str`; language code. List of available languages available [here](https://github.com/surveyjs/survey-library/tree/master/src/localization).
+:::
+
+::: arg_name
+url_on_complete
+:::
+::: arg_desc
+`str`; webpage to which the respondent should be redirected after completing the survey.
+:::
+
+# Value
+
+An object of class `SurveyOptions`.
+
+# Examples
+
+``` {python}
+# | eval: true
+# | output: false
+
+from velesresearch import question, page, survey, SurveyOptions
+
+drinks = "Tea, Coffee, Water".split(", ")
+answers = "My favourite, I like it, Neutral, I don't like it, I despite it".split(", ")
+
+q = question("drinks", drinks, answers)
+p = page("drinks", q, title="Favourite drinks")
+survey(
+    "drink_survey",
+    p,
+    options=SurveyOptions(url_on_complete="https://en.wikipedia.org/wiki/Tea"),
+)
+```

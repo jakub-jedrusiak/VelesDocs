@@ -1,0 +1,64 @@
+---
+title: "`PageOptions`"
+subtitle: "Change Page's behaviour"
+description: "A class of options that can be applied to a [Page](/ref/structure/Page.qmd) object. Main possibilities include setting a time limit. All currently available options can be found below."
+aliases: 
+  - ../PageOptions.html
+categories:
+  - velesresearch
+  - velesresearch.options
+---
+# Modules
+
+`velesresearch`
+
+`velesresearch.options`
+
+# Usage
+
+``` {python}
+PageOptions(read_only=False, time_limit=None, visible=True)
+```
+
+
+# Arguments
+
+::: arg_name
+read_only
+:::
+::: arg_desc
+`bool`; makes the page read only.
+:::
+
+::: arg_name
+time_limit
+:::
+::: arg_desc
+`int`; time limit in seconds. Zero, negative values and `None` will result in unlimited time.
+:::
+
+::: arg_name
+visible
+:::
+::: arg_desc
+`bool`; should the page be visible? Useful for testing.
+:::
+
+# Value
+
+An object of class `PageOptions`.
+
+# Examples
+
+``` {python}
+# | eval: true
+# | output: false
+
+from velesresearch import question, page, PageOptions
+
+drinks = "Tea, Coffee, Water".split(", ")
+answers = "My favourite, I like it, Neutral, I don't like it, I despite it".split(", ")
+
+q = question("drinks", drinks, answers)
+p = page("drinks", q, title="Favourite drinks", options=PageOptions(time_limit=30))
+```
