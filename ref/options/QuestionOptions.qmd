@@ -1,7 +1,7 @@
 ---
 title: "`QuestionOptions`"
 subtitle: "Change Question's behaviour"
-description: "A class of options that can be applied to a [Question](/ref/structure/Question.qmd) object. Main possibilities include making question required, setting random answer order, giving space for comments and adding a "None" answer. All currently available options can be found below."
+description: "A class of options that can be applied to a [Question](/ref/structure/Question.qmd) object. Main possibilities include making question required, setting random answer order, giving space for comments and adding a \"None\" answer. All currently available options can be found below."
 aliases: 
   - ../QuestionOptions.html
 categories:
@@ -151,10 +151,6 @@ radio(
     "Tea",
     "Coffee",
     "Water",
-    options=QuestionOptions(
-      other=True
-      none=True
-      required=True
-    )
+    options=QuestionOptions(other=True, none=True, required=True),
 )
 ```

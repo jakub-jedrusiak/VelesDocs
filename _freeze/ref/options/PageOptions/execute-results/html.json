@@ -1,0 +1,11 @@
+{
+  "hash": "03f6abcfe4b7d2bedb7763f63c87e417",
+  "result": {
+    "markdown": "---\ntitle: \"`PageOptions`\"\nsubtitle: \"Change Page's behaviour\"\ndescription: \"A class of options that can be applied to a [Page](/ref/structure/Page.qmd) object. Main possibilities include setting a time limit. All currently available options can be found below.\"\naliases: \n  - ../PageOptions.html\ncategories:\n  - velesresearch\n  - velesresearch.options\n---\n\n# Modules\n\n`velesresearch`\n\n`velesresearch.options`\n\n# Usage\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nPageOptions(read_only=False, time_limit=None, visible=True)\n```\n:::\n\n\n# Arguments\n\n::: arg_name\nread_only\n:::\n::: arg_desc\n`bool`; makes the page read only.\n:::\n\n::: arg_name\ntime_limit\n:::\n::: arg_desc\n`int`; time limit in seconds. Zero, negative values and `None` will result in unlimited time.\n:::\n\n::: arg_name\nvisible\n:::\n::: arg_desc\n`bool`; should the page be visible? Useful for testing.\n:::\n\n# Value\n\nAn object of class `PageOptions`.\n\n# Examples\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nfrom velesresearch import question, page, PageOptions\n\ndrinks = \"Tea, Coffee, Water\".split(\", \")\nanswers = \"My favourite, I like it, Neutral, I don't like it, I despite it\".split(\", \")\n\nq = question(\"drinks\", drinks, answers)\np = page(\"drinks\", q, title=\"Favourite drinks\", options=PageOptions(time_limit=30))\n```\n:::\n\n\n",
+    "supporting": [
+      "PageOptions_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
