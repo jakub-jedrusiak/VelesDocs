@@ -2,26 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jakub-jedrusiak.github.io/VelesDocs/getting-started.html</loc>
-    <lastmod>2023-06-14T01:01:25.714Z</lastmod>
+    <lastmod>2023-06-28T21:08:52.896Z</lastmod>
   </url>
   <url>
     <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/page.html</loc>
-    <lastmod>2023-06-13T14:29:07.267Z</lastmod>
+    <lastmod>2023-06-28T21:08:50.686Z</lastmod>
   </url>
   <url>
     <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/survey.html</loc>
-    <lastmod>2023-06-14T01:06:43.440Z</lastmod>
+    <lastmod>2023-06-28T21:08:49.846Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/options/SurveyOptions.html</loc>
+    <lastmod>2023-06-28T21:08:45.946Z</lastmod>
   </url>
   <url>
     <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/overview.html</loc>
-    <lastmod>2023-06-11T14:33:58.380Z</lastmod>
+    <lastmod>2023-06-28T21:08:43.556Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/options/PageOptions.html</loc>
+    <lastmod>2023-06-28T21:08:43.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/options/QuestionOptions.html</loc>
+    <lastmod>2023-06-28T21:08:47.916Z</lastmod>
   </url>
   <url>
     <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/question.html</loc>
-    <lastmod>2023-06-13T14:32:04.547Z</lastmod>
+    <lastmod>2023-06-28T21:08:50.239Z</lastmod>
   </url>
   <url>
     <loc>https://jakub-jedrusiak.github.io/VelesDocs/index.html</loc>
-    <lastmod>2023-06-14T01:07:01.590Z</lastmod>
+    <lastmod>2023-06-28T21:08:50.926Z</lastmod>
   </url>
 </urlset>
