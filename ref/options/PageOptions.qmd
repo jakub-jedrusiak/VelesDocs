@@ -57,6 +57,7 @@ An object of class `PageOptions`.
 from velesresearch import question, page, PageOptions
 
 drinks = "Tea, Coffee, Water".split(", ")
+drinks = [f"How do you like {drink}?" for drink in drinks]
 answers = "My favourite, I like it, Neutral, I don't like it, I despise it".split(", ")
 
 q = question("drinks", drinks, answers)
