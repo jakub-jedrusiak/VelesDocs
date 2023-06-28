@@ -3,7 +3,7 @@ title: "Question types"
 subtitle: "Wrappers and available types of questions"
 description: "Veles includes a series of different question types. Each of them can be passed as the `type` argument in [`question()`](./question.qmd) (or directly in [`Question()`](/ref/structure/Question.qmd). Every question type also has a wrapper that allows to create a [Question](/ref/structure/Question.qmd) object quicker. For example you can create a radio question with `question(type=\"radio\")` or with `radio()`."
 aliases: 
-  - ../PageOptions.html
+  - ../question_types.html
 categories:
   - velesresearch
   - velesresearch.question_types
