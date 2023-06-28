@@ -57,7 +57,7 @@ An object of class `PageOptions`.
 from velesresearch import question, page, PageOptions
 
 drinks = "Tea, Coffee, Water".split(", ")
-answers = "My favourite, I like it, Neutral, I don't like it, I despite it".split(", ")
+answers = "My favourite, I like it, Neutral, I don't like it, I despise it".split(", ")
 
 q = question("drinks", drinks, answers)
 p = page("drinks", q, title="Favourite drinks", options=PageOptions(time_limit=30))
