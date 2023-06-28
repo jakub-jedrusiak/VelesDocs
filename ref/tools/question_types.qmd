@@ -5,8 +5,8 @@ description: "Veles includes a series of different question types. Each of them 
 aliases: 
   - ../question_types.html
 categories:
-  - velesresearch
-  - velesresearch.question_types
+  - "`velesresearch`"
+  - "`velesresearch.question_types`"
 ---
 
 | Question type | Description              |

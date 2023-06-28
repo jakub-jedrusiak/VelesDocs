@@ -5,8 +5,8 @@ description: "A class of options that can be applied to a [Survey](/ref/structur
 aliases: 
   - ../SurveyOptions.html
 categories:
-  - velesresearch
-  - velesresearch.options
+  - "`velesresearch`"
+  - "`velesresearch.options`"
 ---
 # Modules
 
