@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A class of options that can be applied to a Survey object. Main possibilities include setting a language and redirect URL. All currently available options can be found below.">
+<meta name="description" content="Veles includes a series of different question types. Each of them can be passed as the type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(type=&quot;radio&quot;) or with radio().">
 
-<title>Veles Documentation - SurveyOptions</title>
+<title>Veles Documentation - Question types</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -99,12 +65,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles/styles.css">
-<meta property="og:title" content="Veles Documentation - SurveyOptions">
-<meta property="og:description" content="A class of options that can be applied to a Survey object. Main possibilities include setting a language and redirect URL. All currently available options can be found below.">
+<meta property="og:title" content="Veles Documentation - Question types">
+<meta property="og:description" content="Veles includes a series of different question types. Each of them can be passed as the type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(type=&quot;radio&quot;) or with radio().">
+<meta property="og:image" content="https://jakub-jedrusiak.github.io/VelesDocs/figs/question_types/radio.png">
 <meta property="og:site-name" content="Veles Documentation">
-<meta name="twitter:title" content="Veles Documentation - SurveyOptions">
-<meta name="twitter:description" content="A class of options that can be applied to a Survey object. Main possibilities include setting a language and redirect URL. All currently available options can be found below.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="363">
+<meta property="og:image:width" content="655">
+<meta name="twitter:title" content="Veles Documentation - Question types">
+<meta name="twitter:description" content="Veles includes a series of different question types. Each of them can be passed as the type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(type=&quot;radio&quot;) or with radio().">
+<meta name="twitter:image" content="https://jakub-jedrusiak.github.io/VelesDocs/figs/question_types/radio.png">
+<meta name="twitter:image-height" content="363">
+<meta name="twitter:image-width" content="655">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -147,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../ref/overview.html">Reference</a></li><li class="breadcrumb-item"><a href="../../ref/options/PageOptions.html">Options</a></li><li class="breadcrumb-item"><a href="../../ref/options/SurveyOptions.html"><code>SurveyOptions</code></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../ref/overview.html">Reference</a></li><li class="breadcrumb-item"><a href="../../ref/tools/page.html">Tools</a></li><li class="breadcrumb-item"><a href="../../ref/tools/question_types.html">Question types</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -217,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ref/options/SurveyOptions.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../ref/options/SurveyOptions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>SurveyOptions</code></span></a>
   </div>
 </li>
@@ -246,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ref/tools/question_types.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/tools/question_types.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Question types</span></a>
   </div>
 </li>
@@ -270,30 +242,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modules" id="toc-modules" class="nav-link active" data-scroll-target="#modules">Modules</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments">Arguments</a></li>
-  <li><a href="#value" id="toc-value" class="nav-link" data-scroll-target="#value">Value</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#radio" id="toc-radio" class="nav-link active" data-scroll-target="#radio"><code>radio</code></a></li>
+  <li><a href="#checkbox" id="toc-checkbox" class="nav-link" data-scroll-target="#checkbox"><code>checkbox</code></a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/ref/options/SurveyOptions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/ref/tools/question_types.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><code>SurveyOptions</code></h1>
-<p class="subtitle lead">Change Survey’s behaviour</p>
+<h1 class="title">Question types</h1>
+<p class="subtitle lead">Wrappers and available types of questions</p>
   <div class="quarto-categories">
     <div class="quarto-category">velesresearch</div>
-    <div class="quarto-category">velesresearch.options</div>
+    <div class="quarto-category">velesresearch.question_types</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    A class of options that can be applied to a <a href="../../ref/structure/Survey.qmd">Survey</a> object. Main possibilities include setting a language and redirect URL. All currently available options can be found below.
+    Veles includes a series of different question types. Each of them can be passed as the <code>type</code> argument in <a href="../../ref/tools/question.html"><code>question()</code></a> (or directly in <a href="../../ref/structure/Question.qmd"><code>Question()</code></a>. Every question type also has a wrapper that allows to create a <a href="../../ref/structure/Question.qmd">Question</a> object quicker. For example you can create a radio question with <code>question(type="radio")</code> or with <code>radio()</code>.
   </div>
 </div>
 
@@ -305,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-28</p>
+      <p class="date-modified">2023-06-29</p>
     </div>
   </div>
     
@@ -314,53 +283,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="modules" class="level1">
-<h1>Modules</h1>
-<p><code>velesresearch</code></p>
-<p><code>velesresearch.options</code></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Question type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>radio</code></td>
+<td>single choice question</td>
+</tr>
+<tr class="even">
+<td><code>checkbox</code></td>
+<td>multiple choice question</td>
+</tr>
+</tbody>
+</table>
+<section id="radio" class="level1">
+<h1><code>radio</code></h1>
+<p>Single choice question. Can have “None” and “Other” options (available through <a href="../../ref/options/QuestionOptions.html">options</a>).</p>
+<p><img src="../../figs/question_types/radio.png" class="img-fluid" alt="radio question example"></p>
 </section>
-<section id="usage" class="level1">
-<h1>Usage</h1>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>PageOptions(language<span class="op">=</span><span class="st">"en"</span>, url_on_complete<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="arguments" class="level1">
-<h1>Arguments</h1>
-<div class="arg_name">
-<p>language</p>
-</div>
-<div class="arg_desc">
-<p><code>str</code>; language code. List of available languages available <a href="https://github.com/surveyjs/survey-library/tree/master/src/localization">here</a>.</p>
-</div>
-<div class="arg_name">
-<p>url_on_complete</p>
-</div>
-<div class="arg_desc">
-<p><code>str</code>; webpage to which the respondent should be redirected after completing the survey.</p>
-</div>
-</section>
-<section id="value" class="level1">
-<h1>Value</h1>
-<p>An object of class <code>SurveyOptions</code>.</p>
-</section>
-<section id="examples" class="level1">
-<h1>Examples</h1>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question, page, survey, SurveyOptions</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> <span class="st">"Tea, Coffee, Water"</span>.split(<span class="st">", "</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>answers <span class="op">=</span> <span class="st">"My favourite, I like it, Neutral, I don't like it, I despise it"</span>.split(<span class="st">", "</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> question(<span class="st">"drinks"</span>, drinks, answers)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> page(<span class="st">"drinks"</span>, q, title<span class="op">=</span><span class="st">"Favourite drinks"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>survey(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"drink_survey"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    p,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>SurveyOptions(url_on_complete<span class="op">=</span><span class="st">"https://en.wikipedia.org/wiki/Tea"</span>),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    create<span class="op">=</span><span class="va">False</span>,  <span class="co"># for example sake, you probably want to create</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="checkbox" class="level1">
+<h1><code>checkbox</code></h1>
+<p>Multiple choice question. Just like <code>radio</code> but allows to pick multiple answers.</p>
+<p><img src="../../figs/question_types/checkbox.png" class="img-fluid" alt="checkbox question example"></p>
 
 
 </section>
