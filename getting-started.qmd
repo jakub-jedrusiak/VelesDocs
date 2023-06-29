@@ -182,6 +182,30 @@ We save our items and answers in variables and treat them with `split()`. In her
 
 If `question_text` is a list, `question()` output is a question list. Each question have the same options, scale and type. The labels are `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
 
+### List comprehension
+
+The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over his alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee" (especially coffee) but rather something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string to do just that.
+
+```{python}
+from velesresearch import question
+
+# get our drinks and make them a list
+drinks = "tea coffee juice water".split(" ")
+
+# modify with a loop
+drinks = [f"How do you like {drink}?" for drink in drinks]
+
+# add some answers
+answers = "I love it; I like it; It's OK; I don't like it; I despise it".split("; ")
+
+# make it a list of questions
+q_drinks = question("drinks", drinks, answers)
+```
+
+First we get our drinks separated with some common separator (a space in this example), split it and save it in a `drinks` variable. Then we modify it with an f-string and a for loop. An f-string is a string preceded with `f`. In it, we can use variables' values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it's called *list comprehension*). It will take every value inside the `drinks` one by one, put them in a variable called `drink`[^1] and do whatever we commanded before the `for` keyword. Notice everything is in **square brackets**.
+
+[^1]: We could have called it otherwise. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it?
+
 ## Panels
 
 To be implemented...
