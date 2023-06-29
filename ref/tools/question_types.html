@@ -69,15 +69,15 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles/styles.css">
 <meta property="og:title" content="Veles Documentation - Question types">
 <meta property="og:description" content="Veles includes a series of different question types. Each of them can be passed as the type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(question_type=&quot;radio&quot;) or with radio().">
-<meta property="og:image" content="https://docs.velesweb.org/figs/question_types/radio.png">
+<meta property="og:image" content="https://docs.velesweb.org/figs/question_types/checkbox.png">
 <meta property="og:site-name" content="Veles Documentation">
-<meta property="og:image:height" content="363">
-<meta property="og:image:width" content="655">
+<meta property="og:image:height" content="400">
+<meta property="og:image:width" content="658">
 <meta name="twitter:title" content="Veles Documentation - Question types">
 <meta name="twitter:description" content="Veles includes a series of different question types. Each of them can be passed as the type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(question_type=&quot;radio&quot;) or with radio().">
-<meta name="twitter:image" content="https://docs.velesweb.org/figs/question_types/radio.png">
-<meta name="twitter:image-height" content="363">
-<meta name="twitter:image-width" content="655">
+<meta name="twitter:image" content="https://docs.velesweb.org/figs/question_types/checkbox.png">
+<meta name="twitter:image-height" content="400">
+<meta name="twitter:image-width" content="658">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -257,8 +257,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#radio" id="toc-radio" class="nav-link active" data-scroll-target="#radio"><code>radio</code></a></li>
-  <li><a href="#checkbox" id="toc-checkbox" class="nav-link" data-scroll-target="#checkbox"><code>checkbox</code></a></li>
+  <li><a href="#checkbox" id="toc-checkbox" class="nav-link active" data-scroll-target="#checkbox"><code>checkbox</code></a></li>
+  <li><a href="#dropdown" id="toc-dropdown" class="nav-link" data-scroll-target="#dropdown"><code>dropdown</code></a></li>
+  <li><a href="#dropdown_multi" id="toc-dropdown_multi" class="nav-link" data-scroll-target="#dropdown_multi"><code>dropdown_multi</code></a></li>
+  <li><a href="#radio" id="toc-radio" class="nav-link" data-scroll-target="#radio"><code>radio</code></a></li>
+  <li><a href="#ranking" id="toc-ranking" class="nav-link" data-scroll-target="#ranking"><code>ranking</code></a></li>
+  <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text"><code>text</code></a></li>
+  <li><a href="#text_long" id="toc-text_long" class="nav-link" data-scroll-target="#text_long"><code>text_long</code></a></li>
+  <li><a href="#yes_no" id="toc-yes_no" class="nav-link" data-scroll-target="#yes_no"><code>yes_no</code></a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/ref/tools/question_types.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -271,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
 <p class="subtitle lead">Wrappers and available types of questions</p>
   <div class="quarto-categories">
     <div class="quarto-category"><code>velesresearch</code></div>
-    <div class="quarto-category"><code>velesresearch.question_types</code></div>
+    <div class="quarto-category"><code>velesresearch.questiontypes</code></div>
   </div>
   </div>
 
@@ -307,24 +313,78 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>radio</code></td>
-<td>single choice question</td>
-</tr>
-<tr class="even">
 <td><code>checkbox</code></td>
 <td>multiple choice question</td>
 </tr>
+<tr class="even">
+<td><code>dropdown</code></td>
+<td>single choice question with a dropdown list</td>
+</tr>
+<tr class="odd">
+<td><code>dropdown_multi</code></td>
+<td>multiple choice question with a dropdown list</td>
+</tr>
+<tr class="even">
+<td><code>radio</code></td>
+<td>single choice question</td>
+</tr>
+<tr class="odd">
+<td><code>ranking</code></td>
+<td>question to rank given items</td>
+</tr>
+<tr class="even">
+<td><code>text</code></td>
+<td>short text field</td>
+</tr>
+<tr class="odd">
+<td><code>text_long</code></td>
+<td>long text box</td>
+</tr>
+<tr class="even">
+<td><code>yes_no</code></td>
+<td>a yes/no question</td>
+</tr>
 </tbody>
 </table>
+<section id="checkbox" class="level1">
+<h1><code>checkbox</code></h1>
+<p>Multiple choice question. Just like <code>radio</code> but allows to pick multiple answers.</p>
+<p><img src="../../figs/question_types/checkbox.png" class="img-fluid" alt="checkbox question example"></p>
+</section>
+<section id="dropdown" class="level1">
+<h1><code>dropdown</code></h1>
+<p>Single choice question. Just like <code>radio</code> but with a dropdown list.</p>
+<p><img src="../../figs/question_types/dropdown.png" class="img-fluid" alt="dropdown question example"></p>
+</section>
+<section id="dropdown_multi" class="level1">
+<h1><code>dropdown_multi</code></h1>
+<p>Multiple choice question. Just like <code>checkbox</code> but with a dropdown list.</p>
+<p><img src="../../figs/question_types/dropdown_multi.png" class="img-fluid" alt="dropdown_multi question example"></p>
+</section>
 <section id="radio" class="level1">
 <h1><code>radio</code></h1>
 <p>Single choice question. Can have “None” and “Other” options (available through <a href="../../ref/options/QuestionOptions.html">options</a>).</p>
 <p><img src="../../figs/question_types/radio.png" class="img-fluid" alt="radio question example"></p>
 </section>
-<section id="checkbox" class="level1">
-<h1><code>checkbox</code></h1>
-<p>Multiple choice question. Just like <code>radio</code> but allows to pick multiple answers.</p>
-<p><img src="../../figs/question_types/checkbox.png" class="img-fluid" alt="checkbox question example"></p>
+<section id="ranking" class="level1">
+<h1><code>ranking</code></h1>
+<p>Question to rank given items e.g.&nbsp;from best to worst.</p>
+<p><img src="../../figs/question_types/ranking.png" class="img-fluid" alt="ranking question example"></p>
+</section>
+<section id="text" class="level1">
+<h1><code>text</code></h1>
+<p>Short text field. For longer text use <code>text_long</code>.</p>
+<p><img src="../../figs/question_types/text.png" class="img-fluid" alt="text question example"></p>
+</section>
+<section id="text_long" class="level1">
+<h1><code>text_long</code></h1>
+<p>Long text box. For shorter text use <code>text</code>.</p>
+<p><img src="../../figs/question_types/text_long.png" class="img-fluid" alt="text_long question example"></p>
+</section>
+<section id="yes_no" class="level1">
+<h1><code>yes_no</code></h1>
+<p>A yes/no question with a simple switch.</p>
+<p><img src="../../figs/question_types/yes_no.png" class="img-fluid" alt="yes_no question example"></p>
 
 
 </section>
