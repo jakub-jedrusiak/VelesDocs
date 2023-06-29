@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/getting-started.html</loc>
-    <lastmod>2023-06-28T22:13:34.166Z</lastmod>
+    <loc>https://docs.velesweb.org/getting-started.html</loc>
+    <lastmod>2023-06-29T16:17:40.894Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/page.html</loc>
-    <lastmod>2023-06-28T22:13:32.230Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/tools/page.html</loc>
+    <lastmod>2023-06-29T16:17:38.277Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/survey.html</loc>
-    <lastmod>2023-06-28T22:13:31.490Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/tools/survey.html</loc>
+    <lastmod>2023-06-29T16:17:37.404Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/options/QuestionOptions.html</loc>
-    <lastmod>2023-06-28T22:13:30.713Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/options/QuestionOptions.html</loc>
+    <lastmod>2023-06-29T16:17:36.531Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/options/PageOptions.html</loc>
-    <lastmod>2023-06-28T22:13:27.266Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/options/PageOptions.html</loc>
+    <lastmod>2023-06-29T16:17:35.674Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/overview.html</loc>
-    <lastmod>2023-06-28T22:13:25.153Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/overview.html</loc>
+    <lastmod>2023-06-29T16:17:35.074Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/options/SurveyOptions.html</loc>
-    <lastmod>2023-06-28T22:13:28.980Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/options/SurveyOptions.html</loc>
+    <lastmod>2023-06-29T16:17:36.077Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/question_types.html</loc>
-    <lastmod>2023-06-28T22:13:30.953Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/tools/question_types.html</loc>
+    <lastmod>2023-06-29T16:17:36.897Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/ref/tools/question.html</loc>
-    <lastmod>2023-06-28T22:13:31.880Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/tools/question.html</loc>
+    <lastmod>2023-06-29T16:17:37.857Z</lastmod>
   </url>
   <url>
-    <loc>https://jakub-jedrusiak.github.io/VelesDocs/index.html</loc>
-    <lastmod>2023-06-28T22:13:32.506Z</lastmod>
+    <loc>https://docs.velesweb.org/index.html</loc>
+    <lastmod>2023-06-29T16:17:38.574Z</lastmod>
   </url>
 </urlset>

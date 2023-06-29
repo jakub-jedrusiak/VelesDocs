@@ -122,17 +122,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">Veles Documentation</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.velesweb.org/" rel="" target="">
+ <span class="menu-text">VelesWeb</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> | </span></li>
+</ul>
+            <div class="quarto-navbar-tools">
     <div class="dropdown">
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://github.com/jakub-jedrusiak/mtscr">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/jakub-jedrusiak/VelesResearch">
             Source code
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://github.com/jakub-jedrusiak/mtscr/issues">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/jakub-jedrusiak/VelesResearch/issues">
             Issues
             </a>
           </li>
@@ -140,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -281,6 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question"><code>question()</code></a></li>
   <li><a href="#question-options" id="toc-question-options" class="nav-link" data-scroll-target="#question-options">Question options</a></li>
   <li><a href="#whole-questionnaires" id="toc-whole-questionnaires" class="nav-link" data-scroll-target="#whole-questionnaires">Whole questionnaires</a></li>
+  <li><a href="#list-comprehension" id="toc-list-comprehension" class="nav-link" data-scroll-target="#list-comprehension">List comprehension</a></li>
   </ul></li>
   <li><a href="#panels" id="toc-panels" class="nav-link" data-scroll-target="#panels">Panels</a></li>
   <li><a href="#pages" id="toc-pages" class="nav-link" data-scroll-target="#pages">Pages</a></li>
@@ -293,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#self-hosting" id="toc-self-hosting" class="nav-link" data-scroll-target="#self-hosting">Self-hosting</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/veles-docs/edit/main/getting-started.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/veles-docs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/getting-started.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -312,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-28</p>
+      <p class="date-modified">2023-06-29</p>
     </div>
   </div>
     
@@ -352,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install velesresearch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also choose development version using this command:</p>
-<pre><code>pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="create-project" class="level1">
 <h1>Create project</h1>
@@ -472,6 +486,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We save our items and answers in variables and treat them with <code>split()</code>. In here I’ve done it inside the <code>question()</code> function, but I also could have done it anywhere before that. To learn more about Python string methods, see <a href="https://www.w3schools.com/python/python_ref_string.asp">W3Schools lesson</a> about them.</p>
 <p>If <code>question_text</code> is a list, <code>question()</code> output is a question list. Each question have the same options, scale and type. The labels are <code>"RSSI_1"</code>, <code>"RSSI_2"</code>, <code>"RSSI_3"</code> etc.</p>
 </section>
+<section id="list-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="list-comprehension">List comprehension</h3>
+<p>The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over his alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee” (especially coffee) but rather something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string to do just that.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get our drinks and make them a list</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> <span class="st">"tea coffee juice water"</span>.split(<span class="st">" "</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># modify with a loop</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> [<span class="ss">f"How do you like </span><span class="sc">{</span>drink<span class="sc">}</span><span class="ss">?"</span> <span class="cf">for</span> drink <span class="kw">in</span> drinks]</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add some answers</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>answers <span class="op">=</span> <span class="st">"I love it; I like it; It's OK; I don't like it; I despise it"</span>.split(<span class="st">"; "</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># make it a list of questions</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>q_drinks <span class="op">=</span> question(<span class="st">"drinks"</span>, drinks, answers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First we get our drinks separated with some common separator (a space in this example), split it and save it in a <code>drinks</code> variable. Then we modify it with an f-string and a for loop. An f-string is a string preceded with <code>f</code>. In it, we can use variables’ values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it’s called <em>list comprehension</em>). It will take every value inside the <code>drinks</code> one by one, put them in a variable called <code>drink</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and do whatever we commanded before the <code>for</code> keyword. Notice everything is in <strong>square brackets</strong>.</p>
+</section>
 </section>
 <section id="panels" class="level2">
 <h2 class="anchored" data-anchor-id="panels">Panels</h2>
@@ -480,24 +514,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pages" class="level2">
 <h2 class="anchored" data-anchor-id="pages">Pages</h2>
 <p>Every survey needs to have at least one page. You can create it with <code>page()</code>.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>vls.page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>vls.page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page’s title and description. The <code>options</code> argument accepts a <code>PageOptions</code> object. These are <strong>different options</strong> than in <code>QuestionOptions</code>. The list of available options can be found <a href="./ref/options/PageOptions.html">here</a>.</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(<span class="st">"RSSI"</span>, RSSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(<span class="st">"RSSI"</span>, RSSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
 <p>When all elements are created, we can combine them into the final survey. We can do this with <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and builds a website with your survey.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>vls.survey(label, pages, title, description, options, create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vls.survey(<span class="st">"My smart research"</span>, intro, self_esteem, title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vls.survey(label, pages, title, description, options, create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vls.survey(<span class="st">"My smart research"</span>, intro, self_esteem, title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Building a website for the first time might take a few minutes due to <code>yarn</code> downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section <a href="#sec-hosting">below</a>.</p>
 </section>
@@ -524,7 +558,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>We could have called it otherwise. <code>[f"How do you like {i}?" for i in drinks]</code> would give the same result, but it makes more sense to call it <code>drink</code> rather than <code>i</code>, doesn’t it?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
