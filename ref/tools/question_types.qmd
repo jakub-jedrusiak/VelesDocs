@@ -3,16 +3,40 @@ title: "Question types"
 subtitle: "Wrappers and available types of questions"
 description: "Veles includes a series of different question types. Each of them can be passed as the `type` argument in [`question()`](./question.qmd) (or directly in [`Question()`](/ref/structure/Question.qmd). Every question type also has a wrapper that allows to create a [Question](/ref/structure/Question.qmd) object quicker. For example you can create a radio question with `question(question_type=\"radio\")` or with `radio()`."
 aliases: 
-  - ../question_types.html
+  - ../questiontypes.html
 categories:
   - "`velesresearch`"
-  - "`velesresearch.question_types`"
+  - "`velesresearch.questiontypes`"
 ---
 
-| Question type | Description              |
-|---------------|--------------------------|
-| `radio`       | single choice question   |
-| `checkbox`    | multiple choice question |
+| Question type    | Description                                   |
+|------------------|-----------------------------------------------|
+| `checkbox`       | multiple choice question                      |
+| `dropdown`       | single choice question with a dropdown list   |
+| `dropdown_multi` | multiple choice question with a dropdown list |
+| `radio`          | single choice question                        |
+| `ranking`        | question to rank given items                  |
+| `text`           | short text field                              |
+| `text_long`      | long text box                                 |
+| `yes_no`         | a yes/no question                             |
+
+# `checkbox`
+
+Multiple choice question. Just like `radio` but allows to pick multiple answers.
+
+![](/figs/question_types/checkbox.png){fig-alt="checkbox question example"}
+
+# `dropdown`
+
+Single choice question. Just like `radio` but with a dropdown list.
+
+![](/figs/question_types/dropdown.png){fig-alt="dropdown question example"}
+
+# `dropdown_multi`
+
+Multiple choice question. Just like `checkbox` but with a dropdown list.
+
+![](/figs/question_types/dropdown_multi.png){fig-alt="dropdown_multi question example"}
 
 # `radio`
 
@@ -20,8 +44,26 @@ Single choice question. Can have "None" and "Other" options (available through [
 
 ![](/figs/question_types/radio.png){fig-alt="radio question example"}
 
-# `checkbox`
+# `ranking`
 
-Multiple choice question. Just like `radio` but allows to pick multiple answers.
+Question to rank given items e.g. from best to worst.
 
-![](/figs/question_types/checkbox.png){fig-alt="checkbox question example"}
+![](/figs/question_types/ranking.png){fig-alt="ranking question example"}
+
+# `text`
+
+Short text field. For longer text use `text_long`.
+
+![](/figs/question_types/text.png){fig-alt="text question example"}
+
+# `text_long`
+
+Long text box. For shorter text use `text`.
+
+![](/figs/question_types/text_long.png){fig-alt="text_long question example"}
+
+# `yes_no`
+
+A yes/no question with a simple switch.
+
+![](/figs/question_types/yes_no.png){fig-alt="yes_no question example"}
