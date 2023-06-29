@@ -55,7 +55,7 @@ pip install velesresearch
 
 You can also choose development version using this command:
 
-```         
+``` bash
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
 

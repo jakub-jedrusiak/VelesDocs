@@ -11,9 +11,9 @@ website:
       - icon: github
         menu:
           - text: Source code
-            url: https://github.com/jakub-jedrusiak/mtscr
+            url: https://github.com/jakub-jedrusiak/VelesResearch
           - text: Issues
-            url: https://github.com/jakub-jedrusiak/mtscr/issues
+            url: https://github.com/jakub-jedrusiak/VelesResearch/issues
   sidebar:
     style: "floating"
     search: true
@@ -27,7 +27,7 @@ website:
     collapse-level: 3
   twitter-card: true
   open-graph: true
-  repo-url: https://github.com/jakub-jedrusiak/veles-docs
+  repo-url: https://github.com/jakub-jedrusiak/VelesDocs
   repo-actions: [edit, issue]
 
 format:
@@ -37,3 +37,5 @@ format:
       dark: [darkly, ./styles/dark.scss]
     css: ./styles/styles.css
     toc: true
+resources:
+  - CNAME
