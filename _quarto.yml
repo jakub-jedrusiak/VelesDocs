@@ -8,9 +8,9 @@ website:
     logo: ./figs/Veles-rune-gray.png
     pinned: true
     right:
-      - text: "VelesWeb"
+      - text: "{{< fa flask >}} VelesWeb"
         href: https://www.velesweb.org/
-      - text: " | "
+      - text: " "
     tools:
       - icon: github
         menu:
