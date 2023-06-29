@@ -6,13 +6,13 @@ date-format: iso
 
 # Prerequisites
 
-Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing `python` in the terminal, without the full path.
+Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing `python` in the terminal, without the full path. If you're using Linux or MacOS, you already have Python installed by default.
 
-Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/).
+Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). If you want to use it, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack) and [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). You can do it from within the program. You can also use RStudio if you want.
 
-Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go.
+Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go. If you don't know anything about programming, [this 1-hour introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
 
-To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` gets installed with Node.js. If you're a Windows or Mac user, you can download it from [the official website](https://nodejs.org/en/download). If you're a Linux user, chances are you have `npm` already installed. Otherwise you can use one of the following commands:
+To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` gets installed with Node.js. If you're a Windows user, you can download it from [the official website](https://nodejs.org/en/download). MacOS comes with Node.js preinstalled. If you're a Linux user, chances are you have `npm` already installed. Otherwise you can use one of the following commands:
 
 ``` bash
 # Ubuntu (and other apt distros)
@@ -31,7 +31,7 @@ choco install nodejs-lts
 brew install node
 ```
 
-If everything is OK, you should be able to run this command in your terminal:
+If everything is OK you should be able to run this command in your terminal (PowerShell or cmd in Windows):
 
 ``` bash
 npm -v
@@ -45,6 +45,8 @@ corepack enable
 
 If everything went well, command `yarn -v` should return a version number.
 
+![`yarn -v` in Linux terminal](figs/getting_started/yarn-v.png){fig-alt="yarn -v in the terminal"}
+
 # Installation
 
 To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.
@@ -53,7 +55,7 @@ To install Veles, open your terminal (PowerShell or cmd on Windows), write the f
 pip install velesresearch
 ```
 
-You can also choose development version using this command:
+You can also choose development version (unstable) using this command:
 
 ``` bash
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
@@ -67,14 +69,13 @@ The first thing we need to do is to import the `velesresearch` library. To do th
 
 ```{python}
 import velesresearch as vls
-
 ```
 
 # Survey structure
 
 In SurveyJS, which is the base of Veles, surveys consist of pages, panels and questions. We can create them separately and then combine them into a complete survey.
 
-![Survey structure. Source: SurveyJS documentation.](https://surveyjs.io/form-library/documentation/images/survey-structure.svg)
+![Survey structure. Source: SurveyJS documentation](https://surveyjs.io/form-library/documentation/images/survey-structure.svg)
 
 Veles is a Python library, so there are many ways to achieve this in practice. We can put things in separate variables and then combine them or nest appropriate functions. In here I'll mainly be using the first approach.
 
@@ -90,7 +91,7 @@ Let's start with creating some metrical questions with `question()`. The syntax 
 vls.question(label, question_text, answers, question_type, options, description)
 ```
 
-The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `question_type` defaults to `"radio"`. `options` can change the survey's behaviour (e.g. make the answer order random), but we'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used.
+The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `question_type` defaults to `"radio"`. `options` can change the survey's behaviour (e.g. make the answer order random), but I'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used (i.e. you need to write `options=`).
 
 ```{python}
 gender = vls.question(
@@ -105,7 +106,7 @@ gender = vls.question(
 
 ![Gender question example](figs/getting_started/gender_question_example.png)
 
-Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", What is your gender?", ...)`. A complete list of available question types can be found [here](ref/tools/question_types.qmd).
+Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", "What is your gender?", ...)`. A complete list of available question types can be found [here](ref/tools/question_types.qmd).
 
 ### Question options
 
@@ -134,9 +135,9 @@ List of available options can be found [here](ref/options/QuestionOptions.qmd).
 
 ### Whole questionnaires
 
-Often in psychological sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles the `question()` also allows to convert a whole questionnaire at once.
+Often in behavioral sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles the `question()` also allows to convert a whole questionnaire at once.
 
-To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using `split()` method or with `split` arguments. In the second and third cases, we need to have our items separated by some specified separator, e.g. every item in a separate line.
+To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using `split()` method or with `split` arguments. In the second and third cases, we need to have our items separated by some common separator, e.g. every item in a separate line. Both methods are shown below
 
 ```{python}
 # manually formatted list
@@ -178,13 +179,15 @@ RSSI = vls.question(
 
 The `"""` allows us to write multiple line strings.
 
-We save our items and answers in variables and treat them with `split()`. In here I've done it inside the `question()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them.
+We save our items and answers in variables and treat them with `split()`. In here I've done it inside the `question()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them. Had I used the manually formatted list, I wouldn't have to write the `split()` part.
 
-If `question_text` is a list, `question()` output is a question list. Each question have the same options, scale and type. The labels are `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
+If `question_text` is a list, `question()` output is a list of questions. Each question in the list have the same options, scale and type. The labels will become `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
 
 ### List comprehension
 
-The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over his alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee" (especially coffee) but rather something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string to do just that.
+The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^1] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee" (especially coffee) but rather something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string to do just that.
+
+[^1]: Or WYSIWYG.
 
 ```{python}
 from velesresearch import question
@@ -202,9 +205,9 @@ answers = "I love it; I like it; It's OK; I don't like it; I despise it".split("
 q_drinks = question("drinks", drinks, answers)
 ```
 
-First we get our drinks separated with some common separator (a space in this example), split it and save it in a `drinks` variable. Then we modify it with an f-string and a for loop. An f-string is a string preceded with `f`. In it, we can use variables' values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it's called *list comprehension*). It will take every value inside the `drinks` one by one, put them in a variable called `drink`[^1] and do whatever we commanded before the `for` keyword. Notice everything is in **square brackets**.
+First we get our drinks separated with some common separator (a space in this example). We then split it and save it in a `drinks` variable. After that we modify it with an f-string and a for loop. An f-string is a string preceded with an `f`. Inside it, we can use variables' values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it's called *list comprehension*). It will take every value inside the `drinks` one by one, put them in a variable called `drink`[^2] and do whatever we commanded before the `for` keyword. When it's done with the first value, it saves the result and moves on to the next drink until the list ends. Notice everything is in **square brackets**. We then overwrite the `drinks` variable with the newly created list.
 
-[^1]: We could have called it otherwise. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it?
+[^2]: We could have called it otherwise. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it?
 
 ## Panels
 
@@ -212,18 +215,20 @@ To be implemented...
 
 ## Pages
 
-Every survey needs to have at least one page. You can create it with `page()`.
+Every survey needs to have at least one page. Page is basically a list of questions but with its own label, title, description and options. You can create it with `page()`.
 
 ```{python}
 vls.page(label, questions, title, description, options)
 ```
 
-Pages have their own labels. Questions can be provided as a list or separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](ref/options/PageOptions.qmd).
+Pages have their own labels. They don't yet have many uses in Veles but are still mandatory for SurveyJS compatibility reasons. Questions can be provided as a list or values separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](ref/options/PageOptions.qmd).
 
 ```{python}
 intro = vls.page("metrics", gender)
 
-self_esteem = vls.page("RSSI", RSSI)
+limit = vls.PageOptions(time_limit=120)
+
+self_esteem = vls.page("RSSI", RSSI, options=limit)
 ```
 
 ## Survey
