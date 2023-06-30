@@ -2,7 +2,7 @@
   {
     "listing": "/ref/overview.html",
     "items": [
-      "/ref/tools/question_types.html",
+      "/ref/question_types.html",
       "/ref/options/PageOptions.html",
       "/ref/options/QuestionOptions.html",
       "/ref/options/SurveyOptions.html",
