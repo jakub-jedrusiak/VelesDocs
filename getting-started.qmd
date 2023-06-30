@@ -69,6 +69,7 @@ The first thing we need to do is to import the `velesresearch` library. To do th
 
 ```{python}
 import velesresearch as vls
+
 ```
 
 # Survey structure
@@ -249,9 +250,17 @@ Building a website for the first time might take a few minutes due to `yarn` dow
 
 To be implemented...
 
+# How to run your script
+
+After writing your survey, you need to build it. Don't worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take a few minutes the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there's a "Run" button in the upper right corner. Just click it and see if the console prints any errors.
+
+![](figs/getting_started/run_script.png)
+
+If everything went well, you should have a folder named like your survey's label. Inside there will be a series of files and folders. The most important one is the `.tar.gz` file. It's an archive with all the files needed to host your survey. You can upload it to [VelesWeb](https://www.velesweb.org/). If you want to host the survey yourself, the most important part of the package will be the `dist` folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section [below](#sec-hosting).
+
 # Hosting {#sec-hosting}
 
-The main way to host Veles surveys is through [VelesWeb](https://www.velesweb.org/). Currently in closed alpha. Self-hosting is also possible.
+The main way to host Veles surveys is through [VelesWeb](https://www.velesweb.org/). Currently in closed alpha. Veles isn't meant to be a commercial product so even if VelesWeb will get some restrictions and paywalls (it mostly depends on the maintenance costs), there will always be an alternative. You can host your surveys yourself.
 
 ## VelesWeb
 
