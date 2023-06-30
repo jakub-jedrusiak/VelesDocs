@@ -311,7 +311,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-hosting" id="toc-sec-hosting" class="nav-link" data-scroll-target="#sec-hosting">Hosting</a>
   <ul class="collapse">
   <li><a href="#velesweb" id="toc-velesweb" class="nav-link" data-scroll-target="#velesweb">VelesWeb</a></li>
-  <li><a href="#self-hosting" id="toc-self-hosting" class="nav-link" data-scroll-target="#self-hosting">Self-hosting</a></li>
+  <li><a href="#self-hosting" id="toc-self-hosting" class="nav-link" data-scroll-target="#self-hosting">Self-hosting</a>
+  <ul class="collapse">
+  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration">Configuration</a></li>
+  <li><a href="#using" id="toc-using" class="nav-link" data-scroll-target="#using">Using</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/getting-started.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -569,13 +573,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use <a href="https://www.velesweb.org/">VelesWeb</a>. The only file that will be interesting, is the archive with <code>.tar.gz</code> extension.</p>
 <p>Log in to your VelesWeb account, create a new survey, give it a title and – optionally – a description. Then choose the <code>.tar.gz</code> file from your hard drive. Submit and wait. It might take a minute or two. After that you’ll see your survey’s overview.</p>
 <p><img src="figs/getting_started/velesweb_overview.png" class="img-fluid"></p>
-<p>From here you can test the survey, make it offline or turn on the real data collection. Each survey has two databases – the main one and the test one. The test mode is the default. As you can see below, responses from both modes are separated.</p>
+<p>From here you can test the survey, make it offline or turn on the real data collection. Each survey has two databases – the main one and the test one. The test mode is the default. As you can see below, responses collected in both modes are separated. This makes it easier to test your survey without worrying about messing up the data.</p>
 </section>
 <section id="self-hosting" class="level2">
 <h2 class="anchored" data-anchor-id="self-hosting">Self-hosting</h2>
-<p>To be described…</p>
+<p>If we want to manage our surveys ourselves, we need a place to host them and a place to store the results. Luckily there are free methods to do both. In here we’ll use Vercel for hosting and MongoDB Atlas for storing the results. Additional benefit of self-hosting is that we can use our own domain name e.g.&nbsp;create a special subdomain in our university’s domain (like <code>surveys.uwr.edu.pl</code>). That is if someone will give us access to the DNS settings.</p>
+<section id="configuration" class="level3">
+<h3 class="anchored" data-anchor-id="configuration">Configuration</h3>
+<ol type="1">
+<li><p>Go to <a href="https://github.com/jakub-jedrusiak/VelesSurvey-Vercel">VelesSurvey for Vercel GitHub repository</a>. Click on “Use this template” button. Give your repo a name and confirm with “Create repository from template” button. Of course you need to be logged into your GitHub account.</p></li>
+<li><p>Go to <a href="https://vercel.com/">Vercel</a>, create an account and from there start a new project. Link the project to your newly created GitHub repo.</p></li>
+<li><p>Don’t change the default deployment settings but do click on <code>Enviroment variables</code>. Add a new variable named <code>SECRET_KEY</code> with a value generated with <a href="https://djecrety.ir/">this website</a> and confirm with “Add” button. If you plan to use a custom domain, you can also add a <code>DOMAIN_NAME</code> variable with a value like <code>.uwr.edu.pl</code> to match all subdomains of <code>uwr.edu.pl</code>. Don’t worry, if you don’t know yet. You can always add it later. You can read more about custom domains <a href="https://vercel.com/docs/concepts/projects/domains/add-a-domain">here</a>.</p></li>
+</ol>
+<p><img src="./figs/getting_started/config_vercel.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li><p>When the building process ends, you can visit your page. It’s just a white screen with a moving Veles logo. By design, there’s no survey list on the main page. It helps keeping everything confidential.</p></li>
+<li><p>Not only we need a place to collect our responses, but also somewhere to store them. For this purpuse we’ll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1 600 000 responses before the space runs out. I wish everyone this kind of probe sizes. Go to <a href="https://www.mongodb.com/">MongoDB</a>, create a free account and then a free cluster. The website will take you through the whole process.</p></li>
+<li><p>Now we need do connect Vercel and MongoDB. You can do it on <a href="https://vercel.com/integrations/mongodbatlas">this website</a>. Click “Add integration” and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.</p></li>
+<li><p>That’s it. Test your application by going to <code>/tea_survey</code> in your Vercel app (e.g.&nbsp;<code>https://tea-research-project.vercel.app/tea_survey/</code>). You should see a survey with a series of questions about tea. When you complete it, you should see a new response in your database.</p></li>
+</ol>
+</section>
+<section id="using" class="level3">
+<h3 class="anchored" data-anchor-id="using">Using</h3>
+<p>When you create a survey with Veles, you get a folder with a series of files. The most important one is <code>main.js</code> from <code>build</code> subfolder. To add it to your site, you need to create a new subfolder in the <code>surveys</code> folder in your repository. The easiest way to do it it through <a href="https://desktop.github.com/">GitHub Desktop</a>. Use it to download (or “clone”) your repository and create a new folder inside the <code>surveys</code> folder. The name of that folder will become a link to your survey, e.g.&nbsp;if you name it <code>black_tea_study</code>, the link will be something like <code>https://tea-research-project.vercel.app/black_tea_study</code>. Then put your <code>main.js</code> in your newly created folder. <strong>Do not rename it.</strong> Then use GitHub Desktop to upload (or “push”) your changes. After a minute or so, your survey should be available.</p>
+<p>To read and save your data you can use web desktop on <a href="https://www.mongodb.com/">mongodb.com</a> or with a special program called <a href="https://www.mongodb.com/products/compass">MongoDB Compass</a>. After any responses are recieved (even for the tea survey), a new database called <code>VelesResponses</code> is created. Every survey gets its own folder (or “collection”). From there you can easily export your data to <code>.csv</code> or <code>.json</code>.</p>
 
 
+</section>
 </section>
 </section>
 
