@@ -107,7 +107,7 @@ gender = vls.question(
 
 ![Gender question example](figs/getting_started/gender_question_example.png)
 
-Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", "What is your gender?", ...)`. A complete list of available question types can be found [here](ref/tools/question_types.qmd).
+Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", "What is your gender?", ...)`. A complete list of available question types can be found [here](ref/questiontypes.qmd).
 
 ### Question options
 

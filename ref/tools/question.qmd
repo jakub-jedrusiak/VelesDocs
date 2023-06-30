@@ -48,7 +48,7 @@ question_text
 question_type
 :::
 ::: arg_desc
-`str`; type of the question. Default is `"radio"`. For a list of available question types see [Question types](./question_types.qmd).
+`str`; type of the question. Default is `"radio"`. For a list of available question types see [Question types](../questiontypes.qmd).
 :::
 
 ::: arg_name
@@ -71,7 +71,7 @@ The return value depends on `question_text` argument type. If it's a `str`, then
 
 # See also
 
-- [Question types](./question_types.qmd) for wrappers like `radio()` or `checkbox()` and available question types.
+- [Question types](../questiontypes.qmd) for wrappers like `radio()` or `checkbox()` and available question types.
 
 - [`QuestionOptions()`](../options/QuestionOptions) for available question modifications.
 
