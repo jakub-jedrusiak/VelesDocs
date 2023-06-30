@@ -256,7 +256,7 @@ After writing your survey, you need to build it. Don't worry, it all happens aut
 
 ![](figs/getting_started/run_script.png)
 
-If everything went well, you should have a folder named like your survey's label. Inside there will be a series of files and folders. The most important one is the `.tar.gz` file. It's an archive with all the files needed to host your survey. You can upload it to [VelesWeb](https://www.velesweb.org/). If you want to host the survey yourself, the most important part of the package will be the `dist` folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section [below](#sec-hosting).
+If everything went well, you should have a folder named like your survey's label. Inside there will be a series of files and folders. The most important one is the `.tar.gz` file. It's an archive with all the files needed to host your survey. You can upload it to [VelesWeb](https://www.velesweb.org/). If you want to host the survey yourself, the most important part of the package will be the `build` folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section [below](#sec-hosting).
 
 # Hosting {#sec-hosting}
 
