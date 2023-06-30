@@ -69,10 +69,16 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles/styles.css">
 <meta property="og:title" content="Veles Documentation - Question types">
 <meta property="og:description" content="Veles includes a series of different question types. Each of them can be passed as the question_type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(question_type=&quot;radio&quot;) or with radio().">
+<meta property="og:image" content="https://docs.velesweb.org/figs/question_types/checkbox.png">
 <meta property="og:site-name" content="Veles Documentation">
+<meta property="og:image:height" content="400">
+<meta property="og:image:width" content="658">
 <meta name="twitter:title" content="Veles Documentation - Question types">
 <meta name="twitter:description" content="Veles includes a series of different question types. Each of them can be passed as the question_type argument in question() (or directly in Question(). Every question type also has a wrapper that allows to create a Question object quicker. For example you can create a radio question with question(question_type=&quot;radio&quot;) or with radio().">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://docs.velesweb.org/figs/question_types/checkbox.png">
+<meta name="twitter:image-height" content="400">
+<meta name="twitter:image-width" content="658">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -340,84 +346,85 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<script type="text/javascript">
+let showInteractive = function(id) {
+  var modal = document.getElementById(id + '-div');
+  var btn = document.getElementById(id + '-btn');
+  var frame = document.getElementById(id + '-frame');
+
+  frame.src = frame.getAttribute('data-src');
+}
+</script>
 <section id="checkbox" class="level1">
 <h1><code>checkbox</code></h1>
 <p>Multiple choice question. Just like <code>radio</code> but allows to pick multiple answers.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-checkbox-zjmzhc?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – checkbox" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-checkbox-zjmzhc?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – checkbox" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/checkbox.png" class="img-fluid"></p>
+<button id="checkbox-btn" onclick="showInteractive('checkbox')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#checkbox-collapse" aria-expanded="false" aria-controls="checkbox-collapse">Show interactive example</button>
+<div class="collapse" id="checkbox-collapse">
+<iframe id="checkbox-frame" data-src="https://codesandbox.io/embed/veles-checkbox-zjmzhc?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – checkbox" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="dropdown" class="level1">
 <h1><code>dropdown</code></h1>
 <p>Single choice question. Just like <code>radio</code> but with a dropdown list.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/kind-wave-yg86kq?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles –&nbsp;dropdown" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/kind-wave-yg86kq?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles –&nbsp;dropdown" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/dropdown.png" class="img-fluid"></p>
+<button id="dropdown-btn" onclick="showInteractive('dropdown')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-collapse" aria-expanded="false" aria-controls="dropdown-collapse">Show interactive example</button>
+<div class="collapse" id="dropdown-collapse">
+<iframe id="dropdown-frame" data-src="https://codesandbox.io/embed/veles-checkbox-zjmzhc?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – dropdown" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="dropdown_multi" class="level1">
 <h1><code>dropdown_multi</code></h1>
 <p>Multiple choice question. Just like <code>checkbox</code> but with a dropdown list.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-dropdown-multi-tw93f4?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – dropdown_multi" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-dropdown-multi-tw93f4?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – dropdown_multi" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/dropdown_multi.png" class="img-fluid"></p>
+<button id="dropdown_multi-btn" onclick="showInteractive('dropdown_multi')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_multi-collapse" aria-expanded="false" aria-controls="dropdown_multi-collapse">Show interactive example</button>
+<div class="collapse" id="dropdown_multi-collapse">
+<iframe id="dropdown_multi-frame" data-src="https://codesandbox.io/embed/veles-dropdown-multi-tw93f4?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – dropdown_multi" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="radio" class="level1">
 <h1><code>radio</code></h1>
 <p>Single choice question. Can have “None” and “Other” options (available through <a href="../../ref/options/QuestionOptions.html">options</a>).</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-radio-stm95y?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles –&nbsp;radio" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-radio-stm95y?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles –&nbsp;radio" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/radio.png" class="img-fluid"></p>
+<button id="radio-btn" onclick="showInteractive('radio')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#radio-collapse" aria-expanded="false" aria-controls="radio-collapse">Show interactive example</button>
+<div class="collapse" id="radio-collapse">
+<iframe id="radio-frame" data-src="https://codesandbox.io/embed/veles-radio-w677qp?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – radio" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="ranking" class="level1">
 <h1><code>ranking</code></h1>
 <p>Question to rank given items e.g.&nbsp;from best to worst.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-ranking-x546t9?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – ranking" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-ranking-x546t9?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – ranking" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/ranking.png" class="img-fluid"></p>
+<button id="ranking-btn" onclick="showInteractive('ranking')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ranking-collapse" aria-expanded="false" aria-controls="ranking-collapse">Show interactive example</button>
+<div class="collapse" id="ranking-collapse">
+<iframe id="ranking-frame" data-src="https://codesandbox.io/embed/veles-ranking-x546t9?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – ranking" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="text" class="level1">
 <h1><code>text</code></h1>
 <p>Short text field. For longer text use <code>text_long</code>.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-text-qttwmt?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – text" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-text-qttwmt?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – text" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/text.png" class="img-fluid"></p>
+<button id="text-btn" onclick="showInteractive('text')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#text-collapse" aria-expanded="false" aria-controls="text-collapse">Show interactive example</button>
+<div class="collapse" id="text-collapse">
+<iframe id="text-frame" data-src="https://codesandbox.io/embed/veles-text-qttwmt?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – text" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="text_long" class="level1">
 <h1><code>text_long</code></h1>
 <p>Long text box. For shorter text use <code>text</code>.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-text-long-2kpj68?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – text_long" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-text-long-2kpj68?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – text_long" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/text_long.png" class="img-fluid"></p>
+<button id="text_long-btn" onclick="showInteractive('text_long')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#text_long-collapse" aria-expanded="false" aria-controls="text_long-collapse">Show interactive example</button>
+<div class="collapse" id="text_long-collapse">
+<iframe id="text_long-frame" data-src="https://codesandbox.io/embed/veles-text-long-2kpj68?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – text_long" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="yes_no" class="level1">
 <h1><code>yes_no</code></h1>
 <p>A yes/no question with a simple switch.</p>
-<div class="light-mode">
-<iframe src="https://codesandbox.io/embed/veles-yes-no-m4y9jy?fontsize=14&amp;hidenavigation=1&amp;theme=light&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – yes_no" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="dark-mode">
-<iframe src="https://codesandbox.io/embed/veles-yes-no-m4y9jy?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – yes_no" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<p><img src="../../figs/question_types/yes_no.png" class="img-fluid"></p>
+<button id="yes_no-btn" onclick="showInteractive('yes_no')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#yes_no-collapse" aria-expanded="false" aria-controls="yes_no-collapse">Show interactive example</button>
+<div class="collapse" id="yes_no-collapse">
+<iframe id="yes_no-frame" data-src="https://codesandbox.io/embed/veles-yes-no-m4y9jy?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – yes_no" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 
 
