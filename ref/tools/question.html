@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ref/question_types.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/questiontypes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Question types</span></a>
   </div>
 </li>
@@ -321,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-28</p>
+      <p class="date-modified">2023-06-30</p>
     </div>
   </div>
     
@@ -337,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="usage" class="level1">
 <h1>Usage</h1>
-<div id="769a90d6" class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>question(label, question_text, <span class="op">*</span>answers, question_type, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -365,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>question_type</p>
 </div>
 <div class="arg_desc">
-<p><code>str</code>; type of the question. Default is <code>"radio"</code>. For a list of available question types see <a href="./question_types.qmd">Question types</a>.</p>
+<p><code>str</code>; type of the question. Default is <code>"radio"</code>. For a list of available question types see <a href="../../ref/questiontypes.html">Question types</a>.</p>
 </div>
 <div class="arg_name">
 <p>options</p>
@@ -387,14 +387,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="see-also" class="level1">
 <h1>See also</h1>
 <ul>
-<li><p><a href="./question_types.qmd">Question types</a> for wrappers like <code>radio()</code> or <code>checkbox()</code> and available question types.</p></li>
+<li><p><a href="../../ref/questiontypes.html">Question types</a> for wrappers like <code>radio()</code> or <code>checkbox()</code> and available question types.</p></li>
 <li><p><a href="../options/QuestionOptions"><code>QuestionOptions()</code></a> for available question modifications.</p></li>
 <li><p><a href="../../ref/tools/page.html"><code>page()</code></a> for composing questions into pages.</p></li>
 </ul>
 </section>
 <section id="examples" class="level1">
 <h1>Examples</h1>
-<div id="25f09bf7" class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question, QuestionOptions</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> question(</span>

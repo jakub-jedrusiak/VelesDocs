@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://docs.velesweb.org/getting-started.html</loc>
-    <lastmod>2023-06-30T12:43:54.219Z</lastmod>
+    <lastmod>2023-06-30T12:47:16.405Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/tools/page.html</loc>
-    <lastmod>2023-06-30T12:43:51.745Z</lastmod>
+    <lastmod>2023-06-30T12:47:14.128Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/tools/survey.html</loc>
-    <lastmod>2023-06-30T12:43:50.992Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/options/QuestionOptions.html</loc>
-    <lastmod>2023-06-30T12:43:50.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/options/PageOptions.html</loc>
-    <lastmod>2023-06-30T12:43:49.559Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/overview.html</loc>
-    <lastmod>2023-06-30T12:43:48.809Z</lastmod>
+    <lastmod>2023-06-30T12:47:11.305Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/options/SurveyOptions.html</loc>
-    <lastmod>2023-06-30T12:43:49.922Z</lastmod>
+    <lastmod>2023-06-30T12:47:10.455Z</lastmod>
   </url>
   <url>
-    <loc>https://docs.velesweb.org/ref/question_types.html</loc>
-    <lastmod>2023-06-30T12:43:50.625Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/questiontypes.html</loc>
+    <lastmod>2023-06-30T12:47:09.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/overview.html</loc>
+    <lastmod>2023-06-30T12:47:09.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/options/PageOptions.html</loc>
+    <lastmod>2023-06-30T12:47:10.085Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/options/QuestionOptions.html</loc>
+    <lastmod>2023-06-30T12:47:10.908Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/tools/question.html</loc>
-    <lastmod>2023-06-30T12:43:51.372Z</lastmod>
+    <lastmod>2023-06-30T12:47:13.705Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/index.html</loc>
-    <lastmod>2023-06-30T12:43:51.985Z</lastmod>
+    <lastmod>2023-06-30T12:47:14.365Z</lastmod>
   </url>
 </urlset>
