@@ -24,46 +24,198 @@ categories:
 
 Multiple choice question. Just like `radio` but allows to pick multiple answers.
 
-![](/figs/question_types/checkbox.png){fig-alt="checkbox question example"}
+::: light-mode
+```{=html}
+<iframe src="https://codesandbox.io/embed/veles-checkbox-zjmzhc?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – checkbox"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+```{=html}
+<iframe src="https://codesandbox.io/embed/veles-checkbox-zjmzhc?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – checkbox"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+   ```
+:::
 
 # `dropdown`
 
 Single choice question. Just like `radio` but with a dropdown list.
 
-![](/figs/question_types/dropdown.png){fig-alt="dropdown question example"}
+::: light-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/kind-wave-yg86kq?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – dropdown"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/kind-wave-yg86kq?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – dropdown"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
 
 # `dropdown_multi`
 
 Multiple choice question. Just like `checkbox` but with a dropdown list.
 
-![](/figs/question_types/dropdown_multi.png){fig-alt="dropdown_multi question example"}
+::: light-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-dropdown-multi-tw93f4?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – dropdown_multi"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-dropdown-multi-tw93f4?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – dropdown_multi"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
 
 # `radio`
 
 Single choice question. Can have "None" and "Other" options (available through [options](/ref/options/QuestionOptions.qmd)).
 
-![](/figs/question_types/radio.png){fig-alt="radio question example"}
+::: light-mode
+```{=html}
+<iframe src="https://codesandbox.io/embed/veles-radio-stm95y?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – radio"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+```{=html}
+<iframe src="https://codesandbox.io/embed/veles-radio-stm95y?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – radio"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
 
 # `ranking`
 
 Question to rank given items e.g. from best to worst.
 
-![](/figs/question_types/ranking.png){fig-alt="ranking question example"}
+::: light-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-ranking-x546t9?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – ranking"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-ranking-x546t9?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – ranking"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
 
 # `text`
 
 Short text field. For longer text use `text_long`.
 
-![](/figs/question_types/text.png){fig-alt="text question example"}
+::: light-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-text-qttwmt?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – text"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-text-qttwmt?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – text"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
 
 # `text_long`
 
 Long text box. For shorter text use `text`.
 
-![](/figs/question_types/text_long.png){fig-alt="text_long question example"}
+::: light-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-text-long-2kpj68?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – text_long"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-text-long-2kpj68?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – text_long"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
 
 # `yes_no`
 
 A yes/no question with a simple switch.
 
-![](/figs/question_types/yes_no.png){fig-alt="yes_no question example"}
+::: light-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-yes-no-m4y9jy?fontsize=14&hidenavigation=1&theme=light&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – yes_no"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
+::: dark-mode
+``` {=html}
+<iframe src="https://codesandbox.io/embed/veles-yes-no-m4y9jy?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Veles – yes_no"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+:::
