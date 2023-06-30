@@ -307,6 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#survey" id="toc-survey" class="nav-link" data-scroll-target="#survey">Survey</a></li>
   </ul></li>
   <li><a href="#psychojs-experiments" id="toc-psychojs-experiments" class="nav-link" data-scroll-target="#psychojs-experiments">PsychoJS experiments</a></li>
+  <li><a href="#how-to-run-your-script" id="toc-how-to-run-your-script" class="nav-link" data-scroll-target="#how-to-run-your-script">How to run your script</a></li>
   <li><a href="#sec-hosting" id="toc-sec-hosting" class="nav-link" data-scroll-target="#sec-hosting">Hosting</a>
   <ul class="collapse">
   <li><a href="#velesweb" id="toc-velesweb" class="nav-link" data-scroll-target="#velesweb">VelesWeb</a></li>
@@ -554,9 +555,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>PsychoJS experiments</h1>
 <p>To be implemented…</p>
 </section>
+<section id="how-to-run-your-script" class="level1">
+<h1>How to run your script</h1>
+<p>After writing your survey, you need to build it. Don’t worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take a few minutes the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there’s a “Run” button in the upper right corner. Just click it and see if the console prints any errors.</p>
+<p><img src="figs/getting_started/run_script.png" class="img-fluid"></p>
+<p>If everything went well, you should have a folder named like your survey’s label. Inside there will be a series of files and folders. The most important one is the <code>.tar.gz</code> file. It’s an archive with all the files needed to host your survey. You can upload it to <a href="https://www.velesweb.org/">VelesWeb</a>. If you want to host the survey yourself, the most important part of the package will be the <code>dist</code> folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section <a href="#sec-hosting">below</a>.</p>
+</section>
 <section id="sec-hosting" class="level1">
 <h1>Hosting</h1>
-<p>The main way to host Veles surveys is through <a href="https://www.velesweb.org/">VelesWeb</a>. Currently in closed alpha. Self-hosting is also possible.</p>
+<p>The main way to host Veles surveys is through <a href="https://www.velesweb.org/">VelesWeb</a>. Currently in closed alpha. Veles isn’t meant to be a commercial product so even if VelesWeb will get some restrictions and paywalls (it mostly depends on the maintenance costs), there will always be an alternative. You can host your surveys yourself.</p>
 <section id="velesweb" class="level2">
 <h2 class="anchored" data-anchor-id="velesweb">VelesWeb</h2>
 <p>When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use <a href="https://www.velesweb.org/">VelesWeb</a>. The only file that will be interesting, is the archive with <code>.tar.gz</code> extension.</p>
