@@ -304,6 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-options" id="toc-question-options" class="nav-link" data-scroll-target="#question-options">Question options</a></li>
   <li><a href="#whole-questionnaires" id="toc-whole-questionnaires" class="nav-link" data-scroll-target="#whole-questionnaires">Whole questionnaires</a></li>
   <li><a href="#list-comprehension" id="toc-list-comprehension" class="nav-link" data-scroll-target="#list-comprehension">List comprehension</a></li>
+  <li><a href="#questionnaire-library" id="toc-questionnaire-library" class="nav-link" data-scroll-target="#questionnaire-library">Questionnaire library</a></li>
   </ul></li>
   <li><a href="#panels" id="toc-panels" class="nav-link" data-scroll-target="#panels">Panels</a></li>
   <li><a href="#pages" id="toc-pages" class="nav-link" data-scroll-target="#pages">Pages</a></li>
@@ -340,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-30</p>
+      <p class="date-modified">2023-07-01</p>
     </div>
   </div>
     
@@ -526,6 +527,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>First we get our drinks separated with some common separator (a space in this example). We then split it and save it in a <code>drinks</code> variable. After that we modify it with an f-string and a for loop. An f-string is a string preceded with an <code>f</code>. Inside it, we can use variables’ values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it’s called <em>list comprehension</em>). It will take every value inside the <code>drinks</code> one by one, put them in a variable called <code>drink</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and do whatever we commanded before the <code>for</code> keyword. When it’s done with the first value, it saves the result and moves on to the next drink until the list ends. Notice everything is in <strong>square brackets</strong>. We then overwrite the <code>drinks</code> variable with the newly created list.</p>
 </section>
+<section id="questionnaire-library" class="level3">
+<h3 class="anchored" data-anchor-id="questionnaire-library">Questionnaire library</h3>
+<p>Veles has it’s own (currently small) questionnaire library. Thanks to it, you can quickly add a whole questionnaire with only one command. The library is available in the <code>veleslibrary</code> package. To use it, you need to install and import it first.</p>
+<pre class="{bash}"><code># In the terminal
+pip install veleslibrary</code></pre>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires <span class="im">import</span> rse</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"self_esteem_survey"</span>, page(<span class="st">"RSE"</span>, rse()))  <span class="co"># Rosenberg Self-Esteem Scale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Library is multilingual.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires.pl <span class="im">import</span> tipi</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"personality"</span>, page(<span class="st">"TIPI"</span>, tipi()))  <span class="co"># TIPI in Polish</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Feel free to contribute to the library by adding your own questionnaires. You can find the library’s source code in the repo <a href="https://github.com/jakub-jedrusiak/VelesLibrary">here</a>.</p>
+</section>
 </section>
 <section id="panels" class="level2">
 <h2 class="anchored" data-anchor-id="panels">Panels</h2>
@@ -534,26 +553,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pages" class="level2">
 <h2 class="anchored" data-anchor-id="pages">Pages</h2>
 <p>Every survey needs to have at least one page. Page is basically a list of questions but with its own label, title, description and options. You can create it with <code>page()</code>.</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>vls.page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vls.page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pages have their own labels. They don’t yet have many uses in Veles but are still mandatory for SurveyJS compatibility reasons. Questions can be provided as a list or values separated by commas. You can also provide page’s title and description. The <code>options</code> argument accepts a <code>PageOptions</code> object. These are <strong>different options</strong> than in <code>QuestionOptions</code>. The list of available options can be found <a href="./ref/options/PageOptions.html">here</a>.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>limit <span class="op">=</span> vls.PageOptions(time_limit<span class="op">=</span><span class="dv">120</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(<span class="st">"RSSI"</span>, RSSI, options<span class="op">=</span>limit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>limit <span class="op">=</span> vls.PageOptions(time_limit<span class="op">=</span><span class="dv">120</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(<span class="st">"RSSI"</span>, RSSI, options<span class="op">=</span>limit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
 <p>When all elements are created, we can combine them into the final survey. We can do this with <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and builds a website with your survey.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vls.survey(label, pages, title, description, options, create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vls.survey(label, pages, title, description, options, create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vls.survey(<span class="st">"My smart research"</span>, intro, self_esteem, title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vls.survey(<span class="st">"My smart research"</span>, intro, self_esteem, title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Building a website for the first time might take a few minutes due to <code>yarn</code> downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section <a href="#sec-hosting">below</a>.</p>
 </section>
