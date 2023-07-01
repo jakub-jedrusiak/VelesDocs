@@ -210,6 +210,31 @@ First we get our drinks separated with some common separator (a space in this ex
 
 [^2]: We could have called it otherwise. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it?
 
+### Questionnaire library
+
+Veles has it's own (currently small) questionnaire library. Thanks to it, you can quickly add a whole questionnaire with only one command. The library is available in the `veleslibrary` package. To use it, you need to install and import it first.
+
+```{bash}
+# In the terminal
+pip install veleslibrary
+```
+
+```{python}
+from veleslibrary.questionnaires import rse
+
+survey("self_esteem_survey", page("RSE", rse()))  # Rosenberg Self-Esteem Scale
+```
+
+Library is multilingual.
+
+```{python}
+from veleslibrary.questionnaires.pl import tipi
+
+survey("personality", page("TIPI", tipi()))  # TIPI in Polish
+```
+
+Feel free to contribute to the library by adding your own questionnaires. You can find the library's source code in the repo [here](https://github.com/jakub-jedrusiak/VelesLibrary).
+
 ## Panels
 
 To be implemented...
