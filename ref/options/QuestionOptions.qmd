@@ -211,7 +211,8 @@ An object of class `QuestionOptions`.
 from velesresearch import radio, QuestionOptions
 
 radio(
-    "Favourite drink",
+    "favourite_drink",
+    "What's your favourite drink?",
     "Tea",
     "Coffee",
     "Water",
