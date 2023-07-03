@@ -323,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-29</p>
+      <p class="date-modified">2023-07-03</p>
     </div>
   </div>
     
@@ -343,18 +343,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>QuestionOptions(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    required<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    answers_order<span class="op">=</span><span class="st">"none"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    inherit_answers<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    comment<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    comment_text<span class="op">=</span><span class="st">"Other"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    comment_placeholder<span class="op">=</span><span class="st">""</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    visible<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    other<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    other_text<span class="op">=</span><span class="st">"Other"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    other_placeholder<span class="op">=</span><span class="st">""</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    none<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    none_text<span class="op">=</span><span class="st">"None"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    clear_button<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    placeholder: <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    inherit_answers<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    inherit_answers_mode<span class="op">=</span><span class="st">"all"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    comment<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    comment_text<span class="op">=</span><span class="st">"Other"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    comment_placeholder<span class="op">=</span><span class="st">""</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    visible<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    other<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    other_text<span class="op">=</span><span class="st">"Other"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    other_placeholder<span class="op">=</span><span class="st">""</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    none<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    none_text<span class="op">=</span><span class="st">"None"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    clear_button<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    visible_if<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    editable_if<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    requied_if<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    hide_number<span class="op">=</span><span class="va">False</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments" class="level1">
@@ -370,6 +376,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="arg_desc">
 <p><code>str</code>; in what order should the answers be displayed. Possible values are <code>"none"</code> (default; doesn’t change the order), <code>"random"</code>, <code>"asc"</code> (ascending), <code>"desc"</code> (descending).</p>
+</div>
+<div class="arg_name">
+<p>placeholder</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; placeholder in the answer textbox. Works for textual types of questions only.</p>
 </div>
 <div class="arg_name">
 <p>inherit_answers</p>
@@ -443,6 +455,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="arg_desc">
 <p><code>bool</code>; should a clear button be visible?</p>
 </div>
+<div class="arg_name">
+<p>visible_if</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; a condition for the question to be visible. Accepts a string with a condition in SurveyJS syntax. Accepts a string with other questions’ names in curly brackets and logical statements about them. You can also join multiple statements with <code>and</code> and <code>or</code>. Available statements are: - <code>empty</code> - question is empty (e.g.&nbsp;<code>{q1} empty</code>). - <code>notempty</code> - question is not empty (e.g.&nbsp;<code>{q1} notempty</code>). - <code>=</code> - question is equal to a value (e.g.&nbsp;<code>{q1} = 1</code>). - <code>&lt;&gt;</code> – question is not equal to a value (e.g.&nbsp;<code>{q1} &lt;&gt; 1</code>). - <code>contains</code> – question contains a value (e.g.&nbsp;<code>{q1} contains 'yes'</code>). - <code>notcontains</code> – question doesn’t contain a value (e.g.&nbsp;<code>{q1} notcontains 'yes'</code>). - <code>&gt;</code> – question is greater than a value (e.g.&nbsp;<code>{q1} &gt; 1</code>). - <code>&lt;</code> – question is less than a value (e.g.&nbsp;<code>{q1} &lt; 1</code>). - <code>&gt;=</code> – question is greater than or equal to a value (e.g.&nbsp;<code>{q1} &gt;= 1</code>). - <code>&lt;=</code> – question is less than or equal to a value (e.g.&nbsp;<code>{q1} &lt;= 1</code>).</p>
+</div>
+<div class="arg_name">
+<p>editable_if</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; a condition for the question to be editable. Accepts a string with a condition in SurveyJS syntax. Accepts a string with other questions’ names in curly brackets and logical statements about them. You can also join multiple statements with <code>and</code> and <code>or</code>. Available statements are: - <code>empty</code> - question is empty (e.g.&nbsp;<code>{q1} empty</code>). - <code>notempty</code> - question is not empty (e.g.&nbsp;<code>{q1} notempty</code>). - <code>=</code> - question is equal to a value (e.g.&nbsp;<code>{q1} = 1</code>). - <code>&lt;&gt;</code> – question is not equal to a value (e.g.&nbsp;<code>{q1} &lt;&gt; 1</code>). - <code>contains</code> – question contains a value (e.g.&nbsp;<code>{q1} contains 'yes'</code>). - <code>notcontains</code> – question doesn’t contain a value (e.g.&nbsp;<code>{q1} notcontains 'yes'</code>). - <code>&gt;</code> – question is greater than a value (e.g.&nbsp;<code>{q1} &gt; 1</code>). - <code>&lt;</code> – question is less than a value (e.g.&nbsp;<code>{q1} &lt; 1</code>). - <code>&gt;=</code> – question is greater than or equal to a value (e.g.&nbsp;<code>{q1} &gt;= 1</code>). - <code>&lt;=</code> – question is less than or equal to a value (e.g.&nbsp;<code>{q1} &lt;= 1</code>).</p>
+</div>
+<div class="arg_name">
+<p>requied_if</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; a condition for the question to be requied. Accepts a string with a condition in SurveyJS syntax. Accepts a string with other questions’ names in curly brackets and logical statements about them. You can also join multiple statements with <code>and</code> and <code>or</code>. Available statements are: - <code>empty</code> - question is empty (e.g.&nbsp;<code>{q1} empty</code>). - <code>notempty</code> - question is not empty (e.g.&nbsp;<code>{q1} notempty</code>). - <code>=</code> - question is equal to a value (e.g.&nbsp;<code>{q1} = 1</code>). - <code>&lt;&gt;</code> – question is not equal to a value (e.g.&nbsp;<code>{q1} &lt;&gt; 1</code>). - <code>contains</code> – question contains a value (e.g.&nbsp;<code>{q1} contains 'yes'</code>). - <code>notcontains</code> – question doesn’t contain a value (e.g.&nbsp;<code>{q1} notcontains 'yes'</code>). - <code>&gt;</code> – question is greater than a value (e.g.&nbsp;<code>{q1} &gt; 1</code>). - <code>&lt;</code> – question is less than a value (e.g.&nbsp;<code>{q1} &lt; 1</code>). - <code>&gt;=</code> – question is greater than or equal to a value (e.g.&nbsp;<code>{q1} &gt;= 1</code>). - <code>&lt;=</code> – question is less than or equal to a value (e.g.&nbsp;<code>{q1} &lt;= 1</code>).</p>
+</div>
 </section>
 <section id="value" class="level1">
 <h1>Value</h1>
@@ -454,12 +484,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> radio, QuestionOptions</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>radio(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Favourite drink"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tea"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Coffee"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Water"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>QuestionOptions(other<span class="op">=</span><span class="va">True</span>, none<span class="op">=</span><span class="va">True</span>, required<span class="op">=</span><span class="va">True</span>),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"favourite_drink"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What's your favourite drink?"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tea"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Coffee"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Water"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>QuestionOptions(other<span class="op">=</span><span class="va">True</span>, none<span class="op">=</span><span class="va">True</span>, required<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

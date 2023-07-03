@@ -263,6 +263,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#checkbox" id="toc-checkbox" class="nav-link active" data-scroll-target="#checkbox"><code>checkbox</code></a></li>
   <li><a href="#dropdown" id="toc-dropdown" class="nav-link" data-scroll-target="#dropdown"><code>dropdown</code></a></li>
   <li><a href="#dropdown_multi" id="toc-dropdown_multi" class="nav-link" data-scroll-target="#dropdown_multi"><code>dropdown_multi</code></a></li>
+  <li><a href="#info" id="toc-info" class="nav-link" data-scroll-target="#info"><code>info</code></a></li>
   <li><a href="#radio" id="toc-radio" class="nav-link" data-scroll-target="#radio"><code>radio</code></a></li>
   <li><a href="#ranking" id="toc-ranking" class="nav-link" data-scroll-target="#ranking"><code>ranking</code></a></li>
   <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text"><code>text</code></a></li>
@@ -298,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-30</p>
+      <p class="date-modified">2023-07-03</p>
     </div>
   </div>
     
@@ -328,22 +329,26 @@ ul.task-list li input[type="checkbox"] {
 <td>multiple choice question with a dropdown list</td>
 </tr>
 <tr class="even">
+<td><code>info</code></td>
+<td>information text</td>
+</tr>
+<tr class="odd">
 <td><code>radio</code></td>
 <td>single choice question</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ranking</code></td>
 <td>question to rank given items</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>text</code></td>
 <td>short text field</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>text_long</code></td>
 <td>long text box</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>yes_no</code></td>
 <td>a yes/no question</td>
 </tr>
@@ -383,6 +388,15 @@ let showInteractive = function(id) {
 <button id="dropdown_multi-btn" onclick="showInteractive('dropdown_multi')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown_multi-collapse" aria-expanded="false" aria-controls="dropdown_multi-collapse">Show interactive example</button>
 <div class="collapse" id="dropdown_multi-collapse">
 <iframe id="dropdown_multi-frame" data-src="https://codesandbox.io/embed/veles-dropdown-multi-tw93f4?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles – dropdown_multi" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+</div>
+</section>
+<section id="info" class="level1">
+<h1><code>info</code></h1>
+<p>Information text. Can be used to display additional information to the user.</p>
+<p><img src="../figs/question_types/info.png" class="img-fluid"></p>
+<button id="info-btn" onclick="showInteractive('info')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#info-collapse" aria-expanded="false" aria-controls="info-collapse">Show interactive example</button>
+<div class="collapse" id="info-collapse">
+<iframe id="info-frame" src="https://codesandbox.io/embed/veles-info-ngv56r?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Veles-info" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 </div>
 </section>
 <section id="radio" class="level1">
