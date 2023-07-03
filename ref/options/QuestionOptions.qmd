@@ -20,7 +20,9 @@ categories:
 QuestionOptions(
     required=False,
     answers_order="none",
+    placeholder: = None,
     inherit_answers=None,
+    inherit_answers_mode="all",
     comment=False,
     comment_text="Other",
     comment_placeholder="",
@@ -31,6 +33,10 @@ QuestionOptions(
     none=False,
     none_text="None",
     clear_button=False,
+    visible_if=None,
+    editable_if=None,
+    requied_if=None,
+    hide_number=False
 )
 ```
 
@@ -49,6 +55,13 @@ answers_order
 :::
 ::: arg_desc
 `str`; in what order should the answers be displayed. Possible values are `"none"` (default; doesn't change the order), `"random"`, `"asc"` (ascending), `"desc"` (descending).
+:::
+
+::: arg_name
+placeholder
+:::
+::: arg_desc
+`str`; placeholder in the answer textbox. Works for textual types of questions only.
 :::
 
 ::: arg_name
@@ -133,6 +146,57 @@ clear_button
 :::
 ::: arg_desc
 `bool`; should a clear button be visible?
+:::
+
+::: arg_name
+visible_if
+:::
+::: arg_desc
+`str`; a condition for the question to be visible. Accepts a string with a condition in SurveyJS syntax. Accepts a string with other questions' names in curly brackets and logical statements about them. You can also join multiple statements with `and` and `or`. Available statements are:
+- `empty` - question is empty (e.g. `{q1} empty`).
+- `notempty` - question is not empty (e.g. `{q1} notempty`).
+- `=` - question is equal to a value (e.g. `{q1} = 1`).
+- `<>` – question is not equal to a value (e.g. `{q1} <> 1`).
+- `contains` – question contains a value (e.g. `{q1} contains 'yes'`).
+- `notcontains` – question doesn't contain a value (e.g. `{q1} notcontains 'yes'`).
+- `>` – question is greater than a value (e.g. `{q1} > 1`).
+- `<` – question is less than a value (e.g. `{q1} < 1`).
+- `>=` – question is greater than or equal to a value (e.g. `{q1} >= 1`).
+- `<=` – question is less than or equal to a value (e.g. `{q1} <= 1`).
+:::
+
+::: arg_name
+editable_if
+:::
+::: arg_desc
+`str`; a condition for the question to be editable. Accepts a string with a condition in SurveyJS syntax. Accepts a string with other questions' names in curly brackets and logical statements about them. You can also join multiple statements with `and` and `or`. Available statements are:
+- `empty` - question is empty (e.g. `{q1} empty`).
+- `notempty` - question is not empty (e.g. `{q1} notempty`).
+- `=` - question is equal to a value (e.g. `{q1} = 1`).
+- `<>` – question is not equal to a value (e.g. `{q1} <> 1`).
+- `contains` – question contains a value (e.g. `{q1} contains 'yes'`).
+- `notcontains` – question doesn't contain a value (e.g. `{q1} notcontains 'yes'`).
+- `>` – question is greater than a value (e.g. `{q1} > 1`).
+- `<` – question is less than a value (e.g. `{q1} < 1`).
+- `>=` – question is greater than or equal to a value (e.g. `{q1} >= 1`).
+- `<=` – question is less than or equal to a value (e.g. `{q1} <= 1`).
+:::
+
+::: arg_name
+requied_if
+:::
+::: arg_desc
+`str`; a condition for the question to be requied. Accepts a string with a condition in SurveyJS syntax. Accepts a string with other questions' names in curly brackets and logical statements about them. You can also join multiple statements with `and` and `or`. Available statements are:
+- `empty` - question is empty (e.g. `{q1} empty`).
+- `notempty` - question is not empty (e.g. `{q1} notempty`).
+- `=` - question is equal to a value (e.g. `{q1} = 1`).
+- `<>` – question is not equal to a value (e.g. `{q1} <> 1`).
+- `contains` – question contains a value (e.g. `{q1} contains 'yes'`).
+- `notcontains` – question doesn't contain a value (e.g. `{q1} notcontains 'yes'`).
+- `>` – question is greater than a value (e.g. `{q1} > 1`).
+- `<` – question is less than a value (e.g. `{q1} < 1`).
+- `>=` – question is greater than or equal to a value (e.g. `{q1} >= 1`).
+- `<=` – question is less than or equal to a value (e.g. `{q1} <= 1`).
 :::
 
 # Value

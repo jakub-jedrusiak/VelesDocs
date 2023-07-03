@@ -17,7 +17,14 @@ categories:
 # Usage
 
 ``` {python}
-PageOptions(language="en", url_on_complete=None)
+PageOptions(
+    language="en",
+    timer_position="none",
+    timer_mode="",
+    url_on_complete=None,
+    allow_previous=True,
+    clear_invivsible_values="none",
+)
 ```
 
 
@@ -31,10 +38,38 @@ language
 :::
 
 ::: arg_name
+timer_position
+:::
+::: arg_desc
+`str`; position of the timer. Possible values: `top`, `bottom`, `none`. If there's no time limit, the timer will count up from 0.
+:::
+
+::: arg_name
+timer_mode
+:::
+::: arg_desc
+`str`; mode of the timer. Possible values: `page`, `survey`, `all`. Controls what times should be shown. `page` shows time spent on the current page, `survey` shows time spent on the whole survey, `all` shows both.
+:::
+
+::: arg_name
 url_on_complete
 :::
 ::: arg_desc
 `str`; webpage to which the respondent should be redirected after completing the survey.
+:::
+
+::: arg_name
+allow_previous
+:::
+::: arg_desc
+`bool`; whether the respondent should be able to go back to previous pages.
+:::
+
+::: arg_name
+clear_invivsible_values
+:::
+::: arg_desc
+`str` or `bool`; whether to clear invisible values. Possible values: `none` (or `False`), `onHidden`, `onHiddenContainer`, `onComplete` (or `True`). If `none`, no values will be cleared. If `onHidden`, values will be cleared when the question is hidden. `onHiddenContainer` clears value when questions' page or panel gets hidden. If `onComplete`, values of hidden questions will be cleared when the survey is completed.
 :::
 
 # Value

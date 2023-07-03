@@ -17,7 +17,9 @@ categories:
 # Usage
 
 ``` {python}
-PageOptions(read_only=False, time_limit=None, visible=True)
+PageOptions(
+    read_only=False, time_limit=None, visible=True, navigation_visibility="inherit"
+)
 ```
 
 
@@ -42,6 +44,13 @@ visible
 :::
 ::: arg_desc
 `bool`; should the page be visible? Useful for testing.
+:::
+
+::: arg_name
+navigation_visibility
+:::
+::: arg_desc
+`str`; should the navigation bar be visible? Possible values: `"show"`, `"hide"`, `"inherit"`.
 :::
 
 # Value
