@@ -104,13 +104,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:description" content="">
 <meta property="og:image" content="https://docs.velesweb.org/figs/getting_started/yarn-v.png">
 <meta property="og:site-name" content="Veles Documentation">
-<meta property="og:image:height" content="279">
-<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="219">
+<meta property="og:image:width" content="616">
 <meta name="twitter:title" content="Veles Documentation - Getting started">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://docs.velesweb.org/figs/getting_started/yarn-v.png">
-<meta name="twitter:image-height" content="279">
-<meta name="twitter:image-width" content="512">
+<meta name="twitter:image-height" content="219">
+<meta name="twitter:image-width" content="616">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -375,11 +375,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>fter installing <code>node.js</code>, activate <code>yarn</code> with this command in the terminal:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">corepack</span> enable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If everything went well, command <code>yarn -v</code> should return a version number.</p>
+<div class="light-mode">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figs/getting_started/yarn-v.png" class="img-fluid figure-img" alt="yarn -v in the terminal"></p>
 <figcaption class="figure-caption"><code>yarn -v</code> in Linux terminal</figcaption>
 </figure>
+</div>
+</div>
+<div class="dark-mode">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/getting_started/yarn-v_dark.png" class="img-fluid figure-img" alt="yarn -v in the terminal"></p>
+<figcaption class="figure-caption"><code>yarn -v</code> in Linux terminal</figcaption>
+</figure>
+</div>
 </div>
 </section>
 <section id="installation" class="level1">
@@ -584,7 +594,12 @@ pip install veleslibrary</code></pre>
 <section id="how-to-run-your-script" class="level1">
 <h1>How to run your script</h1>
 <p>After writing your survey, you need to build it. Don’t worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take a few minutes the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there’s a “Run” button in the upper right corner. Just click it and see if the console prints any errors.</p>
+<div class="light-mode">
 <p><img src="figs/getting_started/run_script.png" class="img-fluid"></p>
+</div>
+<div class="dark-mode">
+<p><img src="figs/getting_started/run_script_dark.png" class="img-fluid"></p>
+</div>
 <p>If everything went well, you should have a folder named like your survey’s label. Inside there will be a series of files and folders. The most important one is the <code>.tar.gz</code> file. It’s an archive with all the files needed to host your survey. You can upload it to <a href="https://www.velesweb.org/">VelesWeb</a>. If you want to host the survey yourself, the most important part of the package will be the <code>build</code> folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section <a href="#sec-hosting">below</a>.</p>
 </section>
 <section id="sec-hosting" class="level1">
@@ -612,7 +627,12 @@ pip install veleslibrary</code></pre>
 <li><p>Go to <a href="https://vercel.com/">Vercel</a>, create an account and from there start a new project. Link the project to your newly created GitHub repo.</p></li>
 <li><p>Don’t change the default deployment settings but do click on <code>Enviroment variables</code>. Add a new variable named <code>SECRET_KEY</code> with a value generated with <a href="https://djecrety.ir/">this website</a> and confirm with “Add” button. If you plan to use a custom domain, you can also add a <code>DOMAIN_NAME</code> variable with a value like <code>.uwr.edu.pl</code> to match all subdomains of <code>uwr.edu.pl</code>. Don’t worry, if you don’t know yet. You can always add it later. You can read more about custom domains <a href="https://vercel.com/docs/concepts/projects/domains/add-a-domain">here</a>.</p></li>
 </ol>
+<div class="light-mode">
 <p><img src="./figs/getting_started/config_vercel.png" class="img-fluid"></p>
+</div>
+<div class="dark-mode">
+<p><img src="./figs/getting_started/config_vercel_dark.png" class="img-fluid"></p>
+</div>
 <ol start="4" type="1">
 <li><p>When the building process ends, you can visit your page. It’s just a white screen with a moving Veles logo. By design, there’s no survey list on the main page. It helps keeping everything confidential.</p></li>
 <li><p>Not only we need a place to collect our responses, but also somewhere to store them. For this purpuse we’ll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1 600 000 responses before the space runs out. I wish everyone this kind of probe sizes. Go to <a href="https://www.mongodb.com/">MongoDB</a>, create a free account and then a free cluster. The website will take you through the whole process.</p></li>
