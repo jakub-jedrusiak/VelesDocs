@@ -45,7 +45,12 @@ corepack enable
 
 If everything went well, command `yarn -v` should return a version number.
 
+::: light-mode
 ![`yarn -v` in Linux terminal](figs/getting_started/yarn-v.png){fig-alt="yarn -v in the terminal"}
+:::
+::: dark-mode
+![`yarn -v` in Linux terminal](figs/getting_started/yarn-v_dark.png){fig-alt="yarn -v in the terminal"}
+:::
 
 # Installation
 
@@ -279,7 +284,12 @@ To be implemented...
 
 After writing your survey, you need to build it. Don't worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take a few minutes the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there's a "Run" button in the upper right corner. Just click it and see if the console prints any errors.
 
+::: light-mode
 ![](figs/getting_started/run_script.png)
+:::
+::: dark-mode
+![](figs/getting_started/run_script_dark.png)
+:::
 
 If everything went well, you should have a folder named like your survey's label. Inside there will be a series of files and folders. The most important one is the `.tar.gz` file. It's an archive with all the files needed to host your survey. You can upload it to [VelesWeb](https://www.velesweb.org/). If you want to host the survey yourself, the most important part of the package will be the `build` folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section [below](#sec-hosting).
 
@@ -314,7 +324,12 @@ If we want to manage our surveys ourselves, we need a place to host them and a p
 
 3. Don't change the default deployment settings but do click on `Enviroment variables`. Add a new variable named `SECRET_KEY` with a value generated with [this website](https://djecrety.ir/) and confirm with "Add" button. If you plan to use a custom domain, you can also add a `DOMAIN_NAME` variable with a value like `.uwr.edu.pl` to match all subdomains of `uwr.edu.pl`. Don't worry, if you don't know yet. You can always add it later. You can read more about custom domains [here](https://vercel.com/docs/concepts/projects/domains/add-a-domain).
 
+::: light-mode
 ![](/figs/getting_started/config_vercel.png)
+:::
+::: dark-mode
+![](/figs/getting_started/config_vercel_dark.png)
+:::
 
 4. When the building process ends, you can visit your page. It's just a white screen with a moving Veles logo. By design, there's no survey list on the main page. It helps keeping everything confidential.
 
