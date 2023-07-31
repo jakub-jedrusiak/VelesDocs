@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A handy wrapper around Survey(). Joins Page objects into a survey and generates all survey website files.">
 
-<title>Veles Documentation - survey</title>
+<title>Veles Documentation - Polish library</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -106,11 +124,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles/styles.css">
-<meta property="og:title" content="Veles Documentation - survey">
-<meta property="og:description" content="A handy wrapper around Survey(). Joins Page objects into a survey and generates all survey website files.">
+<meta property="og:title" content="Veles Documentation - Polish library">
 <meta property="og:site_name" content="Veles Documentation">
-<meta name="twitter:title" content="Veles Documentation - survey">
-<meta name="twitter:description" content="A handy wrapper around Survey(). Joins Page objects into a survey and generates all survey website files.">
+<meta name="twitter:title" content="Veles Documentation - Polish library">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -167,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../ref/overview.html">Reference</a></li><li class="breadcrumb-item"><a href="../../ref/tools/page.html">Tools</a></li><li class="breadcrumb-item"><a href="../../ref/tools/survey.html"><code>survey</code></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../library/overview.html">Library</a></li><li class="breadcrumb-item"><a href="../../library/languages/pl.html">Other languages</a></li><li class="breadcrumb-item"><a href="../../library/languages/pl.html">Polish library</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -222,16 +238,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Other languages</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../library/languages/pl.html" class="sidebar-item-text sidebar-link">
+  <a href="../../library/languages/pl.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Polish library</span></a>
   </div>
 </li>
@@ -291,13 +307,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../ref/tools/page.html" class="sidebar-item-text sidebar-link">
@@ -312,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../ref/tools/survey.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../ref/tools/survey.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>survey</code></span></a>
   </div>
 </li>
@@ -333,45 +349,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modules" id="toc-modules" class="nav-link active" data-scroll-target="#modules">Modules</a></li>
+  <li><a href="#questionnaires" id="toc-questionnaires" class="nav-link active" data-scroll-target="#questionnaires">Questionnaires</a>
+  <ul class="collapse">
+  <li><a href="#ten-item-personality-inventory-tipi" id="toc-ten-item-personality-inventory-tipi" class="nav-link" data-scroll-target="#ten-item-personality-inventory-tipi">Ten Item Personality Inventory (TIPI)</a>
+  <ul class="collapse">
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
   <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments">Arguments</a></li>
-  <li><a href="#value" id="toc-value" class="nav-link" data-scroll-target="#value">Value</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tests" id="toc-tests" class="nav-link" data-scroll-target="#tests">Tests</a>
+  <ul class="collapse">
+  <li><a href="#alternative-uses-task-aut" id="toc-alternative-uses-task-aut" class="nav-link" data-scroll-target="#alternative-uses-task-aut">Alternative Uses Task (AUT)</a>
+  <ul class="collapse">
+  <li><a href="#usage-1" id="toc-usage-1" class="nav-link" data-scroll-target="#usage-1">Usage</a></li>
+  <li><a href="#arguments-1" id="toc-arguments-1" class="nav-link" data-scroll-target="#arguments-1">Arguments</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">Bibliography</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/ref/tools/survey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/languages/pl.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../ref/overview.html">Reference</a></li><li class="breadcrumb-item"><a href="../../ref/tools/page.html">Tools</a></li><li class="breadcrumb-item"><a href="../../ref/tools/survey.html"><code>survey</code></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../library/overview.html">Library</a></li><li class="breadcrumb-item"><a href="../../library/languages/pl.html">Other languages</a></li><li class="breadcrumb-item"><a href="../../library/languages/pl.html">Polish library</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><code>survey</code></h1>
-<p class="subtitle lead">Create <code>Survey</code> object and build website</p>
-  <div class="quarto-categories">
-    <div class="quarto-category"><code>velesresearch</code></div>
-    <div class="quarto-category"><code>velesresearch.tools</code></div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    A handy wrapper around <a href="../structure/Survey.qmd"><code>Survey()</code></a>. Joins <code>Page</code> objects into a survey and generates all survey website files.
-  </div>
+<h1 class="title">Polish library</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
     
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-06-28</p>
-    </div>
-  </div>
     
   </div>
   
@@ -379,86 +390,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="modules" class="level1">
-<h1>Modules</h1>
-<p><code>velesresearch</code></p>
-<p><code>velesresearch.tools</code></p>
-</section>
-<section id="usage" class="level1">
-<h1>Usage</h1>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>survey(label, <span class="op">*</span>pages, title<span class="op">=</span><span class="va">None</span>, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>, create<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="questionnaires" class="level1">
+<h1>Questionnaires</h1>
+<section id="ten-item-personality-inventory-tipi" class="level2">
+<h2 class="anchored" data-anchor-id="ten-item-personality-inventory-tipi">Ten Item Personality Inventory (TIPI)</h2>
+<p>Ten item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.</p>
+<div class="arg_name">
+<p>Original</p>
+</div>
+<div class="arg_desc">
+<p><span class="citation" data-cites="tipi">Gosling, Rentfrow, &amp; Swann (<a href="#ref-tipi" role="doc-biblioref">2003</a>)</span></p>
+</div>
+<div class="arg_name">
+<p>Adaptation</p>
+</div>
+<div class="arg_desc">
+<p><span class="citation" data-cites="tipi-pl">Sorokowska, Słowińska, Zbieg, &amp; Sorokowski (<a href="#ref-tipi-pl" role="doc-biblioref">2014</a>)</span></p>
+</div>
+<div class="arg_name">
+<p>Reverse items</p>
+</div>
+<div class="arg_desc">
+<p>2, 4, 6, 8, 10</p>
+</div>
+<section id="usage" class="level3">
+<h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<div id="42b65454" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tipi(label<span class="op">=</span><span class="st">"TIPI"</span>, question_type<span class="op">=</span><span class="st">"radio"</span>, description<span class="op">=</span><span class="va">None</span>, options<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="arguments" class="level1">
-<h1>Arguments</h1>
+<section id="arguments" class="level3">
+<h3 class="anchored" data-anchor-id="arguments">Arguments</h3>
 <div class="arg_name">
 <p>label</p>
 </div>
 <div class="arg_desc">
-<p><code>str</code>; internal label of the survey. Will become webpage title.</p>
+<p><code>str</code>; items base label. Defaults to “TIPI”.</p>
 </div>
 <div class="arg_name">
-<p>*pages</p>
+<p>question_type</p>
 </div>
 <div class="arg_desc">
-<p><code>list[Page]</code> or <code>Page</code>; list of <code>Page</code> objects or a single <code>Page</code> object that will create a survey.</p>
-</div>
-<div class="arg_name">
-<p>title</p>
-</div>
-<div class="arg_desc">
-<p><code>str</code>; title of the survey. Will be visible in the header.</p>
+<p><code>str</code>; question type for the item. Defaults to “radio”.</p>
 </div>
 <div class="arg_name">
 <p>description</p>
 </div>
 <div class="arg_desc">
-<p><code>str</code>; text just under survey header.</p>
+<p><code>str</code> or <code>None</code>; question description. Looks like a subtitle. Defaults to <code>None</code>.</p>
 </div>
 <div class="arg_name">
 <p>options</p>
 </div>
 <div class="arg_desc">
-<p><code>SurveyOptions</code>; options object created with <a href="../../ref/options/SurveyOptions.html"><code>SurveyOptions()</code></a>, changes behaviour of the survey.</p>
+<p><code>QuestionOptions</code> or <code>None</code>; options that will be applied to each item. Defaults to <code>None</code>.</p>
 </div>
+</section>
+</section>
+</section>
+<section id="tests" class="level1">
+<h1>Tests</h1>
+<section id="alternative-uses-task-aut" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-uses-task-aut">Alternative Uses Task (AUT)</h2>
+<p>The task measures creativity. The participant is given an item (e.g.&nbsp;a brick) and asked to list as many uses of it as possible. This function returns a a list of pages or list of questions. The first page contains an instruction. The second page contains the item and the task itself. You probably want to add a time limit to the second page.</p>
 <div class="arg_name">
-<p>create</p>
+<p>Original</p>
 </div>
 <div class="arg_desc">
-<p><code>bool</code> or <code>str</code> or <code>Path</code>; controls whether survey is created and then built. Can be done later with <code>create()</code> method. Can be set to <code>True</code> but can also be a path to a folder where the survey files will be created. If <code>False</code>, no additional files are created.</p>
+<p><span class="citation" data-cites="aut">Torrance (<a href="#ref-aut" role="doc-biblioref">1966</a>)</span></p>
+</div>
+<section id="usage-1" class="level3">
+<h3 class="anchored" data-anchor-id="usage-1">Usage</h3>
+<div id="5e7c45f1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>aut(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"AUT"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    item<span class="op">=</span><span class="st">"cegła"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    max_answers<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    time_limit<span class="op">=</span><span class="dv">120</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    return_type<span class="op">=</span><span class="st">"page"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    instruction<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="value" class="level1">
-<h1>Value</h1>
-<p>A <code>Survey</code> object. If <code>create=True</code> or path, a set of other files and folders are created. Folders <code>src</code> and <code>public</code> contain webpage raw React code. Folder <code>build</code> contains raw, ready to be deployed webpage. <code>package.json</code>, <code>package-lock.json</code> and <code>node-libraries</code> are JavaScript dependencies. When the survey is created for the first time, these dependencies are downloaded from the web.</p>
-</section>
-<section id="see-also" class="level1">
-<h1>See also</h1>
-<p><a href="../options/SurveyOptions"><code>SurveyOptions()</code></a> for available survey modifications.</p>
-</section>
-<section id="examples" class="level1">
-<h1>Examples</h1>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question, page, survey</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> question(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Woman"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Man"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Other/I don't want to answer"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> page(<span class="st">"metric"</span>, gender)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"Just metric"</span>, metric, create<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="arguments-1" class="level3">
+<h3 class="anchored" data-anchor-id="arguments-1">Arguments</h3>
+<div class="arg_name">
+<p>label</p>
 </div>
+<div class="arg_desc">
+<p><code>str</code>; Defaults to “AUT”. An item will be added to the label.</p>
+</div>
+<div class="arg_name">
+<p>item</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; the item to be used, lowercase. Defaults to “Cegła”.</p>
+</div>
+<div class="arg_name">
+<p>max_answers</p>
+</div>
+<div class="arg_desc">
+<p><code>int</code>; max. number of input fields to generate. Defaults to 20.</p>
+</div>
+<div class="arg_name">
+<p>time_limit</p>
+</div>
+<div class="arg_desc">
+<p><code>int</code>; time limit in seconds. Works only for return_type=“page”. Defaults to 120.</p>
+</div>
+<div class="arg_name">
+<p>return_type</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code>; should the function return pages (“page”) or list of questions (“question”). Defaults to “page”.</p>
+</div>
+<div class="arg_name">
+<p>instruction</p>
+</div>
+<div class="arg_desc">
+<p><code>str</code> or <code>None</code>; If None, defaults to the default instruction.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="bibliography" class="level1">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-tipi" class="csl-entry" role="listitem">
+Gosling, S. D., Rentfrow, P. J., &amp; Swann, W. B. (2003). A very brief measure of the <span>Big</span>-<span>Five</span> personality domains. <em>Journal of Research in Personality</em>, <em>37</em>(6), 504–528. <a href="https://doi.org/10.1016/S0092-6566(03)00046-1">https://doi.org/10.1016/S0092-6566(03)00046-1</a>
+</div>
+<div id="ref-tipi-pl" class="csl-entry" role="listitem">
+Sorokowska, A., Słowińska, A., Zbieg, A., &amp; Sorokowski, P. (2014). <em>Polska adaptacja testu <span>Ten</span> <span>Item</span> <span>Personality</span> <span>Inventory</span> (<span>TIPI</span>) – <span>TIPI</span>-<span>PL</span> – wersja standardowa i internetowa.</em> WrocLab. <a href="https://doi.org/10.13140/2.1.4811.5521">https://doi.org/10.13140/2.1.4811.5521</a>
+</div>
+<div id="ref-aut" class="csl-entry" role="listitem">
+Torrance, E. P. (1966). Torrance tests of creative thinking. <em>Educational and Psychological Measurement</em>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

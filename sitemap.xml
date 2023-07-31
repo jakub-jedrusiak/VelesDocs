@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://docs.velesweb.org/getting-started.html</loc>
-    <lastmod>2023-07-10T12:42:31.192Z</lastmod>
+    <loc>https://docs.velesweb.org/library/en.html</loc>
+    <lastmod>2023-07-31T19:26:31.836Z</lastmod>
   </url>
   <url>
-    <loc>https://docs.velesweb.org/ref/tools/page.html</loc>
-    <lastmod>2023-07-10T12:42:28.503Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/tools/survey.html</loc>
-    <lastmod>2023-07-10T12:42:27.699Z</lastmod>
+    <loc>https://docs.velesweb.org/library/overview.html</loc>
+    <lastmod>2023-07-31T19:17:03.243Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/options/SurveyOptions.html</loc>
-    <lastmod>2023-07-10T12:42:26.776Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/questiontypes.html</loc>
-    <lastmod>2023-07-10T12:42:25.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/overview.html</loc>
-    <lastmod>2023-07-10T12:42:25.573Z</lastmod>
-  </url>
-  <url>
-    <loc>https://docs.velesweb.org/ref/options/PageOptions.html</loc>
-    <lastmod>2023-07-10T12:42:26.333Z</lastmod>
+    <lastmod>2023-07-03T16:10:28.343Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/options/QuestionOptions.html</loc>
-    <lastmod>2023-07-10T12:42:27.259Z</lastmod>
+    <lastmod>2023-07-03T16:28:25.420Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/tools/question.html</loc>
-    <lastmod>2023-07-10T12:42:28.123Z</lastmod>
+    <lastmod>2023-06-30T12:46:15.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/overview.html</loc>
+    <lastmod>2023-06-28T20:24:47.123Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/index.html</loc>
-    <lastmod>2023-07-10T12:42:28.769Z</lastmod>
+    <lastmod>2023-06-28T20:21:09.530Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/getting-started.html</loc>
+    <lastmod>2023-07-31T18:15:04.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/tools/page.html</loc>
+    <lastmod>2023-06-28T20:32:34.178Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/tools/survey.html</loc>
+    <lastmod>2023-06-28T20:32:34.178Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/options/PageOptions.html</loc>
+    <lastmod>2023-07-03T16:04:01.678Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/ref/questiontypes.html</loc>
+    <lastmod>2023-07-03T16:30:28.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/languages/pl.html</loc>
+    <lastmod>2023-07-31T19:18:41.816Z</lastmod>
   </url>
 </urlset>
