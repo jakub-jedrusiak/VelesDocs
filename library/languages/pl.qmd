@@ -1,0 +1,138 @@
+---
+title: Polish library
+---
+# Questionnaires
+
+## Ten Item Personality Inventory (TIPI)
+
+Ten item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.
+
+::: arg_name
+Original
+:::
+::: arg_desc
+@tipi
+:::
+
+::: arg_name
+Adaptation
+:::
+::: arg_desc
+@tipi-pl
+:::
+
+::: arg_name
+Reverse items
+:::
+::: arg_desc
+2, 4, 6, 8, 10
+:::
+
+### Usage
+
+``` {python}
+tipi(label="TIPI", question_type="radio", description=None, options=None)
+```
+
+### Arguments
+
+::: arg_name
+label
+:::
+::: arg_desc
+`str`; items base label. Defaults to "TIPI".
+:::
+
+::: arg_name
+question_type
+:::
+::: arg_desc
+`str`; question type for the item. Defaults to "radio".
+:::
+
+::: arg_name
+description
+:::
+::: arg_desc
+`str` or `None`; question description. Looks like a subtitle. Defaults to `None`.
+:::
+
+::: arg_name
+options
+:::
+::: arg_desc
+`QuestionOptions` or `None`; options that will be applied to each item. Defaults to `None`.
+:::
+
+# Tests
+
+## Alternative Uses Task (AUT)
+
+The task measures creativity. The participant is given an item (e.g. a brick) and asked to list as many uses of it as possible. This function returns a a list of pages or list of questions. The first page contains an instruction. The second page contains the item and the task itself. You probably want to add a time limit to the second page.
+
+::: arg_name
+Original
+:::
+::: arg_desc
+@aut
+:::
+
+### Usage
+
+``` {python}
+aut(
+    label="AUT",
+    item="cegła",
+    max_answers=20,
+    time_limit=120,
+    return_type="page",
+    instruction=None,
+)
+```
+
+### Arguments
+
+::: arg_name
+label
+:::
+::: arg_desc
+`str`; Defaults to "AUT". An item will be added to the label.
+:::
+
+::: arg_name
+item
+:::
+::: arg_desc
+`str`; the item to be used, lowercase. Defaults to "Cegła".
+:::
+
+::: arg_name
+max_answers
+:::
+::: arg_desc
+`int`; max. number of input fields to generate. Defaults to 20.
+:::
+
+::: arg_name
+time_limit
+:::
+::: arg_desc
+`int`; time limit in seconds. Works only for return_type="page". Defaults to 120.
+:::
+
+::: arg_name
+return_type
+:::
+::: arg_desc
+`str`; should the function return pages ("page") or list of questions ("question"). Defaults to "page".
+:::
+
+::: arg_name
+instruction
+:::
+::: arg_desc
+`str` or `None`; If None, defaults to the default instruction.
+:::
+
+
+# Bibliography

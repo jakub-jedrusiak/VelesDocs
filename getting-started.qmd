@@ -238,7 +238,7 @@ from veleslibrary.questionnaires.pl import tipi
 survey("personality", page("TIPI", tipi()))  # TIPI in Polish
 ```
 
-Feel free to contribute to the library by adding your own questionnaires. You can find the library's source code in the repo [here](https://github.com/jakub-jedrusiak/VelesLibrary).
+Go [here](/library/overview.qmd) to read more about the library. Feel free to contribute to the library by adding your own questionnaires. More information [here](/library/overview.qmd#contributing).
 
 ## Panels
 

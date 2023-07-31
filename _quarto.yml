@@ -26,10 +26,16 @@ website:
         href: index.qmd
       - text: "Getting started"
         href: getting-started.qmd
-      - text: "Reference"
+      - section: "Library"
+        contents:
+          - library/overview.qmd
+          - library/en.qmd
+          - section: "Other languages"
+            contents: "library/languages/*"
+      - section: "Reference"
         contents: "ref/**"
       - text: "<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#2C3E50', 'C0C6MPH76');kofiwidget2.draw();</script> "
-    collapse-level: 3
+    collapse-level: 2
   twitter-card: true
   open-graph: true
   repo-url: https://github.com/jakub-jedrusiak/VelesDocs
