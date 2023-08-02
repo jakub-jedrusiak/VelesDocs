@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Veles Documentation"
+  site-url: "https://docs.velesweb.org/"
   favicon: ./figs/Veles-rune-gray.svg
   navbar:
     logo: ./figs/Veles-rune-gray.png
