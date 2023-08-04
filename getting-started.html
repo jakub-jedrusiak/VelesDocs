@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.283">
+<meta name="generator" content="quarto-1.4.288">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -380,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-07-31</p>
+      <p class="date-modified">2023-08-04</p>
     </div>
   </div>
     
@@ -443,7 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Create project</h1>
 <p>Veles project is just a folder with a Python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with <code>.py</code> extension. It it, we’ll be writing the survey structure.</p>
 <p>The first thing we need to do is to import the <code>velesresearch</code> library. To do this, at the top of your script write:</p>
-<div id="94b51b11" class="cell" data-execution_count="1">
+<div id="bbb931d9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> velesresearch <span class="im">as</span> vls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -463,11 +463,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question" class="level3">
 <h3 class="anchored" data-anchor-id="question"><code>question()</code></h3>
 <p>Let’s start with creating some metrical questions with <code>question()</code>. The syntax is as follows:</p>
-<div id="450c9ec3" class="cell" data-execution_count="2">
+<div id="4b241602" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>vls.question(label, question_text, answers, question_type, options, description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The first four arguments are required. <code>label</code> is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. <code>question_text</code> is what the participant actually sees as an item in the survey. <code>answers</code> are the options the participant can choose. It can be a list or strings separated by commas. <code>question_type</code> defaults to <code>"radio"</code>. <code>options</code> can change the survey’s behaviour (e.g.&nbsp;make the answer order random), but I’ll provide more details later. <code>description</code> look like a subtitle. Both <code>options</code> and <code>description</code> arguments must be named if used (i.e.&nbsp;you need to write <code>options=</code>).</p>
-<div id="79f2ae81" class="cell" data-execution_count="3">
+<div id="99eaf61d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.question(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -488,7 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question-options" class="level3">
 <h3 class="anchored" data-anchor-id="question-options">Question options</h3>
 <p>Each question can have a series of options specified. To make it easier, there’s <code>QuestionOptions</code> object class which has all available options listed. Let’s use it to change answer order to random and add real None and Other options. We can create <code>QuestionOptions</code> outside the question itself, save it in a variable and put the variable in the <code>question()</code> function. We can also nest the <code>QuestionOptions</code> object inside the <code>question()</code> function.</p>
-<div id="ac39aab4" class="cell" data-execution_count="4">
+<div id="bf743650" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.question(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -516,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="whole-questionnaires">Whole questionnaires</h3>
 <p>Often in behavioral sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles the <code>question()</code> also allows to convert a whole questionnaire at once.</p>
 <p>To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using <code>split()</code> method or with <code>split</code> arguments. In the second and third cases, we need to have our items separated by some common separator, e.g.&nbsp;every item in a separate line. Both methods are shown below</p>
-<div id="a3fbaec5" class="cell" data-execution_count="5">
+<div id="31fd2510" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually formatted list</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>RSSI_items <span class="op">=</span> [</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I feel that I am a person of worth, at least on an equal plane with others."</span>,</span>
@@ -560,7 +560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="list-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="list-comprehension">List comprehension</h3>
 <p>The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee” (especially coffee) but rather something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string to do just that.</p>
-<div id="0c637bd2" class="cell" data-execution_count="6">
+<div id="fdf8f35b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get our drinks and make them a list</span></span>
@@ -582,13 +582,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Veles has it’s own (currently small) questionnaire library. Thanks to it, you can quickly add a whole questionnaire with only one command. The library is available in the <code>veleslibrary</code> package. To use it, you need to install and import it first.</p>
 <pre class="{bash}"><code># In the terminal
 pip install veleslibrary</code></pre>
-<div id="74cbdff9" class="cell" data-execution_count="7">
+<div id="0e852320" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires <span class="im">import</span> rse</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"self_esteem_survey"</span>, page(<span class="st">"RSE"</span>, rse()))  <span class="co"># Rosenberg Self-Esteem Scale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Library is multilingual.</p>
-<div id="debd82e0" class="cell" data-execution_count="8">
+<div id="c0adcc69" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires.pl <span class="im">import</span> tipi</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"personality"</span>, page(<span class="st">"TIPI"</span>, tipi()))  <span class="co"># TIPI in Polish</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -603,11 +603,11 @@ pip install veleslibrary</code></pre>
 <section id="pages" class="level2">
 <h2 class="anchored" data-anchor-id="pages">Pages</h2>
 <p>Every survey needs to have at least one page. Page is basically a list of questions but with its own label, title, description and options. You can create it with <code>page()</code>.</p>
-<div id="b124b2b6" class="cell" data-execution_count="9">
+<div id="a8adc534" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vls.page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pages have their own labels. They don’t yet have many uses in Veles but are still mandatory for SurveyJS compatibility reasons. Questions can be provided as a list or values separated by commas. You can also provide page’s title and description. The <code>options</code> argument accepts a <code>PageOptions</code> object. These are <strong>different options</strong> than in <code>QuestionOptions</code>. The list of available options can be found <a href="./ref/options/PageOptions.html">here</a>.</p>
-<div id="8bcaecd0" class="cell" data-execution_count="10">
+<div id="1cf24a06" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>limit <span class="op">=</span> vls.PageOptions(time_limit<span class="op">=</span><span class="dv">120</span>)</span>
@@ -618,10 +618,10 @@ pip install veleslibrary</code></pre>
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
 <p>When all elements are created, we can combine them into the final survey. We can do this with <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and builds a website with your survey.</p>
-<div id="a6a88e08" class="cell" data-execution_count="11">
+<div id="b5de06a5" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vls.survey(label, pages, title, description, options, create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="16041e8d" class="cell" data-execution_count="12">
+<div id="30560a4a" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vls.survey(<span class="st">"My smart research"</span>, intro, self_esteem, title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Building a website for the first time might take a few minutes due to <code>yarn</code> downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section <a href="#sec-hosting">below</a>.</p>
@@ -684,6 +684,7 @@ pip install veleslibrary</code></pre>
 <h3 class="anchored" data-anchor-id="using">Using</h3>
 <p>When you create a survey with Veles, you get a folder with a series of files. The most important one is <code>main.js</code> from <code>build</code> subfolder. To add it to your site, you need to create a new subfolder in the <code>surveys</code> folder in your repository. The easiest way to do it it through <a href="https://desktop.github.com/">GitHub Desktop</a>. Use it to download (or “clone”) your repository and create a new folder inside the <code>surveys</code> folder. The name of that folder will become a link to your survey, e.g.&nbsp;if you name it <code>black_tea_study</code>, the link will be something like <code>https://tea-research-project.vercel.app/black_tea_study</code>. Then put your <code>main.js</code> in your newly created folder. <strong>Do not rename it.</strong> Then use GitHub Desktop to upload (or “push”) your changes. After a minute or so, your survey should be available.</p>
 <p>To read and save your data you can use web desktop on <a href="https://www.mongodb.com/">mongodb.com</a> or with a special program called <a href="https://www.mongodb.com/products/compass">MongoDB Compass</a>. After any responses are recieved (even for the tea survey), a new database called <code>VelesResponses</code> is created. Every survey gets its own folder (or “collection”). From there you can easily export your data to <code>.csv</code> or <code>.json</code>.</p>
+<p>If you use R for analysis, you can connect to the database directly, without having to download anything. See <a href="https://www.mongodb.com/languages/mongodb-and-r-example">this article</a> for the details. You can also do that with <a href="https://www.mongodb.com/languages/python">Python</a>.</p>
 
 
 </section>
