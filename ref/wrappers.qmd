@@ -13,7 +13,7 @@ Create a survey object.
 ```{python}
 #| eval: false
 survey(
-    *pages: velesresearch.models.PageModel | list[velesresearch.models.PageModel],
+    *pages: PageModel | list[PageModel],
     createStructure: bool = True,
     buildForPublication: bool = False,
     folderName: str = 'survey',
@@ -90,7 +90,7 @@ survey(
     widthMode: str = 'auto',
     addCode: dict | None = None,
     **kwargs
-) -> velesresearch.models.SurveyModel
+) -> SurveyModel
 ```
 
 ## Arguments
@@ -315,7 +315,7 @@ Create a page object.
 #| eval: false
 page(
     name: str,
-    *questions: velesresearch.models.QuestionModel | list[velesresearch.models.QuestionModel],
+    *questions: QuestionModel | list[QuestionModel],
     description: str | None = None,
     enableIf: str | None = None,
     id: str | None = None,
@@ -339,7 +339,7 @@ page(
     visibleIndex: int | None = None,
     addCode: dict | None = None,
     **kwargs
-) -> velesresearch.models.PageModel
+) -> PageModel
 ```
 
 ## Arguments
@@ -417,6 +417,8 @@ Width of the page
 
 Create a single-select dropdown question object.
 
+![The dropdown question example](./figs/question_types/dropdown.png)
+
 ## Signature
 
 ```{python}
@@ -473,7 +475,7 @@ dropdown(
     choicesStep: int | None = None,
     placeholder: str | None = None,
     **kwargs
-) -> velesresearch.models.QuestionDropdownModel | list[velesresearch.models.QuestionDropdownModel]
+) -> QuestionDropdownModel | list[QuestionDropdownModel]
 ```
 
 ## Arguments
@@ -628,6 +630,8 @@ Additional code for the question. Usually not necessary.
 
 Create a text question object.
 
+![The text question example](./figs/question_types/text.png)
+
 ## Signature
 
 ```{python}
@@ -680,7 +684,7 @@ text(
     step: str | None = None,
     textUpdateMode: str = 'default',
     **kwargs
-) -> velesresearch.models.QuestionTextModel
+) -> QuestionTextModel
 ```
 
 ## Arguments
@@ -824,6 +828,8 @@ Additional code for the question. Usually not necessary.
 
 Create a checkbox question object.
 
+![The checkbox question example](./figs/question_types/checkbox.png)
+
 ## Signature
 
 ```{python}
@@ -882,7 +888,7 @@ checkbox(
     selectAllText: str | None = None,
     showSelectAllItem: bool | None = None,
     **kwargs
-) -> velesresearch.models.QuestionCheckboxModel | list[velesresearch.models.QuestionCheckboxModel]
+) -> QuestionCheckboxModel | list[QuestionCheckboxModel]
 ```
 
 ## Arguments
@@ -1037,6 +1043,8 @@ Additional code for the question. Usually not necessary.
 
 Create a ranking question object.
 
+![The ranking question example](./figs/question_types/ranking.png)
+
 ## Signature
 
 ```{python}
@@ -1100,7 +1108,7 @@ ranking(
     selectToRankEmptyUnrankedAreaText: str | None = None,
     selectToRankEnabled: bool = False,
     **kwargs
-) -> velesresearch.models.QuestionRankingModel | list[velesresearch.models.QuestionRankingModel]
+) -> QuestionRankingModel | list[QuestionRankingModel]
 ```
 
 ## Arguments
@@ -1270,6 +1278,8 @@ Additional code for the question. Usually not necessary.
 
 Create a radio question object.
 
+![The radio question example](./figs/question_types/radio.png)
+
 ## Signature
 
 ```{python}
@@ -1324,7 +1334,7 @@ radio(
     colCount: int | None = None,
     showClearButton: bool = False,
     **kwargs
-) -> velesresearch.models.QuestionRadiogroupModel | list[velesresearch.models.QuestionRadiogroupModel]
+) -> QuestionRadiogroupModel | list[QuestionRadiogroupModel]
 ```
 
 ## Arguments
@@ -1473,6 +1483,8 @@ Additional code for the question. Usually not necessary.
 
 Create a multiple dropdown question object.
 
+![The dropdownMultiple question example](./figs/question_types/dropdownMultiple.png)
+
 ## Signature
 
 ```{python}
@@ -1537,7 +1549,7 @@ dropdownMultiple(
     searchEnabled: bool = True,
     searchMode: str = 'contains',
     **kwargs
-) -> velesresearch.models.QuestionTagboxModel | list[velesresearch.models.QuestionTagboxModel]
+) -> QuestionTagboxModel | list[QuestionTagboxModel]
 ```
 
 ## Arguments
@@ -1710,6 +1722,8 @@ Additional code for the question. Usually not necessary.
 
 Create a long text question object.
 
+![The textLong question example](./figs/question_types/textLong.png)
+
 ## Signature
 
 ```{python}
@@ -1753,7 +1767,7 @@ textLong(
     autoGrow: bool | None = None,
     rows: int = 4,
     **kwargs
-) -> velesresearch.models.QuestionCommentModel | list[velesresearch.models.QuestionCommentModel]
+) -> QuestionCommentModel | list[QuestionCommentModel]
 ```
 
 ## Arguments
@@ -1870,6 +1884,8 @@ Additional code for the question. Usually not necessary.
 
 Create a rating question object.
 
+![The rating question example](./figs/question_types/rating.png)
+
 ## Signature
 
 ```{python}
@@ -1917,7 +1933,7 @@ rating(
     rateValues: list | None = None,
     scaleColorMode: str = 'monochrome',
     **kwargs
-) -> velesresearch.models.QuestionRatingModel | list[velesresearch.models.QuestionRatingModel]
+) -> QuestionRatingModel | list[QuestionRatingModel]
 ```
 
 ## Arguments
@@ -2046,6 +2062,8 @@ Additional code for the question. Usually not necessary.
 
 Create a yes/no (boolean) question object.
 
+![The yesno question example](./figs/question_types/yesno.png)
+
 ## Signature
 
 ```{python}
@@ -2090,7 +2108,7 @@ yesno(
     valueFalse: bool | str = False,
     valueTrue: bool | str = True,
     **kwargs
-) -> velesresearch.models.QuestionBooleanModel | list[velesresearch.models.QuestionBooleanModel]
+) -> QuestionBooleanModel | list[QuestionBooleanModel]
 ```
 
 ## Arguments
@@ -2210,6 +2228,8 @@ Additional code for the question. Usually not necessary.
 
 Create an informational text object.
 
+![The info question example](./figs/question_types/info.png)
+
 ## Signature
 
 ```{python}
@@ -2249,7 +2269,7 @@ info(
     width: str = '',
     addCode: dict | None = None,
     **kwargs
-) -> velesresearch.models.QuestionHtmlModel | list[velesresearch.models.QuestionHtmlModel]
+) -> QuestionHtmlModel | list[QuestionHtmlModel]
 ```
 
 ## Arguments
@@ -2357,6 +2377,8 @@ Additional code for the question. Usually not necessary.
 
 Create a matrix question object.
 
+![The matrix question example](./figs/question_types/matrix.png)
+
 ## Signature
 
 ```{python}
@@ -2408,7 +2430,7 @@ matrix(
     isAllRowRequired: bool = False,
     rowsOrder: str = 'initial',
     **kwargs
-) -> velesresearch.models.QuestionMatrixModel | list[velesresearch.models.QuestionMatrixModel]
+) -> QuestionMatrixModel | list[QuestionMatrixModel]
 ```
 
 ## Arguments
@@ -2549,6 +2571,8 @@ Additional code for the question. Usually not necessary.
 
 Create a dynamic matrix question object.
 
+![The matrixDynamic question example](./figs/question_types/matrixDynamic.png)
+
 ## Signature
 
 ```{python}
@@ -2616,7 +2640,7 @@ matrixDynamic(
     removeRowText: str | None = None,
     rowCount: int = 2,
     **kwargs
-) -> velesresearch.models.QuestionMatrixDynamicModel | list[velesresearch.models.QuestionMatrixDynamicModel]
+) -> QuestionMatrixDynamicModel | list[QuestionMatrixDynamicModel]
 ```
 
 ## Arguments
@@ -2814,6 +2838,8 @@ Additional code for the question. Usually not necessary.
 
 Create a slider question object.
 
+![The slider question example](./figs/question_types/slider.png)
+
 ## Signature
 
 ```{python}
@@ -2871,7 +2897,7 @@ slider(
     direction: str = 'ltr',
     tooltips: bool = True,
     **kwargs
-) -> velesresearch.models.QuestionNoUiSliderModel | list[velesresearch.models.QuestionNoUiSliderModel]
+) -> QuestionNoUiSliderModel | list[QuestionNoUiSliderModel]
 ```
 
 ## Arguments
@@ -2915,6 +2941,8 @@ Additional code for the question. Usually not necessary.
 # `image()`
 
 An image or video question object.
+
+![The image question example](./figs/question_types/image.png)
 
 ## Signature
 
@@ -2960,7 +2988,7 @@ image(
     imageHeight: int | str = 150,
     imageWidth: int | str = 200,
     **kwargs
-) -> velesresearch.models.QuestionImageModel | list[velesresearch.models.QuestionImageModel]
+) -> QuestionImageModel | list[QuestionImageModel]
 ```
 
 ## Arguments
@@ -3083,6 +3111,8 @@ Additional code for the question. Usually not necessary.
 
 Create a question with a consent to take part in the study.
 
+![The consent question example](./figs/question_types/consent.png)
+
 ## Signature
 
 ```{python}
@@ -3092,7 +3122,7 @@ consent(
     error: str = "You can't continue without a consent",
     name: str = 'consent',
     **kwargs
-) -> velesresearch.models.QuestionBooleanModel
+) -> QuestionBooleanModel
 ```
 
 ## Arguments
