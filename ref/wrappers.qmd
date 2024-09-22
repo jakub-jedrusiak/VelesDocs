@@ -1,0 +1,3107 @@
+---
+title: Wrappers for question types
+toc: true
+toc-depth: 1
+---
+
+# `survey()`
+
+Create a survey object.
+
+## Signature
+
+```{python}
+#| eval: false
+survey(
+    *pages: velesresearch.models.PageModel | list[velesresearch.models.PageModel],
+    createStructure: bool = True,
+    buildForPublication: bool = False,
+    folderName: str = 'survey',
+    path: str | pathlib.Path = '/home/jakub/OneDrive/Documents/git-repos/VelesResearch',
+    addScoreToResults: bool = True,
+    allowCompleteSurveyAutomatic: bool = True,
+    allowResizeComment: bool = True,
+    autoGrowComment: bool = False,
+    backgroundImage: str | None = None,
+    backgroundOpacity: int = 1,
+    checkErrorsMode: str = 'onNextPage',
+    commentAreaRows: int = 2,
+    completedBeforeHtml: str | None = None,
+    completedHtml: str | None = None,
+    completedHtmlOnCondition: list[dict] | None = None,
+    completeText: str | None = None,
+    cookieName: str | None = None,
+    editText: str | None = None,
+    firstPageIsStarted: bool | None = None,
+    focusFirstQuestionAutomatic: bool = False,
+    focusOnFirstError: bool = True,
+    goNextPageAutomatic: bool = False,
+    locale: str = 'en',
+    logo: str | None = None,
+    logoFit: str = 'contain',
+    logoHeight: str = '200px',
+    logoPosition: str = 'left',
+    logoWidth: str = '300px',
+    matrixDragHandleArea: str = 'entireItem',
+    maxOthersLength: int = 0,
+    maxTextLength: int = 0,
+    maxTimeToFinish: int | None = None,
+    maxTimeToFinishPage: int | None = None,
+    mode: str = 'edit',
+    navigateToUrl: str | None = None,
+    navigateToUrlOnCondition: list[dict] | None = None,
+    numberOfGroups: int = 1,
+    pageNextText: str | None = None,
+    pagePrevText: str | None = None,
+    previewText: str | None = None,
+    progressBarInheritWidthFrom: str = 'container',
+    progressBarShowPageNumbers: bool = False,
+    progressBarShowPageTitles: bool = False,
+    progressBarType: str = 'pages',
+    questionDescriptionLocation: str = 'underTitle',
+    questionErrorLocation: str = 'top',
+    questionsOnPageMode: str = 'standard',
+    questionsOrder: str = 'initial',
+    questionStartIndex: int | str | None = None,
+    questionTitleLocation: str = 'top',
+    questionTitlePattern: str = 'numTitleRequire',
+    requiredText: str = '*',
+    scoresSuffix: str = '_score',
+    showCompletedPage: bool = True,
+    showNavigationButtons: str = 'bottom',
+    showPageNumbers: bool | None = None,
+    showPageTitles: bool = True,
+    showPrevButton: bool = True,
+    showPreviewBeforeComplete: str = 'noPreview',
+    showProgressBar: str = 'off',
+    showQuestionNumbers: bool | str = True,
+    showTimerPanel: str = 'none',
+    showTimerPanelMode: str = 'all',
+    showTitle: bool = True,
+    showTOC: bool = False,
+    startSurveyText: str | None = None,
+    storeOthersAsComment: bool = True,
+    textUpdateMode: str = 'onBlur',
+    title: str | None = None,
+    tocLocation: str = 'left',
+    triggers: list[dict] | None = None,
+    validateVisitedEmptyFields: bool = False,
+    width: str | None = None,
+    widthMode: str = 'auto',
+    addCode: dict | None = None,
+    **kwargs
+) -> velesresearch.models.SurveyModel
+```
+
+## Arguments
+
+**`addScoreToResults`** : _bool_
+Whether to add the scores of the questions with `correctAnswer` to the results data. See `scoresSuffix`.
+
+**`allowCompleteSurveyAutomatic`** : _bool_
+Whether the survey should complete automatically after all questions on the last page had been answered. Works only if `goNextPageAutomatic=True`. Default is True.
+
+**`allowResizeComment`** : _bool_
+Whether to allow resizing the long questions input area. Default is True. Can be overridden for individual questions.
+
+**`autoGrowComment`** : _bool_
+Whether to automatically grow the long questions input area. Default is False. Can be overridden for individual questions.
+
+**`backgroundImage`** : _str | None_
+URL or base64 of the background image.
+
+**`backgroundOpacity`** : _int_
+The opacity of the background image. 0 is transparent, 1 is opaque.
+
+**`checkErrorsMode`** : _str_
+The mode of checking errors. Can be 'onNextPage', 'onValueChanged', 'onComplete'.
+
+**`commentAreaRows`** : _int_
+The number of rows for the comment area of the questions with `showCommentArea` or `showOtherItem` set to True. Default is 2. Can be overridden for individual questions.
+
+**`completedBeforeHtml`** : _str | None_
+HTML content to show if the survey had been completed before. Use with `cookieName`.
+
+**`completedHtml`** : _str | None_
+HTML content to show after the survey is completed.
+
+**`completedHtmlOnCondition`** : _list[dict] | None_
+HTML content to show after the survey is completed if the condition is met. List of dictionaries with keys `expression` and `html` keys.
+
+**`completeText`** : _str | None_
+Text for the 'Complete' button.
+
+**`cookieName`** : _str | None_
+The name of the cookie to store the information about the survey having been completed. See `completedBeforeHtml`.
+
+**`editText`** : _str | None_
+Text for the 'Edit' button if `showPreviewBeforeComplete=True`.
+
+**`firstPageIsStarted`** : _bool | None_
+Whether the first page is a start page. Default is False.
+
+**`focusFirstQuestionAutomatic`** : _bool_
+Whether to focus the first question automatically. Default is False.
+
+**`focusOnFirstError`** : _bool_
+Whether to focus on the first error if it was raised. Default is True.
+
+**`goNextPageAutomatic`** : _bool_
+Whether to go to the next page automatically after all questions had been answered. Default is False.
+
+**`locale`** : _str_
+The locale of the survey. Default is 'en'.
+
+**`logo`** : _str | None_
+URL or base64 of the logo image.
+
+**`logoFit`** : _str_
+The `object-fit` CSS property logo image. Can be 'contain', 'cover', 'fill', 'none'.
+
+**`logoHeight`** : _str_
+The height of the logo image in CSS units. Default is '200px'.
+
+**`logoPosition`** : _str_
+The position of the logo image. Can be 'left', 'right', 'none'.
+
+**`logoWidth`** : _str_
+The width of the logo image in CSS units. Default is '300px'.
+
+**`matrixDragHandleArea`** : _str_
+The part of an item with which the users can drag and drop in dynamic matrix questions. Can be 'entireItem' (default), 'icon' (drag icon only).
+
+**`maxOthersLength`** : _int_
+The maximum length of the comment area in the questions with `showOtherItem` or `showCommentArea` set to True. Default is 0 (no limit).
+
+**`maxTextLength`** : _int_
+The maximum length of the text in the textual questions. Default is 0 (no limit).
+
+**`maxTimeToFinish`** : _int | None_
+Maximum time in seconds to finish the survey.
+
+**`maxTimeToFinishPage`** : _int | None_
+Maximum time in seconds to finish the page. 0 means no limit.
+
+**`mode`** : _str_
+The mode of the survey. Can be 'edit' (can be filled), 'display' (read-only).
+
+**`navigateToUrl`** : _str | None_
+URL to navigate to after the survey is completed.
+
+**`navigateToUrlOnCondition`** : _list[dict] | None_
+URL to navigate to after the survey is completed if the condition is met. List of dictionaries with keys `expression` and `url` keys.
+
+**`pageNextText`** : _str | None_
+Text for the 'Next' button.
+
+**`pagePrevText`** : _str | None_
+Text for the 'Previous' button.
+
+**`previewText`** : _str | None_
+Text for the 'Preview' button if `showPreviewBeforeComplete=True`.
+
+**`progressBarInheritWidthFrom`** : _str_
+The element from which the progress bar should inherit the width. Can be 'container', 'survey'.
+
+**`progressBarShowPageNumbers`** : _bool_
+Whether to show the page numbers on the progress bar. Only if `progressBarType="pages"`. Default is False. See `showProgressBar`.
+
+**`progressBarShowPageTitles`** : _bool_
+Whether to show the page titles on the progress bar. Only if `progressBarType="pages"`. Default is False. See `showProgressBar`.
+
+**`progressBarType`** : _str_
+The type of the progress bar. Can be 'pages' (default), 'questions', 'requiredQuestions', 'correctQuestions'.
+
+**`questionDescriptionLocation`** : _str_
+The location of the description for the questions. Can be 'underTitle' (default), 'underInput'. Can be overridden for individual questions.
+
+**`questionErrorLocation`** : _str_
+The location of the error text for the questions. Can be 'top' (default), 'bottom'. Can be overridden for individual questions.
+
+**`questionsOnPageMode`** : _str_
+The mode of the questions on the page. Can be 'standard' (default; use structure in JSON), 'singlePage' (combine all questions into a single page), 'questionPerPage' (move all questions to separate pages).
+
+**`questionsOrder`** : _str_
+The order of the questions. Can be 'initial' (default), 'random'. Can be overridden for individual pages.
+
+**`questionStartIndex`** : _int | str | None_
+The number or letter with which the questions numbering should start.
+
+**`questionTitleLocation`** : _str_
+The location of the title for the questions. Can be 'top' (default), 'bottom', 'left'. Can be overridden for individual questions or pages.
+
+**`questionTitlePattern`** : _str_
+The pattern of the question title. See <https://surveyjs.io/form-library/documentation/design-survey/configure-question-titles#title-pattern>.
+
+**`requiredText`** : _str_
+The text denoting the required questions. Default is '*'.
+
+**`scoresSuffix`** : _str_
+The suffix of the score column if `addScoreToResults=True`. Default is '_score'.
+
+**`showCompletedPage`** : _bool_
+Whether to show the completed page. Default is True.
+
+**`showNavigationButtons`** : _str_
+The location of the navigation buttons. Can be 'bottom' (default), 'top', 'both', 'none'.
+
+**`showPageNumbers`** : _bool | None_
+Whether to show the page numbers in the pages' titles.
+
+**`showPageTitles`** : _bool_
+Whether to show the page titles. Default is True.
+
+**`showPrevButton`** : _bool_
+Whether to show the 'Previous' button. Default is True.
+
+**`showPreviewBeforeComplete`** : _str_
+Whether to preview all answers before completion. Can be 'noPreview' (default), 'showAllQuestions', 'showAnsweredQuestions'.
+
+**`showProgressBar`** : _str_
+Whether to show the progress bar. Can be 'off' (default), 'aboveHeader', 'belowHeader', 'bottom', 'topBottom', 'auto'.
+
+**`showQuestionNumbers`** : _bool | str_
+Whether to show the question numbers. Default is True. Can be True, 'on', False, 'off', 'onpage' (number each page anew).
+
+**`showTimerPanel`** : _str_
+Whether to show the timer panel. Can be 'none' (default), 'top', 'bottom'. See `maxTimeToFinish`, `maxTimeToFinishPage`, and `showTimerPanelMode`.
+
+**`showTimerPanelMode`** : _str_
+What times to show on the timer panel. Can be 'all' (default), 'page', 'survey'. See `showTimerPanel`.
+
+**`showTitle`** : _bool_
+Whether to show the survey title. Default is True.
+
+**`showTOC`** : _bool_
+Whether to show the table of contents. Default is False. See `tocLocation`.
+
+**`startSurveyText`** : _str | None_
+Text for the 'Start' button if `firstPageIsStarted=True`.
+
+**`storeOthersAsComment`** : _bool_
+Whether to store the 'Other' answers in a separate column (True; see `commentSuffix`) or in the question column (False). Default is True.
+
+**`textUpdateMode`** : _str_
+The mode of updating the text. Can be 'onBlur' (default; update after the field had been unclicked), 'onTyping' (update every key press). Can be overridden for individual questions.
+
+**`title`** : _str | None_
+The title of the survey.
+
+**`tocLocation`** : _str_
+The location of the table of contents. Can be 'left' (default), 'right'. See `showTOC`.
+
+**`triggers`** : _str | None_
+Triggers for the survey. Usually not necessary. See <https://surveyjs.io/form-library/documentation/design-survey/conditional-logic#conditional-survey-logic-triggers>.
+
+**`validateVisitedEmptyFields`** : _bool_
+Whether to validate empty fields that had been clicked, and unclicked empty. Default is False.
+
+**`width`** : _str | None_
+Width of the survey in CSS units. Default is None (inherit from the container).
+
+**`widthMode`** : _str_
+The mode of the width. Can be 'auto' (default; the width is set by the content), 'static', 'responsive'.
+
+**`addCode`** : _dict | None_
+Additional code for the survey. Usually not necessary.
+
+# `page()`
+
+Create a page object.
+
+## Signature
+
+```{python}
+#| eval: false
+page(
+    name: str,
+    *questions: velesresearch.models.QuestionModel | list[velesresearch.models.QuestionModel],
+    description: str | None = None,
+    enableIf: str | None = None,
+    id: str | None = None,
+    isRequired: bool = False,
+    maxTimeToFinish: int | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    navigationButtonsVisibility: str = 'inherit',
+    navigationDescription: str | None = None,
+    navigationTitle: str | None = None,
+    questionErrorLocation: str = 'default',
+    questionTitleLocation: str = 'default',
+    questionsOrder: str = 'default',
+    readOnly: bool = False,
+    requiredErrorText: str | None = None,
+    requiredIf: str | None = None,
+    state: str = 'default',
+    title: str | None = None,
+    visible: bool = True,
+    visibleIf: str | None = None,
+    visibleIndex: int | None = None,
+    addCode: dict | None = None,
+    **kwargs
+) -> velesresearch.models.PageModel
+```
+
+## Arguments
+
+**`questions`** : _QuestionModel | list[QuestionModel]_
+The questions on the page.
+
+**`description`** : _str | None_
+Optional subtitle or description of the page.
+
+**`enableIf`** : _str | None_
+Expression to enable the page.
+
+**`id`** : _str | None_
+HTML id attribute for the page. Usually not necessary.
+
+**`isRequired`** : _bool_
+Whether the page is required (at least one question must be answered).
+
+**`maxTimeToFinish`** : _int | None_
+Maximum time in seconds to finish the page.
+
+**`maxWidth`** : _str_
+Maximum width of the page in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the page in CSS units.
+
+**`navigationButtonsVisibility`** : _str_
+The visibility of the navigation buttons. Can be 'inherit', 'show', 'hide'.
+
+**`navigationDescription`** : _str | None_
+Description for the page navigation.
+
+**`navigationTitle`** : _str | None_
+Title for the page navigation.
+
+**`questionErrorLocation`** : _str_
+The location of the error text for the questions. Can be 'default', 'top', 'bottom'.
+
+**`questionTitleLocation`** : _str_
+The location of the title for the questions. Can be 'default', 'top', 'bottom'.
+
+**`questionsOrder`** : _str_
+The order of the questions. Can be 'default', 'random'.
+
+**`readOnly`** : _bool_
+Whether the page is read-only.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the page required (at least one question must be answered).
+
+**`state`** : _str_
+If the page should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`title`** : _str_
+The visible title of the page.
+
+**`visible`** : _bool_
+Whether the page is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the page visible.
+
+**`visibleIndex`** : _int | None_
+The index at which the page should be visible.
+
+**`width`** : _str_
+Width of the page
+
+# `dropdown()`
+
+Create a single-select dropdown question object.
+
+## Signature
+
+```{python}
+#| eval: false
+dropdown(
+    name: str,
+    title: str | list[str] | None,
+    *choices: str | dict | list,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    choicesFromQuestion: str | None = None,
+    choicesFromQuestionMode: str = 'all',
+    choicesOrder: str = 'none',
+    showDontKnowItem: bool = False,
+    dontKnowText: str | None = None,
+    hideIfChoicesEmpty: bool | None = None,
+    showNoneItem: bool = False,
+    noneText: str | None = None,
+    otherText: str | None = None,
+    otherErrorText: str | None = None,
+    showRefuseItem: bool = False,
+    refuseText: str | None = None,
+    choicesMax: int | None = None,
+    choicesMin: int | None = None,
+    choicesStep: int | None = None,
+    placeholder: str | None = None,
+    **kwargs
+) -> velesresearch.models.QuestionDropdownModel | list[velesresearch.models.QuestionDropdownModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`choices`** : _str | dict | list_
+The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
+
+**`choicesFromQuestion`** : _str | None_
+The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
+
+**`choicesFromQuestionMode`** : _str_
+The mode of copying choices. Can be 'all', 'selected', 'unselected'.
+
+**`choicesMax`** : _int | None_
+Maximum for automatically generated choices. Use with `choicesMin` and `choicesStep`.
+
+**`choicesMin`** : _int | None_
+Minimum for automatically generated choices. Use with `choicesMax` and `choicesStep`.
+
+**`choicesOrder`** : _str_
+The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
+
+**`choicesStep`** : _int | None_
+Step for automatically generated choices. Use with `choicesMax` and `choicesMin`.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`dontKnowText`**: str | None = None
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideIfChoicesEmpty`**: bool | None = None
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`noneText`**: str | None = None
+
+**`otherErrorText`**: str | None = None
+
+**`otherText`**: str | None = None
+
+**`placeholder`** : _str | None_
+Placeholder text.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`refuseText`**: str | None = None
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showDontKnowItem`**: bool = False
+
+**`showNoneItem`**: bool = False
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`showOtherItem`**: bool = False
+
+**`showRefuseItem`**: bool = False
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+
+
+**`Returns`**:
+
+**`QuestionDropdownModel`**: The question object model or a list of question object models if `title` is a list.
+
+# `text()`
+
+Create a text question object.
+
+## Signature
+
+```{python}
+#| eval: false
+text(
+    name: str,
+    *title: str | list[str] | None,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    autocomplete: str | None = None,
+    inputType: str = 'text',
+    max: str | int | None = None,
+    maxErrorText: str | None = None,
+    maxLength: int | None = None,
+    maxValueExpression: str | None = None,
+    min: str | int | None = None,
+    minErrorText: str | None = None,
+    minValueExpression: str | None = None,
+    placeholder: str | None = None,
+    size: int | None = None,
+    step: str | None = None,
+    textUpdateMode: str = 'default',
+    **kwargs
+) -> velesresearch.models.QuestionTextModel
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`autocomplete`** : _str | None_
+A value of `autocomplete` attribute for `<input>`. See MDN for a list: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#token_list_tokens>.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`inputType`** : _str | None_
+The type of the input. Can be 'text', 'password', 'email', 'url', 'tel', 'number', 'date', 'datetime-local', 'time', 'month', 'week', 'color'.
+
+**`max`** : _str_
+The `max` attribute of `<input>`. Syntax depends on the `inputType`. See MDN for details: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/max>.
+
+**`maxErrorText`** : _str | None_
+Error text if the value exceeds `max`.
+
+**`maxLength`** : _int | None_
+The maximum length of the input in characters. Use 0 for no limit. Use -1 for the default limit.
+
+**`maxValueExpression`** : _str | None_
+Expression to decide the maximum value.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`min`** : _str | None_
+The `min` attribute of `<input>`. Syntax depends on the `inputType`. See MDN for details: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/min>.
+
+**`minErrorText`** : _str | None_
+Error text if the value is less than `min`.
+
+**`minValueExpression`** : _str | None_
+Expression to decide the minimum value.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`placeholder`** : _str | None_
+Placeholder text for the input.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`size`** : _int | None_
+The width of the input in characters. A value for `size` attribute of `<input>`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`step`** : _str | None_
+The `step` attribute of `<input>`. Syntax depends on the `inputType`. See MDN for details: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/step>.
+
+**`textUpdateMode`** : _str_
+The mode of updating the text. Can be 'default', 'onBlur' (update after the field had been unclicked), 'onTyping' (update every key press).
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `checkbox()`
+
+Create a checkbox question object.
+
+## Signature
+
+```{python}
+#| eval: false
+checkbox(
+    name: str,
+    title: str | list[str] | None,
+    *choices: str | dict | list,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    choicesFromQuestion: str | None = None,
+    choicesFromQuestionMode: str = 'all',
+    choicesOrder: str = 'none',
+    showDontKnowItem: bool = False,
+    dontKnowText: str | None = None,
+    hideIfChoicesEmpty: bool | None = None,
+    showNoneItem: bool = False,
+    noneText: str | None = None,
+    otherText: str | None = None,
+    otherErrorText: str | None = None,
+    showRefuseItem: bool = False,
+    refuseText: str | None = None,
+    colCount: int | None = None,
+    isAllSelected: bool | None = None,
+    maxSelectedChoices: int = 0,
+    minSelectedChoices: int = 0,
+    selectAllText: str | None = None,
+    showSelectAllItem: bool | None = None,
+    **kwargs
+) -> velesresearch.models.QuestionCheckboxModel | list[velesresearch.models.QuestionCheckboxModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`choices`** : _str | dict | list_
+The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
+
+**`choicesFromQuestion`** : _str | None_
+The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
+
+**`choicesFromQuestionMode`** : _str_
+The mode of copying choices. Can be 'all', 'selected', 'unselected'.
+
+**`choicesOrder`** : _str_
+The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
+
+**`colCount`** : _int | None_
+The number of columns for the choices. 0 means a single line.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`dontKnowText`**: str | None = None
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideIfChoicesEmpty`**: bool | None = None
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`isAllSelected`** : _bool | None_
+Start with all choices selected. Default is False.
+
+**`maxSelectedChoices`** : _int_
+Maximum number of selected choices. 0 means no limit.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minSelectedChoices`** : _int_
+Minimum number of selected choices. 0 means no limit.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`noneText`**: str | None = None
+
+**`otherErrorText`**: str | None = None
+
+**`otherText`**: str | None = None
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`refuseText`**: str | None = None
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`selectAllText`** : _str | None_
+Text for the 'Select All' item.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showDontKnowItem`**: bool = False
+
+**`showNoneItem`**: bool = False
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`showOtherItem`**: bool = False
+
+**`showRefuseItem`**: bool = False
+
+**`showSelectAllItem`** : _bool | None_
+Whether to show the 'Select All' item.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `ranking()`
+
+Create a ranking question object.
+
+## Signature
+
+```{python}
+#| eval: false
+ranking(
+    name: str,
+    title: str | list[str] | None,
+    *choices: str | dict | list,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    choicesFromQuestion: str | None = None,
+    choicesFromQuestionMode: str = 'all',
+    choicesOrder: str = 'none',
+    showDontKnowItem: bool = False,
+    dontKnowText: str | None = None,
+    hideIfChoicesEmpty: bool | None = None,
+    showNoneItem: bool = False,
+    noneText: str | None = None,
+    otherText: str | None = None,
+    otherErrorText: str | None = None,
+    showRefuseItem: bool = False,
+    refuseText: str | None = None,
+    colCount: int | None = None,
+    isAllSelected: bool | None = None,
+    maxSelectedChoices: int = 0,
+    minSelectedChoices: int = 0,
+    selectAllText: str | None = None,
+    showSelectAllItem: bool | None = None,
+    longTap: bool = True,
+    selectToRankAreasLayout: str = 'horizontal',
+    selectToRankEmptyRankedAreaText: str | None = None,
+    selectToRankEmptyUnrankedAreaText: str | None = None,
+    selectToRankEnabled: bool = False,
+    **kwargs
+) -> velesresearch.models.QuestionRankingModel | list[velesresearch.models.QuestionRankingModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`choices`** : _str | dict | list_
+The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
+
+**`choicesFromQuestion`** : _str | None_
+The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
+
+**`choicesFromQuestionMode`** : _str_
+The mode of copying choices. Can be 'all', 'selected', 'unselected'.
+
+**`choicesOrder`** : _str_
+The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
+
+**`colCount`** : _int | None_
+The number of columns for the choices. 0 means a single line.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`dontKnowText`**: str | None = None
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideIfChoicesEmpty`**: bool | None = None
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`isAllSelected`** : _bool | None_
+Start with all choices selected. Default is False.
+
+**`longTap`** : _bool_
+Whether to use long tap for dragging on mobile devices.
+
+**`maxSelectedChoices`** : _int_
+Maximum number of selected choices. 0 means no limit.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minSelectedChoices`** : _int_
+Minimum number of selected choices. 0 means no limit.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`noneText`**: str | None = None
+
+**`otherErrorText`**: str | None = None
+
+**`otherText`**: str | None = None
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`refuseText`**: str | None = None
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`selectAllText`** : _str | None_
+Text for the 'Select All' item.
+
+**`selectToRankAreasLayout`** : _str_
+The layout of the ranked and unranked areas when `selectToRankEnabled=True`. Can be 'horizontal', 'vertical'.
+
+**`selectToRankEmptyRankedAreaText`** : _str | None_
+Text for the empty ranked area when `selectToRankEnabled=True`.
+
+**`selectToRankEmptyUnrankedAreaText`** : _str | None_
+Text for the empty unranked area when `selectToRankEnabled=True`.
+
+**`selectToRankEnabled`** : _bool_
+Whether user should select items they want to rank before ranking them. Default is False.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showDontKnowItem`**: bool = False
+
+**`showNoneItem`**: bool = False
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`showOtherItem`**: bool = False
+
+**`showRefuseItem`**: bool = False
+
+**`showSelectAllItem`** : _bool | None_
+Whether to show the 'Select All' item.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `radio()`
+
+Create a radio question object.
+
+## Signature
+
+```{python}
+#| eval: false
+radio(
+    name: str,
+    title: str | list[str] | None,
+    *choices: str | dict | list,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    choicesFromQuestion: str | None = None,
+    choicesFromQuestionMode: str = 'all',
+    choicesOrder: str = 'none',
+    showDontKnowItem: bool = False,
+    dontKnowText: str | None = None,
+    hideIfChoicesEmpty: bool | None = None,
+    showNoneItem: bool = False,
+    noneText: str | None = None,
+    otherText: str | None = None,
+    otherErrorText: str | None = None,
+    showRefuseItem: bool = False,
+    refuseText: str | None = None,
+    colCount: int | None = None,
+    showClearButton: bool = False,
+    **kwargs
+) -> velesresearch.models.QuestionRadiogroupModel | list[velesresearch.models.QuestionRadiogroupModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`choices`** : _str | dict | list_
+The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
+
+**`choicesFromQuestion`** : _str | None_
+The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
+
+**`choicesFromQuestionMode`** : _str_
+The mode of copying choices. Can be 'all', 'selected', 'unselected'.
+
+**`choicesOrder`** : _str_
+The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`colCount`** : _int | None_
+The number of columns for the choices. 0 means a single line.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`dontKnowText`**: str | None = None
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideIfChoicesEmpty`**: bool | None = None
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`noneText`**: str | None = None
+
+**`otherErrorText`**: str | None = None
+
+**`otherText`**: str | None = None
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`refuseText`**: str | None = None
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showClearButton`** : _bool_
+Show a button to clear the answer.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showDontKnowItem`**: bool = False
+
+**`showNoneItem`**: bool = False
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`showOtherItem`**: bool = False
+
+**`showRefuseItem`**: bool = False
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+
+
+**`Returns`**:
+
+**`QuestionRadiogroupModel`**: The question object model or a list of question object models if `title` is a list.
+
+# `dropdownMultiple()`
+
+Create a multiple dropdown question object.
+
+## Signature
+
+```{python}
+#| eval: false
+dropdownMultiple(
+    name: str,
+    title: str | list[str] | None,
+    *choices: str | dict | list,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    choicesFromQuestion: str | None = None,
+    choicesFromQuestionMode: str = 'all',
+    choicesOrder: str = 'none',
+    showDontKnowItem: bool = False,
+    dontKnowText: str | None = None,
+    hideIfChoicesEmpty: bool | None = None,
+    showNoneItem: bool = False,
+    noneText: str | None = None,
+    otherText: str | None = None,
+    otherErrorText: str | None = None,
+    showRefuseItem: bool = False,
+    refuseText: str | None = None,
+    colCount: int | None = None,
+    isAllSelected: bool | None = None,
+    maxSelectedChoices: int = 0,
+    minSelectedChoices: int = 0,
+    selectAllText: str | None = None,
+    showSelectAllItem: bool | None = None,
+    allowClear: bool = True,
+    closeOnSelect: int | None = None,
+    hideSelectedItems: bool | None = False,
+    placeholder: str | None = None,
+    searchEnabled: bool = True,
+    searchMode: str = 'contains',
+    **kwargs
+) -> velesresearch.models.QuestionTagboxModel | list[velesresearch.models.QuestionTagboxModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`choices`** : _str | dict | list_
+The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
+
+**`allowClear`** : _str_
+Whether to show the 'Clear' button for each answer.
+
+**`choicesFromQuestion`** : _str | None_
+The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
+
+**`choicesFromQuestionMode`** : _str_
+The mode of copying choices. Can be 'all', 'selected', 'unselected'.
+
+**`choicesOrder`** : _str_
+The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
+
+**`closeOnSelect`** : _int | None_
+Whether to close the dropdown after user selects a specified number of items.
+
+**`colCount`** : _int | None_
+The number of columns for the choices. 0 means a single line.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`dontKnowText`**: str | None = None
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideIfChoicesEmpty`**: bool | None = None
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`hideSelectedItems`** : _bool | None_
+Whether to hide selected items in the dropdown.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`isAllSelected`** : _bool | None_
+Start with all choices selected. Default is False.
+
+**`maxSelectedChoices`** : _int_
+Maximum number of selected choices. 0 means no limit.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minSelectedChoices`** : _int_
+Minimum number of selected choices. 0 means no limit.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`noneText`**: str | None = None
+
+**`otherErrorText`**: str | None = None
+
+**`otherText`**: str | None = None
+
+**`placeholder`** : _str | None_
+Placeholder text for the input with no value.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`refuseText`**: str | None = None
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`searchEnabled`** : _bool_
+Whether to enable search in the dropdown.
+
+**`searchMode`** : _str_
+The search mode. Can be 'contains' (default), 'startsWith'. Works only if `searchEnabled=True`.
+
+**`selectAllText`** : _str | None_
+Text for the 'Select All' item.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showDontKnowItem`**: bool = False
+
+**`showNoneItem`**: bool = False
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`showOtherItem`**: bool = False
+
+**`showRefuseItem`**: bool = False
+
+**`showSelectAllItem`** : _bool | None_
+Whether to show the 'Select All' item.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `textLong()`
+
+Create a long text question object.
+
+## Signature
+
+```{python}
+#| eval: false
+textLong(
+    name: str,
+    *title: str | list[str] | None,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    acceptCarriageReturn: bool = True,
+    allowResize: bool | None = None,
+    autoGrow: bool | None = None,
+    rows: int = 4,
+    **kwargs
+) -> velesresearch.models.QuestionCommentModel | list[velesresearch.models.QuestionCommentModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`acceptCarriageReturn`** : _bool_
+Whether to allow line breaks. Default is True.
+
+**`allowResize`** : _bool_
+Whether to allow resizing the input field. Default is True.
+
+**`autoGrow`** : _bool_
+Whether to automatically grow the input field. Default is False.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`rows`** : _int_
+Height of the input field in rows' number.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `rating()`
+
+Create a rating question object.
+
+## Signature
+
+```{python}
+#| eval: false
+rating(
+    name: str,
+    *title: str | list[str] | None,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    maxRateDescription: str | None = None,
+    minRateDescription: str | None = None,
+    rateMax: int = 5,
+    rateMin: int = 1,
+    rateStep: int = 1,
+    rateType: str = 'labels',
+    rateValues: list | None = None,
+    scaleColorMode: str = 'monochrome',
+    **kwargs
+) -> velesresearch.models.QuestionRatingModel | list[velesresearch.models.QuestionRatingModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`maxRateDescription`** : _str | None_
+Description for the biggest rate.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minRateDescription`** : _str | None_
+Description for the smallest rate.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`rateMax`** : _int_
+Maximum rate. Works only if `rateValues` is not set.
+
+**`rateMin`** : _int_
+Minimum rate. Works only if `rateValues` is not set.
+
+**`rateStep`** : _int_
+Step for the rate. Works only if `rateValues` is not set.
+
+**`rateType`** : _str_
+The type of the rate. Can be 'labels', 'stars', 'smileys'.
+
+**`rateValues`** : _list | None_
+Manually set rate values. Use a list of primitives and/or dictionaries `{"value": ..., "text": ...}`.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`scaleColorMode`** : _str_
+The color mode of the scale if `rateType='smileys'`. Can be 'monochrome', 'colored'.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `yesno()`
+
+Create a yes/no (boolean) question object.
+
+## Signature
+
+```{python}
+#| eval: false
+yesno(
+    name: str,
+    *title: str | list[str] | None,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    labelFalse: str | None = None,
+    labelTrue: str | None = None,
+    swapOrder: bool = False,
+    valueFalse: bool | str = False,
+    valueTrue: bool | str = True,
+    **kwargs
+) -> velesresearch.models.QuestionBooleanModel | list[velesresearch.models.QuestionBooleanModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`labelFalse`** : _str | None_
+Label for the 'false' value.
+
+**`labelTrue`** : _str | None_
+Label for the 'true' value.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`swapOrder`** : _bool_
+Whether to swap the default (no, yes) order of the labels.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`valueFalse`** : _str_
+Value for the 'false' option.
+
+**`valueTrue`** : _str_
+Value for the 'true' option.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `info()`
+
+Create an informational text object.
+
+## Signature
+
+```{python}
+#| eval: false
+info(
+    name: str,
+    *infoHTML: str | list[str],
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    **kwargs
+) -> velesresearch.models.QuestionHtmlModel | list[velesresearch.models.QuestionHtmlModel]
+```
+
+## Arguments
+
+**`infoHTML`** : _str_
+The HTML content of the infobox.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `matrix()`
+
+Create a matrix question object.
+
+## Signature
+
+```{python}
+#| eval: false
+matrix(
+    name: str,
+    title: str | list[str] | None,
+    *columns,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    rows: list | dict | None = None,
+    alternateRows: bool | None = None,
+    columnMinWidth: str | None = None,
+    displayMode: str = 'auto',
+    rowTitleWidth: str | None = None,
+    showHeader: bool = True,
+    verticalAlign: str = 'middle',
+    eachRowUnique: bool | None = None,
+    hideIfRowsEmpty: bool | None = None,
+    isAllRowRequired: bool = False,
+    rowsOrder: str = 'initial',
+    **kwargs
+) -> velesresearch.models.QuestionMatrixModel | list[velesresearch.models.QuestionMatrixModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`columns`** : _list | dict_
+The columns of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "type": ..., "otherParameter": ...}`.
+
+**`rows`** : _list | dict_
+The rows of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "otherParameter": ...}`.
+
+**`alternateRows`** : _bool | None_
+Whether to alternate the rows.
+
+**`columnMinWidth`** : _str | None_
+Minimum width of the column in CSS units.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`displayMode`** : _str_
+The display mode of the matrix. Can be 'auto', 'list', 'table'.
+
+**`eachRowUnique`** : _bool | None_
+Whether each row should have a unique answer. Defaults to False.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideIfRowsEmpty`** : _bool | None_
+Whether to hide the question if no rows are visible.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`isAllRowRequired`** : _bool_
+Whether each and every row is to be required.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`rowTitleWidth`** : _str | None_
+Width of the row title in CSS units.
+
+**`rowsOrder`** : _str_
+The order of the rows. Can be 'initial', 'random'.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showHeader`** : _bool_
+Whether to show the header of the table.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`verticalAlign`** : _str_
+The vertical alignment of the content. Can be 'top', 'middle'.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `matrixDynamic()`
+
+Create a dynamic matrix question object.
+
+## Signature
+
+```{python}
+#| eval: false
+matrixDynamic(
+    name: str,
+    title: str | list[str] | None,
+    *columns,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    rows: list | dict | None = None,
+    alternateRows: bool | None = None,
+    columnMinWidth: str | None = None,
+    displayMode: str = 'auto',
+    rowTitleWidth: str | None = None,
+    showHeader: bool = True,
+    verticalAlign: str = 'middle',
+    cellErrorLocation: str = 'default',
+    cellType: str | None = None,
+    isUniqueCaseSensitive: bool = False,
+    placeHolder: str | None = None,
+    transposeData: bool = False,
+    addRowLocation: str = 'default',
+    addRowText: str | None = None,
+    allowAddRows: bool = True,
+    allowRemoveRows: bool = True,
+    allowRowsDragAndDrop: bool = False,
+    confirmDelete: bool = False,
+    confirmDeleteText: str | None = None,
+    defaultRowValue: str | None = None,
+    defaultValueFromLastRow: bool = False,
+    emptyRowsText: str | None = None,
+    hideColumnsIfEmpty: bool = False,
+    maxRowCount: int = 1000,
+    minRowCount: int = 0,
+    removeRowText: str | None = None,
+    rowCount: int = 2,
+    **kwargs
+) -> velesresearch.models.QuestionMatrixDynamicModel | list[velesresearch.models.QuestionMatrixDynamicModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`columns`** : _list | dict_
+The columns of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "type": ..., "otherParameter": ...}`.
+
+**`rows`** : _list | dict_
+The rows of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "otherParameter": ...}`.
+
+**`addRowLocation`** : _str_
+The location of the 'Add row' button. Can be 'default', 'top', 'bottom', 'topBottom' (both top and bottom).
+
+**`addRowText`** : _str | None_
+Text for the 'Add row' button.
+
+**`allowAddRows`** : _bool_
+Whether to allow adding rows.
+
+**`allowRemoveRows`** : _bool_
+Whether to allow removing rows.
+
+**`allowRowsDragAndDrop`** : _bool_
+Whether to allow dragging and dropping rows to change order.
+
+**`alternateRows`** : _bool | None_
+Whether to alternate the rows.
+
+**`cellErrorLocation`** : _str_
+The location of the error text for the cells. Can be 'default', 'top', 'bottom'.
+
+**`cellType`** : _str | None_
+The type of the matrix cells. Can be overridden for individual columns. Can be "dropdown" (default), "checkbox", "radiogroup", "tagbox", "text", "comment", "boolean", "expression", "rating".
+
+**`choices`** : _str | dict | list_
+The default choices for all select questions. Can be overridden for individual columns. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ..., "otherParameter": ...}`.
+
+**`columnMinWidth`** : _str | None_
+Minimum width of the column in CSS units.
+
+**`columns`** : _list | dict_
+The columns of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "type": ..., "otherParameter": ...}`.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`confirmDelete`** : _bool_
+Whether to prompt for confirmation before deleting a row. Default is False.
+
+**`confirmDeleteText`** : _str | None_
+Text for the confirmation dialog when `confirmDelete` is True.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultRowValue`** : _str | None_
+Default value for the new rows that has no `defaultValue` property.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`defaultValueFromLastRow`** : _bool_
+Whether to copy the value from the last row to the new row.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`displayMode`** : _str_
+The display mode of the matrix. Can be 'auto', 'list', 'table'.
+
+**`emptyRowsText`** : _str | None_
+Text to display when there are no rows if `hideColumnsIfEmpty` is True.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideColumnsIfEmpty`** : _bool_
+Whether to hide columns if there are no rows.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`isUniqueCaseSensitive`** : _bool_
+Whether the case of the answer should be considered when checking for uniqueness. If `True`, "Kowalski" and "kowalski" will be considered different answers.
+
+**`maxRowCount`** : _int_
+Maximum number of rows.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minRowCount`** : _int_
+Minimum number of rows.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`placeHolder`** : _str | None_
+Placeholder text for the cells.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`removeRowText`** : _str | None_
+Text for the 'Remove row' button.
+
+**`required`** : _bool_
+Whether the question is required.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`rowCount`** : _int_
+The initial number of rows.
+
+**`rowTitleWidth`** : _str | None_
+Width of the row title in CSS units.
+
+**`rows`** : _list | dict_
+The rows of the matrix. Use primitives or dictionaries `{"text": ..., "value": ...}`.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showHeader`** : _bool_
+Whether to show the header of the table.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`transposeData`** : _bool_
+Whether to show columns as rows. Default is False.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`verticalAlign`** : _str_
+The vertical alignment of the content. Can be 'top', 'middle'.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `slider()`
+
+Create a slider question object.
+
+## Signature
+
+```{python}
+#| eval: false
+slider(
+    name: str,
+    *title: str | list[str] | None,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    step: int = 1,
+    rangeMin: int = 0,
+    rangeMax: int = 100,
+    pipsMode: str = 'positions',
+    pipsValues: list = [0,
+    25,
+    50,
+    75,
+    100],
+    pipsText: list = [0,
+    25,
+    50,
+    75,
+    100],
+    pipsDensity: int = 5,
+    orientation: str = 'horizontal',
+    direction: str = 'ltr',
+    tooltips: bool = True,
+    **kwargs
+) -> velesresearch.models.QuestionNoUiSliderModel | list[velesresearch.models.QuestionNoUiSliderModel]
+```
+
+## Arguments
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`step`** : _int_
+The step of the slider.
+
+**`rangeMin`** : _int_
+The minimum value of the slider.
+
+**`rangeMax`** : _int_
+The maximum value of the slider.
+
+**`pipsMode`** : _str_
+The mode of the pips. Can be 'positions', 'values', 'count', 'range', 'steps'. See <https://refreshless.com/nouislider/pips/>
+
+**`pipsValues`** : _list_
+The values of the pips.
+
+**`pipsText`** : _list_
+The text of the pips.
+
+**`pipsDensity`** : _int_
+The density of the pips.
+
+**`orientation`** : _str_
+The orientation of the slider. Can be 'horizontal', 'vertical'.
+
+**`direction`** : _str_
+The direction of the slider. Can be 'ltr', 'rtl'.
+
+**`tooltips`** : _bool_
+Whether to show tooltips.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `image()`
+
+An image or video question object.
+
+## Signature
+
+```{python}
+#| eval: false
+image(
+    name: str,
+    *imageLink: str,
+    titleLocation: str = 'default',
+    description: str | None = None,
+    descriptionLocation: str = 'default',
+    isRequired: bool = False,
+    readOnly: bool = False,
+    visible: bool = True,
+    requiredIf: str | None = None,
+    enableIf: str | None = None,
+    visibleIf: str | None = None,
+    validators: velesresearch.helperModels.ValidatorModel | list[velesresearch.helperModels.ValidatorModel] | None = None,
+    showOtherItem: bool = False,
+    showCommentArea: bool = False,
+    commentPlaceholder: str | None = None,
+    commentText: str | None = None,
+    correctAnswer: str | None = None,
+    defaultValue: str | None = None,
+    defaultValueExpression: str | None = None,
+    requiredErrorText: str | None = None,
+    errorLocation: str = 'default',
+    hideNumber: bool = False,
+    id: str | None = None,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    resetValueIf: str | None = None,
+    setValueIf: str | None = None,
+    setValueExpression: str | None = None,
+    startWithNewLine: bool = True,
+    state: str = 'default',
+    useDisplayValuesInDynamicTexts: bool = True,
+    width: str = '',
+    addCode: dict | None = None,
+    altText: str | None = None,
+    contentMode: str = 'auto',
+    imageFit: str = 'contain',
+    imageHeight: int | str = 150,
+    imageWidth: int | str = 200,
+    **kwargs
+) -> velesresearch.models.QuestionImageModel | list[velesresearch.models.QuestionImageModel]
+```
+
+## Arguments
+
+**`imageLink`** : _str | None_
+The src property for <img> or video link.
+
+**`altText`** : _str | None_
+The alt property for <img>.
+
+**`commentPlaceholder`** : _str | None_
+Placeholder text for the comment area.
+
+**`commentText`** : _str | None_
+Text for the comment area.
+
+**`contentMode`** : _str_
+The content type. Can be 'auto' (default), 'image', 'video', 'youtube'.
+
+**`correctAnswer`** : _str | None_
+Correct answer for the question. Use for quizzes.
+
+**`defaultValue`** : _str | None_
+Default value for the question.
+
+**`defaultValueExpression`** : _str | None_
+Expression deciding the default value for the question.
+
+**`description`** : _str | None_
+Optional subtitle or description of the question.
+
+**`descriptionLocation`** : _str_
+The location of the description. Can be 'default', 'underTitle', 'underInput'.
+
+**`enableIf`** : _str | None_
+Expression to enable the question.
+
+**`errorLocation`** : _str | None_
+Location of the error text. Can be 'default' 'top', 'bottom'.
+
+**`hideNumber`** : _bool_
+Whether to hide the question number.
+
+**`id`** : _str | None_
+HTML id attribute for the question. Usually not necessary.
+
+**`imageFit`** : _str_
+The object-fit property of <img>. Can be 'contain', 'cover', 'fill', 'none'. See MDN <https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit>.
+
+**`imageHeight`** : _int | str_
+The height of the image container in CSS units. See `imageFit`.
+
+**`imageWidth`** : _int | str_
+The width of the image container in CSS units. See `imageFit`.
+
+**`isRequired`** : _bool_
+Whether the question is required.
+
+**`maxWidth`** : _str_
+Maximum width of the question in CSS units.
+
+**`minWidth`** : _str_
+Minimum width of the question in CSS units.
+
+**`readOnly`** : _bool_
+Whether the question is read-only.
+
+**`requiredErrorText`** : _str | None_
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_
+Expression to make the question required.
+
+**`resetValueIf`** : _str | None_
+Expression to reset the value of the question.
+
+**`setValueExpression`** : _str | None_
+Expression to decide on the value of the question to be set. Requires `setValueIf`.
+
+**`setValueIf`** : _str | None_
+Expression with a condition to set the value of the question. Requires `setValueExpression`.
+
+**`showCommentArea`** : _bool_
+Whether to show the comment area. Doesn't work with `showOtherItem`.
+
+**`showOtherItem`** : _bool_
+Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
+
+**`startWithNewLine`** : _bool_
+Whether to start the question on a new line.
+
+**`state`** : _str | None_
+If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
+
+**`title`** : _str | None_
+The visible title of the question. If None, `name` is used.
+
+**`titleLocation`** : _str_
+The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
+
+**`useDisplayValuesInDynamicTexts`** : _bool_
+Whether to use display names for question values in placeholders.
+
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+Validator(s) for the question.
+
+**`visible`** : _bool_
+Whether the question is visible.
+
+**`visibleIf`** : _str | None_
+Expression to make the question visible.
+
+**`width`** : _str_
+Width of the question in CSS units.
+
+**`addCode`** : _dict | None_
+Additional code for the question. Usually not necessary.
+
+# `consent()`
+
+Create a question with a consent to take part in the study.
+
+## Signature
+
+```{python}
+#| eval: false
+consent(
+    title: str = 'Do you consent to take part in the study?',
+    error: str = "You can't continue without a consent",
+    name: str = 'consent',
+    **kwargs
+) -> velesresearch.models.QuestionBooleanModel
+```
+
+## Arguments
+
+**`error`** : _str_
+Error shown if a person doesn't consent.
+
+**`name`** : _str_
+The label of the question. Defaults to "consent".
+
+**`kwargs`**: Other arguments passed to `yesno()`.
+
