@@ -292,9 +292,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Create a survey object.</p>
 <section id="signature" class="level2">
 <h2 class="anchored" data-anchor-id="signature">Signature</h2>
-<div id="685ba007" class="cell" data-execution_count="1">
+<div id="dbf32b67" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>survey(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>pages: velesresearch.models.PageModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.PageModel],</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>pages: PageModel <span class="op">|</span> <span class="bu">list</span>[PageModel],</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    createStructure: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    buildForPublication: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span>,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    folderName: <span class="bu">str</span> <span class="op">=</span> <span class="st">'survey'</span>,</span>
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    widthMode: <span class="bu">str</span> <span class="op">=</span> <span class="st">'auto'</span>,</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    addCode: <span class="bu">dict</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.SurveyModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> SurveyModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments" class="level2">
@@ -453,10 +453,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Create a page object.</p>
 <section id="signature-1" class="level2">
 <h2 class="anchored" data-anchor-id="signature-1">Signature</h2>
-<div id="872e6e3a" class="cell" data-execution_count="2">
+<div id="35ed8ee4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>page(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>questions: velesresearch.models.QuestionModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionModel],</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>questions: QuestionModel <span class="op">|</span> <span class="bu">list</span>[QuestionModel],</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    description: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    enableIf: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">id</span>: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
@@ -480,7 +480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    visibleIndex: <span class="bu">int</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    addCode: <span class="bu">dict</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.PageModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> PageModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-1" class="level2">
@@ -513,9 +513,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dropdown" class="level1">
 <h1><code>dropdown()</code></h1>
 <p>Create a single-select dropdown question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/dropdown.png" class="img-fluid figure-img"></p>
+<figcaption>The dropdown question example</figcaption>
+</figure>
+</div>
 <section id="signature-2" class="level2">
 <h2 class="anchored" data-anchor-id="signature-2">Signature</h2>
-<div id="4b4bf9cf" class="cell" data-execution_count="3">
+<div id="e55f7fc3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dropdown(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -568,7 +574,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    choicesStep: <span class="bu">int</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    placeholder: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionDropdownModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionDropdownModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionDropdownModel <span class="op">|</span> <span class="bu">list</span>[QuestionDropdownModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-2" class="level2">
@@ -630,9 +636,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="text" class="level1">
 <h1><code>text()</code></h1>
 <p>Create a text question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/text.png" class="img-fluid figure-img"></p>
+<figcaption>The text question example</figcaption>
+</figure>
+</div>
 <section id="signature-3" class="level2">
 <h2 class="anchored" data-anchor-id="signature-3">Signature</h2>
-<div id="1e42fc70" class="cell" data-execution_count="4">
+<div id="d4a04be1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>text(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -681,7 +693,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    step: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    textUpdateMode: <span class="bu">str</span> <span class="op">=</span> <span class="st">'default'</span>,</span>
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionTextModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionTextModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-3" class="level2">
@@ -736,9 +748,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="checkbox" class="level1">
 <h1><code>checkbox()</code></h1>
 <p>Create a checkbox question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/checkbox.png" class="img-fluid figure-img"></p>
+<figcaption>The checkbox question example</figcaption>
+</figure>
+</div>
 <section id="signature-4" class="level2">
 <h2 class="anchored" data-anchor-id="signature-4">Signature</h2>
-<div id="ab25aaf6" class="cell" data-execution_count="5">
+<div id="2492e553" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>checkbox(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -793,7 +811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    selectAllText: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    showSelectAllItem: <span class="bu">bool</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionCheckboxModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionCheckboxModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionCheckboxModel <span class="op">|</span> <span class="bu">list</span>[QuestionCheckboxModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-4" class="level2">
@@ -855,9 +873,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ranking" class="level1">
 <h1><code>ranking()</code></h1>
 <p>Create a ranking question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/ranking.png" class="img-fluid figure-img"></p>
+<figcaption>The ranking question example</figcaption>
+</figure>
+</div>
 <section id="signature-5" class="level2">
 <h2 class="anchored" data-anchor-id="signature-5">Signature</h2>
-<div id="ebee0e21" class="cell" data-execution_count="6">
+<div id="5522c8b3" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ranking(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -917,7 +941,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>    selectToRankEmptyUnrankedAreaText: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>    selectToRankEnabled: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span>,</span>
 <span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionRankingModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionRankingModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionRankingModel <span class="op">|</span> <span class="bu">list</span>[QuestionRankingModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-5" class="level2">
@@ -984,9 +1008,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="radio" class="level1">
 <h1><code>radio()</code></h1>
 <p>Create a radio question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/radio.png" class="img-fluid figure-img"></p>
+<figcaption>The radio question example</figcaption>
+</figure>
+</div>
 <section id="signature-6" class="level2">
 <h2 class="anchored" data-anchor-id="signature-6">Signature</h2>
-<div id="05c04f8e" class="cell" data-execution_count="7">
+<div id="f2dfb9ed" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>radio(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1037,7 +1067,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>    colCount: <span class="bu">int</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    showClearButton: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span>,</span>
 <span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionRadiogroupModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionRadiogroupModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionRadiogroupModel <span class="op">|</span> <span class="bu">list</span>[QuestionRadiogroupModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-6" class="level2">
@@ -1097,9 +1127,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dropdownmultiple" class="level1">
 <h1><code>dropdownMultiple()</code></h1>
 <p>Create a multiple dropdown question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/dropdownMultiple.png" class="img-fluid figure-img"></p>
+<figcaption>The dropdownMultiple question example</figcaption>
+</figure>
+</div>
 <section id="signature-7" class="level2">
 <h2 class="anchored" data-anchor-id="signature-7">Signature</h2>
-<div id="19087fa1" class="cell" data-execution_count="8">
+<div id="a47c9281" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dropdownMultiple(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1160,7 +1196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>    searchEnabled: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>,</span>
 <span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>    searchMode: <span class="bu">str</span> <span class="op">=</span> <span class="st">'contains'</span>,</span>
 <span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionTagboxModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionTagboxModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionTagboxModel <span class="op">|</span> <span class="bu">list</span>[QuestionTagboxModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-7" class="level2">
@@ -1228,9 +1264,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="textlong" class="level1">
 <h1><code>textLong()</code></h1>
 <p>Create a long text question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/textLong.png" class="img-fluid figure-img"></p>
+<figcaption>The textLong question example</figcaption>
+</figure>
+</div>
 <section id="signature-8" class="level2">
 <h2 class="anchored" data-anchor-id="signature-8">Signature</h2>
-<div id="09f3f349" class="cell" data-execution_count="9">
+<div id="3fe8179e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>textLong(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1270,7 +1312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    autoGrow: <span class="bu">bool</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    rows: <span class="bu">int</span> <span class="op">=</span> <span class="dv">4</span>,</span>
 <span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionCommentModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionCommentModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionCommentModel <span class="op">|</span> <span class="bu">list</span>[QuestionCommentModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-8" class="level2">
@@ -1316,9 +1358,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="rating" class="level1">
 <h1><code>rating()</code></h1>
 <p>Create a rating question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/rating.png" class="img-fluid figure-img"></p>
+<figcaption>The rating question example</figcaption>
+</figure>
+</div>
 <section id="signature-9" class="level2">
 <h2 class="anchored" data-anchor-id="signature-9">Signature</h2>
-<div id="c5349536" class="cell" data-execution_count="10">
+<div id="dab8e791" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rating(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1362,7 +1410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>    rateValues: <span class="bu">list</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>    scaleColorMode: <span class="bu">str</span> <span class="op">=</span> <span class="st">'monochrome'</span>,</span>
 <span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionRatingModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionRatingModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionRatingModel <span class="op">|</span> <span class="bu">list</span>[QuestionRatingModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-9" class="level2">
@@ -1412,9 +1460,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="yesno" class="level1">
 <h1><code>yesno()</code></h1>
 <p>Create a yes/no (boolean) question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/yesno.png" class="img-fluid figure-img"></p>
+<figcaption>The yesno question example</figcaption>
+</figure>
+</div>
 <section id="signature-10" class="level2">
 <h2 class="anchored" data-anchor-id="signature-10">Signature</h2>
-<div id="d5719ec4" class="cell" data-execution_count="11">
+<div id="ec4ba24a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>yesno(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1455,7 +1509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    valueFalse: <span class="bu">bool</span> <span class="op">|</span> <span class="bu">str</span> <span class="op">=</span> <span class="va">False</span>,</span>
 <span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    valueTrue: <span class="bu">bool</span> <span class="op">|</span> <span class="bu">str</span> <span class="op">=</span> <span class="va">True</span>,</span>
 <span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionBooleanModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionBooleanModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionBooleanModel <span class="op">|</span> <span class="bu">list</span>[QuestionBooleanModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-10" class="level2">
@@ -1502,9 +1556,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="info" class="level1">
 <h1><code>info()</code></h1>
 <p>Create an informational text object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/info.png" class="img-fluid figure-img"></p>
+<figcaption>The info question example</figcaption>
+</figure>
+</div>
 <section id="signature-11" class="level2">
 <h2 class="anchored" data-anchor-id="signature-11">Signature</h2>
-<div id="907ecccd" class="cell" data-execution_count="12">
+<div id="7893ab78" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>info(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>infoHTML: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>],</span>
@@ -1540,7 +1600,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    width: <span class="bu">str</span> <span class="op">=</span> <span class="st">''</span>,</span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    addCode: <span class="bu">dict</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionHtmlModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionHtmlModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionHtmlModel <span class="op">|</span> <span class="bu">list</span>[QuestionHtmlModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-11" class="level2">
@@ -1583,9 +1643,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="matrix" class="level1">
 <h1><code>matrix()</code></h1>
 <p>Create a matrix question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/matrix.png" class="img-fluid figure-img"></p>
+<figcaption>The matrix question example</figcaption>
+</figure>
+</div>
 <section id="signature-12" class="level2">
 <h2 class="anchored" data-anchor-id="signature-12">Signature</h2>
-<div id="5c5353c6" class="cell" data-execution_count="13">
+<div id="74d3e0d6" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>matrix(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1633,7 +1699,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    isAllRowRequired: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span>,</span>
 <span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    rowsOrder: <span class="bu">str</span> <span class="op">=</span> <span class="st">'initial'</span>,</span>
 <span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionMatrixModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionMatrixModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionMatrixModel <span class="op">|</span> <span class="bu">list</span>[QuestionMatrixModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-12" class="level2">
@@ -1687,9 +1753,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="matrixdynamic" class="level1">
 <h1><code>matrixDynamic()</code></h1>
 <p>Create a dynamic matrix question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/matrixDynamic.png" class="img-fluid figure-img"></p>
+<figcaption>The matrixDynamic question example</figcaption>
+</figure>
+</div>
 <section id="signature-13" class="level2">
 <h2 class="anchored" data-anchor-id="signature-13">Signature</h2>
-<div id="359bbe43" class="cell" data-execution_count="14">
+<div id="6bc1c216" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>matrixDynamic(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1753,7 +1825,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>    removeRowText: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>    rowCount: <span class="bu">int</span> <span class="op">=</span> <span class="dv">2</span>,</span>
 <span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionMatrixDynamicModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionMatrixDynamicModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionMatrixDynamicModel <span class="op">|</span> <span class="bu">list</span>[QuestionMatrixDynamicModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-13" class="level2">
@@ -1826,9 +1898,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="slider" class="level1">
 <h1><code>slider()</code></h1>
 <p>Create a slider question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/slider.png" class="img-fluid figure-img"></p>
+<figcaption>The slider question example</figcaption>
+</figure>
+</div>
 <section id="signature-14" class="level2">
 <h2 class="anchored" data-anchor-id="signature-14">Signature</h2>
-<div id="d65493d6" class="cell" data-execution_count="15">
+<div id="11c534ce" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>slider(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1882,7 +1960,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>    direction: <span class="bu">str</span> <span class="op">=</span> <span class="st">'ltr'</span>,</span>
 <span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>    tooltips: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>,</span>
 <span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionNoUiSliderModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionNoUiSliderModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionNoUiSliderModel <span class="op">|</span> <span class="bu">list</span>[QuestionNoUiSliderModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-14" class="level2">
@@ -1904,9 +1982,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="image" class="level1">
 <h1><code>image()</code></h1>
 <p>An image or video question object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/image.png" class="img-fluid figure-img"></p>
+<figcaption>The image question example</figcaption>
+</figure>
+</div>
 <section id="signature-15" class="level2">
 <h2 class="anchored" data-anchor-id="signature-15">Signature</h2>
-<div id="c1482aaa" class="cell" data-execution_count="16">
+<div id="095286fc" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>image(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>imageLink: <span class="bu">str</span>,</span>
@@ -1947,7 +2031,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    imageHeight: <span class="bu">int</span> <span class="op">|</span> <span class="bu">str</span> <span class="op">=</span> <span class="dv">150</span>,</span>
 <span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>    imageWidth: <span class="bu">int</span> <span class="op">|</span> <span class="bu">str</span> <span class="op">=</span> <span class="dv">200</span>,</span>
 <span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionImageModel <span class="op">|</span> <span class="bu">list</span>[velesresearch.models.QuestionImageModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionImageModel <span class="op">|</span> <span class="bu">list</span>[QuestionImageModel]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-15" class="level2">
@@ -1995,15 +2079,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="consent" class="level1">
 <h1><code>consent()</code></h1>
 <p>Create a question with a consent to take part in the study.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/question_types/consent.png" class="img-fluid figure-img"></p>
+<figcaption>The consent question example</figcaption>
+</figure>
+</div>
 <section id="signature-16" class="level2">
 <h2 class="anchored" data-anchor-id="signature-16">Signature</h2>
-<div id="196bd212" class="cell" data-execution_count="17">
+<div id="d19a4d83" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>consent(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">=</span> <span class="st">'Do you consent to take part in the study?'</span>,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    error: <span class="bu">str</span> <span class="op">=</span> <span class="st">"You can't continue without a consent"</span>,</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span> <span class="op">=</span> <span class="st">'consent'</span>,</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>kwargs</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> velesresearch.models.QuestionBooleanModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> QuestionBooleanModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments-16" class="level2">
