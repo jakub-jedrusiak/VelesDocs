@@ -206,33 +206,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Library</span></a>
+ <span class="menu-text">Reference</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
- <span class="menu-text">library/overview.qmd</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">library/en.qmd</span>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Other languages</span></span>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Reference</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ref/overview.html" class="sidebar-item-text sidebar-link">
@@ -271,14 +250,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-options" id="toc-question-options" class="nav-link" data-scroll-target="#question-options">Question options</a></li>
   <li><a href="#whole-questionnaires" id="toc-whole-questionnaires" class="nav-link" data-scroll-target="#whole-questionnaires">Whole questionnaires</a></li>
   <li><a href="#list-comprehension" id="toc-list-comprehension" class="nav-link" data-scroll-target="#list-comprehension">List comprehension</a></li>
-  <li><a href="#questionnaire-library" id="toc-questionnaire-library" class="nav-link" data-scroll-target="#questionnaire-library">Questionnaire library</a></li>
   </ul></li>
   <li><a href="#panels" id="toc-panels" class="nav-link" data-scroll-target="#panels">Panels</a></li>
   <li><a href="#pages" id="toc-pages" class="nav-link" data-scroll-target="#pages">Pages</a></li>
-  <li><a href="#survey" id="toc-survey" class="nav-link" data-scroll-target="#survey">Survey</a></li>
+  <li><a href="#survey" id="toc-survey" class="nav-link" data-scroll-target="#survey">Survey</a>
+  <ul class="collapse">
+  <li><a href="#view-and-test" id="toc-view-and-test" class="nav-link" data-scroll-target="#view-and-test">View and test</a></li>
   </ul></li>
-  <li><a href="#psychojs-experiments" id="toc-psychojs-experiments" class="nav-link" data-scroll-target="#psychojs-experiments">PsychoJS experiments</a></li>
-  <li><a href="#how-to-run-your-script" id="toc-how-to-run-your-script" class="nav-link" data-scroll-target="#how-to-run-your-script">How to run your script</a></li>
+  </ul></li>
   <li><a href="#sec-hosting" id="toc-sec-hosting" class="nav-link" data-scroll-target="#sec-hosting">Hosting</a>
   <ul class="collapse">
   <li><a href="#velesweb" id="toc-velesweb" class="nav-link" data-scroll-target="#velesweb">VelesWeb</a></li>
@@ -288,6 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using" id="toc-using" class="nav-link" data-scroll-target="#using">Using</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#psychojs-experiments" id="toc-psychojs-experiments" class="nav-link" data-scroll-target="#psychojs-experiments">PsychoJS experiments</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/getting-started.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -372,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Create project</h1>
 <p>Veles project is just a folder with a Python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with <code>.py</code> extension. It it, we’ll be writing the survey structure.</p>
 <p>The first thing we need to do is to import the <code>velesresearch</code> library. To do this, at the top of your script write:</p>
-<div id="d30b607b" class="cell" data-execution_count="1">
+<div id="f10513ed" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> velesresearch <span class="im">as</span> vls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -392,11 +372,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="radio" class="level3">
 <h3 class="anchored" data-anchor-id="radio"><code>radio()</code></h3>
 <p>Let’s start with creating some demographic questions with <code>vls.radio()</code>. The syntax is as follows:</p>
-<div id="b8f3def7" class="cell" data-execution_count="2">
+<div id="acb952e4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>vls.radio(name, title, <span class="op">*</span>choices, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To create a single-choice question we need to invoke the <code>vls.radio()</code> function and fill it with appropriate data. The first thing is the <code>name</code> argument which is the internal code of the question that will later <strong>become the name of the column</strong> in the database. Then we have <code>title</code> which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:</p>
-<div id="2759a95e" class="cell" data-execution_count="3">
+<div id="34185afe" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.radio(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -416,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question-options" class="level3">
 <h3 class="anchored" data-anchor-id="question-options">Question options</h3>
 <p>Each question can have a series of additional parameters specified. For example we can make an answer required, add a subtitle, add an “Other” option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.</p>
-<div id="04a46779" class="cell" data-execution_count="4">
+<div id="0d94193d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.radio(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -456,11 +436,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="whole-questionnaires" class="level3">
 <h3 class="anchored" data-anchor-id="whole-questionnaires">Whole questionnaires</h3>
-<p>Often in behavioral sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles the <code>question()</code> also allows to convert a whole questionnaire at once.</p>
-<p>To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using <code>split()</code> method or with <code>split</code> arguments. In the second and third cases, we need to have our items separated by some common separator, e.g.&nbsp;every item in a separate line. Both methods are shown below</p>
-<div id="127d357b" class="cell" data-execution_count="5">
+<p>Often in behavioral sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and the labels are predictable. Veles allows for including a whole questionnaire at once.</p>
+<p>To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand…</p>
+<div id="1c3c05cb" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually formatted list</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>RSSI_items <span class="op">=</span> [</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>RSES_items <span class="op">=</span> [</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I feel that I am a person of worth, at least on an equal plane with others."</span>,</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I feel that I have a number of good qualities."</span>,</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"All in all, I am inclined to feel that I am a failure."</span>,</span>
@@ -471,71 +451,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I wish I could have more respect for myself."</span>,</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I certainly feel useless at times."</span>,</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"At times I think I am no good at all."</span>,</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># triple quotation for multi-line strings</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>RSSI_items <span class="op">=</span> <span class="st">"""I feel that I am a person of worth, at least on an equal plane with others.</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="st">I feel that I have a number of good qualities.</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="st">All in all, I am inclined to feel that I am a failure.</span></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="st">I am able to do things as well as most other people.</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="st">I feel I do not have much to be proud of.</span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="st">I take a positive attitude toward myself.</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="st">On the whole, I am satisfied with myself.</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="st">I wish I could have more respect for myself.</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="st">I certainly feel useless at times.</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="st">At times I think I am no good at all."""</span></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co"># scale</span></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>RSSI_scale <span class="op">=</span> <span class="st">"Strongly Agree; Agree; Disagree; Strongly Disagree"</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>RSSI <span class="op">=</span> vls.question(</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSSI"</span>,</span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    RSSI.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>),</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    RSSI_scale.split(<span class="st">"; "</span>),</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>QuestionOptions(required<span class="op">=</span><span class="va">True</span>),</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The <code>"""</code> allows us to write multiple line strings.</p>
-<p>We save our items and answers in variables and treat them with <code>split()</code>. In here I’ve done it inside the <code>question()</code> function, but I also could have done it anywhere before that. To learn more about Python string methods, see <a href="https://www.w3schools.com/python/python_ref_string.asp">W3Schools lesson</a> about them. Had I used the manually formatted list, I wouldn’t have to write the <code>split()</code> part.</p>
-<p>If <code>question_text</code> is a list, <code>question()</code> output is a list of questions. Each question in the list have the same options, scale and type. The labels will become <code>"RSSI_1"</code>, <code>"RSSI_2"</code>, <code>"RSSI_3"</code> etc.</p>
+<p>…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. Notice the triple quotation marks <code>"""</code>. They allow us to create a multiline strings.</p>
+<div id="7c48f6be" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># triple quotation for multi-line strings</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>RSES_items <span class="op">=</span> <span class="st">"""I feel that I am a person of worth, at least on an equal plane with others.</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">I feel that I have a number of good qualities.</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="st">All in all, I am inclined to feel that I am a failure.</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="st">I am able to do things as well as most other people.</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="st">I feel I do not have much to be proud of.</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="st">I take a positive attitude toward myself.</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="st">On the whole, I am satisfied with myself.</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="st">I wish I could have more respect for myself.</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="st">I certainly feel useless at times.</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="st">At times I think I am no good at all."""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>So I saved the questionnaire into a variable called <code>RSES_items</code>. I can now tell python to split it, so it would become a list of items. To do this, we can use the <code>split()</code> method. Methods are functions that we write after a dot to apply them to something. <code>split()</code> takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with <code>"\n"</code>. To split the <code>RSES_items</code> string we could write <code>RSES_items.split("\n")</code>.</p>
+<div id="befe821e" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>RSES <span class="op">=</span> vls.radio(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    RSES_items.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Strongly Agree; Agree; Disagree; Strongly Disagree"</span>.split(<span class="st">"; "</span>),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    isRequired<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In here I’ve splitted the inside the <code>radio()</code> function, but I also could have done it anywhere before that. To learn more about Python string methods, see <a href="https://www.w3schools.com/python/python_ref_string.asp">W3Schools lesson</a> about them. Had I used the manually formatted list, I wouldn’t have to write the <code>split()</code> part. Also notice what I did with the scale – we don’t <em>have to</em> save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:</p>
+<div id="5393a430" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>RSES <span class="op">=</span> vls.radio(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""I feel that I am a person of worth, at least on an equal plane with others.</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">I feel that I have a number of good qualities.</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">All in all, I am inclined to feel that I am a failure.</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">I am able to do things as well as most other people.</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">I feel I do not have much to be proud of.</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="st">I take a positive attitude toward myself.</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">On the whole, I am satisfied with myself.</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">I wish I could have more respect for myself.</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="st">I certainly feel useless at times.</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="st">At times I think I am no good at all."""</span>.split(</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Strongly Agree; Agree; Disagree; Strongly Disagree"</span>.split(<span class="st">"; "</span>),</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    isRequired<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The labels will become <code>"RSES_1"</code>, <code>"RSES_2"</code>, <code>"RSES_3"</code> etc.</p>
 </section>
 <section id="list-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="list-comprehension">List comprehension</h3>
-<p>The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee” (especially coffee) but rather something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string to do just that.</p>
-<div id="efec21be" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch <span class="im">import</span> question</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get our drinks and make them a list</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> <span class="st">"tea coffee juice water"</span>.split(<span class="st">" "</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># modify with a loop</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> [<span class="ss">f"How do you like </span><span class="sc">{</span>drink<span class="sc">}</span><span class="ss">?"</span> <span class="cf">for</span> drink <span class="kw">in</span> drinks]</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add some answers</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>answers <span class="op">=</span> <span class="st">"I love it; I like it; It's OK; I don't like it; I despise it"</span>.split(<span class="st">"; "</span>)</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># make it a list of questions</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>q_drinks <span class="op">=</span> question(<span class="st">"drinks"</span>, drinks, answers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This part is not necessary but extremely useful.</p>
+<p>The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee”. That would disrespect tea. We need something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to do just that.</p>
+<div id="b3fa34f4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get our drinks and make them a list</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> <span class="st">"tea coffee juice water"</span>.split(<span class="st">" "</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># modify with a loop</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> [<span class="ss">f"How do you like </span><span class="sc">{</span>drink<span class="sc">}</span><span class="ss">?"</span> <span class="cf">for</span> drink <span class="kw">in</span> drinks]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># add some answers</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>answers <span class="op">=</span> <span class="st">"I love it; I like it; It's OK; I don't like it; I despise it"</span>.split(<span class="st">"; "</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># make it a list of questions</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>q_drinks <span class="op">=</span> vls.radio(<span class="st">"drinks"</span>, drinks, answers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>First we get our drinks separated with some common separator (a space in this example). We then split it and save it in a <code>drinks</code> variable. After that we modify it with an f-string and a for loop. An f-string is a string preceded with an <code>f</code>. Inside it, we can use variables’ values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it’s called <em>list comprehension</em>). It will take every value inside the <code>drinks</code> one by one, put them in a variable called <code>drink</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and do whatever we commanded before the <code>for</code> keyword. When it’s done with the first value, it saves the result and moves on to the next drink until the list ends. Notice everything is in <strong>square brackets</strong>. We then overwrite the <code>drinks</code> variable with the newly created list.</p>
-</section>
-<section id="questionnaire-library" class="level3">
-<h3 class="anchored" data-anchor-id="questionnaire-library">Questionnaire library</h3>
-<p>Veles has it’s own (currently small) questionnaire library. Thanks to it, you can quickly add a whole questionnaire with only one command. The library is available in the <code>veleslibrary</code> package. To use it, you need to install and import it first.</p>
-<pre class="{bash}"><code># In the terminal
-pip install veleslibrary</code></pre>
-<div id="704c0b04" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires <span class="im">import</span> rse</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"self_esteem_survey"</span>, page(<span class="st">"RSE"</span>, rse()))  <span class="co"># Rosenberg Self-Esteem Scale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Library is multilingual.</p>
-<div id="a3432314" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires.pl <span class="im">import</span> tipi</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>survey(<span class="st">"personality"</span>, page(<span class="st">"TIPI"</span>, tipi()))  <span class="co"># TIPI in Polish</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Go <a href="./library/overview.qmd">here</a> to read more about the library. Feel free to contribute to the library by adding your own questionnaires. More information <a href="./library/overview.qmd#contributing">here</a>.</p>
+<p>There’s a few things to unpack here. First we get the list of our drinks separated with some common separator. Put simply, there should be some string (text) separating single drinks – a space in this example. If we also had <code>"orange juice"</code> on the list we would need something else, e.g.&nbsp;a comma followed by a space (<code>"tea, coffee, juice, water, orange juice"</code>). We then split it and save it in the <code>drinks</code> variable.</p>
+<p>The third step may seem more complicated, so let’s take it slowly. That is something called <em>list comprehension</em>. It’s a form of a loop in Python that allows us to quickly do something with a list, e.g.&nbsp;call a function for each element or put every element in a certain string. If you think about our question, it is basically “How do you like {drink}?” where “{drink}” is the name of each drink. That is what we start with. Inside square brackets we write <code>[f"How do you like {drink}?"]</code>. Notice I have added <code>f</code> before the opening quotation mark. These so called “f-strings” are Python’s way of saying that there is a variable in a string. The variable itself must be inside curly brackets.</p>
+<p>Now we just need to tell Python to do this for each of our drinks. Python doesn’t know what <code>drink</code> means if we don’t tell it. It is not that smart to infer it from the fact that we called our list <code>drinks</code>. To tell Python what we mean by <code>{drink}</code>, we need to write <code>for drink in drinks</code> so we end up with <code>[f"How do you like {drink}?" for drink in drinks]</code>. We could have called it differently. <code>[f"How do you like {i}?" for i in drinks]</code> would give the same result, but it makes more sense to call it <code>drink</code> rather than <code>i</code>, doesn’t it? <code>[f"How do you like {drink}?" for drink in drinks]</code> basically means “Give me this string <code>"How do you like {drink}?"</code> where <code>drink</code> means a value from the list called <code>drinks</code>. Do this <code>for</code> every <code>drink</code> <code>in</code> the list called <code>drinks</code>”. We also save the newly created list to the <code>drinks</code> variable, overwriting it.</p>
+<p>When we run it, the list <code>['tea', 'coffee', 'juice', 'water']</code> becomes <code>['How do you like tea?', 'How do you like coffee?', 'How do you like juice?', 'How do you like water?']</code>. The new list can be then passed into the <code>radio()</code> function. It could’ve been done manually but learning this technique allows for doing it for arbitrarily long lists.</p>
 </section>
 </section>
 <section id="panels" class="level2">
@@ -544,53 +527,104 @@ pip install veleslibrary</code></pre>
 </section>
 <section id="pages" class="level2">
 <h2 class="anchored" data-anchor-id="pages">Pages</h2>
-<p>Every survey needs to have at least one page. Page is basically a list of questions but with its own label, title, description and options. You can create it with <code>page()</code>.</p>
-<div id="df85db41" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vls.page(label, questions, title, description, options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Every survey needs to have at least one page. Page is basically a list of questions but with its own name, title, description and options. You can create it with <code>page()</code>.</p>
+<div id="9ba0b0ec" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vls.page(name, questions, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Pages have their own labels. They don’t yet have many uses in Veles but are still mandatory for SurveyJS compatibility reasons. Questions can be provided as a list or values separated by commas. You can also provide page’s title and description. The <code>options</code> argument accepts a <code>PageOptions</code> object. These are <strong>different options</strong> than in <code>QuestionOptions</code>. The list of available options can be found <a href="ref/options/PageOptions.qmd">here</a>.</p>
-<div id="4f57e879" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)</span>
+<p>Pages have their own names. They don’t yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See <a href="./ref/wrappers.html">the docs</a>.</p>
+<div id="66f4c42d" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)  <span class="co"># previously created gender question</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>limit <span class="op">=</span> vls.PageOptions(time_limit<span class="op">=</span><span class="dv">120</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(<span class="st">"RSSI"</span>, RSSI, options<span class="op">=</span>limit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    RSES,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    questionsOrder<span class="op">=</span><span class="st">"random"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Rosenberg Self-Esteem Scale"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    maxTimeToFinish<span class="op">=</span><span class="dv">300</span>,  <span class="co"># time limit in seconds</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
-<p>When all elements are created, we can combine them into the final survey. We can do this with <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and builds a website with your survey.</p>
-<div id="3cb42bf7" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vls.survey(label, pages, title, description, options, create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When all elements are created, we can combine them into the final survey. We can do this with the <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and creates your survey’s structure.</p>
+<div id="16a93480" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vls.survey(pages, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f14ab230" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vls.survey(<span class="st">"My smart research"</span>, intro, self_esteem, title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ff0d15ac" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>vls.survey(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"My smart research"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    intro,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    self_esteem,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Building a website for the first time might take a few minutes due to <code>yarn</code> downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section <a href="#sec-hosting">below</a>.</p>
-</section>
-</section>
-<section id="psychojs-experiments" class="level1">
-<h1>PsychoJS experiments</h1>
-<p>To be implemented…</p>
-</section>
-<section id="how-to-run-your-script" class="level1">
-<h1>How to run your script</h1>
-<p>After writing your survey, you need to build it. Don’t worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take a few minutes the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there’s a “Run” button in the upper right corner. Just click it and see if the console prints any errors.</p>
+<p>By default the page is not built for production, i.e.&nbsp;it is not compiled into a form that can be actually hosted. That is because it takes around a minute and is not needed for testing. When you complete designing your survey, set <code>buildForProduction</code> to <code>True</code>. Be default, the survey will be created in a subfolder called “survey”. To change the folder’s name or path, use the <code>folderName</code> argument.</p>
+<div id="021628d2" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>vls.survey(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"My smart research"</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    intro,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    self_esteem,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Self-esteem and gender"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    buildForProduction<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The structure of the generated files and what to do with them is explained in Hosting section <a href="#sec-hosting">below</a>.</p>
+<section id="view-and-test" class="level3">
+<h3 class="anchored" data-anchor-id="view-and-test">View and test</h3>
+<p>After writing your survey, you need to create it. Don’t worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take some time the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there’s a “Run” button in the upper right corner. Just click it and see if the console prints any errors.</p>
 <div class="light-mode">
 <p><img src="figs/getting_started/run_script.png" class="img-fluid"></p>
 </div>
 <div class="dark-mode">
 <p><img src="figs/getting_started/run_script_dark.png" class="img-fluid"></p>
 </div>
-<p>If everything went well, you should have a folder named like your survey’s label. Inside there will be a series of files and folders. The most important one is the <code>.tar.gz</code> file. It’s an archive with all the files needed to host your survey. You can upload it to <a href="https://www.velesweb.org/">VelesWeb</a>. If you want to host the survey yourself, the most important part of the package will be the <code>build</code> folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section <a href="#sec-hosting">below</a>.</p>
+<p>If everything went well, you should have a folder named “survey”. To run your survey, open the folder in a terminal. In VS Code you can use Terminal &gt; New terminal. Then move to the survey folder with:</p>
+<pre class="{bash}"><code>cd survey</code></pre>
+<p>To run your survey, run a second command:</p>
+<pre class="{bash}"><code>yarn start</code></pre>
+<p>This runs a local server on your computer. To access your survey, open your favourite browser and type <code>localhost:3000</code> in the address bar. The server will work until you turn it off, so if you update your survey, just run the survey script again and the page should automatically refresh. You can now test your survey in your own browser.</p>
+<p>If you want to see the data from your tests, open the developer tools of your browser (usually Ctrl+Shift+I) and go to the Network tab. If you have some kind of categories in there, you can select Fetch/XHR. If you click the “Complete” button with this tab opened, you will see a server response called “submit/”. When you click it and navigate to the Payload or Request tab, you will see the data you have sent to the server in json format.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/getting_started/devtools_chrome.png" class="img-fluid figure-img"></p>
+<figcaption>Developer tools in Google Chrome</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/getting_started/devtools_firefox.png" class="img-fluid figure-img"></p>
+<figcaption>Developer tools in Mozilla Firefox</figcaption>
+</figure>
+</div>
+<p>If you want, you can copy the json object and convert to .csv or .xlsx using <a href="https://www.convertcsv.com/json-to-csv.htm">some online service</a>. If you have multiple answers, enclose them all with square brackets and separate with commas before converting to csv. It should look similar to this:</p>
+<pre class="{json}"><code>[
+   {
+      "id": "y71c6K8S",
+      "RSES_1": "Strongly Agree",
+      "RSES_2": "Agree",
+      "group": 1,
+      "datestarted": "2024-09-22T19:13:05.116Z",
+      "datecompleted": "2024-09-22T19:13:20.192Z"
+   },
+   {
+      "id": "y71c6K8S",
+      "RSES_1": "Strongly Disargee",
+      "RSES_2": "Strongly Agree",
+      "group": 2,
+      "datestarted": "2024-09-22T19:21:59.245Z",
+      "datecompleted": "2024-09-22T19:22:42.863Z"
+   }
+]</code></pre>
+</section>
+</section>
 </section>
 <section id="sec-hosting" class="level1">
 <h1>Hosting</h1>
-<p>The main way to host Veles surveys is through <a href="https://www.velesweb.org/">VelesWeb</a>. Currently in closed alpha. Veles isn’t meant to be a commercial product so even if VelesWeb will get some restrictions and paywalls (it mostly depends on the maintenance costs), there will always be an alternative. You can host your surveys yourself.</p>
+<p>The main way to host Veles surveys is through <a href="https://www.velesweb.org/">VelesWeb</a>. It is only available to academics. Veles isn’t meant to be a commercial product so even if VelesWeb will get some restrictions and paywalls (it mostly depends on the maintenance costs), there will always be an alternative. You can host your surveys yourself.</p>
 <section id="velesweb" class="level2">
 <h2 class="anchored" data-anchor-id="velesweb">VelesWeb</h2>
-<p>When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use <a href="https://www.velesweb.org/">VelesWeb</a>. The only file that will be interesting, is the archive with <code>.tar.gz</code> extension.</p>
-<p>Log in to your VelesWeb account, create a new survey, give it a title and – optionally – a description. Then choose the <code>.tar.gz</code> file from your hard drive. Submit and wait. It might take a minute or two. After that you’ll see your survey’s overview.</p>
+<p>When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use <a href="https://www.velesweb.org/">VelesWeb</a>. The only file that will be interesting, is the <code>main.js</code> file in the <code>build</code> folder.</p>
+<p>Log in to your VelesWeb account, create a new survey, give it a title and – optionally – a description. Then choose the <code>main.js</code> file from your hard drive. Submit and wait. It might take a minute or two. After that you’ll see your survey’s overview.</p>
 <div class="light-mode">
 <p><img src="figs/getting_started/velesweb_overview.png" class="img-fluid"></p>
 </div>
@@ -607,7 +641,7 @@ pip install veleslibrary</code></pre>
 <ol type="1">
 <li><p>Go to <a href="https://github.com/jakub-jedrusiak/VelesSurvey-Vercel">VelesSurvey for Vercel GitHub repository</a>. Click on “Use this template” button. Give your repo a name and confirm with “Create repository from template” button. Of course you need to be logged into your GitHub account.</p></li>
 <li><p>Go to <a href="https://vercel.com/">Vercel</a>, create an account and from there start a new project. Link the project to your newly created GitHub repo.</p></li>
-<li><p>Don’t change the default deployment settings but do click on <code>Enviroment variables</code>. Add a new variable named <code>SECRET_KEY</code> with a value generated with <a href="https://djecrety.ir/">this website</a> and confirm with “Add” button. If you plan to use a custom domain, you can also add a <code>DOMAIN_NAME</code> variable with a value like <code>.uwr.edu.pl</code> to match all subdomains of <code>uwr.edu.pl</code>. Don’t worry, if you don’t know yet. You can always add it later. You can read more about custom domains <a href="https://vercel.com/docs/concepts/projects/domains/add-a-domain">here</a>.</p></li>
+<li><p>Don’t change the default deployment settings but do click on <code>Enviroment variables</code>. Add a new variable named <code>SECRET_KEY</code> with a value generated with <a href="https://djecrety.ir/">this website</a> and confirm with “Add” button. If you plan to use a custom domain, you add a <code>DOMAIN_NAME</code> variable with a value like <code>.uwr.edu.pl</code>. Don’t worry, if you don’t know yet. You can always add it later. You can read more about custom domains <a href="https://vercel.com/docs/concepts/projects/domains/add-a-domain">here</a>.</p></li>
 </ol>
 <div class="light-mode">
 <p><img src="./figs/getting_started/config_vercel.png" class="img-fluid"></p>
@@ -617,7 +651,7 @@ pip install veleslibrary</code></pre>
 </div>
 <ol start="4" type="1">
 <li><p>When the building process ends, you can visit your page. It’s just a white screen with a moving Veles logo. By design, there’s no survey list on the main page. It helps keeping everything confidential.</p></li>
-<li><p>Not only we need a place to collect our responses, but also somewhere to store them. For this purpuse we’ll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1 600 000 responses before the space runs out. I wish everyone this kind of probe sizes. Go to <a href="https://www.mongodb.com/">MongoDB</a>, create a free account and then a free cluster. The website will take you through the whole process.</p></li>
+<li><p>Not only we need a place to collect our responses, but also somewhere to store them. For this purpose we’ll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1.5 milion responses before we run out of space. I wish everyone this kind of probe sizes. Go to <a href="https://www.mongodb.com/">MongoDB</a>, create a free account and then a free cluster. The website will take you through the whole process.</p></li>
 <li><p>Now we need do connect Vercel and MongoDB. You can do it on <a href="https://vercel.com/integrations/mongodbatlas">this website</a>. Click “Add integration” and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.</p></li>
 <li><p>That’s it. Test your application by going to <code>/tea_survey</code> in your Vercel app (e.g.&nbsp;<code>https://tea-research-project.vercel.app/tea_survey/</code>). You should see a survey with a series of questions about tea. When you complete it, you should see a new response in your database.</p></li>
 </ol>
@@ -626,11 +660,15 @@ pip install veleslibrary</code></pre>
 <h3 class="anchored" data-anchor-id="using">Using</h3>
 <p>When you create a survey with Veles, you get a folder with a series of files. The most important one is <code>main.js</code> from <code>build</code> subfolder. To add it to your site, you need to create a new subfolder in the <code>surveys</code> folder in your repository. The easiest way to do it it through <a href="https://desktop.github.com/">GitHub Desktop</a>. Use it to download (or “clone”) your repository and create a new folder inside the <code>surveys</code> folder. The name of that folder will become a link to your survey, e.g.&nbsp;if you name it <code>black_tea_study</code>, the link will be something like <code>https://tea-research-project.vercel.app/black_tea_study</code>. Then put your <code>main.js</code> in your newly created folder. <strong>Do not rename it.</strong> Then use GitHub Desktop to upload (or “push”) your changes. After a minute or so, your survey should be available.</p>
 <p>To read and save your data you can use web desktop on <a href="https://www.mongodb.com/">mongodb.com</a> or with a special program called <a href="https://www.mongodb.com/products/compass">MongoDB Compass</a>. After any responses are recieved (even for the tea survey), a new database called <code>VelesResponses</code> is created. Every survey gets its own folder (or “collection”). From there you can easily export your data to <code>.csv</code> or <code>.json</code>.</p>
-<p>If you use R for analysis, you can connect to the database directly, without having to download anything. See <a href="https://www.mongodb.com/languages/mongodb-and-r-example">this article</a> for the details. You can also do that with <a href="https://www.mongodb.com/languages/python">Python</a>.</p>
-
-
+<p>If you use R for the analysis, you can connect to the database directly, without having to download anything. See <a href="https://www.mongodb.com/languages/mongodb-and-r-example">this article</a> for the details. You can also do that with <a href="https://www.mongodb.com/languages/python">Python</a>.</p>
 </section>
 </section>
+</section>
+<section id="psychojs-experiments" class="level1">
+<h1>PsychoJS experiments</h1>
+<p>To be implemented…</p>
+
+
 </section>
 
 
@@ -638,7 +676,7 @@ pip install veleslibrary</code></pre>
 
 <ol>
 <li id="fn1"><p>Or WYSIWYG.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>We could have called it otherwise. <code>[f"How do you like {i}?" for i in drinks]</code> would give the same result, but it makes more sense to call it <code>drink</code> rather than <code>i</code>, doesn’t it?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>“String” is a computer lingo for text, a group of letters.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
