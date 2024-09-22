@@ -370,6 +370,15 @@ stumuli = vls.page(
 
 ![You can use HTML and CSS directly (langouste by Michael Wolf on CC BY 2.5, jam by Pixaby on CC0)](figs/getting_started/images_css.png)
 
+Notice that svg files are basically HTML with extra steps. You can open any svg file in a text editor and you will see HTML that you can paste into an `info()` question. You can use [an online service](https://vecta.io/nano) to compress it beforehand.
+
+```{python}
+rune = vls.info(
+    "veles",
+    """<svg xmlns="http://www.w3.org/2000/svg" width="560" height="600" xmlns:v="https://vecta.io/nano"><path d="M279.32 598.941c-.958-1.888-186.52-399.897-186.52-400.064 0-.085 84.24-.154 187.2-.154l187.2.155c0 .302-186.767 400.674-187.031 400.938-.162.162-.5-.186-.849-.874zm43.778-245.228l42.026-90.128-42.464-.075c-23.355-.041-61.661-.041-85.123 0l-42.659.075 42.555 91.257 42.555 91.256.543-1.128 42.569-91.257zM39.022 83.699L2.78 5.982.05.146h35.991 35.991L93.15 45.431l21.118 45.286H280h165.731l21.118-45.286L487.968.146h35.991 35.991l-2.73 5.836-36.243 77.717-33.513 71.881H280 72.536z"/></svg>""", 
+)
+```
+
 # View and test {#view-and-test}
 
 After writing your survey, you need to create it. Don't worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take some time the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there's a "Run" button in the upper right corner. Just click it and see if the console prints any errors.
