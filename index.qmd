@@ -8,15 +8,17 @@
 :::
 :::
 
-Veles is a free and open source Python research package, primarly for social scientists. It's goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with Python interface to create self contained research units that can be self-hosted. Veles' own web service for creating and hosting experiments are planned.
+Veles is a free and open source Python research package, primarly for social scientists. It's goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.
 
 # Overview
 
-Veles is in pre-alpha development, but the goal features are:
+Veles is in alpha phase of development, but the goal features are:
 
 -   Free and open source.
 
 -   Text-based, so automatable and easily modifiable.
+
+-   Questionnaire library for fast creation.
 
 -   Integration with GitHub.
 
@@ -24,30 +26,28 @@ Veles is in pre-alpha development, but the goal features are:
 
 -   Open source documentation.
 
--   Python-based, so every Python tools work.
+-   Python-based, so every Python tool works.
 
--   Esay to collaborate through git.
-
--   VS code extension pack.
+-   Easy to collaborate through git.
 
 -   Custom redirection in the end (for panels).
 
 -   PsychoPy integration.
 
--   JavaScript code preview.
-
 -   Modifiable themes.
 
-# Installation
+# Usage
 
-You can install the current version of Veles with:
-``` bash
-pip install velesresearch
-```
+See [Getting started](getting-started.qmd) for an introduction.
 
-You can install development version (unstable) with:
+You can install development version with:
 ``` bash
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
+```
+
+Veles is also on PyPI but it can't currently be considered stable anyway:
+``` bash
+pip install velesresearch
 ```
 
 Note that **`yarn` is required** for Veles to work. You can download it from [here](https://nodejs.org/en/download) or use your package manager.

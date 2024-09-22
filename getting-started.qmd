@@ -6,13 +6,19 @@ date-format: iso
 
 # Prerequisites
 
-Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing `python` in the terminal, without the full path. If you're using Linux or MacOS, you already have Python installed by default.
+Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe. If you're using Linux or MacOS, you already have Python installed by default.
 
 Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). If you want to use it, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack) and [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). You can do it from within the program. You can also use RStudio if you want.
 
-Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go. If you don't know anything about programming, [this 1-hour introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
+Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go. If you don't know anything about programming, [this 1-hour Python introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
 
-To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` gets installed with Node.js. If you're a Windows user, you can download it from [the official website](https://nodejs.org/en/download). MacOS comes with Node.js preinstalled. If you're a Linux user, chances are you have `npm` already installed. Otherwise you can use one of the following commands:
+To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` gets installed with Node.js. If you're a Windows user, you can download it from [the official website](https://nodejs.org/en/download). MacOS comes with Node.js preinstalled. If you're a Linux user, chances are you have Node.js already installed. If so, you should be able to run this command in your terminal (PowerShell or cmd in Windows):
+
+``` bash
+npm -v
+```
+
+Otherwise you can use one of the following commands:
 
 ``` bash
 # Ubuntu (and other apt distros)
@@ -31,13 +37,7 @@ choco install nodejs-lts
 brew install node
 ```
 
-If everything is OK you should be able to run this command in your terminal (PowerShell or cmd in Windows):
-
-``` bash
-npm -v
-```
-
-fter installing `node.js`, activate `yarn` with this command in the terminal:
+After installing `node.js`, activate `yarn` with this command in the terminal:
 
 ``` bash
 corepack enable
@@ -74,7 +74,6 @@ The first thing we need to do is to import the `velesresearch` library. To do th
 
 ```{python}
 import velesresearch as vls
-
 ```
 
 # Survey structure
@@ -87,67 +86,71 @@ Veles is a Python library, so there are many ways to achieve this in practice. W
 
 ## Questions
 
-In Veles, questions are a class of objects. There are two main ways of creating them -- separately or when we want to convert a whole questionnaire at once. In both cases we use the `question()` function.
+In Veles, questions are a class of objects. There are two main ways of creating them -- separately or when we want to convert a whole questionnaire at once. In both cases we use an appropriate question function. See [the docs](ref/questiontypes.qmd)
 
-### `question()`
+### `radio()`
 
-Let's start with creating some metrical questions with `question()`. The syntax is as follows:
+Let's start with creating some demographic questions with `vls.radio()`. The syntax is as follows:
 
 ```{python}
-vls.question(label, question_text, answers, question_type, options, description)
+vls.radio(name, title, *choices, **kwargs)
 ```
 
-The first four arguments are required. `label` is an internal name of the question. It will become a column name in the database. Question type is a string representing one of the available question types. `question_text` is what the participant actually sees as an item in the survey. `answers` are the options the participant can choose. It can be a list or strings separated by commas. `question_type` defaults to `"radio"`. `options` can change the survey's behaviour (e.g. make the answer order random), but I'll provide more details later. `description` look like a subtitle. Both `options` and `description` arguments must be named if used (i.e. you need to write `options=`).
+To create a single-choice question we need to invoke the `vls.radio()` function and fill it with appropriate data. The first thing is the `name` argument which is the internal code of the question that will later **become the name of the column** in the database. Then we have `title` which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:
 
 ```{python}
-gender = vls.question(
+gender = vls.radio(
     "gender",
     "What is your gender?",
     "Woman",
     "Man",
     "Other/I don't want to answer",
-    description="Choose an answer from options below.",
 )
 ```
 
 ![Gender question example](figs/getting_started/gender_question_example.png)
 
-Every question type has its own wrapper functions, so we could also write `gender = vls.radio("gender", "What is your gender?", ...)`. A complete list of available question types can be found [here](ref/questiontypes.qmd).
+There are two things to notice here. Firstly, I save the created question to a variable called `gender`. We will then use the variable to put the question in a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables.
 
 ### Question options
 
-Each question can have a series of options specified. To make it easier, there's `QuestionOptions` object class which has all available options listed. Let's use it to change answer order to random and add real None and Other options. We can create `QuestionOptions` outside the question itself, save it in a variable and put the variable in the `question()` function. We can also nest the `QuestionOptions` object inside the `question()` function.
+Each question can have a series of additional parameters specified. For example we can make an answer required, add a subtitle, add an "Other" option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.
 
 ```{python}
-gender = vls.question(
+gender = vls.radio(
     "gender",
     "What is your gender?",
     "Woman",
     "Man",
-    options=QuestionOptions(
-        answers_order="random",
-        none=True,
-        none_text="I don't want to answer",
-        other=True,
-        other_placeholder="Write your gender.",
-    ),
-    description="Choose an answer from options below.",
+    isRequired=True,
+    showOtherItem=True,
+    showNoneItem=True,
+    noneText="Prefer not to say",
+    hideNumber=True,
+    description="Choose an answer from options below",
 )
 ```
 
 ![Gender questions with options specified](figs/getting_started/gender_question_options_example.png)
 
-List of available options can be found [here](ref/options/QuestionOptions.qmd).
+Every type of question (as well as pages and surveys) has its set of possible options. To check the possible options you can consult the docs or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup.
+
+::: light-mode
+![The documentation you can see when you hover over a name of the function in VS Code](figs/getting_started/IDE_docs.png)
+:::
+::: dark-mode
+![The documentation you can see when you hover over a name of the function in VS Code](figs/getting_started/IDE_docs_dark.png)
+:::
 
 ### Whole questionnaires
 
-Often in behavioral sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and predictable labels. In Veles the `question()` also allows to convert a whole questionnaire at once.
+Often in behavioral sciences we want to use a whole questionnaire. It's quite pointless to format every item separately, because they often have the same scale, options and the labels are predictable. Veles allows for including a whole questionnaire at once.
 
-To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand, using `split()` method or with `split` arguments. In the second and third cases, we need to have our items separated by some common separator, e.g. every item in a separate line. Both methods are shown below
+To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand…
 
 ```{python}
 # manually formatted list
-RSSI_items = [
+RSES_items = [
     "I feel that I am a person of worth, at least on an equal plane with others.",
     "I feel that I have a number of good qualities.",
     "All in all, I am inclined to feel that I am a failure.",
@@ -159,9 +162,13 @@ RSSI_items = [
     "I certainly feel useless at times.",
     "At times I think I am no good at all.",
 ]
+```
 
+…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. Notice the triple quotation marks `"""`. They allow us to create a multiline strings.
+
+```{python}
 # triple quotation for multi-line strings
-RSSI_items = """I feel that I am a person of worth, at least on an equal plane with others.
+RSES_items = """I feel that I am a person of worth, at least on an equal plane with others.
 I feel that I have a number of good qualities.
 All in all, I am inclined to feel that I am a failure.
 I am able to do things as well as most other people.
@@ -171,33 +178,54 @@ On the whole, I am satisfied with myself.
 I wish I could have more respect for myself.
 I certainly feel useless at times.
 At times I think I am no good at all."""
+```
 
-# scale
-RSSI_scale = "Strongly Agree; Agree; Disagree; Strongly Disagree"
+So I saved the questionnaire into a variable called `RSES_items`. I can now tell python to split it, so it would become a list of items. To do this, we can use the `split()` method. Methods are functions that we write after a dot to apply them to something. `split()` takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with `"\n"`. To split the `RSES_items` string we could write `RSES_items.split("\n")`.
 
-RSSI = vls.question(
-    "RSSI",
-    RSSI.split("\n"),
-    RSSI_scale.split("; "),
-    options=QuestionOptions(required=True),
+```{python}
+RSES = vls.radio(
+    "RSES",
+    RSES_items.split("\n"),
+    "Strongly Agree; Agree; Disagree; Strongly Disagree".split("; "),
+    isRequired=True,
 )
 ```
 
-The `"""` allows us to write multiple line strings.
+In here I've splitted the  inside the `radio()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them. Had I used the manually formatted list, I wouldn't have to write the `split()` part. Also notice what I did with the scale -- we don't _have to_ save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:
 
-We save our items and answers in variables and treat them with `split()`. In here I've done it inside the `question()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them. Had I used the manually formatted list, I wouldn't have to write the `split()` part.
+```{python}
+RSES = vls.radio(
+    "RSES",
+    """I feel that I am a person of worth, at least on an equal plane with others.
+I feel that I have a number of good qualities.
+All in all, I am inclined to feel that I am a failure.
+I am able to do things as well as most other people.
+I feel I do not have much to be proud of.
+I take a positive attitude toward myself.
+On the whole, I am satisfied with myself.
+I wish I could have more respect for myself.
+I certainly feel useless at times.
+At times I think I am no good at all.""".split(
+        "\n"
+    ),
+    "Strongly Agree; Agree; Disagree; Strongly Disagree".split("; "),
+    isRequired=True,
+)
+```
 
-If `question_text` is a list, `question()` output is a list of questions. Each question in the list have the same options, scale and type. The labels will become `"RSSI_1"`, `"RSSI_2"`, `"RSSI_3"` etc.
+The labels will become `"RSES_1"`, `"RSES_2"`, `"RSES_3"` etc.
 
 ### List comprehension
 
-The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^1] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee" (especially coffee) but rather something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string to do just that.
+This part is not necessary but extremely useful.
+
+The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^1] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^2] to do just that.
 
 [^1]: Or WYSIWYG.
 
-```{python}
-from velesresearch import question
+[^2]: "String" is a computer lingo for text, a group of letters.
 
+```{python}
 # get our drinks and make them a list
 drinks = "tea coffee juice water".split(" ")
 
@@ -208,37 +236,16 @@ drinks = [f"How do you like {drink}?" for drink in drinks]
 answers = "I love it; I like it; It's OK; I don't like it; I despise it".split("; ")
 
 # make it a list of questions
-q_drinks = question("drinks", drinks, answers)
+q_drinks = vls.radio("drinks", drinks, answers)
 ```
 
-First we get our drinks separated with some common separator (a space in this example). We then split it and save it in a `drinks` variable. After that we modify it with an f-string and a for loop. An f-string is a string preceded with an `f`. Inside it, we can use variables' values if we enclose them in curly braces. After the f-string we put a shorthand loop syntax (it's called *list comprehension*). It will take every value inside the `drinks` one by one, put them in a variable called `drink`[^2] and do whatever we commanded before the `for` keyword. When it's done with the first value, it saves the result and moves on to the next drink until the list ends. Notice everything is in **square brackets**. We then overwrite the `drinks` variable with the newly created list.
+There's a few things to unpack here. First we get the list of our drinks separated with some common separator. Put simply, there should be some string (text) separating single drinks -- a space in this example. If we also had `"orange juice"` on the list we would need something else, e.g. a comma followed by a space (`"tea, coffee, juice, water, orange juice"`). We then split it and save it in the `drinks` variable.
 
-[^2]: We could have called it otherwise. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it?
+The third step may seem more complicated, so let's take it slowly. That is something called _list comprehension_. It's a form of a loop in Python that allows us to quickly do something with a list, e.g. call a function for each element or put every element in a certain string. If you think about our question, it is basically "How do you like {drink}?" where "{drink}" is the name of each drink. That is what we start with. Inside square brackets we write `[f"How do you like {drink}?"]`. Notice I have added `f` before the opening quotation mark. These so called "f-strings" are Python's way of saying that there is a variable in a string. The variable itself must be inside curly brackets.
 
-### Questionnaire library
+Now we just need to tell Python to do this for each of our drinks. Python doesn't know what `drink` means if we don't tell it. It is not that smart to infer it from the fact that we called our list `drinks`. To tell Python what we mean by `{drink}`, we need to write `for drink in drinks` so we end up with `[f"How do you like {drink}?" for drink in drinks]`. We could have called it differently. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it? `[f"How do you like {drink}?" for drink in drinks]` basically means "Give me this string `"How do you like {drink}?"` where `drink` means a value from the list called `drinks`. Do this `for` every `drink` `in` the list called `drinks`". We also save the newly created list to the `drinks` variable, overwriting it.
 
-Veles has it's own (currently small) questionnaire library. Thanks to it, you can quickly add a whole questionnaire with only one command. The library is available in the `veleslibrary` package. To use it, you need to install and import it first.
-
-```{bash}
-# In the terminal
-pip install veleslibrary
-```
-
-```{python}
-from veleslibrary.questionnaires import rse
-
-survey("self_esteem_survey", page("RSE", rse()))  # Rosenberg Self-Esteem Scale
-```
-
-Library is multilingual.
-
-```{python}
-from veleslibrary.questionnaires.pl import tipi
-
-survey("personality", page("TIPI", tipi()))  # TIPI in Polish
-```
-
-Go [here](/library/overview.qmd) to read more about the library. Feel free to contribute to the library by adding your own questionnaires. More information [here](/library/overview.qmd#contributing).
+When we run it, the list `['tea', 'coffee', 'juice', 'water']` becomes `['How do you like tea?', 'How do you like coffee?', 'How do you like juice?', 'How do you like water?']`. The new list can be then passed into the `radio()` function. It could've been done manually but learning this technique allows for doing it for arbitrarily long lists.
 
 ## Panels
 
@@ -246,43 +253,60 @@ To be implemented...
 
 ## Pages
 
-Every survey needs to have at least one page. Page is basically a list of questions but with its own label, title, description and options. You can create it with `page()`.
+Every survey needs to have at least one page. Page is basically a list of questions but with its own name, title, description and options. You can create it with `page()`.
 
 ```{python}
-vls.page(label, questions, title, description, options)
+vls.page(name, questions, **kwargs)
 ```
 
-Pages have their own labels. They don't yet have many uses in Veles but are still mandatory for SurveyJS compatibility reasons. Questions can be provided as a list or values separated by commas. You can also provide page's title and description. The `options` argument accepts a `PageOptions` object. These are **different options** than in `QuestionOptions`. The list of available options can be found [here](ref/options/PageOptions.qmd).
+Pages have their own names. They don't yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See [the docs](ref/wrappers.qmd).
 
 ```{python}
-intro = vls.page("metrics", gender)
+intro = vls.page("metrics", gender)  # previously created gender question
 
-limit = vls.PageOptions(time_limit=120)
-
-self_esteem = vls.page("RSSI", RSSI, options=limit)
+self_esteem = vls.page(
+    "RSES",
+    RSES,
+    questionsOrder="random",
+    title="Rosenberg Self-Esteem Scale",
+    maxTimeToFinish=300,  # time limit in seconds
+)
 ```
 
 ## Survey
 
-When all elements are created, we can combine them into the final survey. We can do this with `survey()` function. It does two things -- returns a `Survey` object and builds a website with your survey.
+When all elements are created, we can combine them into the final survey. We can do this with the `survey()` function. It does two things -- returns a `Survey` object and creates your survey's structure.
 
 ```{python}
-vls.survey(label, pages, title, description, options, create)
+vls.survey(pages, **kwargs)
 ```
 
 ```{python}
-vls.survey("My smart research", intro, self_esteem, title="Self-esteem and gender")
+vls.survey(
+    "My smart research",
+    intro,
+    self_esteem,
+    title="Self-esteem and gender",
+)
 ```
 
-Building a website for the first time might take a few minutes due to `yarn` downloading or updating JavaScript dependencies. When the dependencies have been downloaded, the whole process gets much faster. The structure of the generated files and what to do with them is explained in Hosting section [below](#sec-hosting).
+By default the page is not built for production, i.e. it is not compiled into a form that can be actually hosted. That is because it takes around a minute and is not needed for testing. When you complete designing your survey, set `buildForProduction` to `True`. Be default, the survey will be created in a subfolder called "survey". To change the folder's name or path, use the `folderName` argument.
 
-# PsychoJS experiments
+```{python}
+vls.survey(
+    "My smart research",
+    intro,
+    self_esteem,
+    title="Self-esteem and gender",
+    buildForProduction=True,
+)
+```
 
-To be implemented...
+The structure of the generated files and what to do with them is explained in Hosting section [below](#sec-hosting).
 
-# How to run your script
+### View and test
 
-After writing your survey, you need to build it. Don't worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take a few minutes the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there's a "Run" button in the upper right corner. Just click it and see if the console prints any errors.
+After writing your survey, you need to create it. Don't worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take some time the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there's a "Run" button in the upper right corner. Just click it and see if the console prints any errors.
 
 ::: light-mode
 ![](figs/getting_started/run_script.png)
@@ -291,17 +315,58 @@ After writing your survey, you need to build it. Don't worry, it all happens aut
 ![](figs/getting_started/run_script_dark.png)
 :::
 
-If everything went well, you should have a folder named like your survey's label. Inside there will be a series of files and folders. The most important one is the `.tar.gz` file. It's an archive with all the files needed to host your survey. You can upload it to [VelesWeb](https://www.velesweb.org/). If you want to host the survey yourself, the most important part of the package will be the `build` folder where you can find the built webpage. The structure of the files is explained more broadly in Hosting section [below](#sec-hosting).
+If everything went well, you should have a folder named "survey". To run your survey, open the folder in a terminal. In VS Code you can use Terminal > New terminal. Then move to the survey folder with:
+
+```{bash}
+cd survey
+```
+
+To run your survey, run a second command:
+
+```{bash}
+yarn start
+```
+
+This runs a local server on your computer. To access your survey, open your favourite browser and type `localhost:3000` in the address bar. The server will work until you turn it off, so if you update your survey, just run the survey script again and the page should automatically refresh. You can now test your survey in your own browser.
+
+If you want to see the data from your tests, open the developer tools of your browser (usually Ctrl+Shift+I) and go to the Network tab. If you have some kind of categories in there, you can select Fetch/XHR. If you click the "Complete" button with this tab opened, you will see a server response called "submit/". When you click it and navigate to the Payload or Request tab, you will see the data you have sent to the server in json format.
+
+![Developer tools in Google Chrome](./figs/getting_started/devtools_chrome.png)
+
+![Developer tools in Mozilla Firefox](./figs/getting_started/devtools_firefox.png)
+
+If you want, you can copy the json object and convert to .csv or .xlsx using [some online service](https://www.convertcsv.com/json-to-csv.htm). If you have multiple answers, enclose them all with square brackets and separate with commas before converting to csv. It should look similar to this:
+
+```{json}
+[
+   {
+      "id": "y71c6K8S",
+      "RSES_1": "Strongly Agree",
+      "RSES_2": "Agree",
+      "group": 1,
+      "datestarted": "2024-09-22T19:13:05.116Z",
+      "datecompleted": "2024-09-22T19:13:20.192Z"
+   },
+   {
+      "id": "y71c6K8S",
+      "RSES_1": "Strongly Disargee",
+      "RSES_2": "Strongly Agree",
+      "group": 2,
+      "datestarted": "2024-09-22T19:21:59.245Z",
+      "datecompleted": "2024-09-22T19:22:42.863Z"
+   }
+]
+```
 
 # Hosting {#sec-hosting}
 
-The main way to host Veles surveys is through [VelesWeb](https://www.velesweb.org/). Currently in closed alpha. Veles isn't meant to be a commercial product so even if VelesWeb will get some restrictions and paywalls (it mostly depends on the maintenance costs), there will always be an alternative. You can host your surveys yourself.
+The main way to host Veles surveys is through [VelesWeb](https://www.velesweb.org/). It is only available to academics. Veles isn't meant to be a commercial product so even if VelesWeb will get some restrictions and paywalls (it mostly depends on the maintenance costs), there will always be an alternative. You can host your surveys yourself.
 
 ## VelesWeb
 
-When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use [VelesWeb](https://www.velesweb.org/). The only file that will be interesting, is the archive with `.tar.gz` extension.
+When you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use [VelesWeb](https://www.velesweb.org/). The only file that will be interesting, is the `main.js` file in the `build` folder.
 
-Log in to your VelesWeb account, create a new survey, give it a title and -- optionally -- a description. Then choose the `.tar.gz` file from your hard drive. Submit and wait. It might take a minute or two. After that you'll see your survey's overview.
+Log in to your VelesWeb account, create a new survey, give it a title and -- optionally -- a description. Then choose the `main.js` file from your hard drive. Submit and wait. It might take a minute or two. After that you'll see your survey's overview.
 
 ::: light-mode
 ![](figs/getting_started/velesweb_overview.png)
@@ -322,7 +387,7 @@ If we want to manage our surveys ourselves, we need a place to host them and a p
 
 2. Go to [Vercel](https://vercel.com/), create an account and from there start a new project. Link the project to your newly created GitHub repo.
 
-3. Don't change the default deployment settings but do click on `Enviroment variables`. Add a new variable named `SECRET_KEY` with a value generated with [this website](https://djecrety.ir/) and confirm with "Add" button. If you plan to use a custom domain, you can also add a `DOMAIN_NAME` variable with a value like `.uwr.edu.pl` to match all subdomains of `uwr.edu.pl`. Don't worry, if you don't know yet. You can always add it later. You can read more about custom domains [here](https://vercel.com/docs/concepts/projects/domains/add-a-domain).
+3. Don't change the default deployment settings but do click on `Enviroment variables`. Add a new variable named `SECRET_KEY` with a value generated with [this website](https://djecrety.ir/) and confirm with "Add" button. If you plan to use a custom domain, you add a `DOMAIN_NAME` variable with a value like `.uwr.edu.pl`. Don't worry, if you don't know yet. You can always add it later. You can read more about custom domains [here](https://vercel.com/docs/concepts/projects/domains/add-a-domain).
 
 ::: light-mode
 ![](/figs/getting_started/config_vercel.png)
@@ -333,7 +398,7 @@ If we want to manage our surveys ourselves, we need a place to host them and a p
 
 4. When the building process ends, you can visit your page. It's just a white screen with a moving Veles logo. By design, there's no survey list on the main page. It helps keeping everything confidential.
 
-5. Not only we need a place to collect our responses, but also somewhere to store them. For this purpuse we'll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1 600 000 responses before the space runs out. I wish everyone this kind of probe sizes. Go to [MongoDB](https://www.mongodb.com/), create a free account and then a free cluster. The website will take you through the whole process.
+5. Not only we need a place to collect our responses, but also somewhere to store them. For this purpose we'll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1.5 milion responses before we run out of space. I wish everyone this kind of probe sizes. Go to [MongoDB](https://www.mongodb.com/), create a free account and then a free cluster. The website will take you through the whole process.
 
 6. Now we need do connect Vercel and MongoDB. You can do it on [this website](https://vercel.com/integrations/mongodbatlas). Click "Add integration" and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.
 
@@ -345,4 +410,8 @@ When you create a survey with Veles, you get a folder with a series of files. Th
 
 To read and save your data you can use web desktop on [mongodb.com](https://www.mongodb.com/) or with a special program called [MongoDB Compass](https://www.mongodb.com/products/compass). After any responses are recieved (even for the tea survey), a new database called `VelesResponses` is created. Every survey gets its own folder (or "collection"). From there you can easily export your data to `.csv` or `.json`.
 
-If you use R for analysis, you can connect to the database directly, without having to download anything. See [this article](https://www.mongodb.com/languages/mongodb-and-r-example) for the details. You can also do that with [Python](https://www.mongodb.com/languages/python).
+If you use R for the analysis, you can connect to the database directly, without having to download anything. See [this article](https://www.mongodb.com/languages/mongodb-and-r-example) for the details. You can also do that with [Python](https://www.mongodb.com/languages/python).
+
+# PsychoJS experiments
+
+To be implemented...

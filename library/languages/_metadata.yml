@@ -1,4 +1,0 @@
-execute: 
-  eval: false
-bibliography: ../library_bibliography.bib
-csl: ../../styles/apa-6th-edition.csl
