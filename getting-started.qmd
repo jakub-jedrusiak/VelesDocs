@@ -302,9 +302,75 @@ vls.survey(
 )
 ```
 
-The structure of the generated files and what to do with them is explained in Hosting section [below](#sec-hosting).
+The structure of the generated files and what to do with them is explained in View and test section [below](#view-and-test).
 
-### View and test
+# Images
+
+There are two main ways to include images in your survey: using the `image()` question type or the `info()` with HTML. You can keep your images either in the main folder or in a subfolder. Let's assume we created a subfolder called images where we keep some jpg files.
+
+![An example file structure](figs/getting_started/images_file_structure.png)
+
+Now we can put both images in our survey. To do that, we will use `convertImage()` to convert the images to [base64](https://en.wikipedia.org/wiki/Base64). It accepts the paths of the files and returns a list of base64 data URI strings. Basically does all the heavy lifting for you.
+
+```{python}
+stumuli = vls.page(
+    "stimuli",
+    vls.image(
+        "food_preferences",
+        vls.convertImage("images/langouste.jpg", "images/jam.jpg"),
+    ),
+)
+```
+
+You can also bulk convert all the images from the images folder using `glob`.
+
+```{python}
+from glob import glob
+
+stumuli = vls.page(
+    "stimuli",
+    vls.image(
+        "food_preferences",
+        vls.convertImage(glob("images/*")),
+    ),
+)
+```
+
+See the [`image()` documentation](ref/wrappers.qmd#image) on how to control your output. For example we could do:
+
+```{python}
+stumuli = vls.page(
+    "stimuli",
+    vls.image(
+        "food_preferences",
+        vls.convertImage("images/langouste.jpg"),
+        imageWidth="50%",  # all CSS units are supported
+        imageHeight="auto",
+    ),
+)
+```
+
+For more fine-grained control use `info()` with direct HTML and CSS:
+
+```{python}
+stumuli = vls.page(
+    "stimuli",
+    vls.info(
+        "stimuli",
+        f"""
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <img src="{vls.convertImage("images/langouste.jpg")}" style="width: 50%; height: auto;">
+  <img src="{vls.convertImage("images/jam.jpg")}" style="width: 50%; height: auto;">
+</div>
+<p style="text-align: center;">Wbrew obiegowej opinii, langusta żywi się wyłącznie owocami morza.<br>Choć gdyby mogła, jadłaby dżem.</p>
+""",
+    ),
+)
+```
+
+![You can use HTML and CSS directly (langouste by Michael Wolf on CC BY 2.5, jam by Pixaby on CC0)](figs/getting_started/images_css.png)
+
+# View and test {#view-and-test}
 
 After writing your survey, you need to create it. Don't worry, it all happens automatically. Just run your script with Python and wait for the website to be built. It might take some time the first time, but after that it will be much faster. How do we run a python script? There are many ways to do this. If you use Visual Studio Code, there's a "Run" button in the upper right corner. Just click it and see if the console prints any errors.
 
