@@ -1,0 +1,131 @@
+---
+title: Validators
+toc: true
+toc-depth: 1
+---
+
+# `textValidator()`
+
+A validator for text values.
+
+## Signature
+
+```{python}
+#| eval: false
+textValidator(
+    minLength: int = None,
+    maxLength: int = None,
+    allowDigits: bool = True,
+    error: str = None
+) -> ValidatorModel
+```
+
+## Arguments
+
+**`maxLength`** : _int_<br>
+Maximum length for the text validator.
+
+**`allowDigits`** : _bool_<br>
+Whether to allow digits for the text validator. Default is True.
+
+**`error`** : _str_<br>
+Custom error text to display. Optional.
+
+# `emailValidator()`
+
+A validator for email values.
+
+## Signature
+
+```{python}
+#| eval: false
+emailValidator(
+    error: str = None
+) -> ValidatorModel
+```
+
+## Arguments
+
+# `regexValidator()`
+
+A regex based validator.
+
+## Signature
+
+```{python}
+#| eval: false
+regexValidator(
+    regex: str = None,
+    error: str = None
+) -> ValidatorModel
+```
+
+## Arguments
+
+**`error`** : _str_<br>
+Custom error text to display. Optional
+
+# `expressionValidator()`
+
+An expression based validator.
+
+## Signature
+
+```{python}
+#| eval: false
+expressionValidator(
+    expression: str = None,
+    error: str = None
+) -> ValidatorModel
+```
+
+## Arguments
+
+**`error`** : _str_<br>
+Custom error text to display. Optional
+
+# `numberValidator()`
+
+A validator for number values.
+
+## Signature
+
+```{python}
+#| eval: false
+numberValidator(
+    minValue: int = None,
+    maxValue: int = None,
+    error: str = None
+) -> ValidatorModel
+```
+
+## Arguments
+
+**`maxValue`** : _int_<br>
+Maximum value for the number validator.
+
+**`error`** : _str_<br>
+Custom error text to display. Optional.
+
+# `answerCountValidator()`
+
+A validator for answer count.
+
+## Signature
+
+```{python}
+#| eval: false
+answerCountValidator(
+    minCount: int = None,
+    maxCount: int = None,
+    error: str = None
+) -> ValidatorModel
+```
+
+## Arguments
+
+**`maxCount`** : _int_<br>
+Maximum count for the answer count validator.
+
+**`error`** : _str_<br>
+Custom error text to display. Optional
