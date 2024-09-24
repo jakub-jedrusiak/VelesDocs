@@ -4,7 +4,7 @@
     "href": "ref/validators.html",
     "title": "Validators",
     "section": "",
-    "text": "A validator for text values.\n\n\n\ntextValidator(\n    minLength: int = None,\n    maxLength: int = None,\n    allowDigits: bool = True,\n    error: str = None\n) -&gt; ValidatorModel\n\n\n\n\nmaxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.# emailValidator()\nA validator for email values.\n\n\n\n\nemailValidator(\n    error: str = None\n) -&gt; ValidatorModel",
+    "text": "A validator for text values.\n\n\n\ntextValidator(\n    minLength: int = None,\n    maxLength: int = None,\n    allowDigits: bool = True,\n    error: str = None\n) -&gt; ValidatorModel\n\n\n\n\nmaxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
@@ -28,7 +28,7 @@
     "href": "ref/validators.html#arguments",
     "title": "Validators",
     "section": "",
-    "text": "maxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.# emailValidator()\nA validator for email values.",
+    "text": "maxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
@@ -39,8 +39,20 @@
     "objectID": "ref/validators.html#signature-1",
     "href": "ref/validators.html#signature-1",
     "title": "Validators",
-    "section": "",
-    "text": "emailValidator(\n    error: str = None\n) -&gt; ValidatorModel",
+    "section": "Signature",
+    "text": "Signature\n\nemailValidator(\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments-1",
+    "href": "ref/validators.html#arguments-1",
+    "title": "Validators",
+    "section": "Arguments",
+    "text": "Arguments",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
@@ -64,7 +76,7 @@
     "href": "ref/validators.html#arguments-2",
     "title": "Validators",
     "section": "Arguments",
-    "text": "Arguments\nerror : str Custom error text to display. Optional# expressionValidator()\nAn expression based validator.",
+    "text": "Arguments\nerror : str Custom error text to display. Optional",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
@@ -88,7 +100,7 @@
     "href": "ref/validators.html#arguments-3",
     "title": "Validators",
     "section": "Arguments",
-    "text": "Arguments\nerror : str Custom error text to display. Optional# numberValidator()\nA validator for number values.",
+    "text": "Arguments\nerror : str Custom error text to display. Optional",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
@@ -112,7 +124,7 @@
     "href": "ref/validators.html#arguments-4",
     "title": "Validators",
     "section": "Arguments",
-    "text": "Arguments\nmaxValue : int Maximum value for the number validator.\nerror : str Custom error text to display. Optional.# answerCountValidator()\nA validator for answer count.",
+    "text": "Arguments\nmaxValue : int Maximum value for the number validator.\nerror : str Custom error text to display. Optional.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",

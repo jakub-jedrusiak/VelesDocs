@@ -246,7 +246,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#textvalidator" id="toc-textvalidator" class="nav-link active" data-scroll-target="#textvalidator"><code>textValidator()</code></a></li>
+  <li><a href="#emailvalidator" id="toc-emailvalidator" class="nav-link" data-scroll-target="#emailvalidator"><code>emailValidator()</code></a></li>
   <li><a href="#regexvalidator" id="toc-regexvalidator" class="nav-link" data-scroll-target="#regexvalidator"><code>regexValidator()</code></a></li>
+  <li><a href="#expressionvalidator" id="toc-expressionvalidator" class="nav-link" data-scroll-target="#expressionvalidator"><code>expressionValidator()</code></a></li>
+  <li><a href="#numbervalidator" id="toc-numbervalidator" class="nav-link" data-scroll-target="#numbervalidator"><code>numberValidator()</code></a></li>
+  <li><a href="#answercountvalidator" id="toc-answercountvalidator" class="nav-link" data-scroll-target="#answercountvalidator"><code>answerCountValidator()</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/ref/validators.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -283,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A validator for text values.</p>
 <section id="signature" class="level2">
 <h2 class="anchored" data-anchor-id="signature">Signature</h2>
-<div id="6ddf36a3" class="cell" data-execution_count="1">
+<div id="743bf4af" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>textValidator(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    minLength: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    maxLength: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,</span>
@@ -296,12 +300,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="arguments">Arguments</h2>
 <p><strong><code>maxLength</code></strong> : <em>int</em><br> Maximum length for the text validator.</p>
 <p><strong><code>allowDigits</code></strong> : <em>bool</em><br> Whether to allow digits for the text validator. Default is True.</p>
-<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional.# <code>emailValidator()</code></p>
-<p>A validator for email values.</p>
+<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional.</p>
 </section>
+</section>
+<section id="emailvalidator" class="level1">
+<h1><code>emailValidator()</code></h1>
+<p>A validator for email values.</p>
 <section id="signature-1" class="level2">
 <h2 class="anchored" data-anchor-id="signature-1">Signature</h2>
-<div id="a3938932" class="cell" data-execution_count="2">
+<div id="ba1684ee" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>emailValidator(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    error: <span class="bu">str</span> <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> ValidatorModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -316,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A regex based validator.</p>
 <section id="signature-2" class="level2">
 <h2 class="anchored" data-anchor-id="signature-2">Signature</h2>
-<div id="33321228" class="cell" data-execution_count="3">
+<div id="b63afab6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>regexValidator(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    regex: <span class="bu">str</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    error: <span class="bu">str</span> <span class="op">=</span> <span class="va">None</span></span>
@@ -325,12 +332,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arguments-2" class="level2">
 <h2 class="anchored" data-anchor-id="arguments-2">Arguments</h2>
-<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional# <code>expressionValidator()</code></p>
-<p>An expression based validator.</p>
+<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional</p>
 </section>
+</section>
+<section id="expressionvalidator" class="level1">
+<h1><code>expressionValidator()</code></h1>
+<p>An expression based validator.</p>
 <section id="signature-3" class="level2">
 <h2 class="anchored" data-anchor-id="signature-3">Signature</h2>
-<div id="67d7b4b9" class="cell" data-execution_count="4">
+<div id="09545d81" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>expressionValidator(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    expression: <span class="bu">str</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    error: <span class="bu">str</span> <span class="op">=</span> <span class="va">None</span></span>
@@ -339,12 +349,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arguments-3" class="level2">
 <h2 class="anchored" data-anchor-id="arguments-3">Arguments</h2>
-<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional# <code>numberValidator()</code></p>
-<p>A validator for number values.</p>
+<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional</p>
 </section>
+</section>
+<section id="numbervalidator" class="level1">
+<h1><code>numberValidator()</code></h1>
+<p>A validator for number values.</p>
 <section id="signature-4" class="level2">
 <h2 class="anchored" data-anchor-id="signature-4">Signature</h2>
-<div id="d1e47c07" class="cell" data-execution_count="5">
+<div id="c5b16219" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>numberValidator(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    minValue: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    maxValue: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,</span>
@@ -355,12 +368,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="arguments-4" class="level2">
 <h2 class="anchored" data-anchor-id="arguments-4">Arguments</h2>
 <p><strong><code>maxValue</code></strong> : <em>int</em><br> Maximum value for the number validator.</p>
-<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional.# <code>answerCountValidator()</code></p>
-<p>A validator for answer count.</p>
+<p><strong><code>error</code></strong> : <em>str</em><br> Custom error text to display. Optional.</p>
 </section>
+</section>
+<section id="answercountvalidator" class="level1">
+<h1><code>answerCountValidator()</code></h1>
+<p>A validator for answer count.</p>
 <section id="signature-5" class="level2">
 <h2 class="anchored" data-anchor-id="signature-5">Signature</h2>
-<div id="50070d88" class="cell" data-execution_count="6">
+<div id="78025ebe" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>answerCountValidator(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    minCount: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    maxCount: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,</span>
