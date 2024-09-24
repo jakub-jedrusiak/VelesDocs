@@ -2,6 +2,7 @@
   {
     "listing": "/ref/overview.html",
     "items": [
+      "/ref/validators.html",
       "/ref/wrappers.html"
     ]
   }
