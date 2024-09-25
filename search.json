@@ -1,269 +1,98 @@
 [
   {
-    "objectID": "ref/validators.html",
-    "href": "ref/validators.html",
-    "title": "Validators",
+    "objectID": "ref/customExpressionFunctions.html",
+    "href": "ref/customExpressionFunctions.html",
+    "title": "Custom Expression Functions",
     "section": "",
-    "text": "A validator for text values.\n\n\n\ntextValidator(\n    minLength: int = None,\n    maxLength: int = None,\n    allowDigits: bool = True,\n    error: str = None\n) -&gt; ValidatorModel\n\n\n\n\nmaxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.",
+    "text": "Expression functions are functions that can be used inside expressions and – by extension – in calculated values, dynamic texts and dynamic visibility. SurveyJS includes many built-in functions you can use. The most up-to-date documentation of these (especially including iff(), max(), min() and avg()) is the SurveyJS documentation.\nVeles adds some custom, research-tailored expression functions to the mix. You can use them as you would with the built-in SurveyJS functions.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
-      "Validators"
+      "Custom Expression Functions"
     ]
   },
   {
-    "objectID": "ref/validators.html#signature",
-    "href": "ref/validators.html#signature",
-    "title": "Validators",
-    "section": "",
-    "text": "textValidator(\n    minLength: int = None,\n    maxLength: int = None,\n    allowDigits: bool = True,\n    error: str = None\n) -&gt; ValidatorModel",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/validators.html#arguments",
-    "href": "ref/validators.html#arguments",
-    "title": "Validators",
-    "section": "",
-    "text": "maxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/validators.html#signature-1",
-    "href": "ref/validators.html#signature-1",
-    "title": "Validators",
+    "objectID": "ref/customExpressionFunctions.html#signature",
+    "href": "ref/customExpressionFunctions.html#signature",
+    "title": "Custom Expression Functions",
     "section": "Signature",
-    "text": "Signature\n\nemailValidator(\n    error: str = None\n) -&gt; ValidatorModel",
+    "text": "Signature\nround(\n    number: number | string,\n    decimals: number\n)",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
-      "Validators"
+      "Custom Expression Functions"
     ]
   },
   {
-    "objectID": "ref/validators.html#arguments-1",
-    "href": "ref/validators.html#arguments-1",
-    "title": "Validators",
+    "objectID": "ref/customExpressionFunctions.html#arguments",
+    "href": "ref/customExpressionFunctions.html#arguments",
+    "title": "Custom Expression Functions",
     "section": "Arguments",
-    "text": "Arguments",
+    "text": "Arguments\nnumber : number | string Number to be rounded. Can be a number, an expression that evaluates to number, or a string with either the name of a question or the name of a variable. See examples.\ndecimals : number How many decimals should the number be rounded to?",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
-      "Validators"
+      "Custom Expression Functions"
     ]
   },
   {
-    "objectID": "ref/validators.html#signature-2",
-    "href": "ref/validators.html#signature-2",
-    "title": "Validators",
+    "objectID": "ref/customExpressionFunctions.html#examples",
+    "href": "ref/customExpressionFunctions.html#examples",
+    "title": "Custom Expression Functions",
+    "section": "Examples",
+    "text": "Examples\n\n# Use with calculated values\nvls.survey(\n    somePages,\n    calculatedValues=[\n        {\"name\": \"BMI\", \"expression\": \"round({weight} / ({height} * {height}), 1)\"}\n    ],\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#signature-1",
+    "href": "ref/customExpressionFunctions.html#signature-1",
+    "title": "Custom Expression Functions",
     "section": "Signature",
-    "text": "Signature\n\nregexValidator(\n    regex: str = None,\n    error: str = None\n) -&gt; ValidatorModel",
+    "text": "Signature\nrandom(\n    min: number,\n    max: number,\n    seed: any\n)",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
-      "Validators"
+      "Custom Expression Functions"
     ]
   },
   {
-    "objectID": "ref/validators.html#arguments-2",
-    "href": "ref/validators.html#arguments-2",
-    "title": "Validators",
+    "objectID": "ref/customExpressionFunctions.html#arguments-1",
+    "href": "ref/customExpressionFunctions.html#arguments-1",
+    "title": "Custom Expression Functions",
     "section": "Arguments",
-    "text": "Arguments\nerror : str Custom error text to display. Optional",
+    "text": "Arguments\nmin : number The minimum value the return value can get (inclusive).\nmax : number The maximum value the return value can get (inclusive).\nseed : any Random seed for the generator1. Set if you want the number not to change for a particular participant once randomly selected. Can be anything, e.g. the name of the calculated value or some other label. If not set, the number will be set randomly each time a survey value changes (e.g. a question is answered). Do not repeat seeds, repeated seed will result in the same random value selected. See examples.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
-      "Validators"
+      "Custom Expression Functions"
     ]
   },
   {
-    "objectID": "ref/validators.html#signature-3",
-    "href": "ref/validators.html#signature-3",
-    "title": "Validators",
-    "section": "Signature",
-    "text": "Signature\n\nexpressionValidator(\n    expression: str = None,\n    error: str = None\n) -&gt; ValidatorModel",
+    "objectID": "ref/customExpressionFunctions.html#examples-1",
+    "href": "ref/customExpressionFunctions.html#examples-1",
+    "title": "Custom Expression Functions",
+    "section": "Examples",
+    "text": "Examples\n\n# Use to create subgroups\nvls.survey(\n    vls.page(\n        \"manipulation_page\",\n        vls.info(\"manipulation\", \"## You are stupid!\"),\n        visibleIf=\"{group} = 1 and {subgroup} = 5\",  # show only to 1/5 of the first group\n    ),\n    numberOfGroups=2,\n    calculatedValues=[\n        {\n            \"name\": \"subgroup\",\n            \"expression\": \"random(1, 5, 'subgroup')\",  # set seed if the value should be selected once and once only\n        }\n    ],\n)",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
-      "Validators"
+      "Custom Expression Functions"
     ]
   },
   {
-    "objectID": "ref/validators.html#arguments-3",
-    "href": "ref/validators.html#arguments-3",
-    "title": "Validators",
-    "section": "Arguments",
-    "text": "Arguments\nerror : str Custom error text to display. Optional",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/validators.html#signature-4",
-    "href": "ref/validators.html#signature-4",
-    "title": "Validators",
-    "section": "Signature",
-    "text": "Signature\n\nnumberValidator(\n    minValue: int = None,\n    maxValue: int = None,\n    error: str = None\n) -&gt; ValidatorModel",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/validators.html#arguments-4",
-    "href": "ref/validators.html#arguments-4",
-    "title": "Validators",
-    "section": "Arguments",
-    "text": "Arguments\nmaxValue : int Maximum value for the number validator.\nerror : str Custom error text to display. Optional.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/validators.html#signature-5",
-    "href": "ref/validators.html#signature-5",
-    "title": "Validators",
-    "section": "Signature",
-    "text": "Signature\n\nanswerCountValidator(\n    minCount: int = None,\n    maxCount: int = None,\n    error: str = None\n) -&gt; ValidatorModel",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/validators.html#arguments-5",
-    "href": "ref/validators.html#arguments-5",
-    "title": "Validators",
-    "section": "Arguments",
-    "text": "Arguments\nmaxCount : int Maximum count for the answer count validator.\nerror : str Custom error text to display. Optional",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Validators"
-    ]
-  },
-  {
-    "objectID": "ref/overview.html",
-    "href": "ref/overview.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nCategories\n\n\n\n\n\n\nValidators\n\n\n \n\n\n \n\n\n\n\nWrappers for question types\n\n\n \n\n\n \n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that yarn is required for Veles to work. You can download it from here or use your package manager.\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "getting-started.html",
-    "href": "getting-started.html",
-    "title": "Getting started",
-    "section": "",
-    "text": "Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from the official website. During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing python in the terminal, without the full path to python.exe. If you’re using Linux or MacOS, you already have Python installed by default.\nUsing an IDE is recommended. You can use any IDE, but I highly recommend Visual Studio Code. If you want to use it, it’s a good idea to also download Python Extension Pack and Pylance. You can do it from within the program. You can also use RStudio if you want.\nSome really basic knowledge how to use Python is recommended. If you know what’s a variable and how to call functions, you’re good to go. If you don’t know anything about programming, this 1-hour Python introduction will be more than enough (although I think VSCode is better than PyCharm).\nTo actually build (or even preview) your survey, you must have yarn installed. It’s a JavaScript package manager and is used to download some dependencies like Survey.js and React. yarn gets installed with Node.js. If you’re a Windows user, you can download it from the official website. MacOS comes with Node.js preinstalled. If you’re a Linux user, chances are you have Node.js already installed. If so, you should be able to run this command in your terminal (PowerShell or cmd in Windows):\nnpm -v\nOtherwise you can use one of the following commands:\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.\n\n\n\n\nyarn -v in Linux terminal\n\n\n\n\n\n\n\nyarn -v in Linux terminal",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#questions",
-    "href": "getting-started.html#questions",
-    "title": "Getting started",
-    "section": "Questions",
-    "text": "Questions\nIn Veles, questions are a class of objects. There are two main ways of creating them – separately or when we want to convert a whole questionnaire at once. In both cases we use an appropriate question function. See the docs\n\nradio()\nLet’s start with creating some demographic questions with vls.radio(). The syntax is as follows:\n\nvls.radio(name, title, *choices, **kwargs)\n\nTo create a single-choice question we need to invoke the vls.radio() function and fill it with appropriate data. The first thing is the name argument which is the internal code of the question that will later become the name of the column in the database. Then we have title which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:\n\ngender = vls.radio(\n    \"gender\",\n    \"What is your gender?\",\n    \"Woman\",\n    \"Man\",\n    \"Other/I don't want to answer\",\n)\n\n\n\n\nGender question example\n\n\nThere are two things to notice here. Firstly, I save the created question to a variable called gender. We will then use the variable to put the question in a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables.\n\n\nQuestion options\nEach question can have a series of additional parameters specified. For example we can make an answer required, add a subtitle, add an “Other” option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.\n\ngender = vls.radio(\n    \"gender\",\n    \"What is your gender?\",\n    \"Woman\",\n    \"Man\",\n    isRequired=True,\n    showOtherItem=True,\n    showNoneItem=True,\n    noneText=\"Prefer not to say\",\n    hideNumber=True,\n    description=\"Choose an answer from options below\",\n)\n\n\n\n\nGender questions with options specified\n\n\nEvery type of question (as well as pages and surveys) has its set of possible options. To check the possible options you can consult the docs or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup.\n\n\n\n\nThe documentation you can see when you hover over a name of the function in VS Code\n\n\n\n\n\n\n\nThe documentation you can see when you hover over a name of the function in VS Code\n\n\n\n\n\nWhole questionnaires\nOften in behavioral sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and the labels are predictable. Veles allows for including a whole questionnaire at once.\nTo do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand…\n\n# manually formatted list\nRSES_items = [\n    \"I feel that I am a person of worth, at least on an equal plane with others.\",\n    \"I feel that I have a number of good qualities.\",\n    \"All in all, I am inclined to feel that I am a failure.\",\n    \"I am able to do things as well as most other people.\",\n    \"I feel I do not have much to be proud of.\",\n    \"I take a positive attitude toward myself.\",\n    \"On the whole, I am satisfied with myself.\",\n    \"I wish I could have more respect for myself.\",\n    \"I certainly feel useless at times.\",\n    \"At times I think I am no good at all.\",\n]\n\n…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. Notice the triple quotation marks \"\"\". They allow us to create a multiline strings.\n\n# triple quotation for multi-line strings\nRSES_items = \"\"\"I feel that I am a person of worth, at least on an equal plane with others.\nI feel that I have a number of good qualities.\nAll in all, I am inclined to feel that I am a failure.\nI am able to do things as well as most other people.\nI feel I do not have much to be proud of.\nI take a positive attitude toward myself.\nOn the whole, I am satisfied with myself.\nI wish I could have more respect for myself.\nI certainly feel useless at times.\nAt times I think I am no good at all.\"\"\"\n\nSo I saved the questionnaire into a variable called RSES_items. I can now tell python to split it, so it would become a list of items. To do this, we can use the split() method. Methods are functions that we write after a dot to apply them to something. split() takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with \"\\n\". To split the RSES_items string we could write RSES_items.split(\"\\n\").\n\nRSES = vls.radio(\n    \"RSES\",\n    RSES_items.split(\"\\n\"),\n    \"Strongly Agree; Agree; Disagree; Strongly Disagree\".split(\"; \"),\n    isRequired=True,\n)\n\nIn here I’ve splitted the inside the radio() function, but I also could have done it anywhere before that. To learn more about Python string methods, see W3Schools lesson about them. Had I used the manually formatted list, I wouldn’t have to write the split() part. Also notice what I did with the scale – we don’t have to save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:\n\nRSES = vls.radio(\n    \"RSES\",\n    \"\"\"I feel that I am a person of worth, at least on an equal plane with others.\nI feel that I have a number of good qualities.\nAll in all, I am inclined to feel that I am a failure.\nI am able to do things as well as most other people.\nI feel I do not have much to be proud of.\nI take a positive attitude toward myself.\nOn the whole, I am satisfied with myself.\nI wish I could have more respect for myself.\nI certainly feel useless at times.\nAt times I think I am no good at all.\"\"\".split(\n        \"\\n\"\n    ),\n    \"Strongly Agree; Agree; Disagree; Strongly Disagree\".split(\"; \"),\n    isRequired=True,\n)\n\nThe labels will become \"RSES_1\", \"RSES_2\", \"RSES_3\" etc.\n\n\nList comprehension\nThis part is not necessary but extremely useful.\nThe power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based1 alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee”. That would disrespect tea. We need something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string2 to do just that.\n\n# get our drinks and make them a list\ndrinks = \"tea coffee juice water\".split(\" \")\n\n# modify with a loop\ndrinks = [f\"How do you like {drink}?\" for drink in drinks]\n\n# add some answers\nanswers = \"I love it; I like it; It's OK; I don't like it; I despise it\".split(\"; \")\n\n# make it a list of questions\nq_drinks = vls.radio(\"drinks\", drinks, answers)\n\nThere’s a few things to unpack here. First we get the list of our drinks separated with some common separator. Put simply, there should be some string (text) separating single drinks – a space in this example. If we also had \"orange juice\" on the list we would need something else, e.g. a comma followed by a space (\"tea, coffee, juice, water, orange juice\"). We then split it and save it in the drinks variable.\nThe third step may seem more complicated, so let’s take it slowly. That is something called list comprehension. It’s a form of a loop in Python that allows us to quickly do something with a list, e.g. call a function for each element or put every element in a certain string. If you think about our question, it is basically “How do you like {drink}?” where “{drink}” is the name of each drink. That is what we start with. Inside square brackets we write [f\"How do you like {drink}?\"]. Notice I have added f before the opening quotation mark. These so called “f-strings” are Python’s way of saying that there is a variable in a string. The variable itself must be inside curly brackets.\nNow we just need to tell Python to do this for each of our drinks. Python doesn’t know what drink means if we don’t tell it. It is not that smart to infer it from the fact that we called our list drinks. To tell Python what we mean by {drink}, we need to write for drink in drinks so we end up with [f\"How do you like {drink}?\" for drink in drinks]. We could have called it differently. [f\"How do you like {i}?\" for i in drinks] would give the same result, but it makes more sense to call it drink rather than i, doesn’t it? [f\"How do you like {drink}?\" for drink in drinks] basically means “Give me this string \"How do you like {drink}?\" where drink means a value from the list called drinks. Do this for every drink in the list called drinks”. We also save the newly created list to the drinks variable, overwriting it.\nWhen we run it, the list ['tea', 'coffee', 'juice', 'water'] becomes ['How do you like tea?', 'How do you like coffee?', 'How do you like juice?', 'How do you like water?']. The new list can be then passed into the radio() function. It could’ve been done manually but learning this technique allows for doing it for arbitrarily long lists.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#panels",
-    "href": "getting-started.html#panels",
-    "title": "Getting started",
-    "section": "Panels",
-    "text": "Panels\nTo be implemented…",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#pages",
-    "href": "getting-started.html#pages",
-    "title": "Getting started",
-    "section": "Pages",
-    "text": "Pages\nEvery survey needs to have at least one page. Page is basically a list of questions but with its own name, title, description and options. You can create it with page().\n\nvls.page(name, questions, **kwargs)\n\nPages have their own names. They don’t yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See the docs.\n\nintro = vls.page(\"metrics\", gender)  # previously created gender question\n\nself_esteem = vls.page(\n    \"RSES\",\n    RSES,\n    questionsOrder=\"random\",\n    title=\"Rosenberg Self-Esteem Scale\",\n    maxTimeToFinish=300,  # time limit in seconds\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#survey",
-    "href": "getting-started.html#survey",
-    "title": "Getting started",
-    "section": "Survey",
-    "text": "Survey\nWhen all elements are created, we can combine them into the final survey. We can do this with the survey() function. It does two things – returns a Survey object and creates your survey’s structure.\n\nvls.survey(pages, **kwargs)\n\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n)\n\nBy default the page is not built for production, i.e. it is not compiled into a form that can be actually hosted. That is because it takes around a minute and is not needed for testing. When you complete designing your survey, set buildForProduction to True. Be default, the survey will be created in a subfolder called “survey”. To change the folder’s name or path, use the folderName argument.\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n    buildForProduction=True,\n)\n\nThe structure of the generated files and what to do with them is explained in View and test section below.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#velesweb",
-    "href": "getting-started.html#velesweb",
-    "title": "Getting started",
-    "section": "VelesWeb",
-    "text": "VelesWeb\nWhen you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use VelesWeb. The only file that will be interesting, is the main.js file in the build folder.\nLog in to your VelesWeb account, create a new survey, give it a title and – optionally – a description. Then choose the main.js file from your hard drive. Submit and wait. It might take a minute or two. After that you’ll see your survey’s overview.\n\n\n\n\n\n\nFrom here you can test the survey, make it offline or turn on the real data collection. Each survey has two databases – the main one and the test one. The test mode is the default. As you can see below, responses collected in both modes are separated. This makes it easier to test your survey without worrying about messing up the data.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#self-hosting",
-    "href": "getting-started.html#self-hosting",
-    "title": "Getting started",
-    "section": "Self-hosting",
-    "text": "Self-hosting\nIf we want to manage our surveys ourselves, we need a place to host them and a place to store the results. Luckily there are free methods to do both. In here we’ll use Vercel for hosting and MongoDB Atlas for storing the results. Additional benefit of self-hosting is that we can use our own domain name e.g. create a special subdomain in our university’s domain (like surveys.uwr.edu.pl). That is if someone will give us access to the DNS settings.\n\nConfiguration\n\nGo to VelesSurvey for Vercel GitHub repository. Click on “Use this template” button. Give your repo a name and confirm with “Create repository from template” button. Of course you need to be logged into your GitHub account.\nGo to Vercel, create an account and from there start a new project. Link the project to your newly created GitHub repo.\nDon’t change the default deployment settings but do click on Enviroment variables. Add a new variable named SECRET_KEY with a value generated with this website and confirm with “Add” button. If you plan to use a custom domain, you add a DOMAIN_NAME variable with a value like .uwr.edu.pl. Don’t worry, if you don’t know yet. You can always add it later. You can read more about custom domains here.\n\n\n\n\n\n\n\n\nWhen the building process ends, you can visit your page. It’s just a white screen with a moving Veles logo. By design, there’s no survey list on the main page. It helps keeping everything confidential.\nNot only we need a place to collect our responses, but also somewhere to store them. For this purpose we’ll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1.5 milion responses before we run out of space. I wish everyone this kind of probe sizes. Go to MongoDB, create a free account and then a free cluster. The website will take you through the whole process.\nNow we need do connect Vercel and MongoDB. You can do it on this website. Click “Add integration” and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.\nThat’s it. Test your application by going to /tea_survey in your Vercel app (e.g. https://tea-research-project.vercel.app/tea_survey/). You should see a survey with a series of questions about tea. When you complete it, you should see a new response in your database.\n\n\n\nUsing\nWhen you create a survey with Veles, you get a folder with a series of files. The most important one is main.js from build subfolder. To add it to your site, you need to create a new subfolder in the surveys folder in your repository. The easiest way to do it it through GitHub Desktop. Use it to download (or “clone”) your repository and create a new folder inside the surveys folder. The name of that folder will become a link to your survey, e.g. if you name it black_tea_study, the link will be something like https://tea-research-project.vercel.app/black_tea_study. Then put your main.js in your newly created folder. Do not rename it. Then use GitHub Desktop to upload (or “push”) your changes. After a minute or so, your survey should be available.\nTo read and save your data you can use web desktop on mongodb.com or with a special program called MongoDB Compass. After any responses are recieved (even for the tea survey), a new database called VelesResponses is created. Every survey gets its own folder (or “collection”). From there you can easily export your data to .csv or .json.\nIf you use R for the analysis, you can connect to the database directly, without having to download anything. See this article for the details. You can also do that with Python.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "getting-started.html#footnotes",
-    "href": "getting-started.html#footnotes",
-    "title": "Getting started",
+    "objectID": "ref/customExpressionFunctions.html#footnotes",
+    "href": "ref/customExpressionFunctions.html#footnotes",
+    "title": "Custom Expression Functions",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nOr WYSIWYG.↩︎\n“String” is a computer lingo for text, a group of letters.↩︎",
+    "text": "Footnotes\n\n\nTechnically the value of this argument is concatenated with the participant’s random ID, so the seed could be different for each participant.↩︎",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
-      "Getting started"
+      "Reference",
+      "Custom Expression Functions"
     ]
   },
   {
@@ -684,6 +513,273 @@
       "{{< fa flask >}} VelesWeb",
       "Reference",
       "Wrappers for question types"
+    ]
+  },
+  {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "Getting started",
+    "section": "",
+    "text": "Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from the official website. During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing python in the terminal, without the full path to python.exe. If you’re using Linux or MacOS, you already have Python installed by default.\nUsing an IDE is recommended. You can use any IDE, but I highly recommend Visual Studio Code. If you want to use it, it’s a good idea to also download Python Extension Pack and Pylance. You can do it from within the program. You can also use RStudio if you want.\nSome really basic knowledge how to use Python is recommended. If you know what’s a variable and how to call functions, you’re good to go. If you don’t know anything about programming, this 1-hour Python introduction will be more than enough (although I think VSCode is better than PyCharm).\nTo actually build (or even preview) your survey, you must have yarn installed. It’s a JavaScript package manager and is used to download some dependencies like Survey.js and React. yarn gets installed with Node.js. If you’re a Windows user, you can download it from the official website. MacOS comes with Node.js preinstalled. If you’re a Linux user, chances are you have Node.js already installed. If so, you should be able to run this command in your terminal (PowerShell or cmd in Windows):\nnpm -v\nOtherwise you can use one of the following commands:\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.\n\n\n\n\nyarn -v in Linux terminal\n\n\n\n\n\n\n\nyarn -v in Linux terminal",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#questions",
+    "href": "getting-started.html#questions",
+    "title": "Getting started",
+    "section": "Questions",
+    "text": "Questions\nIn Veles, questions are a class of objects. There are two main ways of creating them – separately or when we want to convert a whole questionnaire at once. In both cases we use an appropriate question function. See the docs\n\nradio()\nLet’s start with creating some demographic questions with vls.radio(). The syntax is as follows:\n\nvls.radio(name, title, *choices, **kwargs)\n\nTo create a single-choice question we need to invoke the vls.radio() function and fill it with appropriate data. The first thing is the name argument which is the internal code of the question that will later become the name of the column in the database. Then we have title which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:\n\ngender = vls.radio(\n    \"gender\",\n    \"What is your gender?\",\n    \"Woman\",\n    \"Man\",\n    \"Other/I don't want to answer\",\n)\n\n\n\n\nGender question example\n\n\nThere are two things to notice here. Firstly, I save the created question to a variable called gender. We will then use the variable to put the question in a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables.\n\n\nQuestion options\nEach question can have a series of additional parameters specified. For example we can make an answer required, add a subtitle, add an “Other” option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.\n\ngender = vls.radio(\n    \"gender\",\n    \"What is your gender?\",\n    \"Woman\",\n    \"Man\",\n    isRequired=True,\n    showOtherItem=True,\n    showNoneItem=True,\n    noneText=\"Prefer not to say\",\n    hideNumber=True,\n    description=\"Choose an answer from options below\",\n)\n\n\n\n\nGender questions with options specified\n\n\nEvery type of question (as well as pages and surveys) has its set of possible options. To check the possible options you can consult the docs or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup.\n\n\n\n\nThe documentation you can see when you hover over a name of the function in VS Code\n\n\n\n\n\n\n\nThe documentation you can see when you hover over a name of the function in VS Code\n\n\n\n\n\nWhole questionnaires\nOften in behavioral sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and the labels are predictable. Veles allows for including a whole questionnaire at once.\nTo do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand…\n\n# manually formatted list\nRSES_items = [\n    \"I feel that I am a person of worth, at least on an equal plane with others.\",\n    \"I feel that I have a number of good qualities.\",\n    \"All in all, I am inclined to feel that I am a failure.\",\n    \"I am able to do things as well as most other people.\",\n    \"I feel I do not have much to be proud of.\",\n    \"I take a positive attitude toward myself.\",\n    \"On the whole, I am satisfied with myself.\",\n    \"I wish I could have more respect for myself.\",\n    \"I certainly feel useless at times.\",\n    \"At times I think I am no good at all.\",\n]\n\n…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. Notice the triple quotation marks \"\"\". They allow us to create a multiline strings.\n\n# triple quotation for multi-line strings\nRSES_items = \"\"\"I feel that I am a person of worth, at least on an equal plane with others.\nI feel that I have a number of good qualities.\nAll in all, I am inclined to feel that I am a failure.\nI am able to do things as well as most other people.\nI feel I do not have much to be proud of.\nI take a positive attitude toward myself.\nOn the whole, I am satisfied with myself.\nI wish I could have more respect for myself.\nI certainly feel useless at times.\nAt times I think I am no good at all.\"\"\"\n\nSo I saved the questionnaire into a variable called RSES_items. I can now tell python to split it, so it would become a list of items. To do this, we can use the split() method. Methods are functions that we write after a dot to apply them to something. split() takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with \"\\n\". To split the RSES_items string we could write RSES_items.split(\"\\n\").\n\nRSES = vls.radio(\n    \"RSES\",\n    RSES_items.split(\"\\n\"),\n    \"Strongly Agree; Agree; Disagree; Strongly Disagree\".split(\"; \"),\n    isRequired=True,\n)\n\nIn here I’ve splitted the inside the radio() function, but I also could have done it anywhere before that. To learn more about Python string methods, see W3Schools lesson about them. Had I used the manually formatted list, I wouldn’t have to write the split() part. Also notice what I did with the scale – we don’t have to save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:\n\nRSES = vls.radio(\n    \"RSES\",\n    \"\"\"I feel that I am a person of worth, at least on an equal plane with others.\nI feel that I have a number of good qualities.\nAll in all, I am inclined to feel that I am a failure.\nI am able to do things as well as most other people.\nI feel I do not have much to be proud of.\nI take a positive attitude toward myself.\nOn the whole, I am satisfied with myself.\nI wish I could have more respect for myself.\nI certainly feel useless at times.\nAt times I think I am no good at all.\"\"\".split(\n        \"\\n\"\n    ),\n    \"Strongly Agree; Agree; Disagree; Strongly Disagree\".split(\"; \"),\n    isRequired=True,\n)\n\nThe labels will become \"RSES_1\", \"RSES_2\", \"RSES_3\" etc.\n\n\nList comprehension\nThis part is not necessary but extremely useful.\nThe power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based1 alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee”. That would disrespect tea. We need something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string2 to do just that.\n\n# get our drinks and make them a list\ndrinks = \"tea coffee juice water\".split(\" \")\n\n# modify with a loop\ndrinks = [f\"How do you like {drink}?\" for drink in drinks]\n\n# add some answers\nanswers = \"I love it; I like it; It's OK; I don't like it; I despise it\".split(\"; \")\n\n# make it a list of questions\nq_drinks = vls.radio(\"drinks\", drinks, answers)\n\nThere’s a few things to unpack here. First we get the list of our drinks separated with some common separator. Put simply, there should be some string (text) separating single drinks – a space in this example. If we also had \"orange juice\" on the list we would need something else, e.g. a comma followed by a space (\"tea, coffee, juice, water, orange juice\"). We then split it and save it in the drinks variable.\nThe third step may seem more complicated, so let’s take it slowly. That is something called list comprehension. It’s a form of a loop in Python that allows us to quickly do something with a list, e.g. call a function for each element or put every element in a certain string. If you think about our question, it is basically “How do you like {drink}?” where “{drink}” is the name of each drink. That is what we start with. Inside square brackets we write [f\"How do you like {drink}?\"]. Notice I have added f before the opening quotation mark. These so called “f-strings” are Python’s way of saying that there is a variable in a string. The variable itself must be inside curly brackets.\nNow we just need to tell Python to do this for each of our drinks. Python doesn’t know what drink means if we don’t tell it. It is not that smart to infer it from the fact that we called our list drinks. To tell Python what we mean by {drink}, we need to write for drink in drinks so we end up with [f\"How do you like {drink}?\" for drink in drinks]. We could have called it differently. [f\"How do you like {i}?\" for i in drinks] would give the same result, but it makes more sense to call it drink rather than i, doesn’t it? [f\"How do you like {drink}?\" for drink in drinks] basically means “Give me this string \"How do you like {drink}?\" where drink means a value from the list called drinks. Do this for every drink in the list called drinks”. We also save the newly created list to the drinks variable, overwriting it.\nWhen we run it, the list ['tea', 'coffee', 'juice', 'water'] becomes ['How do you like tea?', 'How do you like coffee?', 'How do you like juice?', 'How do you like water?']. The new list can be then passed into the radio() function. It could’ve been done manually but learning this technique allows for doing it for arbitrarily long lists.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#panels",
+    "href": "getting-started.html#panels",
+    "title": "Getting started",
+    "section": "Panels",
+    "text": "Panels\nTo be implemented…",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#pages",
+    "href": "getting-started.html#pages",
+    "title": "Getting started",
+    "section": "Pages",
+    "text": "Pages\nEvery survey needs to have at least one page. Page is basically a list of questions but with its own name, title, description and options. You can create it with page().\n\nvls.page(name, questions, **kwargs)\n\nPages have their own names. They don’t yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See the docs.\n\nintro = vls.page(\"metrics\", gender)  # previously created gender question\n\nself_esteem = vls.page(\n    \"RSES\",\n    RSES,\n    questionsOrder=\"random\",\n    title=\"Rosenberg Self-Esteem Scale\",\n    maxTimeToFinish=300,  # time limit in seconds\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#survey",
+    "href": "getting-started.html#survey",
+    "title": "Getting started",
+    "section": "Survey",
+    "text": "Survey\nWhen all elements are created, we can combine them into the final survey. We can do this with the survey() function. It does two things – returns a Survey object and creates your survey’s structure.\n\nvls.survey(pages, **kwargs)\n\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n)\n\nBy default the page is not built for production, i.e. it is not compiled into a form that can be actually hosted. That is because it takes around a minute and is not needed for testing. When you complete designing your survey, set buildForProduction to True. Be default, the survey will be created in a subfolder called “survey”. To change the folder’s name or path, use the folderName argument.\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n    buildForProduction=True,\n)\n\nThe structure of the generated files and what to do with them is explained in View and test section below.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#velesweb",
+    "href": "getting-started.html#velesweb",
+    "title": "Getting started",
+    "section": "VelesWeb",
+    "text": "VelesWeb\nWhen you generate a Survey, you get a folder with a series of files. Their structure is not that important if you intent to use VelesWeb. The only file that will be interesting, is the main.js file in the build folder.\nLog in to your VelesWeb account, create a new survey, give it a title and – optionally – a description. Then choose the main.js file from your hard drive. Submit and wait. It might take a minute or two. After that you’ll see your survey’s overview.\n\n\n\n\n\n\nFrom here you can test the survey, make it offline or turn on the real data collection. Each survey has two databases – the main one and the test one. The test mode is the default. As you can see below, responses collected in both modes are separated. This makes it easier to test your survey without worrying about messing up the data.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#self-hosting",
+    "href": "getting-started.html#self-hosting",
+    "title": "Getting started",
+    "section": "Self-hosting",
+    "text": "Self-hosting\nIf we want to manage our surveys ourselves, we need a place to host them and a place to store the results. Luckily there are free methods to do both. In here we’ll use Vercel for hosting and MongoDB Atlas for storing the results. Additional benefit of self-hosting is that we can use our own domain name e.g. create a special subdomain in our university’s domain (like surveys.uwr.edu.pl). That is if someone will give us access to the DNS settings.\n\nConfiguration\n\nGo to VelesSurvey for Vercel GitHub repository. Click on “Use this template” button. Give your repo a name and confirm with “Create repository from template” button. Of course you need to be logged into your GitHub account.\nGo to Vercel, create an account and from there start a new project. Link the project to your newly created GitHub repo.\nDon’t change the default deployment settings but do click on Enviroment variables. Add a new variable named SECRET_KEY with a value generated with this website and confirm with “Add” button. If you plan to use a custom domain, you add a DOMAIN_NAME variable with a value like .uwr.edu.pl. Don’t worry, if you don’t know yet. You can always add it later. You can read more about custom domains here.\n\n\n\n\n\n\n\n\nWhen the building process ends, you can visit your page. It’s just a white screen with a moving Veles logo. By design, there’s no survey list on the main page. It helps keeping everything confidential.\nNot only we need a place to collect our responses, but also somewhere to store them. For this purpose we’ll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1.5 milion responses before we run out of space. I wish everyone this kind of probe sizes. Go to MongoDB, create a free account and then a free cluster. The website will take you through the whole process.\nNow we need do connect Vercel and MongoDB. You can do it on this website. Click “Add integration” and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.\nThat’s it. Test your application by going to /tea_survey in your Vercel app (e.g. https://tea-research-project.vercel.app/tea_survey/). You should see a survey with a series of questions about tea. When you complete it, you should see a new response in your database.\n\n\n\nUsing\nWhen you create a survey with Veles, you get a folder with a series of files. The most important one is main.js from build subfolder. To add it to your site, you need to create a new subfolder in the surveys folder in your repository. The easiest way to do it it through GitHub Desktop. Use it to download (or “clone”) your repository and create a new folder inside the surveys folder. The name of that folder will become a link to your survey, e.g. if you name it black_tea_study, the link will be something like https://tea-research-project.vercel.app/black_tea_study. Then put your main.js in your newly created folder. Do not rename it. Then use GitHub Desktop to upload (or “push”) your changes. After a minute or so, your survey should be available.\nTo read and save your data you can use web desktop on mongodb.com or with a special program called MongoDB Compass. After any responses are recieved (even for the tea survey), a new database called VelesResponses is created. Every survey gets its own folder (or “collection”). From there you can easily export your data to .csv or .json.\nIf you use R for the analysis, you can connect to the database directly, without having to download anything. See this article for the details. You can also do that with Python.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#footnotes",
+    "href": "getting-started.html#footnotes",
+    "title": "Getting started",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOr WYSIWYG.↩︎\n“String” is a computer lingo for text, a group of letters.↩︎",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that yarn is required for Veles to work. You can download it from here or use your package manager.\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "ref/overview.html",
+    "href": "ref/overview.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nCategories\n\n\n\n\n\n\nCustom Expression Functions\n\n\n \n\n\n \n\n\n\n\nValidators\n\n\n \n\n\n \n\n\n\n\nWrappers for question types\n\n\n \n\n\n \n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html",
+    "href": "ref/validators.html",
+    "title": "Validators",
+    "section": "",
+    "text": "A validator for text values.\n\n\n\ntextValidator(\n    minLength: int = None,\n    maxLength: int = None,\n    allowDigits: bool = True,\n    error: str = None\n) -&gt; ValidatorModel\n\n\n\n\nmaxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#signature",
+    "href": "ref/validators.html#signature",
+    "title": "Validators",
+    "section": "",
+    "text": "textValidator(\n    minLength: int = None,\n    maxLength: int = None,\n    allowDigits: bool = True,\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments",
+    "href": "ref/validators.html#arguments",
+    "title": "Validators",
+    "section": "",
+    "text": "maxLength : int Maximum length for the text validator.\nallowDigits : bool Whether to allow digits for the text validator. Default is True.\nerror : str Custom error text to display. Optional.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#signature-1",
+    "href": "ref/validators.html#signature-1",
+    "title": "Validators",
+    "section": "Signature",
+    "text": "Signature\n\nemailValidator(\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments-1",
+    "href": "ref/validators.html#arguments-1",
+    "title": "Validators",
+    "section": "Arguments",
+    "text": "Arguments",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#signature-2",
+    "href": "ref/validators.html#signature-2",
+    "title": "Validators",
+    "section": "Signature",
+    "text": "Signature\n\nregexValidator(\n    regex: str = None,\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments-2",
+    "href": "ref/validators.html#arguments-2",
+    "title": "Validators",
+    "section": "Arguments",
+    "text": "Arguments\nerror : str Custom error text to display. Optional",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#signature-3",
+    "href": "ref/validators.html#signature-3",
+    "title": "Validators",
+    "section": "Signature",
+    "text": "Signature\n\nexpressionValidator(\n    expression: str = None,\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments-3",
+    "href": "ref/validators.html#arguments-3",
+    "title": "Validators",
+    "section": "Arguments",
+    "text": "Arguments\nerror : str Custom error text to display. Optional",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#signature-4",
+    "href": "ref/validators.html#signature-4",
+    "title": "Validators",
+    "section": "Signature",
+    "text": "Signature\n\nnumberValidator(\n    minValue: int = None,\n    maxValue: int = None,\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments-4",
+    "href": "ref/validators.html#arguments-4",
+    "title": "Validators",
+    "section": "Arguments",
+    "text": "Arguments\nmaxValue : int Maximum value for the number validator.\nerror : str Custom error text to display. Optional.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#signature-5",
+    "href": "ref/validators.html#signature-5",
+    "title": "Validators",
+    "section": "Signature",
+    "text": "Signature\n\nanswerCountValidator(\n    minCount: int = None,\n    maxCount: int = None,\n    error: str = None\n) -&gt; ValidatorModel",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
+    ]
+  },
+  {
+    "objectID": "ref/validators.html#arguments-5",
+    "href": "ref/validators.html#arguments-5",
+    "title": "Validators",
+    "section": "Arguments",
+    "text": "Arguments\nmaxCount : int Maximum count for the answer count validator.\nerror : str Custom error text to display. Optional",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Validators"
     ]
   }
 ]
