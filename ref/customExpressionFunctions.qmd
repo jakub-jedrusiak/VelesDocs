@@ -1,0 +1,91 @@
+---
+title: Custom Expression Functions
+toc: true
+toc-depth: 1
+---
+
+Expression functions are functions that can be used inside expressions and – by extension – in calculated values, dynamic texts and dynamic visibility. SurveyJS includes many built-in functions you can use. The most up-to-date documentation of these (especially including `iff()`, `max()`, `min()` and `avg()`) is the [SurveyJS documentation](https://surveyjs.io/form-library/documentation/design-survey/conditional-logic#built-in-functions).
+
+Veles adds some custom, research-tailored expression functions to the mix. You can use them as you would with the built-in SurveyJS functions.
+
+# `round()`
+
+Rounds a given number to a specified number of decimals.
+
+## Signature
+
+```{js}
+round(
+    number: number | string,
+    decimals: number
+)
+```
+
+## Arguments
+
+**`number`** : _number | string_<br>
+Number to be rounded. Can be a number, an expression that evaluates to number, or a string with either the name of a question or the name of a variable. See examples.
+
+**`decimals`** : _number_<br>
+How many decimals should the number be rounded to?
+
+## Examples
+
+```{python}
+#| eval: false
+
+# Use with calculated values
+vls.survey(
+    somePages,
+    calculatedValues=[
+        {"name": "BMI", "expression": "round({weight} / ({height} * {height}), 1)"}
+    ],
+)
+```
+
+# `random()`
+
+Generate a random integer that will evaluate either every time a value is changed or one each survey. See the `seed` argument for details.
+
+## Signature
+
+```{js}
+random(
+    min: number,
+    max: number,
+    seed: any
+)
+```
+
+## Arguments
+
+**`min`** : _number_<br>
+The minimum value the return value can get (inclusive).
+
+**`max`** : _number_<br>
+The maximum value the return value can get (inclusive).
+
+**`seed`** : _any_<br>
+[Random seed](https://en.wikipedia.org/wiki/Random_seed) for the generator[^1]. Set if you want the number not to change for a particular participant once randomly selected. Can be anything, e.g. the name of the calculated value or some other label. If not set, the number will be set randomly each time a survey value changes (e.g. a question is answered). Do not repeat seeds, repeated seed will result in the same random value selected. See examples.
+
+[^1]: Technically the value of this argument is concatenated with the participant's random ID, so the seed could be different for each participant.
+
+## Examples
+
+```{python}
+# Use to create subgroups
+vls.survey(
+    vls.page(
+        "manipulation_page",
+        vls.info("manipulation", "## You are stupid!"),
+        visibleIf="{group} = 1 and {subgroup} = 5",  # show only to 1/5 of the first group
+    ),
+    numberOfGroups=2,
+    calculatedValues=[
+        {
+            "name": "subgroup",
+            "expression": "random(1, 5, 'subgroup')",  # set seed if the value should be selected once and once only
+        }
+    ],
+)
+```
