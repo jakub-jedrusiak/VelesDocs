@@ -516,6 +516,17 @@
     ]
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that yarn is required for Veles to work. You can download it from here or use your package manager.\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Introduction"
+    ]
+  },
+  {
     "objectID": "getting-started.html",
     "href": "getting-started.html",
     "title": "Getting started",
@@ -601,29 +612,6 @@
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Getting started"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that yarn is required for Veles to work. You can download it from here or use your package manager.\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "ref/overview.html",
-    "href": "ref/overview.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nCategories\n\n\n\n\n\n\nCustom Expression Functions\n\n\n \n\n\n \n\n\n\n\nValidators\n\n\n \n\n\n \n\n\n\n\nWrappers for question types\n\n\n \n\n\n \n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Overview"
     ]
   },
   {
