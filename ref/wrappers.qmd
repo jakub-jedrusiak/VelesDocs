@@ -3337,11 +3337,7 @@ consent(
 Error shown if a person doesn't consent.
 
 **`mode`** : _str_<br>
-What to do if a person doesn't consent. Can be 'forbid' (default, doesn't allow to continue) or 'end' (redirects to the end).
-
-**`For`** 'end' to work, set `triggers` in the `survey()` call to `[{"type": "complete", "expression": "{consent} = false"}]`. You can also
-
-**`set`** `completedHtmlOnCondition` in the `survey()` call to `[{"expression": "{consent} = false", "html": "You can't continue without a consent"}]`
+What to do if a person doesn't consent. Can be 'forbid' (default, doesn't allow to continue) or 'end' (redirects to the end). For 'end' to work, set `triggers` in the `survey()` call to `[{"type": "complete", "expression": "{consent} = false"}]`. You can also set `completedHtmlOnCondition` in the `survey()` call to `[{"expression": "{consent} = false", "html": "You can't continue without a consent"}]`
 
 **`to`** show a custom message in that case.
 
