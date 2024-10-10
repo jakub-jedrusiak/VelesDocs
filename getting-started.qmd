@@ -6,19 +6,17 @@ date-format: iso
 
 # Prerequisites
 
-Veles is a Python library, so before using it, you need to install Python. You can download an installation bundle from [the official website](https://www.python.org/). During installation, check the box saying to add Python to PATH. It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe. If you're using Linux or MacOS, you already have Python installed by default.
+Veles is a Python library, so before using it, you need to install Python. If you're using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "add Python to PATH". It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe.
 
-Using an IDE is recommended. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). If you want to use it, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack) and [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). You can do it from within the program. You can also use RStudio if you want.
+Next you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). If you want to use it, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack), [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) and [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). Then go to your preferences (Ctrl+Shift+P and search for "Open user settings"[^1]), find and check "Format on save" checkbox. It's a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program. Alternatively you use RStudio if you want.
+
+[^1]: Searching in English should work despite what language you have set in VS Code.
+
+![Check the "Format on save" option to ensure maximum readability of your code at all times.](figs/getting_started/format_on_save.png){fig-align="center"}
 
 Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go. If you don't know anything about programming, [this 1-hour Python introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
 
-To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` gets installed with Node.js. If you're a Windows user, you can download it from [the official website](https://nodejs.org/en/download). MacOS comes with Node.js preinstalled. If you're a Linux user, chances are you have Node.js already installed. If so, you should be able to run this command in your terminal (PowerShell or cmd in Windows):
-
-``` bash
-npm -v
-```
-
-Otherwise you can use one of the following commands:
+To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` is bundled with Node.js. If you're a Windows user, you can download it from [the official website](https://nodejs.org/en/download). MacOS comes with Node.js preinstalled. If you're a Linux user, chances are you have Node.js already installed. Otherwise you can use one of the following commands:
 
 ``` bash
 # Ubuntu (and other apt distros)
@@ -37,6 +35,14 @@ choco install nodejs-lts
 brew install node
 ```
 
+To check if npm works, open your terminal (PowerShell in Windows), write this command and hit Enter:
+
+``` bash
+npm -v
+```
+
+The output should be a version number. If you get an error, then there's something wrong. If you're on Windows and you just installed Node.js, reboot your system (PATH may need refreshing).
+
 After installing `node.js`, activate `yarn` with this command in the terminal:
 
 ``` bash
@@ -48,55 +54,68 @@ If everything went well, command `yarn -v` should return a version number.
 ::: light-mode
 ![`yarn -v` in Linux terminal](figs/getting_started/yarn-v.png){fig-alt="yarn -v in the terminal"}
 :::
+
 ::: dark-mode
 ![`yarn -v` in Linux terminal](figs/getting_started/yarn-v_dark.png){fig-alt="yarn -v in the terminal"}
 :::
 
-# Installation
+# Create project
 
-To install Veles, open your terminal (PowerShell or cmd on Windows), write the following command and hit enter.
+Veles project is just a folder with a Python script. Create a folder anywhere and open it using Visual Studio Code (File → Open folder…). From inside VS Code you can create a new file. Call with what you want but give it `.py` extension. In the file, we'll be writing the survey structure.
+
+## Creating a virtual environment
+
+I recommend creating a virtual environment for every project. Virtual environments are a kind of containers with all your Python packages. If you have it, Veles will not update for that project unless you explicitly tell it to. It is important for maintaining the code stability. When you have your `.py` file opened, you should see your Python version number at the bottom of the VS Code window (see figure below). Click it, select "Create Virtual Environment", then "Venv" and select your newest Python version. A new folder called `.venv` should now be visible inside your project folder.
+
+![Creating virtual enviroments is recommended for every project.](figs/getting_started/create_venv.png){fig-align="center"}
+
+## Installing Veles
+
+Now open a new terminal inside VS Code. Click Terminal → New Terminal or use a keyboard shortcut Ctrl+\`. This terminal is opened in your newly created virtual environment. Now we need to install Veles into this virtual environment. To install Veles, write the following command and hit enter.
 
 ``` bash
 pip install velesresearch
 ```
 
-You can also choose development version (unstable) using this command:
+You can also choose development version (unstable but with all the newest features) using this command:
 
 ``` bash
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
 
-# Create project
+If everything went well, you shouldn't see any errors.
 
-Veles project is just a folder with a Python script. Output will be created in the same folder. Create a folder and open it in Visual Studio Code. From inside VS Code you can create a file with `.py` extension. It it, we'll be writing the survey structure.
+![An example console output of a successful installation of the `velesresearch` package.](figs/getting_started/installing_veles.png){fig-align="center"}
 
-The first thing we need to do is to import the `velesresearch` library. To do this, at the top of your script write:
+Now we can start writing our script. In your `.py` file add the following line:
 
 ```{python}
 import velesresearch as vls
 ```
 
+It gives you access to all Veles functions when you write `vls.`. If VS Code can't recognise the import, reload the window (Ctrl+Shift+P → Reload Window) or close and reopen VS Code.
+
 # Survey structure
 
-In SurveyJS, which is the base of Veles, surveys consist of pages, panels and questions. We can create them separately and then combine them into a complete survey.
+In [SurveyJS](https://surveyjs.io/), which is the base of Veles, surveys consist of pages, panels and questions. We can create them separately and then combine them into a complete survey.
 
 ![Survey structure. Source: SurveyJS documentation](https://surveyjs.io/form-library/documentation/images/survey-structure.svg)
 
-Veles is a Python library, so there are many ways to achieve this in practice. We can put things in separate variables and then combine them or nest appropriate functions. In here I'll mainly be using the first approach.
+Veles is a Python library, so there are many ways to achieve this in practice. We can put things in separate variables and then combine them or nest appropriate functions.
 
 ## Questions
 
-In Veles, questions are a class of objects. There are two main ways of creating them -- separately or when we want to convert a whole questionnaire at once. In both cases we use an appropriate question function. See [the docs](ref/questiontypes.qmd)
+In Veles, questions are a class of objects. There are two main ways of creating them -- separately or when we want to convert a whole questionnaire at once. In both cases we use an appropriate question function. See [the docs](ref/wrappers.qmd) for all available question types.
 
 ### `radio()`
 
-Let's start with creating some demographic questions with `vls.radio()`. The syntax is as follows:
+Let's start with creating some single-choice questions with `vls.radio()`. The syntax is as follows:
 
 ```{python}
 vls.radio(name, title, *choices, **kwargs)
 ```
 
-To create a single-choice question we need to invoke the `vls.radio()` function and fill it with appropriate data. The first thing is the `name` argument which is the internal code of the question that will later **become the name of the column** in the database. Then we have `title` which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:
+To create a single-choice question we need to invoke the `vls.radio()` function and fill it with appropriate parameters. The first one the `name` argument which is the internal codename of the question that will later **become the name of the column** in the database. The participant will not see this. Then we have the `title` which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:
 
 ```{python}
 gender = vls.radio(
@@ -110,11 +129,11 @@ gender = vls.radio(
 
 ![Gender question example](figs/getting_started/gender_question_example.png)
 
-There are two things to notice here. Firstly, I save the created question to a variable called `gender`. We will then use the variable to put the question in a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables.
+There are two things to notice here. Firstly, I have saved the created question to a variable called `gender`. We will then use the variable to put the question inside a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables. Don't worry – VS Code will scream at you if you forget the quotation marks.
 
 ### Question options
 
-Each question can have a series of additional parameters specified. For example we can make an answer required, add a subtitle, add an "Other" option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.
+Each question can have a series of additional parameters specified. For example we can make the question required, add a subtitle, add an "Other" option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.
 
 ```{python}
 gender = vls.radio(
@@ -133,14 +152,51 @@ gender = vls.radio(
 
 ![Gender questions with options specified](figs/getting_started/gender_question_options_example.png)
 
-Every type of question (as well as pages and surveys) has its set of possible options. To check the possible options you can consult the docs or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup.
+Every type of question (as well as pages and surveys) has its set of possible options. To check the possible options you can consult [the docs](ref/wrappers.qmd) or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup.
 
 ::: light-mode
 ![The documentation you can see when you hover over a name of the function in VS Code](figs/getting_started/IDE_docs.png)
 :::
+
 ::: dark-mode
 ![The documentation you can see when you hover over a name of the function in VS Code](figs/getting_started/IDE_docs_dark.png)
 :::
+
+If you want to have some kind of default set of options (e.g. you want every question to have a hidden number and to be required), create [a dictionary](https://www.w3schools.com/python/python_dictionaries.asp) with curly braces, set all the options there and then pass the dictionary to every question with the [`**` operator](https://www.geeksforgeeks.org/what-does-the-double-star-operator-mean-in-python/#:~:text=As%20arguments%20in%20functions%20and%20methods).
+
+```{python}
+defaultOptions = {"hideNumber": True, "isRequired": True}
+
+gender = vls.radio(
+    "gender",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    "Other/prefer not to answer"
+    **defaultOptions
+)
+
+age = vls.text(
+    "age",
+    "What is your age?",
+    inputType="number",
+    min=18,
+    **defaultOptions
+)
+```
+
+You can use [the pipe `|` operator](https://medium.com/@chinthapooja733/python-tips-merging-dictionaries-using-pipe-operator-98150a4d40ba) to override a some default options for a single question.
+
+```{python}
+gender = vls.radio(
+    "gender",
+    "What is your gender?",
+    "Woman",
+    "Man",
+    "Other/prefer not to answer"
+    **defaultOptions | {"isRequired": False}
+)
+```
 
 ### Whole questionnaires
 
@@ -191,7 +247,9 @@ RSES = vls.radio(
 )
 ```
 
-In here I've splitted the  inside the `radio()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them. Had I used the manually formatted list, I wouldn't have to write the `split()` part. Also notice what I did with the scale -- we don't _have to_ save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:
+In here I've splitted the inside the `radio()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them[^2]. Had I used the manually formatted list, I wouldn't have to write the `split()` part. Also notice what I did with the scale -- we don't *have to* save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:
+
+[^2]: E.g. you can make everything lowercase or get rid of multiple spaces.
 
 ```{python}
 RSES = vls.radio(
@@ -215,15 +273,41 @@ At times I think I am no good at all.""".split(
 
 The labels will become `"RSES_1"`, `"RSES_2"`, `"RSES_3"` etc.
 
+### `info()`
+
+To add an instruction to your questionnaire, use `info()`. The `info()` function gets a name and some html content.
+
+```{python}
+vls.page(
+    "RSES",
+    vls.info(
+        "RSES_intro",
+        "Please record the appropriate answer for each item, depending on whether you strongly agree, agree, disagree, or strongly disagree with it."
+    ),
+    RSES # using the RSES variable from earlier
+)
+```
+
+Use [markdown](https://www.markdownguide.org/basic-syntax/) or [html](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals) to style the text.
+
+```{python}
+vls.info(
+    "RSES_intro",
+    "Please record the appropriate answer <span style='color: #CC0000; font-weight: bold;'>for each item</span>, depending on whether you **strongly agree**, **agree**, **disagree**, or **strongly disagree** with it."
+)
+```
+
+![Use `vls.info()` with markdown and/or html for instructions.](figs/getting_started/info_styling.png){fig-align="center"}
+
 ### List comprehension
 
 This part is not necessary but extremely useful.
 
-The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^1] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^2] to do just that.
+The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^3] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^4] to do just that.
 
-[^1]: Or WYSIWYG.
+[^3]: Or WYSIWYG.
 
-[^2]: "String" is a computer lingo for text, a group of letters.
+[^4]: "String" is a computer lingo for text, a group of letters.
 
 ```{python}
 # get our drinks and make them a list
@@ -241,7 +325,7 @@ q_drinks = vls.radio("drinks", drinks, answers)
 
 There's a few things to unpack here. First we get the list of our drinks separated with some common separator. Put simply, there should be some string (text) separating single drinks -- a space in this example. If we also had `"orange juice"` on the list we would need something else, e.g. a comma followed by a space (`"tea, coffee, juice, water, orange juice"`). We then split it and save it in the `drinks` variable.
 
-The third step may seem more complicated, so let's take it slowly. That is something called _list comprehension_. It's a form of a loop in Python that allows us to quickly do something with a list, e.g. call a function for each element or put every element in a certain string. If you think about our question, it is basically "How do you like {drink}?" where "{drink}" is the name of each drink. That is what we start with. Inside square brackets we write `[f"How do you like {drink}?"]`. Notice I have added `f` before the opening quotation mark. These so called "f-strings" are Python's way of saying that there is a variable in a string. The variable itself must be inside curly brackets.
+The third step may seem more complicated, so let's take it slowly. That is something called *list comprehension*. It's a form of a loop in Python that allows us to quickly do something with a list, e.g. call a function for each element or put every element in a certain string. If you think about our question, it is basically "How do you like {drink}?" where "{drink}" is the name of each drink. That is what we start with. Inside square brackets we write `[f"How do you like {drink}?"]`. Notice I have added `f` before the opening quotation mark. These so called "f-strings" are Python's way of saying that there is a variable in a string. The variable itself must be inside curly brackets.
 
 Now we just need to tell Python to do this for each of our drinks. Python doesn't know what `drink` means if we don't tell it. It is not that smart to infer it from the fact that we called our list `drinks`. To tell Python what we mean by `{drink}`, we need to write `for drink in drinks` so we end up with `[f"How do you like {drink}?" for drink in drinks]`. We could have called it differently. `[f"How do you like {i}?" for i in drinks]` would give the same result, but it makes more sense to call it `drink` rather than `i`, doesn't it? `[f"How do you like {drink}?" for drink in drinks]` basically means "Give me this string `"How do you like {drink}?"` where `drink` means a value from the list called `drinks`. Do this `for` every `drink` `in` the list called `drinks`". We also save the newly created list to the `drinks` variable, overwriting it.
 
@@ -249,7 +333,23 @@ When we run it, the list `['tea', 'coffee', 'juice', 'water']` becomes `['How do
 
 ## Panels
 
-To be implemented...
+Panels are set of questions that have the same set of options. A common usecase is to set a random order of items without moving the instruction. If you set `questionsOrder="random"` for the whole page, the instruction will also end up in a random spot because it is technically a question. Yet we can put all the questions into a panel and set `questionsOrder` for the panel. Panels are created with `vls.panel()`.
+
+```{python}
+vls.page(
+    "RSES",
+    vls.info(
+        "RSES_intro",
+        "Please record the appropriate answer for each item, depending on whether you strongly agree, agree, disagree, or strongly disagree with it."
+    ),
+    vls.panel( 
+        RSES # using the RSES variable from earlier
+        questionsOrder="random"
+    )
+)
+```
+
+See the docs for options you can set for panels.
 
 ## Pages
 
@@ -386,11 +486,12 @@ After writing your survey, you need to create it. Don't worry, it all happens au
 ::: light-mode
 ![](figs/getting_started/run_script.png)
 :::
+
 ::: dark-mode
 ![](figs/getting_started/run_script_dark.png)
 :::
 
-If everything went well, you should have a folder named "survey". To run your survey, open the folder in a terminal. In VS Code you can use Terminal > New terminal. Then move to the survey folder with:
+If everything went well, you should have a folder named "survey". To run your survey, open the folder in a terminal. In VS Code you can use Terminal \> New terminal. Then move to the survey folder with:
 
 ```{bash}
 cd survey
@@ -446,6 +547,7 @@ Log in to your VelesWeb account, create a new survey, give it a title and -- opt
 ::: light-mode
 ![](figs/getting_started/velesweb_overview.png)
 :::
+
 ::: dark-mode
 ![](figs/getting_started/velesweb_overview_dark.png)
 :::
@@ -458,26 +560,27 @@ If we want to manage our surveys ourselves, we need a place to host them and a p
 
 ### Configuration
 
-1. Go to [VelesSurvey for Vercel GitHub repository](https://github.com/jakub-jedrusiak/VelesSurvey-Vercel). Click on "Use this template" button. Give your repo a name and confirm with "Create repository from template" button. Of course you need to be logged into your GitHub account.
+1.  Go to [VelesSurvey for Vercel GitHub repository](https://github.com/jakub-jedrusiak/VelesSurvey-Vercel). Click on "Use this template" button. Give your repo a name and confirm with "Create repository from template" button. Of course you need to be logged into your GitHub account.
 
-2. Go to [Vercel](https://vercel.com/), create an account and from there start a new project. Link the project to your newly created GitHub repo.
+2.  Go to [Vercel](https://vercel.com/), create an account and from there start a new project. Link the project to your newly created GitHub repo.
 
-3. Don't change the default deployment settings but do click on `Enviroment variables`. Add a new variable named `SECRET_KEY` with a value generated with [this website](https://djecrety.ir/) and confirm with "Add" button. If you plan to use a custom domain, you add a `DOMAIN_NAME` variable with a value like `.uwr.edu.pl`. Don't worry, if you don't know yet. You can always add it later. You can read more about custom domains [here](https://vercel.com/docs/concepts/projects/domains/add-a-domain).
+3.  Don't change the default deployment settings but do click on `Enviroment variables`. Add a new variable named `SECRET_KEY` with a value generated with [this website](https://djecrety.ir/) and confirm with "Add" button. If you plan to use a custom domain, you add a `DOMAIN_NAME` variable with a value like `.uwr.edu.pl`. Don't worry, if you don't know yet. You can always add it later. You can read more about custom domains [here](https://vercel.com/docs/concepts/projects/domains/add-a-domain).
 
 ::: light-mode
 ![](/figs/getting_started/config_vercel.png)
 :::
+
 ::: dark-mode
 ![](/figs/getting_started/config_vercel_dark.png)
 :::
 
-4. When the building process ends, you can visit your page. It's just a white screen with a moving Veles logo. By design, there's no survey list on the main page. It helps keeping everything confidential.
+4.  When the building process ends, you can visit your page. It's just a white screen with a moving Veles logo. By design, there's no survey list on the main page. It helps keeping everything confidential.
 
-5. Not only we need a place to collect our responses, but also somewhere to store them. For this purpose we'll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1.5 milion responses before we run out of space. I wish everyone this kind of probe sizes. Go to [MongoDB](https://www.mongodb.com/), create a free account and then a free cluster. The website will take you through the whole process.
+5.  Not only we need a place to collect our responses, but also somewhere to store them. For this purpose we'll use MongoDB and its free 512 MB of space. My rough calculations say it will allow us to collect around 1.5 milion responses before we run out of space. I wish everyone this kind of probe sizes. Go to [MongoDB](https://www.mongodb.com/), create a free account and then a free cluster. The website will take you through the whole process.
 
-6. Now we need do connect Vercel and MongoDB. You can do it on [this website](https://vercel.com/integrations/mongodbatlas). Click "Add integration" and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.
+6.  Now we need do connect Vercel and MongoDB. You can do it on [this website](https://vercel.com/integrations/mongodbatlas). Click "Add integration" and go with the forms. It will make some needed security changes to your MongoDB cluster, so the answers can be sent from Vercel app to the database.
 
-7. That's it. Test your application by going to `/tea_survey` in your Vercel app (e.g. `https://tea-research-project.vercel.app/tea_survey/`). You should see a survey with a series of questions about tea. When you complete it, you should see a new response in your database.
+7.  That's it. Test your application by going to `/tea_survey` in your Vercel app (e.g. `https://tea-research-project.vercel.app/tea_survey/`). You should see a survey with a series of questions about tea. When you complete it, you should see a new response in your database.
 
 ### Using
 

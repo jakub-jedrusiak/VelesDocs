@@ -17,13 +17,14 @@ survey(
     createStructure: bool = True,
     buildForPublication: bool = False,
     folderName: str = 'survey',
-    path: str | pathlib.Path = '/home/jakub/OneDrive/Documents/git-repos/VelesResearch',
+    path: str | pathlib.Path = '/home/jakub/Pulpit/git-repos/VelesResearch',
     addScoreToResults: bool = True,
     allowCompleteSurveyAutomatic: bool = True,
     allowResizeComment: bool = True,
     autoGrowComment: bool = False,
     backgroundImage: str | None = None,
     backgroundOpacity: int = 1,
+    calculatedValues: list[dict] | None = None,
     checkErrorsMode: str = 'onNextPage',
     commentAreaRows: int = 2,
     completedBeforeHtml: str | None = None,
@@ -95,215 +96,224 @@ survey(
 
 ## Arguments
 
-**`addScoreToResults`** : _bool_
+**`addScoreToResults`** : _bool_<br>
 Whether to add the scores of the questions with `correctAnswer` to the results data. See `scoresSuffix`.
 
-**`allowCompleteSurveyAutomatic`** : _bool_
+**`allowCompleteSurveyAutomatic`** : _bool_<br>
 Whether the survey should complete automatically after all questions on the last page had been answered. Works only if `goNextPageAutomatic=True`. Default is True.
 
-**`allowResizeComment`** : _bool_
+**`allowResizeComment`** : _bool_<br>
 Whether to allow resizing the long questions input area. Default is True. Can be overridden for individual questions.
 
-**`autoGrowComment`** : _bool_
+**`autoGrowComment`** : _bool_<br>
 Whether to automatically grow the long questions input area. Default is False. Can be overridden for individual questions.
 
-**`backgroundImage`** : _str | None_
+**`backgroundImage`** : _str | None_<br>
 URL or base64 of the background image.
 
-**`backgroundOpacity`** : _int_
+**`backgroundOpacity`** : _int_<br>
 The opacity of the background image. 0 is transparent, 1 is opaque.
 
-**`checkErrorsMode`** : _str_
+**`calculatedValues`** : _list[dict] | None_<br>
+The calculated values for the survey. List of dictionaries with keys `name`, `expression` and optionally `includeIntoResult` (bool) to save the value in the db.
+
+**`checkErrorsMode`** : _str_<br>
 The mode of checking errors. Can be 'onNextPage', 'onValueChanged', 'onComplete'.
 
-**`commentAreaRows`** : _int_
+**`commentAreaRows`** : _int_<br>
 The number of rows for the comment area of the questions with `showCommentArea` or `showOtherItem` set to True. Default is 2. Can be overridden for individual questions.
 
-**`completedBeforeHtml`** : _str | None_
+**`completedBeforeHtml`** : _str | None_<br>
 HTML content to show if the survey had been completed before. Use with `cookieName`.
 
-**`completedHtml`** : _str | None_
+**`completedHtml`** : _str | None_<br>
 HTML content to show after the survey is completed.
 
-**`completedHtmlOnCondition`** : _list[dict] | None_
+**`completedHtmlOnCondition`** : _list[dict] | None_<br>
 HTML content to show after the survey is completed if the condition is met. List of dictionaries with keys `expression` and `html` keys.
 
-**`completeText`** : _str | None_
+**`completeText`** : _str | None_<br>
 Text for the 'Complete' button.
 
-**`cookieName`** : _str | None_
+**`cookieName`** : _str | None_<br>
 The name of the cookie to store the information about the survey having been completed. See `completedBeforeHtml`.
 
-**`editText`** : _str | None_
+**`editText`** : _str | None_<br>
 Text for the 'Edit' button if `showPreviewBeforeComplete=True`.
 
-**`firstPageIsStarted`** : _bool | None_
+**`firstPageIsStarted`** : _bool | None_<br>
 Whether the first page is a start page. Default is False.
 
-**`focusFirstQuestionAutomatic`** : _bool_
+**`focusFirstQuestionAutomatic`** : _bool_<br>
 Whether to focus the first question automatically. Default is False.
 
-**`focusOnFirstError`** : _bool_
+**`focusOnFirstError`** : _bool_<br>
 Whether to focus on the first error if it was raised. Default is True.
 
-**`goNextPageAutomatic`** : _bool_
+**`goNextPageAutomatic`** : _bool_<br>
 Whether to go to the next page automatically after all questions had been answered. Default is False.
 
-**`locale`** : _str_
+**`locale`** : _str_<br>
 The locale of the survey. Default is 'en'.
 
-**`logo`** : _str | None_
+**`logo`** : _str | None_<br>
 URL or base64 of the logo image.
 
-**`logoFit`** : _str_
+**`logoFit`** : _str_<br>
 The `object-fit` CSS property logo image. Can be 'contain', 'cover', 'fill', 'none'.
 
-**`logoHeight`** : _str_
+**`logoHeight`** : _str_<br>
 The height of the logo image in CSS units. Default is '200px'.
 
-**`logoPosition`** : _str_
+**`logoPosition`** : _str_<br>
 The position of the logo image. Can be 'left', 'right', 'none'.
 
-**`logoWidth`** : _str_
+**`logoWidth`** : _str_<br>
 The width of the logo image in CSS units. Default is '300px'.
 
-**`matrixDragHandleArea`** : _str_
+**`matrixDragHandleArea`** : _str_<br>
 The part of an item with which the users can drag and drop in dynamic matrix questions. Can be 'entireItem' (default), 'icon' (drag icon only).
 
-**`maxOthersLength`** : _int_
+**`maxOthersLength`** : _int_<br>
 The maximum length of the comment area in the questions with `showOtherItem` or `showCommentArea` set to True. Default is 0 (no limit).
 
-**`maxTextLength`** : _int_
+**`maxTextLength`** : _int_<br>
 The maximum length of the text in the textual questions. Default is 0 (no limit).
 
-**`maxTimeToFinish`** : _int | None_
+**`maxTimeToFinish`** : _int | None_<br>
 Maximum time in seconds to finish the survey.
 
-**`maxTimeToFinishPage`** : _int | None_
+**`maxTimeToFinishPage`** : _int | None_<br>
 Maximum time in seconds to finish the page. 0 means no limit.
 
-**`mode`** : _str_
+**`mode`** : _str_<br>
 The mode of the survey. Can be 'edit' (can be filled), 'display' (read-only).
 
-**`navigateToUrl`** : _str | None_
+**`navigateToUrl`** : _str | None_<br>
 URL to navigate to after the survey is completed.
 
-**`navigateToUrlOnCondition`** : _list[dict] | None_
+**`navigateToUrlOnCondition`** : _list[dict] | None_<br>
 URL to navigate to after the survey is completed if the condition is met. List of dictionaries with keys `expression` and `url` keys.
 
-**`pageNextText`** : _str | None_
+**`pageNextText`** : _str | None_<br>
 Text for the 'Next' button.
 
-**`pagePrevText`** : _str | None_
+**`pagePrevText`** : _str | None_<br>
 Text for the 'Previous' button.
 
-**`previewText`** : _str | None_
+**`previewText`** : _str | None_<br>
 Text for the 'Preview' button if `showPreviewBeforeComplete=True`.
 
-**`progressBarInheritWidthFrom`** : _str_
+**`progressBarInheritWidthFrom`** : _str_<br>
 The element from which the progress bar should inherit the width. Can be 'container', 'survey'.
 
-**`progressBarShowPageNumbers`** : _bool_
+**`progressBarShowPageNumbers`** : _bool_<br>
 Whether to show the page numbers on the progress bar. Only if `progressBarType="pages"`. Default is False. See `showProgressBar`.
 
-**`progressBarShowPageTitles`** : _bool_
+**`progressBarShowPageTitles`** : _bool_<br>
 Whether to show the page titles on the progress bar. Only if `progressBarType="pages"`. Default is False. See `showProgressBar`.
 
-**`progressBarType`** : _str_
+**`progressBarType`** : _str_<br>
 The type of the progress bar. Can be 'pages' (default), 'questions', 'requiredQuestions', 'correctQuestions'.
 
-**`questionDescriptionLocation`** : _str_
+**`questionDescriptionLocation`** : _str_<br>
 The location of the description for the questions. Can be 'underTitle' (default), 'underInput'. Can be overridden for individual questions.
 
-**`questionErrorLocation`** : _str_
+**`questionErrorLocation`** : _str_<br>
 The location of the error text for the questions. Can be 'top' (default), 'bottom'. Can be overridden for individual questions.
 
-**`questionsOnPageMode`** : _str_
+**`questionsOnPageMode`** : _str_<br>
 The mode of the questions on the page. Can be 'standard' (default; use structure in JSON), 'singlePage' (combine all questions into a single page), 'questionPerPage' (move all questions to separate pages).
 
-**`questionsOrder`** : _str_
+**`questionsOrder`** : _str_<br>
 The order of the questions. Can be 'initial' (default), 'random'. Can be overridden for individual pages.
 
-**`questionStartIndex`** : _int | str | None_
+**`questionStartIndex`** : _int | str | None_<br>
 The number or letter with which the questions numbering should start.
 
-**`questionTitleLocation`** : _str_
+**`questionTitleLocation`** : _str_<br>
 The location of the title for the questions. Can be 'top' (default), 'bottom', 'left'. Can be overridden for individual questions or pages.
 
-**`questionTitlePattern`** : _str_
+**`questionTitlePattern`** : _str_<br>
 The pattern of the question title. See <https://surveyjs.io/form-library/documentation/design-survey/configure-question-titles#title-pattern>.
 
-**`requiredText`** : _str_
+**`requiredText`** : _str_<br>
 The text denoting the required questions. Default is '*'.
 
-**`scoresSuffix`** : _str_
+**`scoresSuffix`** : _str_<br>
 The suffix of the score column if `addScoreToResults=True`. Default is '_score'.
 
-**`showCompletedPage`** : _bool_
+**`showCompletedPage`** : _bool_<br>
 Whether to show the completed page. Default is True.
 
-**`showNavigationButtons`** : _str_
+**`showNavigationButtons`** : _str_<br>
 The location of the navigation buttons. Can be 'bottom' (default), 'top', 'both', 'none'.
 
-**`showPageNumbers`** : _bool | None_
+**`showPageNumbers`** : _bool | None_<br>
 Whether to show the page numbers in the pages' titles.
 
-**`showPageTitles`** : _bool_
+**`showPageTitles`** : _bool_<br>
 Whether to show the page titles. Default is True.
 
-**`showPrevButton`** : _bool_
+**`showPrevButton`** : _bool_<br>
 Whether to show the 'Previous' button. Default is True.
 
-**`showPreviewBeforeComplete`** : _str_
+**`showPreviewBeforeComplete`** : _str_<br>
 Whether to preview all answers before completion. Can be 'noPreview' (default), 'showAllQuestions', 'showAnsweredQuestions'.
 
-**`showProgressBar`** : _str_
+**`showProgressBar`** : _str_<br>
 Whether to show the progress bar. Can be 'off' (default), 'aboveHeader', 'belowHeader', 'bottom', 'topBottom', 'auto'.
 
-**`showQuestionNumbers`** : _bool | str_
+**`showQuestionNumbers`** : _bool | str_<br>
 Whether to show the question numbers. Default is True. Can be True, 'on', False, 'off', 'onpage' (number each page anew).
 
-**`showTimerPanel`** : _str_
+**`showTimerPanel`** : _str_<br>
 Whether to show the timer panel. Can be 'none' (default), 'top', 'bottom'. See `maxTimeToFinish`, `maxTimeToFinishPage`, and `showTimerPanelMode`.
 
-**`showTimerPanelMode`** : _str_
+**`showTimerPanelMode`** : _str_<br>
 What times to show on the timer panel. Can be 'all' (default), 'page', 'survey'. See `showTimerPanel`.
 
-**`showTitle`** : _bool_
+**`showTitle`** : _bool_<br>
 Whether to show the survey title. Default is True.
 
-**`showTOC`** : _bool_
+**`showTOC`** : _bool_<br>
 Whether to show the table of contents. Default is False. See `tocLocation`.
 
-**`startSurveyText`** : _str | None_
+**`startSurveyText`** : _str | None_<br>
 Text for the 'Start' button if `firstPageIsStarted=True`.
 
-**`storeOthersAsComment`** : _bool_
+**`storeOthersAsComment`** : _bool_<br>
 Whether to store the 'Other' answers in a separate column (True; see `commentSuffix`) or in the question column (False). Default is True.
 
-**`textUpdateMode`** : _str_
+**`textUpdateMode`** : _str_<br>
 The mode of updating the text. Can be 'onBlur' (default; update after the field had been unclicked), 'onTyping' (update every key press). Can be overridden for individual questions.
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The title of the survey.
 
-**`tocLocation`** : _str_
+**`tocLocation`** : _str_<br>
 The location of the table of contents. Can be 'left' (default), 'right'. See `showTOC`.
 
-**`triggers`** : _str | None_
+**`triggers`** : _str | None_<br>
 Triggers for the survey. Usually not necessary. See <https://surveyjs.io/form-library/documentation/design-survey/conditional-logic#conditional-survey-logic-triggers>.
 
-**`validateVisitedEmptyFields`** : _bool_
+**`validateVisitedEmptyFields`** : _bool_<br>
 Whether to validate empty fields that had been clicked, and unclicked empty. Default is False.
 
-**`width`** : _str | None_
+**`width`** : _str | None_<br>
 Width of the survey in CSS units. Default is None (inherit from the container).
 
-**`widthMode`** : _str_
+**`widthMode`** : _str_<br>
 The mode of the width. Can be 'auto' (default; the width is set by the content), 'static', 'responsive'.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the survey. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `page()`
 
@@ -344,74 +354,191 @@ page(
 
 ## Arguments
 
-**`questions`** : _QuestionModel | list[QuestionModel]_
+**`questions`** : _QuestionModel | list[QuestionModel]_<br>
 The questions on the page.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the page.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the page.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the page. Usually not necessary.
 
-**`isRequired`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the page is required (at least one question must be answered).
 
-**`maxTimeToFinish`** : _int | None_
+**`maxTimeToFinish`** : _int | None_<br>
 Maximum time in seconds to finish the page.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the page in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the page in CSS units.
 
-**`navigationButtonsVisibility`** : _str_
+**`navigationButtonsVisibility`** : _str_<br>
 The visibility of the navigation buttons. Can be 'inherit', 'show', 'hide'.
 
-**`navigationDescription`** : _str | None_
+**`navigationDescription`** : _str | None_<br>
 Description for the page navigation.
 
-**`navigationTitle`** : _str | None_
+**`navigationTitle`** : _str | None_<br>
 Title for the page navigation.
 
-**`questionErrorLocation`** : _str_
+**`questionErrorLocation`** : _str_<br>
 The location of the error text for the questions. Can be 'default', 'top', 'bottom'.
 
-**`questionTitleLocation`** : _str_
+**`questionTitleLocation`** : _str_<br>
 The location of the title for the questions. Can be 'default', 'top', 'bottom'.
 
-**`questionsOrder`** : _str_
+**`questionsOrder`** : _str_<br>
 The order of the questions. Can be 'default', 'random'.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the page is read-only.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the page required (at least one question must be answered).
 
-**`state`** : _str_
+**`state`** : _str_<br>
 If the page should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`title`** : _str_
+**`title`** : _str_<br>
 The visible title of the page.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the page is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the page visible.
 
-**`visibleIndex`** : _int | None_
+**`visibleIndex`** : _int | None_<br>
 The index at which the page should be visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the page
+
+**`addCode`** : _dict | None_<br>
+Additional code for the survey. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
+
+# `panel()`
+
+Create a panel.
+
+## Signature
+
+```{python}
+#| eval: false
+panel(
+    name: str,
+    *questions: QuestionModel | list[QuestionModel],
+    description: str | None = None,
+    enableIf: str | None = None,
+    id: str | None = None,
+    innerIndent: int | None = None,
+    isRequired: bool = False,
+    maxWidth: str = '100%',
+    minWidth: str = '300px',
+    questionErrorLocation: str = 'default',
+    questionsOrder: str = 'default',
+    questionStartIndex: str | None = None,
+    questionTitleLocation: str = 'default',
+    questionTitleWidth: str | None = None,
+    readOnly: bool = False,
+    requiredErrorText: str | None = None,
+    requiredIf: str | None = None,
+    rightIndent: int | None = None,
+    showNumber: bool = False,
+    showQuestionNumbers: str = 'default',
+    startWithNewLine: bool = True,
+    visible: bool = True,
+    visibleIf: str | None = None,
+    width: str = '',
+    **kwargs
+) -> PanelModel
+```
+
+## Arguments
+
+**`questions`** : _QuestionModel | list[QuestionModel]_<br>
+The questions on the panel.
+
+**`description`** : _str | None_<br>
+Optional subtitle or description of the panel.
+
+**`enableIf`** : _str | None_<br>
+Expression to enable the panel.
+
+**`id`** : _str | None_<br>
+HTML id attribute for the panel. Usually not necessary.
+
+**`innerIndent`** : _int | None_<br>
+The inner indent of the panel.
+
+**`isRequired`** : _bool_<br>
+Whether the panel is required (at least one question must be answered).
+
+**`maxWidth`** : _str_<br>
+Maximum width of the panel in CSS units.
+
+**`minWidth`** : _str_<br>
+Minimum width of the panel in CSS units.
+
+**`questionErrorLocation`** : _str_<br>
+The location of the error text for the questions. Can be 'default', 'top', 'bottom'.
+
+**`questionsOrder`** : _str_<br>
+The order of the questions. Can be 'default', 'random'.
+
+**`questionStartIndex`** : _str | None_<br>
+The number or letter with which the questions numbering should start.
+
+**`questionTitleLocation`** : _str_<br>
+The location of the title for the questions. Can be 'default', 'top', 'bottom'.
+
+**`questionTitleWidth`** : _str | None_<br>
+The width of the question title.
+
+**`readOnly`** : _bool_<br>
+Whether the panel is read-only.
+
+**`requiredErrorText`** : _str | None_<br>
+Error text if the required condition is not met.
+
+**`requiredIf`** : _str | None_<br>
+Expression to make the panel required (at least one question must be answered).
+
+**`rightIndent`** : _int | None_<br>
+The right indent of the panel.
+
+**`showNumber`** : _bool_<br>
+Whether to show the panel number.
+
+**`showQuestionNumbers`** : _str_<br>
+Whether to show the question numbers. Can be 'default', 'on', 'off', 'onpage' (number each page anew).
+
+**`startWithNewLine`** : _bool_<br>
+Whether to start the panel on a new line.
+
+**`visible`** : _bool_<br>
+Whether the panel is visible.
+
+**`visibleIf`** : _str | None_<br>
+Expression to make the panel visible.
+
+**`width`** : _str_<br>
+Width of the panel.
 
 # `dropdown()`
 
@@ -480,71 +607,71 @@ dropdown(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`choices`** : _str | dict | list_
+**`choices`** : _str | dict | list_<br>
 The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
 
-**`choicesFromQuestion`** : _str | None_
+**`choicesFromQuestion`** : _str | None_<br>
 The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
 
-**`choicesFromQuestionMode`** : _str_
+**`choicesFromQuestionMode`** : _str_<br>
 The mode of copying choices. Can be 'all', 'selected', 'unselected'.
 
-**`choicesMax`** : _int | None_
+**`choicesMax`** : _int | None_<br>
 Maximum for automatically generated choices. Use with `choicesMin` and `choicesStep`.
 
-**`choicesMin`** : _int | None_
+**`choicesMin`** : _int | None_<br>
 Minimum for automatically generated choices. Use with `choicesMax` and `choicesStep`.
 
-**`choicesOrder`** : _str_
+**`choicesOrder`** : _str_<br>
 The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
 
-**`choicesStep`** : _int | None_
+**`choicesStep`** : _int | None_<br>
 Step for automatically generated choices. Use with `choicesMax` and `choicesMin`.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
 **`dontKnowText`**: str | None = None
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
 **`hideIfChoicesEmpty`**: bool | None = None
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
 **`noneText`**: str | None = None
@@ -553,78 +680,78 @@ Minimum width of the question in CSS units.
 
 **`otherText`**: str | None = None
 
-**`placeholder`** : _str | None_
+**`placeholder`** : _str | None_<br>
 Placeholder text.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
 **`refuseText`**: str | None = None
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
 **`showDontKnowItem`**: bool = False
 
 **`showNoneItem`**: bool = False
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
 **`showOtherItem`**: bool = False
 
 **`showRefuseItem`**: bool = False
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
 
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
 
-
-**`Returns`**:
-
-**`QuestionDropdownModel`**: The question object model or a list of question object models if `title` is a list.
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `text()`
 
@@ -689,140 +816,146 @@ text(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`autocomplete`** : _str | None_
+**`autocomplete`** : _str | None_<br>
 A value of `autocomplete` attribute for `<input>`. See MDN for a list: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#token_list_tokens>.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`inputType`** : _str | None_
+**`inputType`** : _str | None_<br>
 The type of the input. Can be 'text', 'password', 'email', 'url', 'tel', 'number', 'date', 'datetime-local', 'time', 'month', 'week', 'color'.
 
-**`max`** : _str_
+**`max`** : _str_<br>
 The `max` attribute of `<input>`. Syntax depends on the `inputType`. See MDN for details: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/max>.
 
-**`maxErrorText`** : _str | None_
+**`maxErrorText`** : _str | None_<br>
 Error text if the value exceeds `max`.
 
-**`maxLength`** : _int | None_
+**`maxLength`** : _int | None_<br>
 The maximum length of the input in characters. Use 0 for no limit. Use -1 for the default limit.
 
-**`maxValueExpression`** : _str | None_
+**`maxValueExpression`** : _str | None_<br>
 Expression to decide the maximum value.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`min`** : _str | None_
+**`min`** : _str | None_<br>
 The `min` attribute of `<input>`. Syntax depends on the `inputType`. See MDN for details: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/min>.
 
-**`minErrorText`** : _str | None_
+**`minErrorText`** : _str | None_<br>
 Error text if the value is less than `min`.
 
-**`minValueExpression`** : _str | None_
+**`minValueExpression`** : _str | None_<br>
 Expression to decide the minimum value.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`placeholder`** : _str | None_
+**`placeholder`** : _str | None_<br>
 Placeholder text for the input.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`size`** : _int | None_
+**`size`** : _int | None_<br>
 The width of the input in characters. A value for `size` attribute of `<input>`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`step`** : _str | None_
+**`step`** : _str | None_<br>
 The `step` attribute of `<input>`. Syntax depends on the `inputType`. See MDN for details: <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/step>.
 
-**`textUpdateMode`** : _str_
+**`textUpdateMode`** : _str_<br>
 The mode of updating the text. Can be 'default', 'onBlur' (update after the field had been unclicked), 'onTyping' (update every key press).
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `checkbox()`
 
@@ -893,74 +1026,74 @@ checkbox(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`choices`** : _str | dict | list_
+**`choices`** : _str | dict | list_<br>
 The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
 
-**`choicesFromQuestion`** : _str | None_
+**`choicesFromQuestion`** : _str | None_<br>
 The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
 
-**`choicesFromQuestionMode`** : _str_
+**`choicesFromQuestionMode`** : _str_<br>
 The mode of copying choices. Can be 'all', 'selected', 'unselected'.
 
-**`choicesOrder`** : _str_
+**`choicesOrder`** : _str_<br>
 The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
 
-**`colCount`** : _int | None_
+**`colCount`** : _int | None_<br>
 The number of columns for the choices. 0 means a single line.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
 **`dontKnowText`**: str | None = None
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
 **`hideIfChoicesEmpty`**: bool | None = None
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`isAllSelected`** : _bool | None_
+**`isAllSelected`** : _bool | None_<br>
 Start with all choices selected. Default is False.
 
-**`maxSelectedChoices`** : _int_
+**`maxSelectedChoices`** : _int_<br>
 Maximum number of selected choices. 0 means no limit.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minSelectedChoices`** : _int_
+**`minSelectedChoices`** : _int_<br>
 Minimum number of selected choices. 0 means no limit.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
 **`noneText`**: str | None = None
@@ -969,75 +1102,81 @@ Minimum width of the question in CSS units.
 
 **`otherText`**: str | None = None
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
 **`refuseText`**: str | None = None
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`selectAllText`** : _str | None_
+**`selectAllText`** : _str | None_<br>
 Text for the 'Select All' item.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
 **`showDontKnowItem`**: bool = False
 
 **`showNoneItem`**: bool = False
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
 **`showOtherItem`**: bool = False
 
 **`showRefuseItem`**: bool = False
 
-**`showSelectAllItem`** : _bool | None_
+**`showSelectAllItem`** : _bool | None_<br>
 Whether to show the 'Select All' item.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `ranking()`
 
@@ -1113,77 +1252,77 @@ ranking(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`choices`** : _str | dict | list_
+**`choices`** : _str | dict | list_<br>
 The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
 
-**`choicesFromQuestion`** : _str | None_
+**`choicesFromQuestion`** : _str | None_<br>
 The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
 
-**`choicesFromQuestionMode`** : _str_
+**`choicesFromQuestionMode`** : _str_<br>
 The mode of copying choices. Can be 'all', 'selected', 'unselected'.
 
-**`choicesOrder`** : _str_
+**`choicesOrder`** : _str_<br>
 The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
 
-**`colCount`** : _int | None_
+**`colCount`** : _int | None_<br>
 The number of columns for the choices. 0 means a single line.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
 **`dontKnowText`**: str | None = None
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
 **`hideIfChoicesEmpty`**: bool | None = None
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`isAllSelected`** : _bool | None_
+**`isAllSelected`** : _bool | None_<br>
 Start with all choices selected. Default is False.
 
-**`longTap`** : _bool_
+**`longTap`** : _bool_<br>
 Whether to use long tap for dragging on mobile devices.
 
-**`maxSelectedChoices`** : _int_
+**`maxSelectedChoices`** : _int_<br>
 Maximum number of selected choices. 0 means no limit.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minSelectedChoices`** : _int_
+**`minSelectedChoices`** : _int_<br>
 Minimum number of selected choices. 0 means no limit.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
 **`noneText`**: str | None = None
@@ -1192,87 +1331,93 @@ Minimum width of the question in CSS units.
 
 **`otherText`**: str | None = None
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
 **`refuseText`**: str | None = None
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`selectAllText`** : _str | None_
+**`selectAllText`** : _str | None_<br>
 Text for the 'Select All' item.
 
-**`selectToRankAreasLayout`** : _str_
+**`selectToRankAreasLayout`** : _str_<br>
 The layout of the ranked and unranked areas when `selectToRankEnabled=True`. Can be 'horizontal', 'vertical'.
 
-**`selectToRankEmptyRankedAreaText`** : _str | None_
+**`selectToRankEmptyRankedAreaText`** : _str | None_<br>
 Text for the empty ranked area when `selectToRankEnabled=True`.
 
-**`selectToRankEmptyUnrankedAreaText`** : _str | None_
+**`selectToRankEmptyUnrankedAreaText`** : _str | None_<br>
 Text for the empty unranked area when `selectToRankEnabled=True`.
 
-**`selectToRankEnabled`** : _bool_
+**`selectToRankEnabled`** : _bool_<br>
 Whether user should select items they want to rank before ranking them. Default is False.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
 **`showDontKnowItem`**: bool = False
 
 **`showNoneItem`**: bool = False
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
 **`showOtherItem`**: bool = False
 
 **`showRefuseItem`**: bool = False
 
-**`showSelectAllItem`** : _bool | None_
+**`showSelectAllItem`** : _bool | None_<br>
 Whether to show the 'Select All' item.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `radio()`
 
@@ -1339,65 +1484,65 @@ radio(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`choices`** : _str | dict | list_
+**`choices`** : _str | dict | list_<br>
 The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
 
-**`choicesFromQuestion`** : _str | None_
+**`choicesFromQuestion`** : _str | None_<br>
 The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
 
-**`choicesFromQuestionMode`** : _str_
+**`choicesFromQuestionMode`** : _str_<br>
 The mode of copying choices. Can be 'all', 'selected', 'unselected'.
 
-**`choicesOrder`** : _str_
+**`choicesOrder`** : _str_<br>
 The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`colCount`** : _int | None_
+**`colCount`** : _int | None_<br>
 The number of columns for the choices. 0 means a single line.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
 **`dontKnowText`**: str | None = None
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
 **`hideIfChoicesEmpty`**: bool | None = None
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
 **`noneText`**: str | None = None
@@ -1406,72 +1551,78 @@ Minimum width of the question in CSS units.
 
 **`otherText`**: str | None = None
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
 **`refuseText`**: str | None = None
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showClearButton`** : _bool_
+**`showClearButton`** : _bool_<br>
 Show a button to clear the answer.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
 **`showDontKnowItem`**: bool = False
 
 **`showNoneItem`**: bool = False
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
 **`showOtherItem`**: bool = False
 
 **`showRefuseItem`**: bool = False
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 
 
@@ -1554,83 +1705,83 @@ dropdownMultiple(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`choices`** : _str | dict | list_
+**`choices`** : _str | dict | list_<br>
 The choices for the question. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ...}`. You can also add `visibleIf`, `enableIf`, and `requiredIf` to the dictionary.
 
-**`allowClear`** : _str_
+**`allowClear`** : _str_<br>
 Whether to show the 'Clear' button for each answer.
 
-**`choicesFromQuestion`** : _str | None_
+**`choicesFromQuestion`** : _str | None_<br>
 The name of the question to get the choices from if the are to be copied. Use with `choicesFromQuestionMode`.
 
-**`choicesFromQuestionMode`** : _str_
+**`choicesFromQuestionMode`** : _str_<br>
 The mode of copying choices. Can be 'all', 'selected', 'unselected'.
 
-**`choicesOrder`** : _str_
+**`choicesOrder`** : _str_<br>
 The order of the choices. Can be 'none', 'asc', 'desc', 'random'.
 
-**`closeOnSelect`** : _int | None_
+**`closeOnSelect`** : _int | None_<br>
 Whether to close the dropdown after user selects a specified number of items.
 
-**`colCount`** : _int | None_
+**`colCount`** : _int | None_<br>
 The number of columns for the choices. 0 means a single line.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
 **`dontKnowText`**: str | None = None
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
 **`hideIfChoicesEmpty`**: bool | None = None
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`hideSelectedItems`** : _bool | None_
+**`hideSelectedItems`** : _bool | None_<br>
 Whether to hide selected items in the dropdown.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`isAllSelected`** : _bool | None_
+**`isAllSelected`** : _bool | None_<br>
 Start with all choices selected. Default is False.
 
-**`maxSelectedChoices`** : _int_
+**`maxSelectedChoices`** : _int_<br>
 Maximum number of selected choices. 0 means no limit.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minSelectedChoices`** : _int_
+**`minSelectedChoices`** : _int_<br>
 Minimum number of selected choices. 0 means no limit.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
 **`noneText`**: str | None = None
@@ -1639,84 +1790,90 @@ Minimum width of the question in CSS units.
 
 **`otherText`**: str | None = None
 
-**`placeholder`** : _str | None_
+**`placeholder`** : _str | None_<br>
 Placeholder text for the input with no value.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
 **`refuseText`**: str | None = None
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`searchEnabled`** : _bool_
+**`searchEnabled`** : _bool_<br>
 Whether to enable search in the dropdown.
 
-**`searchMode`** : _str_
+**`searchMode`** : _str_<br>
 The search mode. Can be 'contains' (default), 'startsWith'. Works only if `searchEnabled=True`.
 
-**`selectAllText`** : _str | None_
+**`selectAllText`** : _str | None_<br>
 Text for the 'Select All' item.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
 **`showDontKnowItem`**: bool = False
 
 **`showNoneItem`**: bool = False
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
 **`showOtherItem`**: bool = False
 
 **`showRefuseItem`**: bool = False
 
-**`showSelectAllItem`** : _bool | None_
+**`showSelectAllItem`** : _bool | None_<br>
 Whether to show the 'Select All' item.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `textLong()`
 
@@ -1772,113 +1929,119 @@ textLong(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`acceptCarriageReturn`** : _bool_
+**`acceptCarriageReturn`** : _bool_<br>
 Whether to allow line breaks. Default is True.
 
-**`allowResize`** : _bool_
+**`allowResize`** : _bool_<br>
 Whether to allow resizing the input field. Default is True.
 
-**`autoGrow`** : _bool_
+**`autoGrow`** : _bool_<br>
 Whether to automatically grow the input field. Default is False.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`rows`** : _int_
+**`rows`** : _int_<br>
 Height of the input field in rows' number.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `rating()`
 
@@ -1938,125 +2101,131 @@ rating(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`maxRateDescription`** : _str | None_
+**`maxRateDescription`** : _str | None_<br>
 Description for the biggest rate.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minRateDescription`** : _str | None_
+**`minRateDescription`** : _str | None_<br>
 Description for the smallest rate.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`rateMax`** : _int_
+**`rateMax`** : _int_<br>
 Maximum rate. Works only if `rateValues` is not set.
 
-**`rateMin`** : _int_
+**`rateMin`** : _int_<br>
 Minimum rate. Works only if `rateValues` is not set.
 
-**`rateStep`** : _int_
+**`rateStep`** : _int_<br>
 Step for the rate. Works only if `rateValues` is not set.
 
-**`rateType`** : _str_
+**`rateType`** : _str_<br>
 The type of the rate. Can be 'labels', 'stars', 'smileys'.
 
-**`rateValues`** : _list | None_
+**`rateValues`** : _list | None_<br>
 Manually set rate values. Use a list of primitives and/or dictionaries `{"value": ..., "text": ...}`.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`scaleColorMode`** : _str_
+**`scaleColorMode`** : _str_<br>
 The color mode of the scale if `rateType='smileys'`. Can be 'monochrome', 'colored'.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `yesno()`
 
@@ -2113,116 +2282,122 @@ yesno(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`labelFalse`** : _str | None_
+**`labelFalse`** : _str | None_<br>
 Label for the 'false' value.
 
-**`labelTrue`** : _str | None_
+**`labelTrue`** : _str | None_<br>
 Label for the 'true' value.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`swapOrder`** : _bool_
+**`swapOrder`** : _bool_<br>
 Whether to swap the default (no, yes) order of the labels.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`valueFalse`** : _str_
+**`valueFalse`** : _str_<br>
 Value for the 'false' option.
 
-**`valueTrue`** : _str_
+**`valueTrue`** : _str_<br>
 Value for the 'true' option.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `info()`
 
@@ -2274,104 +2449,110 @@ info(
 
 ## Arguments
 
-**`infoHTML`** : _str_
+**`infoHTML`** : _str_<br>
 The HTML content of the infobox.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `matrix()`
 
@@ -2435,137 +2616,143 @@ matrix(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`columns`** : _list | dict_
+**`columns`** : _list | dict_<br>
 The columns of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "type": ..., "otherParameter": ...}`.
 
-**`rows`** : _list | dict_
+**`rows`** : _list | dict_<br>
 The rows of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "otherParameter": ...}`.
 
-**`alternateRows`** : _bool | None_
+**`alternateRows`** : _bool | None_<br>
 Whether to alternate the rows.
 
-**`columnMinWidth`** : _str | None_
+**`columnMinWidth`** : _str | None_<br>
 Minimum width of the column in CSS units.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`displayMode`** : _str_
+**`displayMode`** : _str_<br>
 The display mode of the matrix. Can be 'auto', 'list', 'table'.
 
-**`eachRowUnique`** : _bool | None_
+**`eachRowUnique`** : _bool | None_<br>
 Whether each row should have a unique answer. Defaults to False.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideIfRowsEmpty`** : _bool | None_
+**`hideIfRowsEmpty`** : _bool | None_<br>
 Whether to hide the question if no rows are visible.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`isAllRowRequired`** : _bool_
+**`isAllRowRequired`** : _bool_<br>
 Whether each and every row is to be required.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`rowTitleWidth`** : _str | None_
+**`rowTitleWidth`** : _str | None_<br>
 Width of the row title in CSS units.
 
-**`rowsOrder`** : _str_
+**`rowsOrder`** : _str_<br>
 The order of the rows. Can be 'initial', 'random'.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showHeader`** : _bool_
+**`showHeader`** : _bool_<br>
 Whether to show the header of the table.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`verticalAlign`** : _str_
+**`verticalAlign`** : _str_<br>
 The vertical alignment of the content. Can be 'top', 'middle'.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `matrixDynamic()`
 
@@ -2645,194 +2832,200 @@ matrixDynamic(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`columns`** : _list | dict_
+**`columns`** : _list | dict_<br>
 The columns of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "type": ..., "otherParameter": ...}`.
 
-**`rows`** : _list | dict_
+**`rows`** : _list | dict_<br>
 The rows of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "otherParameter": ...}`.
 
-**`addRowLocation`** : _str_
+**`addRowLocation`** : _str_<br>
 The location of the 'Add row' button. Can be 'default', 'top', 'bottom', 'topBottom' (both top and bottom).
 
-**`addRowText`** : _str | None_
+**`addRowText`** : _str | None_<br>
 Text for the 'Add row' button.
 
-**`allowAddRows`** : _bool_
+**`allowAddRows`** : _bool_<br>
 Whether to allow adding rows.
 
-**`allowRemoveRows`** : _bool_
+**`allowRemoveRows`** : _bool_<br>
 Whether to allow removing rows.
 
-**`allowRowsDragAndDrop`** : _bool_
+**`allowRowsDragAndDrop`** : _bool_<br>
 Whether to allow dragging and dropping rows to change order.
 
-**`alternateRows`** : _bool | None_
+**`alternateRows`** : _bool | None_<br>
 Whether to alternate the rows.
 
-**`cellErrorLocation`** : _str_
+**`cellErrorLocation`** : _str_<br>
 The location of the error text for the cells. Can be 'default', 'top', 'bottom'.
 
-**`cellType`** : _str | None_
+**`cellType`** : _str | None_<br>
 The type of the matrix cells. Can be overridden for individual columns. Can be "dropdown" (default), "checkbox", "radiogroup", "tagbox", "text", "comment", "boolean", "expression", "rating".
 
-**`choices`** : _str | dict | list_
+**`choices`** : _str | dict | list_<br>
 The default choices for all select questions. Can be overridden for individual columns. Can be string(s) or dictionary(-ies) with structure `{"value": ..., "text": ..., "otherParameter": ...}`.
 
-**`columnMinWidth`** : _str | None_
+**`columnMinWidth`** : _str | None_<br>
 Minimum width of the column in CSS units.
 
-**`columns`** : _list | dict_
+**`columns`** : _list | dict_<br>
 The columns of the matrix. Use primitives or dictionaries `{"text": ..., "value": ..., "type": ..., "otherParameter": ...}`.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`confirmDelete`** : _bool_
+**`confirmDelete`** : _bool_<br>
 Whether to prompt for confirmation before deleting a row. Default is False.
 
-**`confirmDeleteText`** : _str | None_
+**`confirmDeleteText`** : _str | None_<br>
 Text for the confirmation dialog when `confirmDelete` is True.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultRowValue`** : _str | None_
+**`defaultRowValue`** : _str | None_<br>
 Default value for the new rows that has no `defaultValue` property.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`defaultValueFromLastRow`** : _bool_
+**`defaultValueFromLastRow`** : _bool_<br>
 Whether to copy the value from the last row to the new row.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`displayMode`** : _str_
+**`displayMode`** : _str_<br>
 The display mode of the matrix. Can be 'auto', 'list', 'table'.
 
-**`emptyRowsText`** : _str | None_
+**`emptyRowsText`** : _str | None_<br>
 Text to display when there are no rows if `hideColumnsIfEmpty` is True.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideColumnsIfEmpty`** : _bool_
+**`hideColumnsIfEmpty`** : _bool_<br>
 Whether to hide columns if there are no rows.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`isUniqueCaseSensitive`** : _bool_
+**`isUniqueCaseSensitive`** : _bool_<br>
 Whether the case of the answer should be considered when checking for uniqueness. If `True`, "Kowalski" and "kowalski" will be considered different answers.
 
-**`maxRowCount`** : _int_
+**`maxRowCount`** : _int_<br>
 Maximum number of rows.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minRowCount`** : _int_
+**`minRowCount`** : _int_<br>
 Minimum number of rows.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`placeHolder`** : _str | None_
+**`placeHolder`** : _str | None_<br>
 Placeholder text for the cells.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`removeRowText`** : _str | None_
+**`removeRowText`** : _str | None_<br>
 Text for the 'Remove row' button.
 
-**`required`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`rowCount`** : _int_
+**`rowCount`** : _int_<br>
 The initial number of rows.
 
-**`rowTitleWidth`** : _str | None_
+**`rowTitleWidth`** : _str | None_<br>
 Width of the row title in CSS units.
 
-**`rows`** : _list | dict_
+**`rows`** : _list | dict_<br>
 The rows of the matrix. Use primitives or dictionaries `{"text": ..., "value": ...}`.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showHeader`** : _bool_
+**`showHeader`** : _bool_<br>
 Whether to show the header of the table.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`transposeData`** : _bool_
+**`transposeData`** : _bool_<br>
 Whether to show columns as rows. Default is False.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`verticalAlign`** : _str_
+**`verticalAlign`** : _str_<br>
 The vertical alignment of the content. Can be 'top', 'middle'.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `slider()`
 
@@ -2902,41 +3095,47 @@ slider(
 
 ## Arguments
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`step`** : _int_
+**`step`** : _int_<br>
 The step of the slider.
 
-**`rangeMin`** : _int_
+**`rangeMin`** : _int_<br>
 The minimum value of the slider.
 
-**`rangeMax`** : _int_
+**`rangeMax`** : _int_<br>
 The maximum value of the slider.
 
-**`pipsMode`** : _str_
+**`pipsMode`** : _str_<br>
 The mode of the pips. Can be 'positions', 'values', 'count', 'range', 'steps'. See <https://refreshless.com/nouislider/pips/>
 
-**`pipsValues`** : _list_
+**`pipsValues`** : _list_<br>
 The values of the pips.
 
-**`pipsText`** : _list_
+**`pipsText`** : _list_<br>
 The text of the pips.
 
-**`pipsDensity`** : _int_
+**`pipsDensity`** : _int_<br>
 The density of the pips.
 
-**`orientation`** : _str_
+**`orientation`** : _str_<br>
 The orientation of the slider. Can be 'horizontal', 'vertical'.
 
-**`direction`** : _str_
+**`direction`** : _str_<br>
 The direction of the slider. Can be 'ltr', 'rtl'.
 
-**`tooltips`** : _bool_
+**`tooltips`** : _bool_<br>
 Whether to show tooltips.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `image()`
 
@@ -2993,119 +3192,125 @@ image(
 
 ## Arguments
 
-**`imageLink`** : _str | None_
+**`imageLink`** : _str | None_<br>
 The src property for <img> or video link.
 
-**`altText`** : _str | None_
+**`altText`** : _str | None_<br>
 The alt property for <img>.
 
-**`commentPlaceholder`** : _str | None_
+**`commentPlaceholder`** : _str | None_<br>
 Placeholder text for the comment area.
 
-**`commentText`** : _str | None_
+**`commentText`** : _str | None_<br>
 Text for the comment area.
 
-**`contentMode`** : _str_
+**`contentMode`** : _str_<br>
 The content type. Can be 'auto' (default), 'image', 'video', 'youtube'.
 
-**`correctAnswer`** : _str | None_
+**`correctAnswer`** : _str | None_<br>
 Correct answer for the question. Use for quizzes.
 
-**`defaultValue`** : _str | None_
+**`defaultValue`** : _str | None_<br>
 Default value for the question.
 
-**`defaultValueExpression`** : _str | None_
+**`defaultValueExpression`** : _str | None_<br>
 Expression deciding the default value for the question.
 
-**`description`** : _str | None_
+**`description`** : _str | None_<br>
 Optional subtitle or description of the question.
 
-**`descriptionLocation`** : _str_
+**`descriptionLocation`** : _str_<br>
 The location of the description. Can be 'default', 'underTitle', 'underInput'.
 
-**`enableIf`** : _str | None_
+**`enableIf`** : _str | None_<br>
 Expression to enable the question.
 
-**`errorLocation`** : _str | None_
+**`errorLocation`** : _str | None_<br>
 Location of the error text. Can be 'default' 'top', 'bottom'.
 
-**`hideNumber`** : _bool_
+**`hideNumber`** : _bool_<br>
 Whether to hide the question number.
 
-**`id`** : _str | None_
+**`id`** : _str | None_<br>
 HTML id attribute for the question. Usually not necessary.
 
-**`imageFit`** : _str_
+**`imageFit`** : _str_<br>
 The object-fit property of <img>. Can be 'contain', 'cover', 'fill', 'none'. See MDN <https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit>.
 
-**`imageHeight`** : _int | str_
+**`imageHeight`** : _int | str_<br>
 The height of the image container in CSS units. See `imageFit`.
 
-**`imageWidth`** : _int | str_
+**`imageWidth`** : _int | str_<br>
 The width of the image container in CSS units. See `imageFit`.
 
-**`isRequired`** : _bool_
+**`isRequired`** : _bool_<br>
 Whether the question is required.
 
-**`maxWidth`** : _str_
+**`maxWidth`** : _str_<br>
 Maximum width of the question in CSS units.
 
-**`minWidth`** : _str_
+**`minWidth`** : _str_<br>
 Minimum width of the question in CSS units.
 
-**`readOnly`** : _bool_
+**`readOnly`** : _bool_<br>
 Whether the question is read-only.
 
-**`requiredErrorText`** : _str | None_
+**`requiredErrorText`** : _str | None_<br>
 Error text if the required condition is not met.
 
-**`requiredIf`** : _str | None_
+**`requiredIf`** : _str | None_<br>
 Expression to make the question required.
 
-**`resetValueIf`** : _str | None_
+**`resetValueIf`** : _str | None_<br>
 Expression to reset the value of the question.
 
-**`setValueExpression`** : _str | None_
+**`setValueExpression`** : _str | None_<br>
 Expression to decide on the value of the question to be set. Requires `setValueIf`.
 
-**`setValueIf`** : _str | None_
+**`setValueIf`** : _str | None_<br>
 Expression with a condition to set the value of the question. Requires `setValueExpression`.
 
-**`showCommentArea`** : _bool_
+**`showCommentArea`** : _bool_<br>
 Whether to show the comment area. Doesn't work with `showOtherItem`.
 
-**`showOtherItem`** : _bool_
+**`showOtherItem`** : _bool_<br>
 Whether to show the 'Other' item. Doesn't work with `showCommentArea`.
 
-**`startWithNewLine`** : _bool_
+**`startWithNewLine`** : _bool_<br>
 Whether to start the question on a new line.
 
-**`state`** : _str | None_
+**`state`** : _str | None_<br>
 If the question should be collapsed or expanded. Can be 'default', 'collapsed', 'expanded'.
 
-**`title`** : _str | None_
+**`title`** : _str | None_<br>
 The visible title of the question. If None, `name` is used.
 
-**`titleLocation`** : _str_
+**`titleLocation`** : _str_<br>
 The location of the title. Can be 'default', 'top', 'bottom', 'left', 'hidden'.
 
-**`useDisplayValuesInDynamicTexts`** : _bool_
+**`useDisplayValuesInDynamicTexts`** : _bool_<br>
 Whether to use display names for question values in placeholders.
 
-**`validators`** : _ValidatorModel | list[ValidatorModel] | None_
+**`validators`** : _ValidatorModel | list[ValidatorModel] | None_<br>
 Validator(s) for the question.
 
-**`visible`** : _bool_
+**`visible`** : _bool_<br>
 Whether the question is visible.
 
-**`visibleIf`** : _str | None_
+**`visibleIf`** : _str | None_<br>
 Expression to make the question visible.
 
-**`width`** : _str_
+**`width`** : _str_<br>
 Width of the question in CSS units.
 
-**`addCode`** : _dict | None_
+**`addCode`** : _dict | None_<br>
 Additional code for the question. Usually not necessary.
+
+**`customCode`** : _str | None_<br>
+Custom JS commands to be added to the survey.
+
+**`customFunctions`** : _str | None_<br>
+Custom JS functions definitions to be added to the survey. To be used with `customCode`.
 
 # `consent()`
 
@@ -3120,6 +3325,7 @@ Create a question with a consent to take part in the study.
 consent(
     title: str = 'Do you consent to take part in the study?',
     error: str = "You can't continue without a consent",
+    mode: str = 'forbid',
     name: str = 'consent',
     **kwargs
 ) -> QuestionBooleanModel
@@ -3127,11 +3333,19 @@ consent(
 
 ## Arguments
 
-**`error`** : _str_
+**`error`** : _str_<br>
 Error shown if a person doesn't consent.
 
-**`name`** : _str_
+**`mode`** : _str_<br>
+What to do if a person doesn't consent. Can be 'forbid' (default, doesn't allow to continue) or 'end' (redirects to the end).
+
+**`For`** 'end' to work, set `triggers` in the `survey()` call to `[{"type": "complete", "expression": "{consent} = false"}]`. You can also
+
+**`set`** `completedHtmlOnCondition` in the `survey()` call to `[{"expression": "{consent} = false", "html": "You can't continue without a consent"}]`
+
+**`to`** show a custom message in that case.
+
+**`name`** : _str_<br>
 The label of the question. Defaults to "consent".
 
 **`kwargs`**: Other arguments passed to `yesno()`.
-
