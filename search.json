@@ -532,7 +532,7 @@
     "href": "ref/wrappers.html#arguments-17",
     "title": "Wrappers for question types",
     "section": "Arguments",
-    "text": "Arguments\nerror : str Error shown if a person doesn’t consent.\nmode : str What to do if a person doesn’t consent. Can be ‘forbid’ (default, doesn’t allow to continue) or ‘end’ (redirects to the end).\nFor ‘end’ to work, set triggers in the survey() call to [{\"type\": \"complete\", \"expression\": \"{consent} = false\"}]. You can also\nset completedHtmlOnCondition in the survey() call to [{\"expression\": \"{consent} = false\", \"html\": \"You can't continue without a consent\"}]\nto show a custom message in that case.\nname : str The label of the question. Defaults to “consent”.\nkwargs: Other arguments passed to yesno().",
+    "text": "Arguments\nerror : str Error shown if a person doesn’t consent.\nmode : str What to do if a person doesn’t consent. Can be ‘forbid’ (default, doesn’t allow to continue) or ‘end’ (redirects to the end). For ‘end’ to work, set triggers in the survey() call to [{\"type\": \"complete\", \"expression\": \"{consent} = false\"}]. You can also set completedHtmlOnCondition in the survey() call to [{\"expression\": \"{consent} = false\", \"html\": \"You can't continue without a consent\"}]\nto show a custom message in that case.\nname : str The label of the question. Defaults to “consent”.\nkwargs: Other arguments passed to yesno().",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
