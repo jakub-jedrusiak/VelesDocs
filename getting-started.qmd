@@ -363,7 +363,7 @@ vls.page(
 )
 ```
 
-See the docs for options you can set for panels.
+See [the docs](ref/wrappers.qmd#panel) for options you can set for panels.
 
 ## Pages
 
@@ -373,7 +373,7 @@ Every survey needs to have at least one page. Page is basically a list of questi
 vls.page(name, questions, **kwargs)
 ```
 
-Pages have their own names. They don't yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See [the docs](ref/wrappers.qmd).
+Pages have their own names. They don't yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See [the docs](ref/wrappers.qmd#page).
 
 ```{python}
 intro = vls.page("metrics", gender)  # previously created gender question
