@@ -1,101 +1,5 @@
 [
   {
-    "objectID": "ref/customExpressionFunctions.html",
-    "href": "ref/customExpressionFunctions.html",
-    "title": "Custom Expression Functions",
-    "section": "",
-    "text": "Expression functions are functions that can be used inside expressions and – by extension – in calculated values, dynamic texts and dynamic visibility. SurveyJS includes many built-in functions you can use. The most up-to-date documentation of these (especially including iff(), max(), min() and avg()) is the SurveyJS documentation.\nVeles adds some custom, research-tailored expression functions to the mix. You can use them as you would with the built-in SurveyJS functions.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#signature",
-    "href": "ref/customExpressionFunctions.html#signature",
-    "title": "Custom Expression Functions",
-    "section": "Signature",
-    "text": "Signature\nround(\n    number: number | string,\n    decimals: number\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#arguments",
-    "href": "ref/customExpressionFunctions.html#arguments",
-    "title": "Custom Expression Functions",
-    "section": "Arguments",
-    "text": "Arguments\nnumber : number | string Number to be rounded. Can be a number, an expression that evaluates to number, or a string with either the name of a question or the name of a variable. See examples.\ndecimals : number How many decimals should the number be rounded to?",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#examples",
-    "href": "ref/customExpressionFunctions.html#examples",
-    "title": "Custom Expression Functions",
-    "section": "Examples",
-    "text": "Examples\n\n# Use with calculated values\nvls.survey(\n    somePages,\n    calculatedValues=[\n        {\"name\": \"BMI\", \"expression\": \"round({weight} / ({height} * {height}), 1)\"}\n    ],\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#signature-1",
-    "href": "ref/customExpressionFunctions.html#signature-1",
-    "title": "Custom Expression Functions",
-    "section": "Signature",
-    "text": "Signature\nrandom(\n    min: number,\n    max: number,\n    seed: any\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#arguments-1",
-    "href": "ref/customExpressionFunctions.html#arguments-1",
-    "title": "Custom Expression Functions",
-    "section": "Arguments",
-    "text": "Arguments\nmin : number The minimum value the return value can get (inclusive).\nmax : number The maximum value the return value can get (inclusive).\nseed : any Random seed for the generator1. Set if you want the number not to change for a particular participant once randomly selected. Can be anything, e.g. the name of the calculated value or some other label. If not set, the number will be set randomly each time a survey value changes (e.g. a question is answered). Do not repeat seeds, repeated seed will result in the same random value selected. See examples.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#examples-1",
-    "href": "ref/customExpressionFunctions.html#examples-1",
-    "title": "Custom Expression Functions",
-    "section": "Examples",
-    "text": "Examples\n\n# Use to create subgroups\nvls.survey(\n    vls.page(\n        \"manipulation_page\",\n        vls.info(\"manipulation\", \"## You are stupid!\"),\n        visibleIf=\"{group} = 1 and {subgroup} = 5\",  # show only to 1/5 of the first group\n    ),\n    numberOfGroups=2,\n    calculatedValues=[\n        {\n            \"name\": \"subgroup\",\n            \"expression\": \"random(1, 5, 'subgroup')\",  # set seed if the value should be selected once and once only\n        }\n    ],\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#footnotes",
-    "href": "ref/customExpressionFunctions.html#footnotes",
-    "title": "Custom Expression Functions",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nTechnically the value of this argument is concatenated with the participant’s random ID, so the seed could be different for each participant.↩︎",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
     "objectID": "ref/wrappers.html",
     "href": "ref/wrappers.html",
     "title": "Wrappers for question types",
@@ -532,7 +436,7 @@
     "href": "ref/wrappers.html#arguments-17",
     "title": "Wrappers for question types",
     "section": "Arguments",
-    "text": "Arguments\nerror : str Error shown if a person doesn’t consent.\nmode : str What to do if a person doesn’t consent. Can be ‘forbid’ (default, doesn’t allow to continue) or ‘end’ (redirects to the end). For ‘end’ to work, set triggers in the survey() call to [{\"type\": \"complete\", \"expression\": \"{consent} = false\"}]. You can also set completedHtmlOnCondition in the survey() call to [{\"expression\": \"{consent} = false\", \"html\": \"You can't continue without a consent\"}]\nto show a custom message in that case.\nname : str The label of the question. Defaults to “consent”.\nkwargs: Other arguments passed to yesno().",
+    "text": "Arguments\nerror : str Error shown if a person doesn’t consent.\nmode : str What to do if a person doesn’t consent. Can be ‘forbid’ (default, doesn’t allow to continue) or ‘end’ (redirects to the end).\nFor ‘end’ to work, set triggers in the survey() call to [{\"type\": \"complete\", \"expression\": \"{consent} = false\"}]. You can also\nset completedHtmlOnCondition in the survey() call to [{\"expression\": \"{consent} = false\", \"html\": \"You can't continue without a consent\"}]\nto show a custom message in that case.\nname : str The label of the question. Defaults to “consent”.\nkwargs: Other arguments passed to yesno().",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Reference",
@@ -540,14 +444,99 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
+    "objectID": "ref/customExpressionFunctions.html",
+    "href": "ref/customExpressionFunctions.html",
+    "title": "Custom Expression Functions",
     "section": "",
-    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that yarn is required for Veles to work. You can download it from here or use your package manager.\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.",
+    "text": "Expression functions are functions that can be used inside expressions and – by extension – in calculated values, dynamic texts and dynamic visibility. SurveyJS includes many built-in functions you can use. The most up-to-date documentation of these (especially including iff(), max(), min() and avg()) is the SurveyJS documentation.\nVeles adds some custom, research-tailored expression functions to the mix. You can use them as you would with the built-in SurveyJS functions.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
-      "Introduction"
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#signature",
+    "href": "ref/customExpressionFunctions.html#signature",
+    "title": "Custom Expression Functions",
+    "section": "Signature",
+    "text": "Signature\nround(\n    number: number | string,\n    decimals: number\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#arguments",
+    "href": "ref/customExpressionFunctions.html#arguments",
+    "title": "Custom Expression Functions",
+    "section": "Arguments",
+    "text": "Arguments\nnumber : number | string Number to be rounded. Can be a number, an expression that evaluates to number, or a string with either the name of a question or the name of a variable. See examples.\ndecimals : number How many decimals should the number be rounded to?",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#examples",
+    "href": "ref/customExpressionFunctions.html#examples",
+    "title": "Custom Expression Functions",
+    "section": "Examples",
+    "text": "Examples\n\n# Use with calculated values\nvls.survey(\n    somePages,\n    calculatedValues=[\n        {\"name\": \"BMI\", \"expression\": \"round({weight} / ({height} * {height}), 1)\"}\n    ],\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#signature-1",
+    "href": "ref/customExpressionFunctions.html#signature-1",
+    "title": "Custom Expression Functions",
+    "section": "Signature",
+    "text": "Signature\nrandom(\n    min: number,\n    max: number,\n    seed: any\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#arguments-1",
+    "href": "ref/customExpressionFunctions.html#arguments-1",
+    "title": "Custom Expression Functions",
+    "section": "Arguments",
+    "text": "Arguments\nmin : number The minimum value the return value can get (inclusive).\nmax : number The maximum value the return value can get (inclusive).\nseed : any Random seed for the generator1. Set if you want the number not to change for a particular participant once randomly selected. Can be anything, e.g. the name of the calculated value or some other label. If not set, the number will be set randomly each time a survey value changes (e.g. a question is answered). Do not repeat seeds, repeated seed will result in the same random value selected. See examples.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#examples-1",
+    "href": "ref/customExpressionFunctions.html#examples-1",
+    "title": "Custom Expression Functions",
+    "section": "Examples",
+    "text": "Examples\n\n# Use to create subgroups\nvls.survey(\n    vls.page(\n        \"manipulation_page\",\n        vls.info(\"manipulation\", \"## You are stupid!\"),\n        visibleIf=\"{group} = 1 and {subgroup} = 5\",  # show only to 1/5 of the first group\n    ),\n    numberOfGroups=2,\n    calculatedValues=[\n        {\n            \"name\": \"subgroup\",\n            \"expression\": \"random(1, 5, 'subgroup')\",  # set seed if the value should be selected once and once only\n        }\n    ],\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#footnotes",
+    "href": "ref/customExpressionFunctions.html#footnotes",
+    "title": "Custom Expression Functions",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nTechnically the value of this argument is concatenated with the participant’s random ID, so the seed could be different for each participant.↩︎",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
     ]
   },
   {
@@ -555,7 +544,7 @@
     "href": "getting-started.html",
     "title": "Getting started",
     "section": "",
-    "text": "Veles is a Python library, so before using it, you need to install Python. If you’re using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from the official website. During installation, check the box saying “add Python to PATH”. It will enable you to run Python by writing python in the terminal, without the full path to python.exe.\nNext you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend Visual Studio Code. If you want to use it, it’s a good idea to also download Python Extension Pack, Pylance and Black formatter. Then go to your preferences (Ctrl+Shift+P and search for “Open user settings”1), find and check “Format on save” checkbox. It’s a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program. Alternatively you use RStudio if you want.\n\n\n\nCheck the “Format on save” option to ensure maximum readability of your code at all times.\n\n\nSome really basic knowledge how to use Python is recommended. If you know what’s a variable and how to call functions, you’re good to go. If you don’t know anything about programming, this 1-hour Python introduction will be more than enough (although I think VSCode is better than PyCharm).\nTo actually build (or even preview) your survey, you must have yarn installed. It’s a JavaScript package manager and is used to download some dependencies like Survey.js and React. yarn is bundled with Node.js. If you’re a Windows user, you can download it from the official website. MacOS comes with Node.js preinstalled. If you’re a Linux user, chances are you have Node.js already installed. Otherwise you can use one of the following commands:\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nTo check if npm works, open your terminal (PowerShell in Windows), write this command and hit Enter:\nnpm -v\nThe output should be a version number. If you get an error, then there’s something wrong. If you’re on Windows and you just installed Node.js, reboot your system (PATH may need refreshing).\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number.\n\n\n\n\nyarn -v in Linux terminal\n\n\n\n\n\n\n\nyarn -v in Linux terminal",
+    "text": "Veles is a Python library, so before using it, you need to install Python. If you’re using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from the official website. During installation, check the box saying “Add python.exe to PATH”. It will enable you to run Python by writing python in the terminal, without the full path to python.exe. After you install Python, reboot your system. You can also do it after installing Node.js later.\nNext you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend Visual Studio Code. If you want to use it, it’s a good idea to also download Python Extension Pack, Pylance and Black formatter. Then go to your preferences (Ctrl+Shift+P and search for “Open user settings”1), find and check “Format on save” checkbox. It’s a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program. Alternatively you use RStudio if you want.\n\n\n\nCheck the “Format on save” option to ensure maximum readability of your code at all times.\n\n\nSome really basic knowledge how to use Python is recommended. If you know what’s a variable and how to call functions, you’re good to go. If you don’t know anything about programming, this 1-hour Python introduction will be more than enough (although I think VSCode is better than PyCharm).\nTo actually build (or even preview) your survey, you must have yarn installed. It’s a JavaScript package manager and is used to download some dependencies like Survey.js and React. yarn is bundled with Node.js. If you’re a Windows or MacOS user, you can download it from the official website. The “Prebuilt Installer” should be the easiest. You can also use a package manager (see below). If you’re a Linux user, chances are you have Node.js already installed. Otherwise you can use one of the following commands:\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nTo check if npm works, open your terminal (PowerShell in Windows), write this command and hit Enter:\nnpm -v\nThe output should be a version number. If you get an error, then there’s something wrong. If you’re on Windows and you just installed Node.js, reboot your system (PATH may need refreshing).\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf you get an error about permissions, try opening your terminal as admin (Windows) or use sudo corepack enable (Linux and MacOS).\nIf everything went well, command yarn -v should return a version number.\n\n\n\n\nyarn -v in Linux terminal\n\n\n\n\n\n\n\nyarn -v in Linux terminal\n\n\n\nThere are a few things that could go wrong here. On Windows you will most probably get an error saying yarn : File C:\\Program Files\\nodejs\\yarn.ps1 cannot be loaded. The file C:\\Program Files\\nodejs\\yarn.ps1 is not digitally signed. You cannot run this script on the current system.. If so, run the following command and try again:\nSet-ExecutionPolicy Bypass\nYou may also be asked Corepack is about to download &lt;url&gt;. Do you want to continue? [Y/n]. If so, just hit enter to choose the default (which is yes, as indicated by the uppercase Y).\nIf you get any error telling you that some executable cannot be found, reboot.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Getting started"
@@ -577,7 +566,7 @@
     "href": "getting-started.html#installing-veles",
     "title": "Getting started",
     "section": "Installing Veles",
-    "text": "Installing Veles\nNow open a new terminal inside VS Code. Click Terminal → New Terminal or use a keyboard shortcut Ctrl+`. This terminal is opened in your newly created virtual environment. Now we need to install Veles into this virtual environment. To install Veles, write the following command and hit enter.\npip install velesresearch\nYou can also choose development version (unstable but with all the newest features) using this command:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nIf everything went well, you shouldn’t see any errors.\n\n\n\nAn example console output of a successful installation of the velesresearch package.\n\n\nNow we can start writing our script. In your .py file add the following line:\n\nimport velesresearch as vls\n\nIt gives you access to all Veles functions when you write vls.. If VS Code can’t recognise the import, reload the window (Ctrl+Shift+P → Reload Window) or close and reopen VS Code.",
+    "text": "Installing Veles\nNow open a new terminal inside VS Code. Click Terminal → New Terminal or use a keyboard shortcut Ctrl+`. This terminal is opened in your newly created virtual environment. Now we need to install Veles into this virtual environment. To install Veles, write the following command and hit enter.\npip install velesresearch\nYou can also choose development version (unstable but with all the newest features) using this command:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nTo install the developer version from GitHub, you will need to actually have git installed. Linux comes with git already installed. Windows and MacOS users can download it from the official website or use an appropriate package manager (i.e. Microsoft Store or App Store).\nIf everything went well, you shouldn’t see any errors.\n\n\n\nAn example console output of a successful installation of the velesresearch package.\n\n\nNow we can start writing our script. In your .py file add the following line:\n\nimport velesresearch as vls\n\nIt gives you access to all Veles functions when you write vls.. If VS Code can’t recognise the import, reload the window (Ctrl+Shift+P → Reload Window) or close and reopen VS Code.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Getting started"
@@ -658,6 +647,17 @@
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Getting started"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that yarn is required for Veles to work. You can download it from here or use your package manager.\n# Ubuntu (and other apt distros)\nsudo apt install npm\n\n# Arch\nsudo pacman -S npm\n\n# winget\nwinget install OpenJS.NodeJS.LTS\n\n# Chocolatey\nchoco install nodejs-lts\n\n# Homebrew\nbrew install node\nAfter installing node.js, activate yarn with this command in the terminal:\ncorepack enable\nIf everything went well, command yarn -v should return a version number. See Getting started if you get any errors.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Introduction"
     ]
   },
   {
