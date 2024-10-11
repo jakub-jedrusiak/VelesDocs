@@ -75,4 +75,4 @@ After installing `node.js`, activate `yarn` with this command in the terminal:
 corepack enable
 ```
 
-If everything went well, command `yarn -v` should return a version number.
+If everything went well, command `yarn -v` should return a version number. See [Getting started](getting-started.qmd) if you get any errors.

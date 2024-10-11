@@ -6,7 +6,7 @@ date-format: iso
 
 # Prerequisites
 
-Veles is a Python library, so before using it, you need to install Python. If you're using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "add Python to PATH". It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe.
+Veles is a Python library, so before using it, you need to install Python. If you're using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "Add python.exe to PATH". It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe. After you install Python, **reboot your system**. You can also do it after installing Node.js later.
 
 Next you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). If you want to use it, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack), [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) and [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). Then go to your preferences (Ctrl+Shift+P and search for "Open user settings"[^1]), find and check "Format on save" checkbox. It's a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program. Alternatively you use RStudio if you want.
 
@@ -16,7 +16,7 @@ Next you need an IDE which is a fancy word for programming text editor. You can 
 
 Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go. If you don't know anything about programming, [this 1-hour Python introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
 
-To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` is bundled with Node.js. If you're a Windows user, you can download it from [the official website](https://nodejs.org/en/download). MacOS comes with Node.js preinstalled. If you're a Linux user, chances are you have Node.js already installed. Otherwise you can use one of the following commands:
+To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` is bundled with Node.js. If you're a Windows or MacOS user, you can download it from [the official website](https://nodejs.org/en/download). The "Prebuilt Installer" should be the easiest. You can also use a package manager (see below). If you're a Linux user, chances are you have Node.js already installed. Otherwise you can use one of the following commands:
 
 ``` bash
 # Ubuntu (and other apt distros)
@@ -41,13 +41,15 @@ To check if npm works, open your terminal (PowerShell in Windows), write this co
 npm -v
 ```
 
-The output should be a version number. If you get an error, then there's something wrong. If you're on Windows and you just installed Node.js, reboot your system (PATH may need refreshing).
+The output should be a version number. If you get an error, then there's something wrong. If you're on Windows and you just installed Node.js, **reboot your system** (PATH may need refreshing).
 
 After installing `node.js`, activate `yarn` with this command in the terminal:
 
 ``` bash
 corepack enable
 ```
+
+If you get an error about permissions, try opening your terminal as admin (Windows) or use `sudo corepack enable` (Linux and MacOS).
 
 If everything went well, command `yarn -v` should return a version number.
 
@@ -58,6 +60,16 @@ If everything went well, command `yarn -v` should return a version number.
 ::: dark-mode
 ![`yarn -v` in Linux terminal](figs/getting_started/yarn-v_dark.png){fig-alt="yarn -v in the terminal"}
 :::
+
+There are a few things that could go wrong here. **On Windows** you will most probably get an error saying `yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be loaded. The file C:\Program Files\nodejs\yarn.ps1 is not digitally signed. You cannot run this script on the current system.`. If so, run the following command and try again:
+
+```{powershell}
+Set-ExecutionPolicy Bypass
+```
+
+You may also be asked `Corepack is about to download <url>. Do you want to continue? [Y/n]`. If so, just hit enter to choose the default (which is yes, as indicated by the uppercase Y).
+
+If you get any error telling you that some executable cannot be found, **reboot**.
 
 # Create project
 
@@ -82,6 +94,8 @@ You can also choose development version (unstable but with all the newest featur
 ``` bash
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
+
+To install the developer version from GitHub, you will need to actually have git installed. Linux comes with git already installed. Windows and MacOS users can download it from [the official website](https://git-scm.com/downloads) or use an appropriate package manager (i.e. Microsoft Store or App Store).
 
 If everything went well, you shouldn't see any errors.
 
