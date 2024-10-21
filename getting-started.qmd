@@ -6,59 +6,95 @@ date-format: iso
 
 # Prerequisites
 
-Veles is a Python library, so before using it, you need to install Python. If you're using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "Add python.exe to PATH". It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe. After you install Python, **reboot your system**. You can also do it after installing Node.js later.
+There are a few things you need to install before using Veles, as it is more a library than a program. Namely you need to install Python, some IDE like Visual Studio Code and a JavaScript framework called bun. This section will get you through the process. Whenever I refer to a terminal, I mean your system console (Powershell in Windows). To paste to a terminal, you might have to use Ctrl+Shit+V instead of the standard Ctrl+V shortcut. Same with copying, as Ctrl+C in terminals is used to stop a running process. If you get an error, read it and go to the [Troubleshooting] section.
 
-Next you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). If you want to use it, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack), [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) and [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). Then go to your preferences (Ctrl+Shift+P and search for "Open user settings"[^1]), find and check "Format on save" checkbox. It's a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program. Alternatively you use RStudio if you want.
+## Python
+
+Veles is a Python library, so before using it, you need to install Python. If you're using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "add Python to PATH". It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe.
+
+You can verify if python works correctly by opening your terminal, writing the following command and hitting enter.
+
+```{bash}
+python --version
+```
+
+If everything went fine, you should see a version number, not an error. If there's an error, see [Troubleshooting] below.
+
+Some really basic knowledge on how to use Python or some basic programming skills is recommended. If you know what's a variable and how to call functions, you're good to go. If you use R, you should also be fine. If you don't know anything about programming, [this 1-hour Python introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
+
+## IDE
+
+Next you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). Alternatively you use RStudio if you want. If you want to use VS Code, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack), [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) and [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). They will make our life much easier. After installing the extensions, go to your preferences (Ctrl+Shift+P and search for "Open user settings"[^1]), find and check "Format on save" checkbox. It's a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program.
 
 [^1]: Searching in English should work despite what language you have set in VS Code.
 
 ![Check the "Format on save" option to ensure maximum readability of your code at all times.](figs/getting_started/format_on_save.png){fig-align="center"}
 
-Some really basic knowledge how to use Python is recommended. If you know what's a variable and how to call functions, you're good to go. If you don't know anything about programming, [this 1-hour Python introduction](https://youtu.be/kqtD5dpn9C8) will be more than enough (although I think VSCode is better than PyCharm).
+## bun
 
-To actually build (or even preview) your survey, you **must have `yarn` installed**. It's a JavaScript package manager and is used to download some dependencies like Survey.js and React. `yarn` is bundled with Node.js. If you're a Windows or MacOS user, you can download it from [the official website](https://nodejs.org/en/download). The "Prebuilt Installer" should be the easiest. You can also use a package manager (see below). If you're a Linux user, chances are you have Node.js already installed. Otherwise you can use one of the following commands:
+To actually build (or even preview) your survey, you **must have `bun` installed**[^2]. It's a modern, incredibly fast JavaScript framework and is used to download some dependencies like Survey.js and React. If you use Windows, you need to have at least Windows 10 version 1809. You can always see the current installation process on [the bun website](https://bun.sh/docs/installation). At the time this text is written, to install bun you need to open your terminal, write the command appropriate for your operating system and hit enter:
 
-``` bash
-# Ubuntu (and other apt distros)
-sudo apt install npm
+[^2]: Up to version 0.3.0 Veles used `yarn`.
 
-# Arch
-sudo pacman -S npm
+```{bash}
+# Linux and MacOS
+curl -fsSL https://bun.sh/install | bash
 
-# winget
-winget install OpenJS.NodeJS.LTS
-
-# Chocolatey
-choco install nodejs-lts
-
-# Homebrew
-brew install node
+# Windows
+powershell -c "irm bun.sh/install.ps1|iex"
 ```
 
-To check if npm works, open your terminal (PowerShell in Windows), write this command and hit Enter:
+If anything goes wrong, see [Troubleshooting] below. If everything went well, the following command should not return an error:
 
-``` bash
-npm -v
+```{bash}
+bun --version
 ```
 
-The output should be a version number. If you get an error, then there's something wrong. If you're on Windows and you just installed Node.js, **reboot your system** (PATH may need refreshing).
+## Troubleshooting
 
-After installing `node.js`, activate `yarn` with this command in the terminal:
+There are a number of things that can go wrong in the process, especially on Windows. Please, read the error messages, they are informative. See the instructions below to know how to react.
 
-``` bash
-corepack enable
+### Executable not found
+
+You can get an error saying something aroud "python is not a recognisable script" or "bun not found". The first thing you should do (especially on Windows) is to reboot your system, so the enviroment variables could refresh.
+
+If you use Linux and don't use bash as your main terminal (and use e.g. `zsh` or `fish`), you might need to add bun to your PATH manually. Please, google the appropriate PATH adding method for your terminal.
+
+### Not digitally signed
+
+This Windows-specific error refers to the Powershell's execution policies. If you get it, you need to change Powershell's execution policy to allow running custom scripts. Use the following command and hit enter:
+
+```{powershell}
+Set-ExecutionPolicy Bypass
 ```
 
-If you get an error about permissions, try opening your terminal as admin (Windows) or use `sudo corepack enable` (Linux and MacOS).
+You might be asked for confirmation. Type `y` and hit enter again. Now everything should run smoothly.
 
-If everything went well, command `yarn -v` should return a version number.
+### No `unzip` package
 
-::: light-mode
-![`yarn -v` in Linux terminal](figs/getting_started/yarn-v.png){fig-alt="yarn -v in the terminal"}
-:::
+To install bun on Linux, you need to have the `unzip` package installed. Use your distribution's package manager to install it before attempting to install bun.
 
-::: dark-mode
-![`yarn -v` in Linux terminal](figs/getting_started/yarn-v_dark.png){fig-alt="yarn -v in the terminal"}
+::: panel-tabset
+## Ubuntu
+
+```{bash}
+sudo apt install unzip
+```
+
+## Arch
+
+```{bash}
+sudo pacman -S unzip
+```
+
+## CentOS/REHL
+
+```{bash}
+sudo yum install unzip
+
+# or
+sudo dnf install unzip
+```
 :::
 
 There are a few things that could go wrong here. **On Windows** you will most probably get an error saying `yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be loaded. The file C:\Program Files\nodejs\yarn.ps1 is not digitally signed. You cannot run this script on the current system.`. If so, run the following command and try again:
@@ -261,9 +297,9 @@ RSES = vls.radio(
 )
 ```
 
-In here I've splitted the inside the `radio()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them[^2]. Had I used the manually formatted list, I wouldn't have to write the `split()` part. Also notice what I did with the scale -- we don't *have to* save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:
+In here I've splitted the inside the `radio()` function, but I also could have done it anywhere before that. To learn more about Python string methods, see [W3Schools lesson](https://www.w3schools.com/python/python_ref_string.asp) about them[^3]. Had I used the manually formatted list, I wouldn't have to write the `split()` part. Also notice what I did with the scale -- we don't *have to* save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:
 
-[^2]: E.g. you can make everything lowercase or get rid of multiple spaces.
+[^3]: E.g. you can make everything lowercase or get rid of multiple spaces.
 
 ```{python}
 RSES = vls.radio(
@@ -317,11 +353,11 @@ vls.info(
 
 This part is not necessary but extremely useful.
 
-The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^3] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^4] to do just that.
+The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^4] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^5] to do just that.
 
-[^3]: Or WYSIWYG.
+[^4]: Or WYSIWYG.
 
-[^4]: "String" is a computer lingo for text, a group of letters.
+[^5]: "String" is a computer lingo for text, a group of letters.
 
 ```{python}
 # get our drinks and make them a list
