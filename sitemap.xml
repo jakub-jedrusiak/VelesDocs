@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://docs.velesweb.org/ref/wrappers.html</loc>
-    <lastmod>2024-10-11T19:36:57.133Z</lastmod>
-  </url>
-  <url>
     <loc>https://docs.velesweb.org/ref/customExpressionFunctions.html</loc>
-    <lastmod>2024-10-11T19:36:57.128Z</lastmod>
+    <lastmod>2024-10-10T08:34:47.945Z</lastmod>
   </url>
   <url>
-    <loc>https://docs.velesweb.org/getting-started.html</loc>
-    <lastmod>2024-10-11T19:57:13.826Z</lastmod>
+    <loc>https://docs.velesweb.org/ref/wrappers.html</loc>
+    <lastmod>2024-10-21T12:43:16.088Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/index.html</loc>
-    <lastmod>2024-10-11T19:58:53.339Z</lastmod>
+    <lastmod>2024-10-21T12:48:00.723Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/getting-started.html</loc>
+    <lastmod>2024-10-21T12:45:38.760Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/validators.html</loc>
-    <lastmod>2024-10-11T19:36:57.132Z</lastmod>
+    <lastmod>2024-10-10T08:34:47.948Z</lastmod>
   </url>
 </urlset>

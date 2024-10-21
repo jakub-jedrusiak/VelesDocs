@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,11 +69,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0c8af03b2fbd4cf44d6703e337af0e8d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-515496ad5c8dd6d1b4903a5e19e1f5c9.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8a1ce9d485e0a511e54e12a6f5be6b75.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
@@ -283,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-10-11</p>
+      <p class="date-modified">2024-10-21</p>
     </div>
   </div>
     
@@ -299,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Create a survey object.</p>
 <section id="signature" class="level2">
 <h2 class="anchored" data-anchor-id="signature">Signature</h2>
-<div id="c8bf1bf8" class="cell" data-execution_count="1">
+<div id="cb79ba31" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>survey(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>pages: PageModel <span class="op">|</span> <span class="bu">list</span>[PageModel],</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    createStructure: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>,</span>
@@ -464,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Create a page object.</p>
 <section id="signature-1" class="level2">
 <h2 class="anchored" data-anchor-id="signature-1">Signature</h2>
-<div id="91cf625d" class="cell" data-execution_count="2">
+<div id="9dd37448" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>page(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>questions: QuestionModel <span class="op">|</span> <span class="bu">list</span>[QuestionModel],</span>
@@ -529,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Create a panel.</p>
 <section id="signature-2" class="level2">
 <h2 class="anchored" data-anchor-id="signature-2">Signature</h2>
-<div id="61c6c6c5" class="cell" data-execution_count="3">
+<div id="7d49b31c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>panel(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>questions: QuestionModel <span class="op">|</span> <span class="bu">list</span>[QuestionModel],</span>
@@ -597,7 +597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-3" class="level2">
 <h2 class="anchored" data-anchor-id="signature-3">Signature</h2>
-<div id="f46610a8" class="cell" data-execution_count="4">
+<div id="d1634fc7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dropdown(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -720,7 +720,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-4" class="level2">
 <h2 class="anchored" data-anchor-id="signature-4">Signature</h2>
-<div id="1d646df6" class="cell" data-execution_count="5">
+<div id="fd9271e8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>text(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -834,7 +834,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-5" class="level2">
 <h2 class="anchored" data-anchor-id="signature-5">Signature</h2>
-<div id="6ca6e554" class="cell" data-execution_count="6">
+<div id="9a9782d0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>checkbox(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -961,7 +961,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-6" class="level2">
 <h2 class="anchored" data-anchor-id="signature-6">Signature</h2>
-<div id="79f01188" class="cell" data-execution_count="7">
+<div id="12af09cf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ranking(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1098,7 +1098,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-7" class="level2">
 <h2 class="anchored" data-anchor-id="signature-7">Signature</h2>
-<div id="befd468f" class="cell" data-execution_count="8">
+<div id="2e4b0510" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>radio(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1219,7 +1219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-8" class="level2">
 <h2 class="anchored" data-anchor-id="signature-8">Signature</h2>
-<div id="df50965a" class="cell" data-execution_count="9">
+<div id="671b8ac8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dropdownMultiple(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1358,7 +1358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-9" class="level2">
 <h2 class="anchored" data-anchor-id="signature-9">Signature</h2>
-<div id="d6befe4e" class="cell" data-execution_count="10">
+<div id="c49eeed3" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>textLong(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1454,7 +1454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-10" class="level2">
 <h2 class="anchored" data-anchor-id="signature-10">Signature</h2>
-<div id="f98366e3" class="cell" data-execution_count="11">
+<div id="d80ba0b2" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>rating(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1558,7 +1558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-11" class="level2">
 <h2 class="anchored" data-anchor-id="signature-11">Signature</h2>
-<div id="6f7fa0cb" class="cell" data-execution_count="12">
+<div id="279c2517" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>yesno(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1656,7 +1656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-12" class="level2">
 <h2 class="anchored" data-anchor-id="signature-12">Signature</h2>
-<div id="b40e89ff" class="cell" data-execution_count="13">
+<div id="1ec8aabb" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>info(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>infoHTML: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>],</span>
@@ -1745,7 +1745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-13" class="level2">
 <h2 class="anchored" data-anchor-id="signature-13">Signature</h2>
-<div id="34b606aa" class="cell" data-execution_count="14">
+<div id="3040d5fb" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>matrix(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -1857,7 +1857,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-14" class="level2">
 <h2 class="anchored" data-anchor-id="signature-14">Signature</h2>
-<div id="96ac5b15" class="cell" data-execution_count="15">
+<div id="830343d1" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>matrixDynamic(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -2004,7 +2004,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-15" class="level2">
 <h2 class="anchored" data-anchor-id="signature-15">Signature</h2>
-<div id="d41582ea" class="cell" data-execution_count="16">
+<div id="79734ae1" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>slider(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>title: <span class="bu">str</span> <span class="op">|</span> <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span>,</span>
@@ -2090,7 +2090,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-16" class="level2">
 <h2 class="anchored" data-anchor-id="signature-16">Signature</h2>
-<div id="46d64620" class="cell" data-execution_count="17">
+<div id="732bc37e" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>image(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span>,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>imageLink: <span class="bu">str</span>,</span>
@@ -2189,7 +2189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="signature-17" class="level2">
 <h2 class="anchored" data-anchor-id="signature-17">Signature</h2>
-<div id="e8b97c90" class="cell" data-execution_count="18">
+<div id="954cd144" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>consent(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    title: <span class="bu">str</span> <span class="op">=</span> <span class="st">'Do you consent to take part in the study?'</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    error: <span class="bu">str</span> <span class="op">=</span> <span class="st">"You can't continue without a consent"</span>,</span>
@@ -2202,9 +2202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="arguments-17" class="level2">
 <h2 class="anchored" data-anchor-id="arguments-17">Arguments</h2>
 <p><strong><code>error</code></strong> : <em>str</em><br> Error shown if a person doesn’t consent.</p>
-<p><strong><code>mode</code></strong> : <em>str</em><br> What to do if a person doesn’t consent. Can be ‘forbid’ (default, doesn’t allow to continue) or ‘end’ (redirects to the end).</p>
-<p><strong><code>For</code></strong> ‘end’ to work, set <code>triggers</code> in the <code>survey()</code> call to <code>[{"type": "complete", "expression": "{consent} = false"}]</code>. You can also</p>
-<p><strong><code>set</code></strong> <code>completedHtmlOnCondition</code> in the <code>survey()</code> call to <code>[{"expression": "{consent} = false", "html": "You can't continue without a consent"}]</code></p>
+<p><strong><code>mode</code></strong> : <em>str</em><br> What to do if a person doesn’t consent. Can be ‘forbid’ (default, doesn’t allow to continue) or ‘end’ (redirects to the end). For ‘end’ to work, set <code>triggers</code> in the <code>survey()</code> call to <code>[{"type": "complete", "expression": "{consent} = false"}]</code>. You can also set <code>completedHtmlOnCondition</code> in the <code>survey()</code> call to <code>[{"expression": "{consent} = false", "html": "You can't continue without a consent"}]</code></p>
 <p><strong><code>to</code></strong> show a custom message in that case.</p>
 <p><strong><code>name</code></strong> : <em>str</em><br> The label of the question. Defaults to “consent”.</p>
 <p><strong><code>kwargs</code></strong>: Other arguments passed to <code>yesno()</code>.</p>
