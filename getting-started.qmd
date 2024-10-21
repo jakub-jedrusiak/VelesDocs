@@ -64,7 +64,7 @@ If you use Linux and don't use bash as your main terminal (and use e.g. `zsh` or
 
 This Windows-specific error refers to the Powershell's execution policies. If you get it, you need to change Powershell's execution policy to allow running custom scripts. Use the following command and hit enter:
 
-```{powershell}
+``` powershell
 Set-ExecutionPolicy Bypass
 ```
 
@@ -77,35 +77,25 @@ To install bun on Linux, you need to have the `unzip` package installed. Use you
 ::: panel-tabset
 ## Ubuntu
 
-```{bash}
+``` bash
 sudo apt install unzip
 ```
 
 ## Arch
 
-```{bash}
+``` bash
 sudo pacman -S unzip
 ```
 
 ## CentOS/REHL
 
-```{bash}
+``` bash
 sudo yum install unzip
 
 # or
 sudo dnf install unzip
 ```
 :::
-
-There are a few things that could go wrong here. **On Windows** you will most probably get an error saying `yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be loaded. The file C:\Program Files\nodejs\yarn.ps1 is not digitally signed. You cannot run this script on the current system.`. If so, run the following command and try again:
-
-```{powershell}
-Set-ExecutionPolicy Bypass
-```
-
-You may also be asked `Corepack is about to download <url>. Do you want to continue? [Y/n]`. If so, just hit enter to choose the default (which is yes, as indicated by the uppercase Y).
-
-If you get any error telling you that some executable cannot be found, **reboot**.
 
 # Create project
 
