@@ -528,7 +528,7 @@ cd survey
 To run your survey, run a second command:
 
 ```{bash}
-yarn start
+bun run dev
 ```
 
 This runs a local server on your computer. To access your survey, open your favourite browser and type `localhost:3000` in the address bar. The server will work until you turn it off, so if you update your survey, just run the survey script again and the page should automatically refresh. You can now test your survey in your own browser.
