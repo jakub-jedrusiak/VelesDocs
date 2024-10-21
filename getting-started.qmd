@@ -430,19 +430,7 @@ vls.survey(
 )
 ```
 
-By default the page is not built for production, i.e. it is not compiled into a form that can be actually hosted. That is because it takes around a minute and is not needed for testing. When you complete designing your survey, set `buildForProduction` to `True`. Be default, the survey will be created in a subfolder called "survey". To change the folder's name or path, use the `folderName` argument.
-
-```{python}
-vls.survey(
-    "My smart research",
-    intro,
-    self_esteem,
-    title="Self-esteem and gender",
-    buildForProduction=True,
-)
-```
-
-The structure of the generated files and what to do with them is explained in View and test section [below](#view-and-test).
+Be default, the survey will be created in a subfolder called "survey". To change the folder's name or path, use the `folderName` argument.
 
 # Images
 
