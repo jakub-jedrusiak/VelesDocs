@@ -14,7 +14,7 @@ Veles is a Python library, so before using it, you need to install Python. If yo
 
 You can verify if python works correctly by opening your terminal, writing the following command and hitting enter.
 
-```{bash}
+``` bash
 python --version
 ```
 
@@ -36,7 +36,7 @@ To actually build (or even preview) your survey, you **must have `bun` installed
 
 [^2]: Up to version 0.3.0 Veles used `yarn`.
 
-```{bash}
+``` bash
 # Linux and MacOS
 curl -fsSL https://bun.sh/install | bash
 
@@ -46,7 +46,7 @@ powershell -c "irm bun.sh/install.ps1|iex"
 
 If anything goes wrong, see [Troubleshooting] below. If everything went well, the following command should not return an error:
 
-```{bash}
+``` bash
 bun --version
 ```
 

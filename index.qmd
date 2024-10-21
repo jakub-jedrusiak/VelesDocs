@@ -52,7 +52,7 @@ pip install velesresearch
 
 Note that **`bun` is required** for Veles to work. Use one of the following commands to install it:
 
-```{bash}
+``` bash
 # Linux and MacOS
 curl -fsSL https://bun.sh/install | bash
 
