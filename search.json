@@ -665,7 +665,7 @@
     "href": "getting-started.html#survey",
     "title": "Getting started",
     "section": "Survey",
-    "text": "Survey\nWhen all elements are created, we can combine them into the final survey. We can do this with the survey() function. It does two things – returns a Survey object and creates your survey’s structure.\n\nvls.survey(pages, **kwargs)\n\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n)\n\nBy default the page is not built for production, i.e. it is not compiled into a form that can be actually hosted. That is because it takes around a minute and is not needed for testing. When you complete designing your survey, set buildForProduction to True. Be default, the survey will be created in a subfolder called “survey”. To change the folder’s name or path, use the folderName argument.\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n    buildForProduction=True,\n)\n\nThe structure of the generated files and what to do with them is explained in View and test section below.",
+    "text": "Survey\nWhen all elements are created, we can combine them into the final survey. We can do this with the survey() function. It does two things – returns a Survey object and creates your survey’s structure.\n\nvls.survey(pages, **kwargs)\n\n\nvls.survey(\n    \"My smart research\",\n    intro,\n    self_esteem,\n    title=\"Self-esteem and gender\",\n)\n\nBe default, the survey will be created in a subfolder called “survey”. To change the folder’s name or path, use the folderName argument.",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Getting started"
