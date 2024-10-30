@@ -1,6 +1,5 @@
 ---
-title: "Polish"
-description: "Polish test library"
+title: "Polish test library"
 date-modified: last-modified
 date-format: iso
 listing:
