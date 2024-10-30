@@ -1,0 +1,23 @@
+[
+  {
+    "listing": "/library/pl.html",
+    "items": [
+      "/library/pl/tipi.html"
+    ]
+  },
+  {
+    "listing": "/library/en.html",
+    "items": [
+      "/library/en/rses.html",
+      "/library/en/nfcs.html",
+      "/library/en/nfcsShort.html"
+    ]
+  },
+  {
+    "listing": "/library/index.html",
+    "items": [
+      "/library/en.html",
+      "/library/pl.html"
+    ]
+  }
+]

@@ -1,101 +1,5 @@
 [
   {
-    "objectID": "ref/customExpressionFunctions.html",
-    "href": "ref/customExpressionFunctions.html",
-    "title": "Custom Expression Functions",
-    "section": "",
-    "text": "Expression functions are functions that can be used inside expressions and – by extension – in calculated values, dynamic texts and dynamic visibility. SurveyJS includes many built-in functions you can use. The most up-to-date documentation of these (especially including iff(), max(), min() and avg()) is the SurveyJS documentation.\nVeles adds some custom, research-tailored expression functions to the mix. You can use them as you would with the built-in SurveyJS functions.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#signature",
-    "href": "ref/customExpressionFunctions.html#signature",
-    "title": "Custom Expression Functions",
-    "section": "Signature",
-    "text": "Signature\nround(\n    number: number | string,\n    decimals: number\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#arguments",
-    "href": "ref/customExpressionFunctions.html#arguments",
-    "title": "Custom Expression Functions",
-    "section": "Arguments",
-    "text": "Arguments\nnumber : number | string Number to be rounded. Can be a number, an expression that evaluates to number, or a string with either the name of a question or the name of a variable. See examples.\ndecimals : number How many decimals should the number be rounded to?",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#examples",
-    "href": "ref/customExpressionFunctions.html#examples",
-    "title": "Custom Expression Functions",
-    "section": "Examples",
-    "text": "Examples\n\n# Use with calculated values\nvls.survey(\n    somePages,\n    calculatedValues=[\n        {\"name\": \"BMI\", \"expression\": \"round({weight} / ({height} * {height}), 1)\"}\n    ],\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#signature-1",
-    "href": "ref/customExpressionFunctions.html#signature-1",
-    "title": "Custom Expression Functions",
-    "section": "Signature",
-    "text": "Signature\nrandom(\n    min: number,\n    max: number,\n    seed: any\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#arguments-1",
-    "href": "ref/customExpressionFunctions.html#arguments-1",
-    "title": "Custom Expression Functions",
-    "section": "Arguments",
-    "text": "Arguments\nmin : number The minimum value the return value can get (inclusive).\nmax : number The maximum value the return value can get (inclusive).\nseed : any Random seed for the generator1. Set if you want the number not to change for a particular participant once randomly selected. Can be anything, e.g. the name of the calculated value or some other label. If not set, the number will be set randomly each time a survey value changes (e.g. a question is answered). Do not repeat seeds, repeated seed will result in the same random value selected. See examples.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#examples-1",
-    "href": "ref/customExpressionFunctions.html#examples-1",
-    "title": "Custom Expression Functions",
-    "section": "Examples",
-    "text": "Examples\n\n# Use to create subgroups\nvls.survey(\n    vls.page(\n        \"manipulation_page\",\n        vls.info(\"manipulation\", \"## You are stupid!\"),\n        visibleIf=\"{group} = 1 and {subgroup} = 5\",  # show only to 1/5 of the first group\n    ),\n    numberOfGroups=2,\n    calculatedValues=[\n        {\n            \"name\": \"subgroup\",\n            \"expression\": \"random(1, 5, 'subgroup')\",  # set seed if the value should be selected once and once only\n        }\n    ],\n)",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
-    "objectID": "ref/customExpressionFunctions.html#footnotes",
-    "href": "ref/customExpressionFunctions.html#footnotes",
-    "title": "Custom Expression Functions",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nTechnically the value of this argument is concatenated with the participant’s random ID, so the seed could be different for each participant.↩︎",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Reference",
-      "Custom Expression Functions"
-    ]
-  },
-  {
     "objectID": "ref/wrappers.html",
     "href": "ref/wrappers.html",
     "title": "Wrappers for question types",
@@ -540,6 +444,263 @@
     ]
   },
   {
+    "objectID": "ref/customExpressionFunctions.html",
+    "href": "ref/customExpressionFunctions.html",
+    "title": "Custom Expression Functions",
+    "section": "",
+    "text": "Expression functions are functions that can be used inside expressions and – by extension – in calculated values, dynamic texts and dynamic visibility. SurveyJS includes many built-in functions you can use. The most up-to-date documentation of these (especially including iff(), max(), min() and avg()) is the SurveyJS documentation.\nVeles adds some custom, research-tailored expression functions to the mix. You can use them as you would with the built-in SurveyJS functions.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#signature",
+    "href": "ref/customExpressionFunctions.html#signature",
+    "title": "Custom Expression Functions",
+    "section": "Signature",
+    "text": "Signature\nround(\n    number: number | string,\n    decimals: number\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#arguments",
+    "href": "ref/customExpressionFunctions.html#arguments",
+    "title": "Custom Expression Functions",
+    "section": "Arguments",
+    "text": "Arguments\nnumber : number | string Number to be rounded. Can be a number, an expression that evaluates to number, or a string with either the name of a question or the name of a variable. See examples.\ndecimals : number How many decimals should the number be rounded to?",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#examples",
+    "href": "ref/customExpressionFunctions.html#examples",
+    "title": "Custom Expression Functions",
+    "section": "Examples",
+    "text": "Examples\n\n# Use with calculated values\nvls.survey(\n    somePages,\n    calculatedValues=[\n        {\"name\": \"BMI\", \"expression\": \"round({weight} / ({height} * {height}), 1)\"}\n    ],\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#signature-1",
+    "href": "ref/customExpressionFunctions.html#signature-1",
+    "title": "Custom Expression Functions",
+    "section": "Signature",
+    "text": "Signature\nrandom(\n    min: number,\n    max: number,\n    seed: any\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#arguments-1",
+    "href": "ref/customExpressionFunctions.html#arguments-1",
+    "title": "Custom Expression Functions",
+    "section": "Arguments",
+    "text": "Arguments\nmin : number The minimum value the return value can get (inclusive).\nmax : number The maximum value the return value can get (inclusive).\nseed : any Random seed for the generator1. Set if you want the number not to change for a particular participant once randomly selected. Can be anything, e.g. the name of the calculated value or some other label. If not set, the number will be set randomly each time a survey value changes (e.g. a question is answered). Do not repeat seeds, repeated seed will result in the same random value selected. See examples.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#examples-1",
+    "href": "ref/customExpressionFunctions.html#examples-1",
+    "title": "Custom Expression Functions",
+    "section": "Examples",
+    "text": "Examples\n\n# Use to create subgroups\nvls.survey(\n    vls.page(\n        \"manipulation_page\",\n        vls.info(\"manipulation\", \"## You are stupid!\"),\n        visibleIf=\"{group} = 1 and {subgroup} = 5\",  # show only to 1/5 of the first group\n    ),\n    numberOfGroups=2,\n    calculatedValues=[\n        {\n            \"name\": \"subgroup\",\n            \"expression\": \"random(1, 5, 'subgroup')\",  # set seed if the value should be selected once and once only\n        }\n    ],\n)",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "ref/customExpressionFunctions.html#footnotes",
+    "href": "ref/customExpressionFunctions.html#footnotes",
+    "title": "Custom Expression Functions",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nTechnically the value of this argument is concatenated with the participant’s random ID, so the seed could be different for each participant.↩︎",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Reference",
+      "Custom Expression Functions"
+    ]
+  },
+  {
+    "objectID": "library/pl.html",
+    "href": "library/pl.html",
+    "title": "Polish",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTen Item Personality Inventory (TIPI)\n\n\ntipi()\n\n\nTen item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.\n\n\npersonality\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/en/rses.html",
+    "href": "library/en/rses.html",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.rses"
+  },
+  {
+    "objectID": "library/en/rses.html#module",
+    "href": "library/en/rses.html#module",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.rses"
+  },
+  {
+    "objectID": "library/en/rses.html#import",
+    "href": "library/en/rses.html#import",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Import",
+    "text": "Import\nfrom veleslibrary.questionnaires.rses import rses"
+  },
+  {
+    "objectID": "library/en/rses.html#original",
+    "href": "library/en/rses.html#original",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Original",
+    "text": "Original\n\n\nRosenberg, M. (2011). Rosenberg self-esteem scale [Database record]. APA PsycTests. https://doi.org/10.1037/t01038-000"
+  },
+  {
+    "objectID": "library/en/rses.html#score-calculation",
+    "href": "library/en/rses.html#score-calculation",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Score calculation",
+    "text": "Score calculation\nA simple sum."
+  },
+  {
+    "objectID": "library/en/rses.html#reverse-items",
+    "href": "library/en/rses.html#reverse-items",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Reverse items",
+    "text": "Reverse items\n3, 5, 8, 10"
+  },
+  {
+    "objectID": "library/en/rses.html#subscales",
+    "href": "library/en/rses.html#subscales",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Subscales",
+    "text": "Subscales\nNone."
+  },
+  {
+    "objectID": "library/en/rses.html#reliability",
+    "href": "library/en/rses.html#reliability",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .88"
+  },
+  {
+    "objectID": "library/en/rses.html#implemented-by",
+    "href": "library/en/rses.html#implemented-by",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/rses.html#args",
+    "href": "library/en/rses.html#args",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “RSES”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/rses.html#returns",
+    "href": "library/en/rses.html#returns",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the RSES questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/en/nfcs.html",
+    "href": "library/en/nfcs.html",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.nfcs"
+  },
+  {
+    "objectID": "library/en/nfcs.html#module",
+    "href": "library/en/nfcs.html#module",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.nfcs"
+  },
+  {
+    "objectID": "library/en/nfcs.html#import",
+    "href": "library/en/nfcs.html#import",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Import",
+    "text": "Import\nfrom veleslibrary.questionnaires.nfcs import nfcs"
+  },
+  {
+    "objectID": "library/en/nfcs.html#original",
+    "href": "library/en/nfcs.html#original",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Original",
+    "text": "Original\n\n\nRoets, A., & Van Hiel, A. (2007). Separating ability from need: Clarifying the dimensional structure of the need for closure scale. Personality and Social Psychology Bulletin, 33(2), 266–280. https://doi.org/10.1177/0146167206294744\n\n\nWebster, D. M., & Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. Journal of Personality and Social Psychology, 67(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049\n\n\nYou need to cite both papers if you use the NFCS in your research."
+  },
+  {
+    "objectID": "library/en/nfcs.html#score-calculation",
+    "href": "library/en/nfcs.html#score-calculation",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Score calculation",
+    "text": "Score calculation\nA simple sum."
+  },
+  {
+    "objectID": "library/en/nfcs.html#reverse-items",
+    "href": "library/en/nfcs.html#reverse-items",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Reverse items",
+    "text": "Reverse items\n2, 5, 18, 19, 20, 24, 27, 28, 34, 37, 41"
+  },
+  {
+    "objectID": "library/en/nfcs.html#subscales",
+    "href": "library/en/nfcs.html#subscales",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Subscales",
+    "text": "Subscales\n\nNeed for order: 1, 6, 10, 20, 23, 27, 32, 33, 35, 41\nNeed for predictability: 5, 7, 11, 18, 19, 25, 26, 40\nDecisiveness: 12, 13, 15, 16, 17, 22\nAvoidance of ambiguity: 3, 8, 14, 21, 29, 30, 31, 36, 38\nClosed mindedness: 2, 4, 9, 24, 28, 34, 37, 39"
+  },
+  {
+    "objectID": "library/en/nfcs.html#reliability",
+    "href": "library/en/nfcs.html#reliability",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .84\n\nSubscales\n\nNeed for order: α = .82\nNeed for predictability: α = .79\nDecisiveness: α = .70\nAvoidance of ambiguity: α = .67\nClosed mindedness: α = .62"
+  },
+  {
+    "objectID": "library/en/nfcs.html#implemented-by",
+    "href": "library/en/nfcs.html#implemented-by",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/nfcs.html#args",
+    "href": "library/en/nfcs.html#args",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “NFCS”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\ntitle : str Title for the matrix. Defaults to None.\nmatrixOptions : dict | None Additional options for the matrixDropdown as a dictionary. Defaults to None.\nratingOptions : dict | None Additional options for the rating column as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/nfcs.html#returns",
+    "href": "library/en/nfcs.html#returns",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the NFCS long questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Overview",
@@ -703,6 +864,185 @@
       "{{< fa flask >}} VelesWeb",
       "Getting started"
     ]
+  },
+  {
+    "objectID": "library/en.html",
+    "href": "library/en.html",
+    "title": "English",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\n\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/en/nfcsShort.html",
+    "href": "library/en/nfcsShort.html",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.nfcs"
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#module",
+    "href": "library/en/nfcsShort.html#module",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.nfcs"
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#import",
+    "href": "library/en/nfcsShort.html#import",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Import",
+    "text": "Import\nfrom veleslibrary.questionnaires.nfcs import nfcsShort"
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#original",
+    "href": "library/en/nfcsShort.html#original",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Original",
+    "text": "Original\n\n\nRoets, A., & Van Hiel, A. (2011). Item selection and validation of a brief, 15-item version of the Need for Closure Scale. Personality and Individual Differences, 50(1), 90–94. https://doi.org/10.1016/j.paid.2010.09.004\n\n\nWebster, D. M., & Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. Journal of Personality and Social Psychology, 67(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049\n\n\nYou need to cite both papers if you use the NFCS in your research."
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#score-calculation",
+    "href": "library/en/nfcsShort.html#score-calculation",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Score calculation",
+    "text": "Score calculation\nA simple sum."
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#reverse-items",
+    "href": "library/en/nfcsShort.html#reverse-items",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#subscales",
+    "href": "library/en/nfcsShort.html#subscales",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Subscales",
+    "text": "Subscales\nNone."
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#reliability",
+    "href": "library/en/nfcsShort.html#reliability",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .87"
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#implemented-by",
+    "href": "library/en/nfcsShort.html#implemented-by",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#args",
+    "href": "library/en/nfcsShort.html#args",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “NFCS”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\ntitle : str Title for the matrix. Defaults to None.\nmatrixOptions : dict | None Additional options for the matrixDropdown as a dictionary. Defaults to None.\nratingOptions : dict | None Additional options for the rating column as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/nfcsShort.html#returns",
+    "href": "library/en/nfcsShort.html#returns",
+    "title": "The Need for Closure Scale (NFCS)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the NFCS short questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/index.html",
+    "href": "library/index.html",
+    "title": "Library overview",
+    "section": "",
+    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nEnglish\n\n\nEnglish test library\n\n\n\n\nPolish\n\n\nPolish test library\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Test library"
+    ]
+  },
+  {
+    "objectID": "library/pl/tipi.html",
+    "href": "library/pl/tipi.html",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.pl.tipi"
+  },
+  {
+    "objectID": "library/pl/tipi.html#module",
+    "href": "library/pl/tipi.html#module",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.pl.tipi"
+  },
+  {
+    "objectID": "library/pl/tipi.html#import",
+    "href": "library/pl/tipi.html#import",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Import",
+    "text": "Import\nfrom veleslibrary.questionnaires.pl.tipi import tipi"
+  },
+  {
+    "objectID": "library/pl/tipi.html#original",
+    "href": "library/pl/tipi.html#original",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Original",
+    "text": "Original\n\n\nGosling, S. D., Rentfrow, P. J., & Swann, W. B. (2003). A very brief measure of the Big-Five personality domains. Journal of Research in Personality, 37(6), 504–528. https://doi.org/10.1016/S0092-6566(03)00046-1"
+  },
+  {
+    "objectID": "library/pl/tipi.html#adaptation",
+    "href": "library/pl/tipi.html#adaptation",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Adaptation",
+    "text": "Adaptation\n\n\nSorokowska, A., Słowińska, A., Zbieg, A., & Sorokowski, P. (2014). Polska adaptacja testu Ten Item Personality Inventory (Tipi) – TIPI-PL – wersja standardowa i internetowa. Wrocław: WrocLab."
+  },
+  {
+    "objectID": "library/pl/tipi.html#score-calculation",
+    "href": "library/pl/tipi.html#score-calculation",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Score calculation",
+    "text": "Score calculation\nA simple sum."
+  },
+  {
+    "objectID": "library/pl/tipi.html#reverse-items",
+    "href": "library/pl/tipi.html#reverse-items",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Reverse items",
+    "text": "Reverse items\n2, 4, 6, 8, 10"
+  },
+  {
+    "objectID": "library/pl/tipi.html#subscales",
+    "href": "library/pl/tipi.html#subscales",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Subscales",
+    "text": "Subscales\n\nExtraversion: 1, 6\nAgreeableness: 2, 7\nConscientiousness: 3, 8\nEmotional Stability: 4, 9\nOpenness to Experience: 5, 10"
+  },
+  {
+    "objectID": "library/pl/tipi.html#reliability",
+    "href": "library/pl/tipi.html#reliability",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Reliability",
+    "text": "Reliability\n\nPaper and pencil\n\nExtraversion: α = .68\nAgreeableness: α = .58\nConscientiousness: α = .75\nEmotional Stability: α = .72\nOpenness to Experience: α = .44\n\n\n\nGoogle Forms\n\nExtraversion: α = .74\nAgreeableness: α = .54\nConscientiousness: α = .80\nEmotional Stability: α = .83\nOpenness to Experience: α = .45\n\n\n\nOnline application\n\nExtraversion: α = .70\nAgreeableness: α = .50\nConscientiousness: α = .76\nEmotional Stability: α = .65\nOpenness to Experience: α = .47"
+  },
+  {
+    "objectID": "library/pl/tipi.html#implemented-by",
+    "href": "library/pl/tipi.html#implemented-by",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+  },
+  {
+    "objectID": "library/pl/tipi.html#args",
+    "href": "library/pl/tipi.html#args",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “TIPI”.\ninstruction : str Instruction for the questionnaire. Defaults to “Poniżej przedstawiona jest lista cech, które są lub nie są Twoimi charakterystykami. Zaznacz przy poszczególnych stwierdzeniach, do jakiego stopnia zgadzasz się lub nie zgadzasz z każdym z nich. Oceń stopień, w jakim każde z pytań odnosi się do Ciebie.”.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/pl/tipi.html#returns",
+    "href": "library/pl/tipi.html#returns",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the TIPI questionnaire."
   },
   {
     "objectID": "ref/validators.html",

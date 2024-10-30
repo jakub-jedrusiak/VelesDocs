@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://docs.velesweb.org/ref/wrappers.html</loc>
+    <lastmod>2024-10-21T12:43:16.088Z</lastmod>
+  </url>
+  <url>
     <loc>https://docs.velesweb.org/ref/customExpressionFunctions.html</loc>
     <lastmod>2024-10-10T08:34:47.945Z</lastmod>
   </url>
   <url>
-    <loc>https://docs.velesweb.org/ref/wrappers.html</loc>
-    <lastmod>2024-10-21T12:43:16.088Z</lastmod>
+    <loc>https://docs.velesweb.org/library/pl.html</loc>
+    <lastmod>2024-10-30T11:52:36.426Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/en/rses.html</loc>
+    <lastmod>2024-10-30T12:34:39.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/en/nfcs.html</loc>
+    <lastmod>2024-10-30T12:30:29.719Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/index.html</loc>
@@ -15,6 +27,22 @@
   <url>
     <loc>https://docs.velesweb.org/getting-started.html</loc>
     <lastmod>2024-10-21T17:30:21.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/en.html</loc>
+    <lastmod>2024-10-30T12:11:59.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/en/nfcsShort.html</loc>
+    <lastmod>2024-10-30T12:37:08.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/index.html</loc>
+    <lastmod>2024-10-30T12:10:35.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.velesweb.org/library/pl/tipi.html</loc>
+    <lastmod>2024-10-30T12:12:51.443Z</lastmod>
   </url>
   <url>
     <loc>https://docs.velesweb.org/ref/validators.html</loc>
