@@ -542,7 +542,7 @@
   {
     "objectID": "library/pl.html",
     "href": "library/pl.html",
-    "title": "Polish",
+    "title": "Polish test library",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTen Item Personality Inventory (TIPI)\n\n\ntipi()\n\n\nTen item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.\n\n\npersonality\n\n\n\n\n\nNo matching items"
   },
@@ -868,7 +868,7 @@
   {
     "objectID": "library/en.html",
     "href": "library/en.html",
-    "title": "English",
+    "title": "English test library",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\n\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\n\nNo matching items"
   },
@@ -954,7 +954,7 @@
     "href": "library/index.html",
     "title": "Library overview",
     "section": "",
-    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nEnglish\n\n\nEnglish test library\n\n\n\n\nPolish\n\n\nPolish test library\n\n\n\n\n\nNo matching items",
+    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\n\n\n\n\nEnglish test library\n\n\n\n\nPolish test library\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Test library"

@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-title","listing-author"],
     };
@@ -331,26 +331,17 @@ window.Quarto = {
 <th>
 <a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
 </th>
-<th>
-Description
-</th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1730290319275" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="English" data-listing-filename-sort="en.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1730292240214" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="English test library" data-listing-filename-sort="en.qmd">
 <td>
-<a href="../library/en.html" class="title listing-title">English</a>
-</td>
-<td>
-<span class="listing-description">English test library</span>
+<a href="../library/en.html" class="title listing-title">English test library</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1730289156426" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Polish" data-listing-filename-sort="pl.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1730292247962" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Polish test library" data-listing-filename-sort="pl.qmd">
 <td>
-<a href="../library/pl.html" class="title listing-title">Polish</a>
-</td>
-<td>
-<span class="listing-description">Polish test library</span>
+<a href="../library/pl.html" class="title listing-title">Polish test library</a>
 </td>
 </tr>
 </tbody>
