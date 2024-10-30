@@ -1,0 +1,13 @@
+---
+title: Library overview
+date-modified: last-modified
+date-format: iso
+listing:
+    contents: 
+        - "./*.qmd"
+        - "!template.qmd"
+    type: table
+    fields: [title, description]
+---
+
+VelesLibrary is a part of Veles that aims to simplify the surveys' development process. The idea is that there's no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.

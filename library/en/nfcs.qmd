@@ -1,0 +1,71 @@
+---
+title: "The Need for Closure Scale (NFCS)"
+subtitle: "`nfcs()`"
+description: "Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns **the long version**. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness."
+categories: [cognition]
+---
+
+## Module
+`veleslibrary.questionnaires.nfcs`
+
+## Import
+``` python
+from veleslibrary.questionnaires.nfcs import nfcs
+```
+
+## Original
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">Roets, A., &amp; Van Hiel, A. (2007). Separating ability from need: Clarifying the dimensional structure of the need for closure scale. <i>Personality and Social Psychology Bulletin</i>, <i>33</i>(2), 266–280. https://doi.org/10.1177/0146167206294744</div>
+  <div class="csl-entry">Webster, D. M., &amp; Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. <i>Journal of Personality and Social Psychology</i>, <i>67</i>(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049</div>
+</div>
+
+You need to **cite both papers** if you use the NFCS in your research.
+
+## Score calculation
+A simple sum.
+
+## Reverse items
+2, 5, 18, 19, 20, 24, 27, 28, 34, 37, 41
+
+## Subscales
+1. Need for order: 1, 6, 10, 20, 23, 27, 32, 33, 35, 41
+2. Need for predictability: 5, 7, 11, 18, 19, 25, 26, 40
+3. Decisiveness: 12, 13, 15, 16, 17, 22
+4. Avoidance of ambiguity: 3, 8, 14, 21, 29, 30, 31, 36, 38
+5. Closed mindedness: 2, 4, 9, 24, 28, 34, 37, 39
+
+## Reliability
+α = .84
+
+### Subscales
+1. Need for order: α = .82
+2. Need for predictability: α = .79
+3. Decisiveness: α = .70
+4. Avoidance of ambiguity: α = .67
+5. Closed mindedness: α = .62
+
+## Implemented by
+Jędrusiak, Jakub (University of Wrocław)
+
+## Args
+`name` : *str*<br>
+Base name for pages and questions. Defaults to "NFCS".
+
+`instruction` : *str*<br>
+Instruction for the questionnaire. `None` means that the default instruction will be used.
+
+`title` : *str*<br>
+Title for the matrix. Defaults to None.
+
+`matrixOptions` : *dict | None*<br>
+Additional options for the matrixDropdown as a dictionary. Defaults to None.
+
+`ratingOptions` : *dict | None*<br>
+Additional options for the rating column as a dictionary. Defaults to None.
+
+`pageOptions` : *dict | None*<br>
+Additional options for pages as a dictionary. Defaults to None.
+
+## Returns
+`PageModel`<br>
+PageModel with the NFCS long questionnaire. Use the `*` operator to unpack it to questions.

@@ -1,0 +1,79 @@
+---
+title: "Full name of the questionnaire (ABBREVIATION)"
+subtitle: "`function()`"
+description: "Test's description from the docs."
+categories: [category, category]
+---
+
+## Module
+<!-- Here we put the module path with dots. Use the file structure. -->
+`veleslibrary.questionnaires.pl.tipi`
+
+## Import
+<!-- Here we put an import instruction that imports all functions from the module. -->
+``` python
+from veleslibrary.questionnaires.pl.tipi import tipi
+```
+
+## Original
+<!-- An APA 6th edition style citation. Go to zbib.org, create your bibliography, click an arrow next to the Copy to Clipboard button, click Copy HTML and paste it here. If there's a DOI link, enclose it in triangle brackets <DOI/link/here>. -->
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+<div class="csl-entry">Gosling, S. D., Rentfrow, P. J., &amp; Swann, W. B. (2003). A very brief measure of the Big-Five personality domains. <i>Journal of Research in Personality</i>, <i>37</i>(6), 504–528. <https://doi.org/10.1016/S0092-6566(03)00046-1></div>
+</div>
+
+## Adaptation
+<!-- An APA 6th edition style citation. Go to zbib.org, create your bibliography, click an arrow next to the Copy to Clipboard button, click Copy HTML and paste it here. If there's a DOI link, enclose it in triangle brackets <DOI/link/here>. -->
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+<div class="csl-entry">Sorokowska, A., Słowińska, A., Zbieg, A., &amp; Sorokowski, P. (2014). <i>Polska adaptacja testu Ten Item Personality Inventory (Tipi) – TIPI-PL – wersja standardowa i internetowa</i>. Wrocław: WrocLab.</div>
+</div>
+
+## Score calculation
+<!-- Score calculation method from the docs. -->
+A simple sum.
+
+## Reverse items
+<!-- Numbers separated by commas or "None." if no reverse items. -->
+2, 4, 6, 8, 10
+
+## Subscales
+<!-- Numbered list of subscales, a colon and comma-separated item numbers or "None." if no subscales. -->
+1. Need for order: 1, 6, 10, 20, 23, 27, 32, 33, 35, 41
+2. Need for predictability: 5, 7, 11, 18, 19, 25, 26, 40
+3. Decisiveness: 12, 13, 15, 16, 17, 22
+4. Avoidance of ambiguity: 3, 8, 14, 21, 29, 30, 31, 36, 38
+5. Closed mindedness: 2, 4, 9, 24, 28, 34, 37, 39
+
+## Reliability
+<!-- Reliability score from the cited article. Cronbach's alpha by default. -->
+α = .84
+
+### Subscales
+<!-- If the questionnaire has subscales, report their reliability. If not, do not include this header at all. -->
+1. Need for order: α = .82
+2. Need for predictability: α = .79
+3. Decisiveness: α = .70
+4. Avoidance of ambiguity: α = .67
+5. Closed mindedness: α = .62
+
+## Implemented by
+<!-- You. In the format Surname, Names (affiliation). -->
+Jędrusiak, Jakub (University of Wrocław)
+
+## Args
+<!-- Args from the documentation but in docs format. See the example. You can use regular expression pair find: "^(.+?) \((.+)\): (.+)$" replace: "`$1` : *$2*<br>\n$3\n" to automate. -->
+`name` : *str*<br>
+Base name for pages and questions. Defaults to "TIPI".
+
+`instruction` : *str*<br>
+Instruction for the questionnaire.
+
+`questionOptions` : *dict | None*<br>
+Additional options for questions as a dictionary. Defaults to None.
+
+`pageOptions` : *dict | None*<br>
+Additional options for pages as a dictionary. Defaults to None.
+
+## Returns
+<!-- Return value from the example but in docs format. See the example. -->
+`PageModel`<br>
+PageModel with the TIPI questionnaire.

@@ -1,0 +1,60 @@
+---
+title: "The Need for Closure Scale (NFCS)"
+subtitle: "`nfcsShort()`"
+description: "Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns **the short version**. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness."
+categories: [cognition]
+---
+
+## Module
+`veleslibrary.questionnaires.nfcs`
+
+## Import
+``` python
+from veleslibrary.questionnaires.nfcs import nfcsShort
+```
+
+## Original
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+  <div class="csl-entry">Roets, A., &amp; Van Hiel, A. (2011). Item selection and validation of a brief, 15-item version of the Need for Closure Scale. <i>Personality and Individual Differences</i>, <i>50</i>(1), 90–94. https://doi.org/10.1016/j.paid.2010.09.004</div>
+  <div class="csl-entry">Webster, D. M., &amp; Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. <i>Journal of Personality and Social Psychology</i>, <i>67</i>(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049</div>
+</div>
+
+You need to **cite both papers** if you use the NFCS in your research.
+
+## Score calculation
+A simple sum.
+
+## Reverse items
+None.
+
+## Subscales
+None.
+
+## Reliability
+α = .87
+
+## Implemented by
+Jędrusiak, Jakub (University of Wrocław)
+
+## Args
+`name` : *str*<br>
+Base name for pages and questions. Defaults to "NFCS".
+
+`instruction` : *str*<br>
+Instruction for the questionnaire. `None` means that the default instruction will be used.
+
+`title` : *str*<br>
+Title for the matrix. Defaults to None.
+
+`matrixOptions` : *dict | None*<br>
+Additional options for the matrixDropdown as a dictionary. Defaults to None.
+
+`ratingOptions` : *dict | None*<br>
+Additional options for the rating column as a dictionary. Defaults to None.
+
+`pageOptions` : *dict | None*<br>
+Additional options for pages as a dictionary. Defaults to None.
+
+## Returns
+`PageModel`<br>
+PageModel with the NFCS short questionnaire. Use the `*` operator to unpack it to questions.

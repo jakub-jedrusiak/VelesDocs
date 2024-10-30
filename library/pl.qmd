@@ -1,0 +1,10 @@
+---
+title: "Polish"
+description: "Polish test library"
+date-modified: last-modified
+date-format: iso
+listing:
+    contents: pl
+    type: table
+    fields: [title, subtitle, description, categories]
+---
