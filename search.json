@@ -859,7 +859,7 @@
     "href": "getting-started.html#footnotes",
     "title": "Getting started",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nSearching in English should work despite what language you have set in VS Code.↩︎\nUp to version 0.3.0 Veles used yarn.↩︎\nE.g. you can make everything lowercase or get rid of multiple spaces.↩︎\nOr WYSIWYG.↩︎\n“String” is a computer lingo for text, a group of letters.↩︎",
+    "text": "Footnotes\n\n\nSearching in English should work despite what language you have set in VS Code.↩︎\nUp to version 0.3.0 Veles used yarn.↩︎\nE.g. you can make everything lowercase or get rid of multiple spaces.↩︎\nOr WYSIWYG.↩︎\n“String” is a computer lingo for text, a group of letters.↩︎\nIn R you can use sum(sapply(gregexpr(\"[[:alpha:]]+\", STRING_HERE), function(x) sum(x &gt; 0))) to count words in a string.↩︎",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Getting started"
