@@ -127,10 +127,15 @@ input = vls.page(
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     
     survey.onCurrentPageChanging.add((sender, options) => {
-    window.abbreviation = survey.data.abbreviation;
+    window.abbreviation = survey.data.abbreviation
+        .replaceAll(RegExp("-(?=\\\\d)", "gm"), "")
+        .replaceAll("-", "_")
+        .toLowerCase();
     window.pythonCode = generateDocstring(survey);
     survey.getQuestionByName("output").html = `<p>Below you will find the whole content of your file. Fork the <a href='https://github.com/jakub-jedrusiak/VelesLibrary' target='_blank' rel='noopener noreferrer'>VelesLibrary repo</a>,
-create the file, <b>add the necessary elements</b> and commit it. Manually add anything not ordinary.</p>
+create the file, <b>add the necessary elements</b> and commit it. Manually add anything not ordinary. Your file should be added under veleslibrary/questionnaires${survey.data.language === "en" ? "" : ("/" + survey.data.language)}/
+If there's no such folder, create it and copy the default <code>__init__.py</code> file and remove the existing imports.
+If you can, please also add the following instruction to the appropriate <code>__init__.py</code> file: <code>from .${window.abbreviation} import ${window.abbreviation}</code>.</p>
 <input id="downloadBtn" onclick="downloadPython()" class="sd-btn sd-btn--action sd-navigation__complete-btn" type="button" value="Download as .py file">
 <details style="margin-top: 1em;">
 <summary>See the file</summary>

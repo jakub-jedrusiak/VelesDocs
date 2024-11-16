@@ -56,10 +56,7 @@ description: This page can be used to generate a function's template and (in the
 <script>
 function downloadPython() {
             const blob = new Blob([window.pythonCode], { type: 'text/plain' });
-            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation
-    .replaceAll(RegExp("-(?=\\\\d)", "gm"), "")
-    .replaceAll("-", "_")
-    .toLowerCase()}.py` });
+            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.py` });
             a.click();
         }
 </script>
