@@ -10,7 +10,7 @@ commaValidator = vls.regexValidator(
     'Use comma separated values, e.g. "1, 3, 5". Put spaces between commas.',
 )
 
-input = vls.page(
+form = vls.page(
     "libtool",
     vls.text(
         "name",
@@ -70,6 +70,7 @@ input = vls.page(
             inputType="number",
             min=0,
             max=1,
+            step="0.01",
             **defaultOptions,
         ),
         description="Write the name of the subscale and the numbers of the items that belong to it. Separate the items with commas. Write the Cronbach's alpha reliability coefficient as a number (e.g. 0.85).",
@@ -84,6 +85,7 @@ input = vls.page(
         inputType="number",
         min=0,
         max=1,
+        step="0.01",
         requiredIf="{hasSubscales} = false",
         **defaultOptions | {"isRequired": False},
     ),
@@ -103,7 +105,6 @@ input = vls.page(
         "Reverse scored items",
         description="Comma-separated item numbers.",
         placeholder="2, 4, 6, 8, 10",
-        step="0.01",
         validators=commaValidator,
         visibleIf="{hasReverseItems}",
         **defaultOptions,
@@ -111,9 +112,17 @@ input = vls.page(
     vls.matrixDynamic(
         "authors",
         "Implemented by",
-        vls.text("name", "Given name", autocomplete="given-name"),
-        vls.text("surname", "Surname", autocomplete="family-name"),
-        vls.text("affiliation", "Affiliation", autocomplete="organization"),
+        vls.text(
+            "name", "Given name", **defaultOptions | {"autocomplete": "given-name"}
+        ),
+        vls.text(
+            "surname", "Surname", **defaultOptions | {"autocomplete": "family-name"}
+        ),
+        vls.text(
+            "affiliation",
+            "Affiliation",
+            **defaultOptions | {"autocomplete": "organization"},
+        ),
         rowCount=1,
         minRowCount=1,
         description="Your name, surname, and affiliation.",
@@ -145,15 +154,15 @@ If you can, please also add the following instruction to the appropriate <code>_
 )
 
 
-output = vls.page(
+result = vls.page(
     "output",
     vls.info("output", "Loading…"),
     customCode="survey.showCompleteButton = false;",
 )
 
 survey = vls.survey(
-    input,
-    output,
+    form,
+    result,
     path="libtool",
     pageNextText="Generate",
     themeFile="libtool/survey_theme.json",
