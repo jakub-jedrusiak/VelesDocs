@@ -1,8 +1,9 @@
 [
   {
-    "listing": "/library/pl.html",
+    "listing": "/library/index.html",
     "items": [
-      "/library/pl/tipi.html"
+      "/library/en.html",
+      "/library/pl.html"
     ]
   },
   {
@@ -15,10 +16,9 @@
     ]
   },
   {
-    "listing": "/library/index.html",
+    "listing": "/library/pl.html",
     "items": [
-      "/library/en.html",
-      "/library/pl.html"
+      "/library/pl/tipi.html"
     ]
   }
 ]
