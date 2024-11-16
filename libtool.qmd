@@ -1,0 +1,76 @@
+---
+title: Library implementation tool
+description: This page can be used to generate a function's template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire.
+---
+
+<style>
+    #tryAgainButton {
+      background-color: #CC0000;
+    }
+
+    #tryAgainButton:hover {
+      background-color: #b30000;
+    }
+
+    .lds-dual-ring {
+      /* change color here */
+      color: #19B394 !important;
+    }
+
+    .lds-dual-ring,
+    .lds-dual-ring:after {
+      box-sizing: border-box;
+    }
+
+    .lds-dual-ring {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+    }
+
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6.4px solid currentColor;
+      border-color: currentColor transparent currentColor transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+<script>
+function downloadPython() {
+            const blob = new Blob([window.pythonCode], { type: 'text/plain' });
+            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation
+    .replaceAll(RegExp("-(?=\\\\d)", "gm"), "")
+    .replaceAll("-", "_")
+    .toLowerCase()}.py` });
+            a.click();
+        }
+</script>
+
+<div id="root">
+<div style="text-align: center; padding-bottom: 2em; padding-top: 2em;">
+<div class="lds-dual-ring"></div>
+</div>
+</div>
+<div id="tryAgainDiv" style="text-align: center; padding-bottom: 2em; display: none;"><button id="tryAgainButton"
+disabled class="sd-btn sd-btn--action">Try
+again</button></div>
+
+<script type="module" src="../libtool/main.js"></script>

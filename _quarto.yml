@@ -34,6 +34,8 @@ website:
         contents: "ref/**"
       - text: "Test library"
         href: library/index.qmd
+      - text: "Implementation tool"
+        href: libtool.qmd
       - text: "<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#2C3E50', 'C0C6MPH76');kofiwidget2.draw();</script> "
     collapse-level: 2
   twitter-card: true
