@@ -282,7 +282,7 @@ If you can, please also add the following instruction to the appropriate <code>_
 <div>
 <p>
 You also need to document the questionnaire on the VelesDocs website. Fork the <a href='https://github.com/jakub-jedrusiak/VelesDocs' target='_blank' rel='noopener noreferrer'>VelesDocs repo</a>,
-download the documentation file using the button below, and add it under <code>library/\${survey.data.language}<code>.
+download the documentation file using the button below, and add it under <code>library/\${survey.data.language}</code>.
 If your language folder doesn't exist, create it, make a copy of the <code>en.qmd</code> file, change the language in the title,
 and the language code in the contents. Commit the changes. If you made any changes to the docstring in the .py file, add them to the .qmd file.
 </p>
@@ -749,7 +749,7 @@ If you can, please also add the following instruction to the appropriate <code>_
 <div>
 <p>
 You also need to document the questionnaire on the VelesDocs website. Fork the <a href='https://github.com/jakub-jedrusiak/VelesDocs' target='_blank' rel='noopener noreferrer'>VelesDocs repo</a>,
-download the documentation file using the button below, and add it under <code>library/${a.data.language}<code>.
+download the documentation file using the button below, and add it under <code>library/${a.data.language}</code>.
 If your language folder doesn't exist, create it, make a copy of the <code>en.qmd</code> file, change the language in the title,
 and the language code in the contents. Commit the changes. If you made any changes to the docstring in the .py file, add them to the .qmd file.
 </p>
