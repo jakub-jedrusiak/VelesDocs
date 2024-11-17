@@ -637,77 +637,77 @@
   {
     "objectID": "library/en/sd3.html",
     "href": "library/en/sd3.html",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "",
-    "text": "“““— title:”Short Dark Triad (SD3)” subtitle: “sd3()” description: “A short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.” categories: [“Personality and Traits”,“Narcissism”]"
+    "text": "velesresearch.questionnaires.sd3"
   },
   {
     "objectID": "library/en/sd3.html#module",
     "href": "library/en/sd3.html#module",
-    "title": "Veles Documentation",
-    "section": "Module",
-    "text": "Module\nvelesresearch.questionnaires.sd3"
+    "title": "Short Dark Triad (SD3)",
+    "section": "",
+    "text": "velesresearch.questionnaires.sd3"
   },
   {
     "objectID": "library/en/sd3.html#import",
     "href": "library/en/sd3.html#import",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Import",
     "text": "Import\nfrom velesresearch.questionnaires.sd3 import sd3"
   },
   {
     "objectID": "library/en/sd3.html#original",
     "href": "library/en/sd3.html#original",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Original",
     "text": "Original\n\n\nJones, D. N., & Paulhus, D. L. (2014). Introducing the short dark triad (Sd3): A brief measure of dark personality traits. Assessment, 21(1), 28–41. https://doi.org/10.1177/1073191113514105"
   },
   {
     "objectID": "library/en/sd3.html#score-calculation",
     "href": "library/en/sd3.html#score-calculation",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Score calculation",
     "text": "Score calculation\nA simple sum."
   },
   {
     "objectID": "library/en/sd3.html#reverse-items",
     "href": "library/en/sd3.html#reverse-items",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Reverse items",
     "text": "Reverse items\n11, 15, 17, 20, 25"
   },
   {
     "objectID": "library/en/sd3.html#subscales",
     "href": "library/en/sd3.html#subscales",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Subscales",
     "text": "Subscales\n\nMachiavellianism: 1, 2, 3, 4, 5, 6, 7, 8, 9\nNarcissism: 10, 11, 12, 13, 14, 15, 16, 17, 18\nPsychopathy: 19, 20, 21, 22, 23, 24, 25, 26, 27"
   },
   {
     "objectID": "library/en/sd3.html#reliability",
     "href": "library/en/sd3.html#reliability",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Reliability",
     "text": "Reliability\n\nMachiavellianism: α = .77\nNarcissism: α = .71\nPsychopathy: α = .8"
   },
   {
     "objectID": "library/en/sd3.html#implemented-by",
     "href": "library/en/sd3.html#implemented-by",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Implemented by",
     "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
   },
   {
     "objectID": "library/en/sd3.html#args",
     "href": "library/en/sd3.html#args",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Args",
     "text": "Args\nname : str Base name for pages and questions. Defaults to “sd3”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
     "objectID": "library/en/sd3.html#returns",
     "href": "library/en/sd3.html#returns",
-    "title": "Veles Documentation",
+    "title": "Short Dark Triad (SD3)",
     "section": "Returns",
     "text": "Returns\nPageModel PageModel with the SD3 questionnaire. Use the * operator to unpack it to questions."
   },
@@ -793,7 +793,7 @@
     "href": "library/en.html",
     "title": "English test library",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\n\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nlove\n\n\n\n\ncategories: [“Personality and Traits”,“Narcissism”]\n\n\n \n\n\n\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\n\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\ncognition\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nlove\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "getting-started.html",

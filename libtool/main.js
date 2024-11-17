@@ -481,7 +481,7 @@ function generateDocs(survey) {
 \`
     : "\\\\n";
 
-  const text = \`"""---
+  const text = \`---
 title: "\${survey.data.name} (\${survey.data.abbreviation})"
 subtitle: "\\\`\${cleanAbbreviation}()\\\`"
 description: "\${survey.data.description}"
@@ -670,7 +670,7 @@ ${a.data.reliability?`
 `:""}${a.data.subscales.map((k,S)=>`        ${a.data.reliability?"    ":""}${S+1}. ${k.name}: \u03B1 = ${k.reliability.toString().replace(RegExp("^0","gm"),"")}`).join(`
 `)}
 `:`
-`;return`"""---
+`;return`---
 title: "${a.data.name} (${a.data.abbreviation})"
 subtitle: "\`${s}()\`"
 description: "${a.data.description}"
