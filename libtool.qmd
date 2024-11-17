@@ -59,6 +59,11 @@ function downloadPython() {
             const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.py` });
             a.click();
         }
+function downloadQuarto() {
+            const blob = new Blob([window.quartoCode], { type: 'text/plain' });
+            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.qmd` });
+            a.click();
+        }
 </script>
 
 <div id="root">
