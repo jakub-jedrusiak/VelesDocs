@@ -409,7 +409,7 @@ def \${cleanAbbreviation.toLowerCase()}(
     if pageOptions is None:
         pageOptions = {}
 
-    items = """\${survey.data.items.replaceAll(" - ", " \u2013 ") || ""}""".split(\${
+    items = """\${survey.data.items?.replaceAll(" - ", " \u2013 ") || ""}""".split(\${
     interactiveItems ? "" : " # TODO: Put your items in the quotes"
   }
         \${interactiveItems ? \`"\${survey.data.items_separator}"\` : '"\\\\n"'}\${
@@ -417,7 +417,7 @@ def \${cleanAbbreviation.toLowerCase()}(
   }
     )
 
-    scale = """\${survey.data.scale.replaceAll(" - ", " \u2013 ") || ""}""".split(\${
+    scale = """\${survey.data.scale?.replaceAll(" - ", " \u2013 ") || ""}""".split(\${
     interactiveItems ? "" : " # TODO: Put your scale in the quotes"
   }
   \${interactiveItems ? \`"\${survey.data.scale_separator}"\` : '"\\\\n"'}\${
@@ -639,12 +639,12 @@ ${a.data.authors.map(S=>`        ${S.name} ${S.surname} (${S.affiliation})`).joi
     if pageOptions is None:
         pageOptions = {}
 
-    items = """${a.data.items.replaceAll(" - "," \u2013 ")||""}""".split(${b?"":" # TODO: Put your items in the quotes"}
+    items = """${a.data.items?.replaceAll(" - "," \u2013 ")||""}""".split(${b?"":" # TODO: Put your items in the quotes"}
         ${b?`"${a.data.items_separator}"`:`"
 "`}${b?"":" # TODO: Adapt the split() argument to your items"}
     )
 
-    scale = """${a.data.scale.replaceAll(" - "," \u2013 ")||""}""".split(${b?"":" # TODO: Put your scale in the quotes"}
+    scale = """${a.data.scale?.replaceAll(" - "," \u2013 ")||""}""".split(${b?"":" # TODO: Put your scale in the quotes"}
   ${b?`"${a.data.scale_separator}"`:`"
 "`}${b?"":" # TODO: Adapt the split() argument to your scale"}
     )
