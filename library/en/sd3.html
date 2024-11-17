@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>English test library – Veles Documentation</title>
+<title>sd3 – Veles Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,31 +20,82 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href=".././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-383d4a065b21370043bc4709e21900a7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d182d65b571323b614243c7f329abfa8.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-323a1b7fe099390b9720092ebdc8f7fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-6f4e50e4aa49e6eacf66e0bbb3534050.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../.././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-383d4a065b21370043bc4709e21900a7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d182d65b571323b614243c7f329abfa8.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-323a1b7fe099390b9720092ebdc8f7fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4e50e4aa49e6eacf66e0bbb3534050.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,70 +123,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles/styles.css">
-<meta property="og:title" content="English test library – Veles Documentation">
+<link rel="stylesheet" href="../../styles/styles.css">
+<meta property="og:title" content="Veles Documentation">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Veles Documentation">
-<meta name="twitter:title" content="English test library – Veles Documentation">
+<meta name="twitter:title" content="Veles Documentation">
+<meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -146,10 +141,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src=".././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../.././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Veles Documentation</span>
     </a>
   </div>
@@ -195,7 +190,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">English test library</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -217,13 +212,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../getting-started.html" class="sidebar-item-text sidebar-link">
+  <a href="../../getting-started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
   </div>
 </li>
@@ -238,19 +233,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ref/customExpressionFunctions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/customExpressionFunctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Custom Expression Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ref/validators.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/validators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Validators</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ref/wrappers.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/wrappers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrappers for question types</span></a>
   </div>
 </li>
@@ -258,13 +253,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../library/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../library/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test library</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../libtool.html" class="sidebar-item-text sidebar-link">
+  <a href="../../libtool.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Implementation tool</span></a>
   </div>
 </li>
@@ -276,152 +271,91 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module" id="toc-module" class="nav-link active" data-scroll-target="#module">Module</a></li>
+  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
+  <li><a href="#original" id="toc-original" class="nav-link" data-scroll-target="#original">Original</a></li>
+  <li><a href="#score-calculation" id="toc-score-calculation" class="nav-link" data-scroll-target="#score-calculation">Score calculation</a></li>
+  <li><a href="#reverse-items" id="toc-reverse-items" class="nav-link" data-scroll-target="#reverse-items">Reverse items</a></li>
+  <li><a href="#subscales" id="toc-subscales" class="nav-link" data-scroll-target="#subscales">Subscales</a></li>
+  <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability">Reliability</a></li>
+  <li><a href="#implemented-by" id="toc-implemented-by" class="nav-link" data-scroll-target="#implemented-by">Implemented by</a></li>
+  <li><a href="#args" id="toc-args" class="nav-link" data-scroll-target="#args">Args</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en/sd3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">English test library</h1>
+
+
+
+<p>“““— title:”Short Dark Triad (SD3)” subtitle: “<code>sd3()</code>” description: “A short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.” categories: [“Personality and Traits”,“Narcissism”]</p>
+<hr>
+<section id="module" class="level2">
+<h2 class="anchored" data-anchor-id="module">Module</h2>
+<p><code>velesresearch.questionnaires.sd3</code></p>
+</section>
+<section id="import" class="level2">
+<h2 class="anchored" data-anchor-id="import">Import</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch.questionnaires.sd3 <span class="im">import</span> sd3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="original" class="level2">
+<h2 class="anchored" data-anchor-id="original">Original</h2>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;" role="list">
+<div class="csl-entry" role="listitem">
+Jones, D. N., &amp; Paulhus, D. L. (2014). Introducing the short dark triad (Sd3): A brief measure of dark personality traits. <i>Assessment</i>, <i>21</i>(1), 28–41. <a href="https://doi.org/10.1177/1073191113514105" class="uri">https://doi.org/10.1177/1073191113514105</a>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-10-30</p>
-    </div>
-  </div>
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-Subtitle
-</th>
-<th>
-Description
-</th>
-<th>
-Categories
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="" data-listing-file-modified-sort="1730291679186" data-listing-reading-time-sort="1" data-listing-word-count-sort="110" data-listing-title-sort="Rosenberg Self-Esteem Scale (RSES)" data-listing-filename-sort="rses.qmd">
-<td>
-<a href="../library/en/rses.html" class="title listing-title">Rosenberg Self-Esteem Scale (RSES)</a>
-</td>
-<td>
-<span class="listing-subtitle"><code>rses()</code></span>
-</td>
-<td>
-<span class="listing-description">One of the most popular self-esteem scales. Measures global self-esteem.</span>
-</td>
-<td>
-<span class="listing-categories"></span>
-</td>
-</tr>
-<tr data-index="1" data-categories="Y29nbml0aW9u" data-listing-file-modified-sort="1730291429719" data-listing-reading-time-sort="2" data-listing-word-count-sort="280" data-listing-title-sort="The Need for Closure Scale (NFCS)" data-listing-filename-sort="nfcs.qmd">
-<td>
-<a href="../library/en/nfcs.html" class="title listing-title">The Need for Closure Scale (NFCS)</a>
-</td>
-<td>
-<span class="listing-subtitle"><code>nfcs()</code></span>
-</td>
-<td>
-<span class="listing-description">Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns <strong>the long version</strong>. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.</span>
-</td>
-<td>
-<span class="listing-categories">cognition</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="Y29nbml0aW9u" data-listing-file-modified-sort="1730291828698" data-listing-reading-time-sort="1" data-listing-word-count-sort="189" data-listing-title-sort="The Need for Closure Scale (NFCS)" data-listing-filename-sort="nfcsShort.qmd">
-<td>
-<a href="../library/en/nfcsShort.html" class="title listing-title">The Need for Closure Scale (NFCS)</a>
-</td>
-<td>
-<span class="listing-subtitle"><code>nfcsShort()</code></span>
-</td>
-<td>
-<span class="listing-description">Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns <strong>the short version</strong>. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.</span>
-</td>
-<td>
-<span class="listing-categories">cognition</span>
-</td>
-</tr>
-<tr data-index="3" data-categories="bG92ZQ==" data-listing-file-modified-sort="1731766493954" data-listing-reading-time-sort="2" data-listing-word-count-sort="293" data-listing-title-sort="Triangular Love Scale (TLS-15)" data-listing-filename-sort="tls15.qmd">
-<td>
-<a href="../library/en/tls15.html" class="title listing-title">Triangular Love Scale (TLS-15)</a>
-</td>
-<td>
-<span class="listing-subtitle"><code>tls15()</code></span>
-</td>
-<td>
-<span class="listing-description">Sternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.</span>
-</td>
-<td>
-<span class="listing-categories">love</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-file-modified-sort="1731856352427" data-listing-reading-time-sort="1" data-listing-word-count-sort="183" data-listing-title-sort="categories: [&quot;Personality and Traits&quot;,&quot;Narcissism&quot;]" data-listing-filename-sort="sd3.qmd">
-<td>
-<a href="../library/en/sd3.html" class="title listing-title">categories: [“Personality and Traits”,“Narcissism”]</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-<td>
-<span class="listing-description">“““— title:”Short Dark Triad (SD3)” subtitle: “<code>sd3()</code>” description: “A short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.”…</span>
-</td>
-<td>
-<span class="listing-categories">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</section>
+<section id="score-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="score-calculation">Score calculation</h2>
+<p>A simple sum.</p>
+</section>
+<section id="reverse-items" class="level2">
+<h2 class="anchored" data-anchor-id="reverse-items">Reverse items</h2>
+<p>11, 15, 17, 20, 25</p>
+</section>
+<section id="subscales" class="level2">
+<h2 class="anchored" data-anchor-id="subscales">Subscales</h2>
+<ol type="1">
+<li>Machiavellianism: 1, 2, 3, 4, 5, 6, 7, 8, 9</li>
+<li>Narcissism: 10, 11, 12, 13, 14, 15, 16, 17, 18</li>
+<li>Psychopathy: 19, 20, 21, 22, 23, 24, 25, 26, 27</li>
+</ol>
+</section>
+<section id="reliability" class="level2">
+<h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
+<ol type="1">
+<li>Machiavellianism: α = .77</li>
+<li>Narcissism: α = .71</li>
+<li>Psychopathy: α = .8</li>
+</ol>
+</section>
+<section id="implemented-by" class="level2">
+<h2 class="anchored" data-anchor-id="implemented-by">Implemented by</h2>
+<p>Jakub Jędrusiak (University of Wrocław)</p>
+</section>
+<section id="args" class="level2">
+<h2 class="anchored" data-anchor-id="args">Args</h2>
+<p><code>name</code> : <em>str</em><br> Base name for pages and questions. Defaults to “sd3”.</p>
+<p><code>instruction</code> : <em>str</em><br> Instruction for the questionnaire. None means that the default instruction will be used.</p>
+<p><code>questionOptions</code> : <em>dict | None</em><br> Additional options for questions as a dictionary. Defaults to None.</p>
+<p><code>pageOptions</code> : <em>dict | None</em><br> Additional options for pages as a dictionary. Defaults to None.</p>
+</section>
+<section id="returns" class="level2">
+<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<p><code>PageModel</code><br> PageModel with the SD3 questionnaire. Use the <code>*</code> operator to unpack it to questions.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -988,4 +922,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en/sd3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
