@@ -35,6 +35,8 @@ ${
 `
     : "\\n";
 
+  const interactiveItems = survey.data.specifyItems;
+
   const text = `"""${survey.data.name} (${survey.data.abbreviation})"""
 import velesresearch as vls
 from velesresearch.models import PageModel
@@ -88,7 +90,9 @@ ${survey.data.authors
         } questionnaire. Use the \`*\` operator to unpack it to questions.
     """
     if instruction is None:
-        instruction = "" # TODO: Put your instruction here
+        instruction = """${survey.data.instruction || ""}"""${
+    interactiveItems ? "" : " # TODO: Put your instruction here"
+  }
 
     if questionOptions is None:
         questionOptions = {}
@@ -96,12 +100,20 @@ ${survey.data.authors
     if pageOptions is None:
         pageOptions = {}
 
-    items = """""".split( # TODO: Put your items in the quotes
-        "\\\\n" # TODO: Adapt the split() argument to your items
+    items = """${survey.data.items || ""}""".split(${
+    interactiveItems ? "" : " # TODO: Put your items in the quotes"
+  }
+        ${interactiveItems ? survey.data.items_separator : '"\\n"'}${
+    interactiveItems ? "" : " # TODO: Adapt the split() argument to your items"
+  }
     )
 
-    scale = """""".split( # TODO: Put your scale in the quotes
-        "\\\\n" # TODO: Adapt the split() argument to your scale
+    scale = """${survey.data.scale || ""}""".split(${
+    interactiveItems ? "" : " # TODO: Put your scale in the quotes"
+  }
+  ${interactiveItems ? survey.data.scale_separator : '"\\n"'}${
+    interactiveItems ? "" : " # TODO: Adapt the split() argument to your scale"
+  }
     )
 
     return vls.page(

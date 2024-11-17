@@ -1,7 +1,6 @@
 from shutil import copyfile
 from os.path import exists
 import velesresearch as vls
-from veleslibrary.questionnaires.tls15 import tls15
 
 defaultOptions = {"isRequired": True, "autocomplete": "off"}
 
@@ -68,8 +67,8 @@ form = vls.page(
             "reliability",
             "Reliability (Cronbach's alpha)",
             inputType="number",
-            min=0,
-            max=1,
+            min=0.00,
+            max=1.00,
             step="0.01",
             **defaultOptions,
         ),
@@ -83,8 +82,8 @@ form = vls.page(
         description="Write the Cronbach's alpha reliability coefficient as a number (e.g. 0.85). Use only if a singular score can be calculated for the whole questionnaire.",
         placeholder="0.85",
         inputType="number",
-        min=0,
-        max=1,
+        min=0.00,
+        max=1.00,
         step="0.01",
         requiredIf="{hasSubscales} = false",
         **defaultOptions | {"isRequired": False},
@@ -127,6 +126,51 @@ form = vls.page(
         minRowCount=1,
         description="Your name, surname, and affiliation.",
         **defaultOptions | {"autocomplete": None},
+    ),
+    vls.yesno(
+        "specifyItems",
+        "Do you want to specify the items and the scale here?",
+        description="You can also do it directly in the generated Python code.",
+        **defaultOptions,
+    ),
+    vls.textLong(
+        "instruction",
+        "Default instruction",
+        description="Use HTML/CSS or markdown to style it.",
+        visibleIf="{specifyItems}",
+        **defaultOptions,
+    ),
+    vls.textLong("items", "Items", visibleIf="{specifyItems}", **defaultOptions),
+    vls.radio(
+        "items_separator",
+        "Items' separator",
+        [
+            {"value": "\\\\n", "text": "New line"},
+            {"value": ", ", "text": "Comma (with space)"},
+            {"value": ",", "text": "Comma (without space)"},
+            {"value": "; ", "text": "Semicolon (with space)"},
+            {"value": ";", "text": "Semicolon (without space)"},
+        ],
+        showOtherItem=True,
+        otherText="Custom",
+        visibleIf="{specifyItems}",
+        **defaultOptions,
+    ),
+    vls.textLong("scale", "Scale", visibleIf="{specifyItems}", **defaultOptions),
+    vls.radio(
+        "scale_separator",
+        "Scale separator",
+        [
+            {"value": "\\\\n", "text": "New line"},
+            {"value": ", ", "text": "Comma (with space)"},
+            {"value": ",", "text": "Comma (without space)"},
+            {"value": "; ", "text": "Semicolon (with space)"},
+            {"value": ";", "text": "Semicolon (without space)"},
+        ],
+        showOtherItem=True,
+        otherText="Custom",
+        visibleIf="{specifyItems}",
+        **defaultOptions,
     ),
     customFunctions=vls.getJS("libtool/libtool.js"),
     customCode="""applyThemeBasedOnClass(survey);

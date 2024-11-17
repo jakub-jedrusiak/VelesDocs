@@ -1,6 +1,6 @@
 ---
 title: Library implementation tool
-description: This page can be used to generate a function's template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire.
+description: This page can be used to generate a function's template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.
 ---
 
 <style>
