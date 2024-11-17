@@ -110,7 +110,7 @@ ${survey.data.authors
     if pageOptions is None:
         pageOptions = {}
 
-    items = """${survey.data.items || ""}""".split(${
+    items = """${survey.data.items.replaceAll(" - ", " – ") || ""}""".split(${
     interactiveItems ? "" : " # TODO: Put your items in the quotes"
   }
         ${interactiveItems ? `"${survey.data.items_separator}"` : '"\\n"'}${
@@ -118,7 +118,7 @@ ${survey.data.authors
   }
     )
 
-    scale = """${survey.data.scale || ""}""".split(${
+    scale = """${survey.data.scale.replaceAll(" - ", " – ") || ""}""".split(${
     interactiveItems ? "" : " # TODO: Put your scale in the quotes"
   }
   ${interactiveItems ? `"${survey.data.scale_separator}"` : '"\\n"'}${
