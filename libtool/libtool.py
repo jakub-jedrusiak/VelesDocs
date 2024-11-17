@@ -261,7 +261,7 @@ form = vls.page(
         "items_separator",
         "Items' separator",
         [
-            {"value": "\\\\n", "text": "New line"},
+            {"value": "\\n", "text": "New line"},
             {"value": ", ", "text": "Comma (with space)"},
             {"value": ",", "text": "Comma (without space)"},
             {"value": "; ", "text": "Semicolon (with space)"},
@@ -277,7 +277,7 @@ form = vls.page(
         "scale_separator",
         "Scale separator",
         [
-            {"value": "\\\\n", "text": "New line"},
+            {"value": "\\n", "text": "New line"},
             {"value": ", ", "text": "Comma (with space)"},
             {"value": ",", "text": "Comma (without space)"},
             {"value": "; ", "text": "Semicolon (with space)"},

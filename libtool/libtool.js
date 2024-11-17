@@ -113,7 +113,7 @@ ${survey.data.authors
     items = """${survey.data.items || ""}""".split(${
     interactiveItems ? "" : " # TODO: Put your items in the quotes"
   }
-        ${interactiveItems ? survey.data.items_separator : '"\\n"'}${
+        ${interactiveItems ? `"${survey.data.items_separator}"` : '"\\n"'}${
     interactiveItems ? "" : " # TODO: Adapt the split() argument to your items"
   }
     )
@@ -121,7 +121,7 @@ ${survey.data.authors
     scale = """${survey.data.scale || ""}""".split(${
     interactiveItems ? "" : " # TODO: Put your scale in the quotes"
   }
-  ${interactiveItems ? survey.data.scale_separator : '"\\n"'}${
+  ${interactiveItems ? `"${survey.data.scale_separator}"` : '"\\n"'}${
     interactiveItems ? "" : " # TODO: Adapt the split() argument to your scale"
   }
     )
