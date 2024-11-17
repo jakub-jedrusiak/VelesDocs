@@ -182,7 +182,7 @@ ${survey.data.reliability ? "\\n### Subscales\\n" : ""}${survey.data.subscales
 `
     : "\\n";
 
-  const text = `"""---
+  const text = `---
 title: "${survey.data.name} (${survey.data.abbreviation})"
 subtitle: "\`${cleanAbbreviation}()\`"
 description: "${survey.data.description}"

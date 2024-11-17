@@ -1,4 +1,4 @@
-"""---
+---
 title: "Short Dark Triad (SD3)"
 subtitle: "`sd3()`"
 description: "A short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy."
