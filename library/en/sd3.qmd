@@ -1,0 +1,56 @@
+"""---
+title: "Short Dark Triad (SD3)"
+subtitle: "`sd3()`"
+description: "A short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy."
+categories: ["Personality and Traits","Narcissism"]
+---
+
+## Module
+`velesresearch.questionnaires.sd3`
+
+## Import
+``` python
+from velesresearch.questionnaires.sd3 import sd3
+```
+
+## Original
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+<div class="csl-entry">Jones, D. N., &amp; Paulhus, D. L. (2014). Introducing the short dark triad (Sd3): A brief measure of dark personality traits. <i>Assessment</i>, <i>21</i>(1), 28–41. <https://doi.org/10.1177/1073191113514105></div>
+</div>
+
+## Score calculation
+A simple sum.
+
+## Reverse items
+11, 15, 17, 20, 25
+
+## Subscales
+1. Machiavellianism: 1, 2, 3, 4, 5, 6, 7, 8, 9
+2. Narcissism: 10, 11, 12, 13, 14, 15, 16, 17, 18
+3. Psychopathy: 19, 20, 21, 22, 23, 24, 25, 26, 27
+
+## Reliability
+1. Machiavellianism: α = .77
+2. Narcissism: α = .71
+3. Psychopathy: α = .8
+
+## Implemented by
+Jakub Jędrusiak (University of Wrocław)
+
+## Args
+`name` : *str*<br>
+Base name for pages and questions. Defaults to "sd3".
+
+`instruction` : *str*<br>
+Instruction for the questionnaire. None means that the default instruction will be used.
+
+`questionOptions` : *dict | None*<br>
+Additional options for questions as a dictionary. Defaults to None.
+
+`pageOptions` : *dict | None*<br>
+Additional options for pages as a dictionary. Defaults to None.
+
+
+## Returns
+`PageModel`<br>
+PageModel with the SD3 questionnaire. Use the `*` operator to unpack it to questions.
