@@ -2,7 +2,7 @@
 title: "Ten Item Personality Inventory (TIPI)"
 subtitle: "`tipi()`"
 description: "Ten item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience."
-categories: [personality]
+categories: ["Personality and Traits", "Big Five Personality Traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism)"]
 ---
 
 ## Module

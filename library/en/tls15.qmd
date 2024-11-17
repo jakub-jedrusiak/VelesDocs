@@ -2,7 +2,7 @@
 title: "Triangular Love Scale (TLS-15)"
 subtitle: "`tls15()`"
 description: "Sternberg's triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment."
-categories: [love]
+categories: ["Social and Interpersonal Factors"]
 ---
 
 ## Module

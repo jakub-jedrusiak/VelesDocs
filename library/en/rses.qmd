@@ -2,7 +2,7 @@
 title: "Rosenberg Self-Esteem Scale (RSES)"
 subtitle: "`rses()`"
 description: "One of the most popular self-esteem scales. Measures global self-esteem."
-categories: []
+categories: ["Personality and Traits","Self-Esteem"]
 ---
 
 ## Module

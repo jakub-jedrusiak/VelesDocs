@@ -2,7 +2,7 @@
 title: "The Need for Closure Scale (NFCS)"
 subtitle: "`nfcsShort()`"
 description: "Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns **the short version**. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness."
-categories: [cognition]
+categories: ["Cognitive and Behavioral Assessments", "Motivation and Achievement"]
 ---
 
 ## Module
