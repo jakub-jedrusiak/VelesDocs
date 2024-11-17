@@ -13,7 +13,11 @@ ${survey.data.adaptation.replaceAll(RegExp("^ *", "gm"), "        ")}
   const subscalesString = survey.data.hasSubscales
     ? survey.data.subscales
         .map(
-          (item, index) => `        ${index + 1}. ${item.name}: ${item.items}`
+          (item, index) =>
+            `        ${index + 1}. ${item.name}: ${item.items.replaceAll(
+              RegExp(",(?! )", "gm"),
+              ", "
+            )}`
         )
         .join("\\n")
     : "        None.";
@@ -58,7 +62,11 @@ ${adaptationString}    ## ## Score calculation
         ${survey.data.scoring.replace(RegExp("([^\\.\\n])$", "gm"), "$1.")}
 
     ## Reverse items
-        ${survey.data.hasReverseItems ? survey.data.reverse_items : "None."}
+        ${
+          survey.data.hasReverseItems
+            ? survey.data.reverse_items.replaceAll(RegExp(",(?! )", "gm"), ", ")
+            : "None."
+        }
     
     ## Subscales
 ${subscalesString}

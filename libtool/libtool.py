@@ -5,8 +5,8 @@ import velesresearch as vls
 defaultOptions = {"isRequired": True, "autocomplete": "off"}
 
 commaValidator = vls.regexValidator(
-    r"^(\d+, )*\d+$",
-    'Use comma separated values, e.g. "1, 3, 5". Put spaces between commas.',
+    r"^(\d+, ?)*\d+$",
+    'Use comma separated values, e.g. "1, 3, 5".',
 )
 
 form = vls.page(
