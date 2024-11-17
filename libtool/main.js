@@ -320,7 +320,9 @@ def \${cleanAbbreviation.toLowerCase()}(
         \${survey.data.description}
     
     ## Original
-\${survey.data.original.replaceAll(RegExp("^ *", "gm"), "        ")}
+\${survey.data.original
+  .replaceAll(RegExp("^ *", "gm"), "        ")
+  .replaceAll(RegExp("(https?://.+?)(?=\\\\<", "gm"), "<$1>")}
     
 \${adaptationString}    ## ## Score calculation
         \${survey.data.scoring.replace(RegExp("([^\\\\.\\\\n])$", "gm"), "$1.")}
@@ -450,7 +452,7 @@ def ${s.toLowerCase()}(
         ${a.data.description}
     
     ## Original
-${a.data.original.replaceAll(RegExp("^ *","gm"),"        ")}
+${a.data.original.replaceAll(RegExp("^ *","gm"),"        ").replaceAll(RegExp("(https?://.+?)(?=<","gm"),"<$1>")}
     
 ${c}    ## ## Score calculation
         ${a.data.scoring.replace(RegExp(`([^.

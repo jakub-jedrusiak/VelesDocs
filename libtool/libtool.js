@@ -56,7 +56,9 @@ def ${cleanAbbreviation.toLowerCase()}(
         ${survey.data.description}
     
     ## Original
-${survey.data.original.replaceAll(RegExp("^ *", "gm"), "        ")}
+${survey.data.original
+  .replaceAll(RegExp("^ *", "gm"), "        ")
+  .replaceAll(RegExp("(https?://.+?)(?=\\<", "gm"), "<$1>")}
     
 ${adaptationString}    ## ## Score calculation
         ${survey.data.scoring.replace(RegExp("([^\\.\\n])$", "gm"), "$1.")}
