@@ -1,0 +1,57 @@
+---
+title: "Rosenberg Self-Esteem Scale (RSES)"
+subtitle: "`rses()`"
+description: "One of the most popular self-esteem scales. Measures global self-esteem."
+categories: ["Personality and Traits","Self-Esteem"]
+---
+
+## Module
+`velesresearch.questionnaires.pl.rses`
+
+## Import
+``` python
+from velesresearch.questionnaires.pl.rses import rses
+```
+
+## Original
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+<div class="csl-entry">Rosenberg, M. (2011). <i>Rosenberg self-esteem scale</i> [Database record]. APA PsycTests. <https://doi.org/10.1037/t01038-000></div>
+</div>
+
+## Adaptation:
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+<div class="csl-entry">Dzwonkowska, I., Lachowicz-Tabaczek, K., &amp; Łaguna, M. (2008). <i>Samoocena i jej pomiar. Polska adaptacja skali SES M. Rosenberga. Podręcznik</i>. Pracownia Testów Psychologicznych Polskiego Towarzystwa Psychologicznego.</div>
+</div>
+
+## Score calculation
+A simple sum.
+
+## Reverse items
+3, 5, 8, 9, 10
+
+## Subscales
+None.
+
+## Reliability
+α = .82
+
+## Implemented by
+Jakub Jędrusiak (University of Wrocław)
+
+## Args
+`name` : *str*<br>
+Base name for pages and questions. Defaults to "rses".
+
+`instruction` : *str*<br>
+Instruction for the questionnaire. None means that the default instruction will be used.
+
+`questionOptions` : *dict | None*<br>
+Additional options for questions as a dictionary. Defaults to None.
+
+`pageOptions` : *dict | None*<br>
+Additional options for pages as a dictionary. Defaults to None.
+
+
+## Returns
+`PageModel`<br>
+PageModel with the RSES questionnaire. Use the `*` operator to unpack it to questions.
