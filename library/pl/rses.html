@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.">
+<meta name="description" content="One of the most popular self-esteem scales. Measures global self-esteem.">
 
-<title>The Need for Closure Scale (NFCS) – Veles Documentation</title>
+<title>Rosenberg Self-Esteem Scale (RSES) – Veles Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,11 +127,11 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../../styles/styles.css">
-<meta property="og:title" content="The Need for Closure Scale (NFCS) – Veles Documentation">
-<meta property="og:description" content="Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.">
+<meta property="og:title" content="Rosenberg Self-Esteem Scale (RSES) – Veles Documentation">
+<meta property="og:description" content="One of the most popular self-esteem scales. Measures global self-esteem.">
 <meta property="og:site_name" content="Veles Documentation">
-<meta name="twitter:title" content="The Need for Closure Scale (NFCS) – Veles Documentation">
-<meta name="twitter:description" content="Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.">
+<meta name="twitter:title" content="Rosenberg Self-Esteem Scale (RSES) – Veles Documentation">
+<meta name="twitter:description" content="One of the most popular self-esteem scales. Measures global self-esteem.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -191,7 +191,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">The Need for Closure Scale (NFCS)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Rosenberg Self-Esteem Scale (RSES)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -280,6 +280,7 @@ div.csl-indent {
   <li><a href="#module" id="toc-module" class="nav-link active" data-scroll-target="#module">Module</a></li>
   <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
   <li><a href="#original" id="toc-original" class="nav-link" data-scroll-target="#original">Original</a></li>
+  <li><a href="#adaptation" id="toc-adaptation" class="nav-link" data-scroll-target="#adaptation">Adaptation:</a></li>
   <li><a href="#score-calculation" id="toc-score-calculation" class="nav-link" data-scroll-target="#score-calculation">Score calculation</a></li>
   <li><a href="#reverse-items" id="toc-reverse-items" class="nav-link" data-scroll-target="#reverse-items">Reverse items</a></li>
   <li><a href="#subscales" id="toc-subscales" class="nav-link" data-scroll-target="#subscales">Subscales</a></li>
@@ -288,23 +289,24 @@ div.csl-indent {
   <li><a href="#args" id="toc-args" class="nav-link" data-scroll-target="#args">Args</a></li>
   <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en/nfcsShort.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/pl/rses.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Need for Closure Scale (NFCS)</h1>
-<p class="subtitle lead"><code>nfcsShort()</code></p>
+<h1 class="title">Rosenberg Self-Esteem Scale (RSES)</h1>
+<p class="subtitle lead"><code>rses()</code></p>
   <div class="quarto-categories">
-    <div class="quarto-category">cognition</div>
+    <div class="quarto-category">Personality and Traits</div>
+    <div class="quarto-category">Self-Esteem</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Measures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns <strong>the short version</strong>. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.
+    One of the most popular self-esteem scales. Measures global self-esteem.
   </div>
 </div>
 
@@ -323,23 +325,27 @@ div.csl-indent {
 
 <section id="module" class="level2">
 <h2 class="anchored" data-anchor-id="module">Module</h2>
-<p><code>veleslibrary.questionnaires.nfcs</code></p>
+<p><code>velesresearch.questionnaires.pl.rses</code></p>
 </section>
 <section id="import" class="level2">
 <h2 class="anchored" data-anchor-id="import">Import</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> veleslibrary.questionnaires.nfcs <span class="im">import</span> nfcsShort</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch.questionnaires.pl.rses <span class="im">import</span> rses</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="original" class="level2">
 <h2 class="anchored" data-anchor-id="original">Original</h2>
 <div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;" role="list">
 <div class="csl-entry" role="listitem">
-Roets, A., &amp; Van Hiel, A. (2011). Item selection and validation of a brief, 15-item version of the Need for Closure Scale. <i>Personality and Individual Differences</i>, <i>50</i>(1), 90–94. https://doi.org/10.1016/j.paid.2010.09.004
+Rosenberg, M. (2011). <i>Rosenberg self-esteem scale</i> [Database record]. APA PsycTests. <a href="https://doi.org/10.1037/t01038-000" class="uri">https://doi.org/10.1037/t01038-000</a>
 </div>
+</div>
+</section>
+<section id="adaptation" class="level2">
+<h2 class="anchored" data-anchor-id="adaptation">Adaptation:</h2>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;" role="list">
 <div class="csl-entry" role="listitem">
-Webster, D. M., &amp; Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. <i>Journal of Personality and Social Psychology</i>, <i>67</i>(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049
+Dzwonkowska, I., Lachowicz-Tabaczek, K., &amp; Łaguna, M. (2008). <i>Samoocena i jej pomiar. Polska adaptacja skali SES M. Rosenberga. Podręcznik</i>. Pracownia Testów Psychologicznych Polskiego Towarzystwa Psychologicznego.
 </div>
 </div>
-<p>You need to <strong>cite both papers</strong> if you use the NFCS in your research.</p>
 </section>
 <section id="score-calculation" class="level2">
 <h2 class="anchored" data-anchor-id="score-calculation">Score calculation</h2>
@@ -347,7 +353,7 @@ Webster, D. M., &amp; Kruglanski, A. W. (1994). Individual differences in need f
 </section>
 <section id="reverse-items" class="level2">
 <h2 class="anchored" data-anchor-id="reverse-items">Reverse items</h2>
-<p>None.</p>
+<p>3, 5, 8, 9, 10</p>
 </section>
 <section id="subscales" class="level2">
 <h2 class="anchored" data-anchor-id="subscales">Subscales</h2>
@@ -355,24 +361,22 @@ Webster, D. M., &amp; Kruglanski, A. W. (1994). Individual differences in need f
 </section>
 <section id="reliability" class="level2">
 <h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
-<p>α = .87</p>
+<p>α = .82</p>
 </section>
 <section id="implemented-by" class="level2">
 <h2 class="anchored" data-anchor-id="implemented-by">Implemented by</h2>
-<p>Jędrusiak, Jakub (University of Wrocław)</p>
+<p>Jakub Jędrusiak (University of Wrocław)</p>
 </section>
 <section id="args" class="level2">
 <h2 class="anchored" data-anchor-id="args">Args</h2>
-<p><code>name</code> : <em>str</em><br> Base name for pages and questions. Defaults to “NFCS”.</p>
-<p><code>instruction</code> : <em>str</em><br> Instruction for the questionnaire. <code>None</code> means that the default instruction will be used.</p>
-<p><code>title</code> : <em>str</em><br> Title for the matrix. Defaults to None.</p>
-<p><code>matrixOptions</code> : <em>dict | None</em><br> Additional options for the matrixDropdown as a dictionary. Defaults to None.</p>
-<p><code>ratingOptions</code> : <em>dict | None</em><br> Additional options for the rating column as a dictionary. Defaults to None.</p>
+<p><code>name</code> : <em>str</em><br> Base name for pages and questions. Defaults to “rses”.</p>
+<p><code>instruction</code> : <em>str</em><br> Instruction for the questionnaire. None means that the default instruction will be used.</p>
+<p><code>questionOptions</code> : <em>dict | None</em><br> Additional options for questions as a dictionary. Defaults to None.</p>
 <p><code>pageOptions</code> : <em>dict | None</em><br> Additional options for pages as a dictionary. Defaults to None.</p>
 </section>
 <section id="returns" class="level2">
 <h2 class="anchored" data-anchor-id="returns">Returns</h2>
-<p><code>PageModel</code><br> PageModel with the NFCS short questionnaire. Use the <code>*</code> operator to unpack it to questions.</p>
+<p><code>PageModel</code><br> PageModel with the RSES questionnaire. Use the <code>*</code> operator to unpack it to questions.</p>
 
 
 </section>
@@ -944,4 +948,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en/nfcsShort.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/pl/rses.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
