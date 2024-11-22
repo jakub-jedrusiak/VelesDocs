@@ -1,0 +1,9 @@
+---
+title: "Swedish test library"
+date-modified: last-modified
+date-format: iso
+listing:
+    contents: sv
+    type: table
+    fields: [title, subtitle, description, categories]
+---
