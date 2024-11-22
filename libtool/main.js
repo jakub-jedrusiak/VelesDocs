@@ -266,8 +266,9 @@ Especially check the reliability coefficients.
 Below you will find the whole content of your code file. Fork the <a href='https://github.com/jakub-jedrusiak/VelesLibrary' target='_blank' rel='noopener noreferrer'>VelesLibrary repo</a>,
 create the file at the appropriate location,\${survey.data.specifyItems ? "" : " <b>add the necessary elements</b>,"} and commit it. Manually add anything not ordinary.
 Your file should be added under <code>veleslibrary/questionnaires\${survey.data.language === "en" ? "" : ("/" + survey.data.language)}/</code>.
-If there's no such folder, create it and copy the default <code>__init__.py</code> file and remove the existing imports.
+If there's no such folder, create it and copy the default <code>__init__.py</code> file there and remove the existing imports.
 If you can, please also add the following instruction to the appropriate <code>__init__.py</code> file: <code>from .\${window.abbreviation} import \${window.abbreviation}</code>.
+If you created a new language folder, add it to the <code>__init__.py</code> file in the <code>veleslibrary/questionnaires</code> folder. Just add it to the language codes list.
 </p>
 
 <input id="downloadBtn" onclick="downloadPython()" class="sd-btn sd-btn--action sd-navigation__complete-btn" type="button" value="Download code as .py file">
@@ -487,7 +488,7 @@ subtitle: "\\\`\${cleanAbbreviation}()\\\`"
 description: "\${survey.data.description}"
 categories: \${JSON.stringify(
     survey.data.grand_categories
-      .concat(survey.data.subcategories.map((item) => item.text))
+      .concat(survey.data.subcategories?.map((item) => item.text))
       .filter((item) => item !== undefined)
   )}
 ---
@@ -674,7 +675,7 @@ ${a.data.reliability?`
 title: "${a.data.name} (${a.data.abbreviation})"
 subtitle: "\`${s}()\`"
 description: "${a.data.description}"
-categories: ${JSON.stringify(a.data.grand_categories.concat(a.data.subcategories.map(k=>k.text)).filter(k=>k!==void 0))}
+categories: ${JSON.stringify(a.data.grand_categories.concat(a.data.subcategories?.map(k=>k.text)).filter(k=>k!==void 0))}
 ---
 
 ## Module
@@ -733,8 +734,9 @@ Especially check the reliability coefficients.
 Below you will find the whole content of your code file. Fork the <a href='https://github.com/jakub-jedrusiak/VelesLibrary' target='_blank' rel='noopener noreferrer'>VelesLibrary repo</a>,
 create the file at the appropriate location,${a.data.specifyItems?"":" <b>add the necessary elements</b>,"} and commit it. Manually add anything not ordinary.
 Your file should be added under <code>veleslibrary/questionnaires${a.data.language==="en"?"":"/"+a.data.language}/</code>.
-If there's no such folder, create it and copy the default <code>__init__.py</code> file and remove the existing imports.
+If there's no such folder, create it and copy the default <code>__init__.py</code> file there and remove the existing imports.
 If you can, please also add the following instruction to the appropriate <code>__init__.py</code> file: <code>from .${window.abbreviation} import ${window.abbreviation}</code>.
+If you created a new language folder, add it to the <code>__init__.py</code> file in the <code>veleslibrary/questionnaires</code> folder. Just add it to the language codes list.
 </p>
 
 <input id="downloadBtn" onclick="downloadPython()" class="sd-btn sd-btn--action sd-navigation__complete-btn" type="button" value="Download code as .py file">
