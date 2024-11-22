@@ -862,78 +862,78 @@
     "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "library/en/tls15.html",
-    "href": "library/en/tls15.html",
+    "objectID": "library/en/tls_15.html",
+    "href": "library/en/tls_15.html",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "",
-    "text": "veleslibrary.questionnaires.tls15"
+    "text": "veleslibrary.questionnaires.tls_15"
   },
   {
-    "objectID": "library/en/tls15.html#module",
-    "href": "library/en/tls15.html#module",
+    "objectID": "library/en/tls_15.html#module",
+    "href": "library/en/tls_15.html#module",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "",
-    "text": "veleslibrary.questionnaires.tls15"
+    "text": "veleslibrary.questionnaires.tls_15"
   },
   {
-    "objectID": "library/en/tls15.html#import",
-    "href": "library/en/tls15.html#import",
+    "objectID": "library/en/tls_15.html#import",
+    "href": "library/en/tls_15.html#import",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Import",
-    "text": "Import\n\nfrom veleslibrary.questionnaires.tls15 import tls15"
+    "text": "Import\n\nfrom veleslibrary.questionnaires.tls_15 import tls_15"
   },
   {
-    "objectID": "library/en/tls15.html#original",
-    "href": "library/en/tls15.html#original",
+    "objectID": "library/en/tls_15.html#original",
+    "href": "library/en/tls_15.html#original",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Original",
     "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
   },
   {
-    "objectID": "library/en/tls15.html#score-calculation",
-    "href": "library/en/tls15.html#score-calculation",
+    "objectID": "library/en/tls_15.html#score-calculation",
+    "href": "library/en/tls_15.html#score-calculation",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Score calculation",
     "text": "Score calculation\nAn average. Can be calculated separately for the subscales or for the whole questionnaire."
   },
   {
-    "objectID": "library/en/tls15.html#reverse-items",
-    "href": "library/en/tls15.html#reverse-items",
+    "objectID": "library/en/tls_15.html#reverse-items",
+    "href": "library/en/tls_15.html#reverse-items",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Reverse items",
     "text": "Reverse items\nNone."
   },
   {
-    "objectID": "library/en/tls15.html#subscales",
-    "href": "library/en/tls15.html#subscales",
+    "objectID": "library/en/tls_15.html#subscales",
+    "href": "library/en/tls_15.html#subscales",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Subscales",
     "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
   },
   {
-    "objectID": "library/en/tls15.html#reliability",
-    "href": "library/en/tls15.html#reliability",
+    "objectID": "library/en/tls_15.html#reliability",
+    "href": "library/en/tls_15.html#reliability",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Reliability",
     "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α =.89\nCommitment: α = 0.92"
   },
   {
-    "objectID": "library/en/tls15.html#implemented-by",
-    "href": "library/en/tls15.html#implemented-by",
+    "objectID": "library/en/tls_15.html#implemented-by",
+    "href": "library/en/tls_15.html#implemented-by",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Implemented by",
     "text": "Implemented by\nKsawery Łakomy (University of Wrocław)"
   },
   {
-    "objectID": "library/en/tls15.html#args",
-    "href": "library/en/tls15.html#args",
+    "objectID": "library/en/tls_15.html#args",
+    "href": "library/en/tls_15.html#args",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Args",
-    "text": "Args\n\nname : str Base name for pages and questions. Defaults to “TLS15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+    "text": "Args\n\nname : str Base name for pages and questions. Defaults to “TLS_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
-    "objectID": "library/en/tls15.html#returns",
-    "href": "library/en/tls15.html#returns",
+    "objectID": "library/en/tls_15.html#returns",
+    "href": "library/en/tls_15.html#returns",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Returns",
     "text": "Returns\n\nPageModel PageModel with the TLS15 questionnaire."
@@ -1262,7 +1262,7 @@
     "href": "library/en.html",
     "title": "English test library",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "library/en/nfcsShort.html",
