@@ -487,7 +487,7 @@ subtitle: "\\\`\${cleanAbbreviation}()\\\`"
 description: "\${survey.data.description}"
 categories: \${JSON.stringify(
     survey.data.grand_categories
-      .concat(survey.data.subcategories.map((item) => item.text))
+      .concat(survey.data.subcategories?.map((item) => item.text))
       .filter((item) => item !== undefined)
   )}
 ---
@@ -674,7 +674,7 @@ ${a.data.reliability?`
 title: "${a.data.name} (${a.data.abbreviation})"
 subtitle: "\`${s}()\`"
 description: "${a.data.description}"
-categories: ${JSON.stringify(a.data.grand_categories.concat(a.data.subcategories.map(k=>k.text)).filter(k=>k!==void 0))}
+categories: ${JSON.stringify(a.data.grand_categories.concat(a.data.subcategories?.map(k=>k.text)).filter(k=>k!==void 0))}
 ---
 
 ## Module
