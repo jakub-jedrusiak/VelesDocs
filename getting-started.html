@@ -435,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Now we can start writing our script. In your <code>.py</code> file add the following line:</p>
-<div id="1f4226ad" class="cell" data-execution_count="1">
+<div id="3f408b47" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> velesresearch <span class="im">as</span> vls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It gives you access to all Veles functions when you write <code>vls.</code>. If VS Code can’t recognise the import, reload the window (Ctrl+Shift+P → Reload Window) or close and reopen VS Code.</p>
@@ -457,11 +457,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="radio" class="level3">
 <h3 class="anchored" data-anchor-id="radio"><code>radio()</code></h3>
 <p>Let’s start with creating some single-choice questions with <code>vls.radio()</code>. The syntax is as follows:</p>
-<div id="dc818990" class="cell" data-execution_count="2">
+<div id="80d2a959" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>vls.radio(name, title, <span class="op">*</span>choices, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To create a single-choice question we need to invoke the <code>vls.radio()</code> function and fill it with appropriate parameters. The first one the <code>name</code> argument which is the internal codename of the question that will later <strong>become the name of the column</strong> in the database. The participant will not see this. Then we have the <code>title</code> which is the actual text of the question the participant will see. Finally we need to fill in the possible answers. We can separate them with commas. In the end we get:</p>
-<div id="96ecd7a9" class="cell" data-execution_count="3">
+<div id="8120145f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.radio(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -481,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="question-options" class="level3">
 <h3 class="anchored" data-anchor-id="question-options">Question options</h3>
 <p>Each question can have a series of additional parameters specified. For example we can make the question required, add a subtitle, add an “Other” option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.</p>
-<div id="7042c255" class="cell" data-execution_count="4">
+<div id="5dc56dcf" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.radio(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -519,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>If you want to have some kind of default set of options (e.g.&nbsp;you want every question to have a hidden number and to be required), create <a href="https://www.w3schools.com/python/python_dictionaries.asp">a dictionary</a> with curly braces, set all the options there and then pass the dictionary to every question with the <a href="https://www.geeksforgeeks.org/what-does-the-double-star-operator-mean-in-python/#:~:text=As%20arguments%20in%20functions%20and%20methods"><code>**</code> operator</a>.</p>
-<div id="b8ea114d" class="cell" data-execution_count="5">
+<div id="6d221ea8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>defaultOptions <span class="op">=</span> {<span class="st">"hideNumber"</span>: <span class="va">True</span>, <span class="st">"isRequired"</span>: <span class="va">True</span>}</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.radio(</span>
@@ -540,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can use <a href="https://medium.com/@chinthapooja733/python-tips-merging-dictionaries-using-pipe-operator-98150a4d40ba">the pipe <code>|</code> operator</a> to override a some default options for a single question.</p>
-<div id="9eaa49f3" class="cell" data-execution_count="6">
+<div id="cba4230d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gender <span class="op">=</span> vls.radio(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"What is your gender?"</span>,</span>
@@ -555,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="whole-questionnaires">Whole questionnaires</h3>
 <p>Often in behavioral sciences we want to use a whole questionnaire. It’s quite pointless to format every item separately, because they often have the same scale, options and the labels are predictable. Veles allows for including a whole questionnaire at once.</p>
 <p>To do this, we need to have the questionnaire in the form of a Python list. We can format it either by hand…</p>
-<div id="1e5d7c68" class="cell" data-execution_count="7">
+<div id="86488ba4" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually formatted list</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>RSES_items <span class="op">=</span> [</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"I feel that I am a person of worth, at least on an equal plane with others."</span>,</span>
@@ -571,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. Notice the triple quotation marks <code>"""</code>. They allow us to create a multiline strings.</p>
-<div id="42a900f0" class="cell" data-execution_count="8">
+<div id="0152ffbb" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># triple quotation for multi-line strings</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>RSES_items <span class="op">=</span> <span class="st">"""I feel that I am a person of worth, at least on an equal plane with others.</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="st">I feel that I have a number of good qualities.</span></span>
@@ -585,7 +585,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="st">At times I think I am no good at all."""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So I saved the questionnaire into a variable called <code>RSES_items</code>. I can now tell python to split it, so it would become a list of items. To do this, we can use the <code>split()</code> method. Methods are functions that we write after a dot to apply them to something. <code>split()</code> takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with <code>"\n"</code>. To split the <code>RSES_items</code> string we could write <code>RSES_items.split("\n")</code>.</p>
-<div id="177b770a" class="cell" data-execution_count="9">
+<div id="daa4e0e7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>RSES <span class="op">=</span> vls.radio(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    RSES_items.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>),</span>
@@ -594,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In here I’ve splitted the inside the <code>radio()</code> function, but I also could have done it anywhere before that. To learn more about Python string methods, see <a href="https://www.w3schools.com/python/python_ref_string.asp">W3Schools lesson</a> about them<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Had I used the manually formatted list, I wouldn’t have to write the <code>split()</code> part. Also notice what I did with the scale – we don’t <em>have to</em> save our texts in variables, we can split them directly inside the question creating function. Just do what seems more readable and straightforward. That is to say, I could have also written something like this:</p>
-<div id="5c6b720b" class="cell" data-execution_count="10">
+<div id="99aeac25" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>RSES <span class="op">=</span> vls.radio(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""I feel that I am a person of worth, at least on an equal plane with others.</span></span>
@@ -618,7 +618,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="info" class="level3">
 <h3 class="anchored" data-anchor-id="info"><code>info()</code></h3>
 <p>To add an instruction to your questionnaire, use <code>info()</code>. The <code>info()</code> function gets a name and some html content.</p>
-<div id="c892727f" class="cell" data-execution_count="11">
+<div id="5ce80326" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>vls.page(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    vls.info(</span>
@@ -629,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals">html</a> to style the text.</p>
-<div id="d158b49f" class="cell" data-execution_count="12">
+<div id="d21e02fb" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>vls.info(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES_intro"</span>,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Please record the appropriate answer &lt;span style='color: #CC0000; font-weight: bold;'&gt;for each item&lt;/span&gt;, depending on whether you **strongly agree**, **agree**, **disagree**, or **strongly disagree** with it."</span></span>
@@ -646,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="list-comprehension">List comprehension</h3>
 <p>This part is not necessary but extremely useful.</p>
 <p>The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> alternatives. Let’s imagine we have a list of drinks we want to ask about in our survey. Yet we don’t want the question text to be just “Tea” or “Coffee”. That would disrespect tea. We need something like “How do you feel about tea?”. English being fairly uncomplicated, we just need to put the drink’s name into the sentence. We can easily use a loop and an f-string<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> to do just that.</p>
-<div id="5df99c79" class="cell" data-execution_count="13">
+<div id="0e200129" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get our drinks and make them a list</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>drinks <span class="op">=</span> <span class="st">"tea coffee juice water"</span>.split(<span class="st">" "</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -668,7 +668,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="panels" class="level2">
 <h2 class="anchored" data-anchor-id="panels">Panels</h2>
 <p>Panels are set of questions that have the same set of options. A common usecase is to set a random order of items without moving the instruction. If you set <code>questionsOrder="random"</code> for the whole page, the instruction will also end up in a random spot because it is technically a question. Yet we can put all the questions into a panel and set <code>questionsOrder</code> for the panel. Panels are created with <code>vls.panel()</code>.</p>
-<div id="33aed43d" class="cell" data-execution_count="14">
+<div id="081d8277" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>vls.page(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RSES"</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    vls.info(</span>
@@ -686,11 +686,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pages" class="level2">
 <h2 class="anchored" data-anchor-id="pages">Pages</h2>
 <p>Every survey needs to have at least one page. Page is basically a list of questions but with its own name, title, description and options. You can create it with <code>page()</code>.</p>
-<div id="0d94ed3e" class="cell" data-execution_count="15">
+<div id="9fc45d0c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>vls.page(name, questions, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pages have their own names. They don’t yet have many uses in directly in Veles but are still mandatory for SurveyJS compatibility reasons. You can also use them when you write custom JS code. Questions can be provided as a list or values separated by commas. Pages also have their own options like title, description or questions order. See <a href="./ref/wrappers.html#page">the docs</a>.</p>
-<div id="b0f87137" class="cell" data-execution_count="16">
+<div id="fe99d4cb" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> vls.page(<span class="st">"metrics"</span>, gender)  <span class="co"># previously created gender question</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>self_esteem <span class="op">=</span> vls.page(</span>
@@ -705,10 +705,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="survey" class="level2">
 <h2 class="anchored" data-anchor-id="survey">Survey</h2>
 <p>When all elements are created, we can combine them into the final survey. We can do this with the <code>survey()</code> function. It does two things – returns a <code>Survey</code> object and creates your survey’s structure.</p>
-<div id="3c47ec6e" class="cell" data-execution_count="17">
+<div id="ab9914f2" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>vls.survey(pages, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3d76afd3" class="cell" data-execution_count="18">
+<div id="bec1ae85" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>vls.survey(</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"My smart research"</span>,</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    intro,</span>
@@ -729,7 +729,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Now we can put both images in our survey. To do that, we will use <code>convertImage()</code> to convert the images to <a href="https://en.wikipedia.org/wiki/Base64">base64</a>. It accepts the paths of the files and returns a list of base64 data URI strings. Basically does all the heavy lifting for you.</p>
-<div id="6213ee37" class="cell" data-execution_count="19">
+<div id="e80554e4" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>stumuli <span class="op">=</span> vls.page(</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stimuli"</span>,</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    vls.image(</span>
@@ -739,7 +739,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also bulk convert all the images from the images folder using <code>glob</code>.</p>
-<div id="6b90b369" class="cell" data-execution_count="20">
+<div id="1b7bf777" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>stumuli <span class="op">=</span> vls.page(</span>
@@ -751,7 +751,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>See the <a href="./ref/wrappers.html#image"><code>image()</code> documentation</a> on how to control your output. For example we could do:</p>
-<div id="339a90b6" class="cell" data-execution_count="21">
+<div id="ad062751" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>stumuli <span class="op">=</span> vls.page(</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stimuli"</span>,</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    vls.image(</span>
@@ -763,7 +763,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For more fine-grained control use <code>info()</code> with direct HTML and CSS:</p>
-<div id="165c3a6c" class="cell" data-execution_count="22">
+<div id="378feb09" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>stumuli <span class="op">=</span> vls.page(</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stimuli"</span>,</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    vls.info(</span>
@@ -785,7 +785,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Notice that svg files are basically HTML with extra steps. You can open any svg file in a text editor and you will see HTML that you can paste into an <code>info()</code> question. You can use <a href="https://vecta.io/nano">an online service</a> to compress it beforehand.</p>
-<div id="87db4b9b" class="cell" data-execution_count="23">
+<div id="61d25e4f" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>rune <span class="op">=</span> vls.info(</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"veles"</span>,</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""&lt;svg xmlns="http://www.w3.org/2000/svg" width="560" height="600" xmlns:v="https://vecta.io/nano"&gt;&lt;path d="M279.32 598.941c-.958-1.888-186.52-399.897-186.52-400.064 0-.085 84.24-.154 187.2-.154l187.2.155c0 .302-186.767 400.674-187.031 400.938-.162.162-.5-.186-.849-.874zm43.778-245.228l42.026-90.128-42.464-.075c-23.355-.041-61.661-.041-85.123 0l-42.659.075 42.555 91.257 42.555 91.256.543-1.128 42.569-91.257zM39.022 83.699L2.78 5.982.05.146h35.991 35.991L93.15 45.431l21.118 45.286H280h165.731l21.118-45.286L487.968.146h35.991 35.991l-2.73 5.836-36.243 77.717-33.513 71.881H280 72.536z"/&gt;&lt;/svg&gt;"""</span>, </span>
