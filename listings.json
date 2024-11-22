@@ -17,10 +17,31 @@
     ]
   },
   {
+    "listing": "/library/es.html",
+    "items": [
+      "/library/es/tls_15.html"
+    ]
+  },
+  {
+    "listing": "/library/hu.html",
+    "items": [
+      "/library/hu/tls_15.html"
+    ]
+  },
+  {
     "listing": "/library/index.html",
     "items": [
       "/library/en.html",
-      "/library/pl.html"
+      "/library/hu.html",
+      "/library/pl.html",
+      "/library/es.html",
+      "/library/sv.html"
+    ]
+  },
+  {
+    "listing": "/library/sv.html",
+    "items": [
+      "/library/sv/tls_15.html"
     ]
   }
 ]

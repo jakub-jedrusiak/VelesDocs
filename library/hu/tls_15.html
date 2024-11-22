@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.">
+<meta name="description" content="Sternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.">
 
-<title>Library implementation tool – Veles Documentation</title>
+<title>Triangular Love Scale (TLS-15) – Veles Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,29 +21,82 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-43df0d6f53b733b42d37fa7808e17715.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-323a1b7fe099390b9720092ebdc8f7fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6f4e50e4aa49e6eacf66e0bbb3534050.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../.././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-43df0d6f53b733b42d37fa7808e17715.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-323a1b7fe099390b9720092ebdc8f7fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4e50e4aa49e6eacf66e0bbb3534050.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,21 +126,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles/styles.css">
-<meta property="og:title" content="Library implementation tool – Veles Documentation">
-<meta property="og:description" content="This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.">
-<meta property="og:image" content="https://docs.velesweb.org/figs/libtool/fork.png">
+<link rel="stylesheet" href="../../styles/styles.css">
+<meta property="og:title" content="Triangular Love Scale (TLS-15) – Veles Documentation">
+<meta property="og:description" content="Sternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.">
 <meta property="og:site_name" content="Veles Documentation">
-<meta property="og:image:alt" content="The Fork button">
-<meta property="og:image:height" content="457">
-<meta property="og:image:width" content="1253">
-<meta name="twitter:title" content="Library implementation tool – Veles Documentation">
-<meta name="twitter:description" content="This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.">
-<meta name="twitter:image" content="https://docs.velesweb.org/figs/libtool/fork.png">
-<meta name="twitter:image:alt" content="The Fork button">
-<meta name="twitter:image-height" content="457">
-<meta name="twitter:image-width" content="1253">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Triangular Love Scale (TLS-15) – Veles Documentation">
+<meta name="twitter:description" content="Sternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -97,10 +142,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../.././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Veles Documentation</span>
     </a>
   </div>
@@ -146,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./libtool.html">Implementation tool</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Triangular Love Scale (TLS-15)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -168,13 +213,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
+  <a href="../../getting-started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
   </div>
 </li>
@@ -189,19 +234,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/customExpressionFunctions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/customExpressionFunctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Custom Expression Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/validators.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/validators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Validators</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/wrappers.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ref/wrappers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrappers for question types</span></a>
   </div>
 </li>
@@ -209,13 +254,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../library/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test library</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./libtool.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../libtool.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Implementation tool</span></a>
   </div>
 </li>
@@ -227,20 +272,43 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module" id="toc-module" class="nav-link active" data-scroll-target="#module">Module</a></li>
+  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
+  <li><a href="#original" id="toc-original" class="nav-link" data-scroll-target="#original">Original</a></li>
+  <li><a href="#score-calculation" id="toc-score-calculation" class="nav-link" data-scroll-target="#score-calculation">Score calculation</a></li>
+  <li><a href="#reverse-items" id="toc-reverse-items" class="nav-link" data-scroll-target="#reverse-items">Reverse items</a></li>
+  <li><a href="#subscales" id="toc-subscales" class="nav-link" data-scroll-target="#subscales">Subscales</a></li>
+  <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability">Reliability</a>
+  <ul class="collapse">
+  <li><a href="#subscales-1" id="toc-subscales-1" class="nav-link" data-scroll-target="#subscales-1">Subscales</a></li>
+  </ul></li>
+  <li><a href="#implemented-by" id="toc-implemented-by" class="nav-link" data-scroll-target="#implemented-by">Implemented by</a></li>
+  <li><a href="#args" id="toc-args" class="nav-link" data-scroll-target="#args">Args</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/hu/tls_15.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Library implementation tool</h1>
-</div>
+<h1 class="title">Triangular Love Scale (TLS-15)</h1>
+<p class="subtitle lead"><code>tls_15()</code></p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Social and Interpersonal Factors</div>
+    <div class="quarto-category">Relationship Satisfaction</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.
+    Sternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.
   </div>
 </div>
 
@@ -257,102 +325,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-    #tryAgainButton {
-      background-color: #CC0000;
-    }
-
-    #tryAgainButton:hover {
-      background-color: #b30000;
-    }
-
-    .lds-dual-ring {
-      /* change color here */
-      color: #19B394 !important;
-    }
-
-    .lds-dual-ring,
-    .lds-dual-ring:after {
-      box-sizing: border-box;
-    }
-
-    .lds-dual-ring {
-      display: inline-block;
-      width: 80px;
-      height: 80px;
-    }
-
-    .lds-dual-ring:after {
-      content: " ";
-      display: block;
-      width: 64px;
-      height: 64px;
-      margin: 8px;
-      border-radius: 50%;
-      border: 6.4px solid currentColor;
-      border-color: currentColor transparent currentColor transparent;
-      animation: lds-dual-ring 1.2s linear infinite;
-    }
-
-    @keyframes lds-dual-ring {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-<noscript>
-You need to enable JavaScript to run this app.
-</noscript>
-<script>
-function downloadPython() {
-            const blob = new Blob([window.pythonCode], { type: 'text/plain' });
-            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.py` });
-            a.click();
-        }
-function downloadQuarto() {
-            const blob = new Blob([window.quartoCode], { type: 'text/plain' });
-            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.qmd` });
-            a.click();
-        }
-</script>
-<details>
-<summary>
-View detailed contributing manual
-</summary>
-<p>Thank you for wanting to contribute to the VelesLibrary! Here you’ll find a detailed, illustrated instruction on how to implement your questionnaires. In most cases, <b>you don’t even need to know how to code</b>! Here we assume that you don’t know anything about Git and GitHub. To even begin the implementation process, you need to create a <a href="https://github.com/">GitHub account</a> and download and install <a href="https://github.com/apps/desktop">GitHub Desktop</a> (unless you want to use Git directly).</p>
-<p>To add some code to the VelesLibrary, you need to create your own copy of the library (so called <em>fork</em>), make and confirm some changes (<em>commit</em>), send them to GitHub (<em>push</em>) and open a request to add them to the main library (open a <em>Pull Request</em> (PR)). Here we will discuss this process in detail.</p>
+<section id="module" class="level2">
+<h2 class="anchored" data-anchor-id="module">Module</h2>
+<p><code>velesresearch.questionnaires.hu.tls_15</code></p>
+</section>
+<section id="import" class="level2">
+<h2 class="anchored" data-anchor-id="import">Import</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch.questionnaires.hu.tls_15 <span class="im">import</span> tls_15</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="original" class="level2">
+<h2 class="anchored" data-anchor-id="original">Original</h2>
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;" role="list">
+<div class="csl-entry" role="listitem">
+Kowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. <i>Archives of Sexual Behavior</i>, <i>53</i>(2), 839–857. <a href="https://doi.org/10.1007/s10508-023-02702-7" class="uri">https://doi.org/10.1007/s10508-023-02702-7</a>
+</div>
+<div class="csl-entry" role="listitem">
+Sternberg, R. J. (1988). <i>The triangle of love: Intimacy, passion, commitment</i>. Basic Books.
+</div>
+<div class="csl-entry" role="listitem">
+Sternberg, R. J. (1997). Construct validation of a triangular love scale. <i>European Journal of Social Psychology</i>, <i>27</i>(3), 313–335. <a href="https://doi.org/10.1002/(SICI)1099-0992(199705)27:3%3C313::AID-EJSP824%3E3.0.CO;2-4" class="uri">https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4</a>
+</div>
+</div>
+</section>
+<section id="score-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="score-calculation">Score calculation</h2>
+<p>An average.</p>
+</section>
+<section id="reverse-items" class="level2">
+<h2 class="anchored" data-anchor-id="reverse-items">Reverse items</h2>
+<p>None.</p>
+</section>
+<section id="subscales" class="level2">
+<h2 class="anchored" data-anchor-id="subscales">Subscales</h2>
 <ol type="1">
-<li>The library consists of two code repositories – the code itself (VelesLibrary) and the documentation on this website (VelesDocs). The first thing we will do is to fork both repositories. Go to the <a href="https://github.com/jakub-jedrusiak/VelesLibrary">VelesLibrary GitHub page</a> and click the Fork button (see the figure). Then accept it as is. After you fork VelesLibrary, do the same with <a href="https://github.com/jakub-jedrusiak/VelesDocs">VelesDocs</a>. <img src="figs/libtool/fork.png" class="img-fluid" alt="The Fork button"></li>
-<li>Then we need to download (or <em>clone</em>) both our new forks. Open the GitHub Desktop app, login, go to File → Clone repository…, search for VelesLibrary, confirm and select a folder you want do save the library in. Do the same with VelesDocs. <img src="figs/libtool/clone.png" class="img-fluid" alt="Cloning the repository"></li>
-<li>Now you can create your code. Fill out the form on this page with all the necessary informations and click Generate. Mind the citations! You must use <a href="https://zbib.org/">ZBib</a> to create your citations. When you do that, be sure to set APA 7 citation style and actually copy the HTML. See the figure. <img src="figs/libtool/zbib.png" class="img-fluid" alt="HTML in ZBib"></li>
-<li>When you generate the files, be sure to unfold appropriate sections and check if everything looks OK in the documentation. Especially look at the reliability coefficients.</li>
-<li>Now you can download the files. The first file (with the .py extension) is the code itself. It needs to go to the VelesLibrary folder. See the text to select an appropriate subfolder. It will most probably be the <code>veleslibrary/questionnaires</code> subfolder. If your test is in English, it will go to the folder directly. If it’s in a different language, it will go so an appropriate subfolder. Just put your file there.</li>
-<li>Now you need to edit the <code>__init__.py</code> file. Open it in any text editor and at the end of the file, add an appropriate import closure. Don’t worry, the generated instructions will tell you how your closure should look like. Copy and paste the line to the file. <img src="figs/libtool/init.png" class="img-fluid" alt="Editing the __init__.py"></li>
-<li>Now download the documentation file (.qmd extension). Put it in your VelesDocs folder, in the library subfolder. Look for an appropriate language code.</li>
-<li>Now we’re ready to commit the changes in both repositories. Open the VelesLibrary repo in GitHub Desktop. On the left, you’ll see both changed files. Mark them, add a commit message (e.g.&nbsp;“Add RSES in Polish”) and commit the changes. Click the appropriate button to push the changes. See the figure. Do the same with VelesDocs. <img src="figs/libtool/commit.png" class="img-fluid" alt="Commiting and pushing to GitHub"></li>
-<li>Now we need to open Pull Requests on both repos. Start with VelesLibrary. There should be an appropriate button in GitHub Desktop, but you can also go to your fork’s GitHub page and you will see a big, bright button urging you to open a Pull Request. Click it and fill out the form. Do the same with VelesDocs.</li>
-<li>Done. A maintainer should review your changes, correct the mistakes (if any) and merge your Pull Request. After that, your contribution will serve any scientist who would want to use the questionnaire.</li>
+<li>Intimacy: 1, 2, 3, 4, 5</li>
+<li>Passion: 6, 7, 8, 9, 10</li>
+<li>Commitment: 11, 12, 13, 14, 15</li>
 </ol>
-</details>
-<div id="root">
-<div style="text-align: center; padding-bottom: 2em; padding-top: 2em;">
-<div class="lds-dual-ring">
+</section>
+<section id="reliability" class="level2">
+<h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
+<p>α = .95</p>
+<section id="subscales-1" class="level3">
+<h3 class="anchored" data-anchor-id="subscales-1">Subscales</h3>
+<ol type="1">
+<li>Intimacy: α = .89</li>
+<li>Passion: α = .89</li>
+<li>Commitment: α = .92</li>
+</ol>
+</section>
+</section>
+<section id="implemented-by" class="level2">
+<h2 class="anchored" data-anchor-id="implemented-by">Implemented by</h2>
+<p>Jakub Jędrusiak (University of Wrocław)</p>
+</section>
+<section id="args" class="level2">
+<h2 class="anchored" data-anchor-id="args">Args</h2>
+<p><code>name</code> : <em>str</em><br> Base name for pages and questions. Defaults to “tls_15”.</p>
+<p><code>instruction</code> : <em>str</em><br> Instruction for the questionnaire. None means that the default instruction will be used.</p>
+<p><code>questionOptions</code> : <em>dict | None</em><br> Additional options for questions as a dictionary. Defaults to None.</p>
+<p><code>pageOptions</code> : <em>dict | None</em><br> Additional options for pages as a dictionary. Defaults to None.</p>
+</section>
+<section id="returns" class="level2">
+<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<p><code>PageModel</code><br> PageModel with the TLS-15 questionnaire. Use the <code>*</code> operator to unpack it to questions.</p>
 
-</div>
-</div>
-</div>
-<div id="tryAgainDiv" style="text-align: center; padding-bottom: 2em; display: none;">
-<button id="tryAgainButton" disabled="" class="sd-btn sd-btn--action">
-Try again
-</button>
-</div>
-<script type="module" src="../libtool/main.js"></script>
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -921,4 +960,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/libtool.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/hu/tls_15.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

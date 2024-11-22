@@ -540,6 +540,83 @@
     ]
   },
   {
+    "objectID": "library/sv/tls_15.html",
+    "href": "library/sv/tls_15.html",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.sv.tls_15"
+  },
+  {
+    "objectID": "library/sv/tls_15.html#module",
+    "href": "library/sv/tls_15.html#module",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.sv.tls_15"
+  },
+  {
+    "objectID": "library/sv/tls_15.html#import",
+    "href": "library/sv/tls_15.html#import",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.sv.tls_15 import tls_15"
+  },
+  {
+    "objectID": "library/sv/tls_15.html#original",
+    "href": "library/sv/tls_15.html#original",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Original",
+    "text": "Original\nKowal, Marta, i in. „Validation of the Short Version (TLS-15) of the Triangular Love Scale (TLS-45) across 37 Languages”. Archives of Sexual Behavior, t. 53, nr 2, luty 2024, s. 839–57. DOI.org (Crossref), https://doi.org/10.1007/s10508-023-02702-7.\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg , R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997a). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4\n\n\nSternberg, R. J. (1997b). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4\n\n\nSternberg, Robert J. „Construct Validation of a Triangular Love Scale”. European Journal of Social Psychology, t. 27, nr 3, maj 1997, s. 313–35. DOI.org (Crossref), https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4."
+  },
+  {
+    "objectID": "library/sv/tls_15.html#score-calculation",
+    "href": "library/sv/tls_15.html#score-calculation",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average."
+  },
+  {
+    "objectID": "library/sv/tls_15.html#reverse-items",
+    "href": "library/sv/tls_15.html#reverse-items",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/sv/tls_15.html#subscales",
+    "href": "library/sv/tls_15.html#subscales",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Subscales",
+    "text": "Subscales\n\nIntimacy: 5\nCommitment: 5\nPassion: 5"
+  },
+  {
+    "objectID": "library/sv/tls_15.html#reliability",
+    "href": "library/sv/tls_15.html#reliability",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nCommitment: α = .92\nPassion: α = .89"
+  },
+  {
+    "objectID": "library/sv/tls_15.html#implemented-by",
+    "href": "library/sv/tls_15.html#implemented-by",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJulia Jankowska (University of Wrocław)"
+  },
+  {
+    "objectID": "library/sv/tls_15.html#args",
+    "href": "library/sv/tls_15.html#args",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/sv/tls_15.html#returns",
+    "href": "library/sv/tls_15.html#returns",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
     "objectID": "library/pl/tipi.html",
     "href": "library/pl/tipi.html",
     "title": "Ten Item Personality Inventory (TIPI)",
@@ -629,6 +706,160 @@
     "title": "Polish test library",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nTen Item Personality Inventory (TIPI)\n\n\ntipi()\n\n\nTen item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.\n\n\nPersonality and Traits, Big Five Personality Traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism)\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/hu/tls_15.html",
+    "href": "library/hu/tls_15.html",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.hu.tls_15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#module",
+    "href": "library/hu/tls_15.html#module",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.hu.tls_15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#import",
+    "href": "library/hu/tls_15.html#import",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.hu.tls_15 import tls_15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#original",
+    "href": "library/hu/tls_15.html#original",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Original",
+    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#score-calculation",
+    "href": "library/hu/tls_15.html#score-calculation",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average."
+  },
+  {
+    "objectID": "library/hu/tls_15.html#reverse-items",
+    "href": "library/hu/tls_15.html#reverse-items",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/hu/tls_15.html#subscales",
+    "href": "library/hu/tls_15.html#subscales",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Subscales",
+    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#reliability",
+    "href": "library/hu/tls_15.html#reliability",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α = .89\nCommitment: α = .92"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#implemented-by",
+    "href": "library/hu/tls_15.html#implemented-by",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#args",
+    "href": "library/hu/tls_15.html#args",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/hu/tls_15.html#returns",
+    "href": "library/hu/tls_15.html#returns",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/es/tls_15.html",
+    "href": "library/es/tls_15.html",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.es.tls_15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#module",
+    "href": "library/es/tls_15.html#module",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.es.tls_15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#import",
+    "href": "library/es/tls_15.html#import",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.es.tls_15 import tls_15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#original",
+    "href": "library/es/tls_15.html#original",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Original",
+    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
+  },
+  {
+    "objectID": "library/es/tls_15.html#score-calculation",
+    "href": "library/es/tls_15.html#score-calculation",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average."
+  },
+  {
+    "objectID": "library/es/tls_15.html#reverse-items",
+    "href": "library/es/tls_15.html#reverse-items",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/es/tls_15.html#subscales",
+    "href": "library/es/tls_15.html#subscales",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Subscales",
+    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#reliability",
+    "href": "library/es/tls_15.html#reliability",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α = .89\nCommitment: α = .92"
+  },
+  {
+    "objectID": "library/es/tls_15.html#implemented-by",
+    "href": "library/es/tls_15.html#implemented-by",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Implemented by",
+    "text": "Implemented by\nPiotr Jędrusik (University of Wrocław)"
+  },
+  {
+    "objectID": "library/es/tls_15.html#args",
+    "href": "library/es/tls_15.html#args",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/es/tls_15.html#returns",
+    "href": "library/es/tls_15.html#returns",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
   },
   {
     "objectID": "library/en/tls15.html",
@@ -1188,11 +1419,25 @@
     "text": "Returns\nPageModel PageModel with the SD3 questionnaire. Use the * operator to unpack it to questions."
   },
   {
+    "objectID": "library/es.html",
+    "href": "library/es.html",
+    "title": "Spanish test library",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/hu.html",
+    "href": "library/hu.html",
+    "title": "Hungarian test library",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "library/index.html",
     "href": "library/index.html",
     "title": "Library overview",
     "section": "",
-    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\n\n\n\n\nEnglish test library\n\n\n\n\nPolish test library\n\n\n\n\n\nNo matching items",
+    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\n\n\n\n\nEnglish test library\n\n\n\n\nHungarian test library\n\n\n\n\nPolish test library\n\n\n\n\nSpanish test library\n\n\n\n\nSwedish test library\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "{{< fa flask >}} VelesWeb",
       "Test library"
@@ -1281,6 +1526,13 @@
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Returns",
     "text": "Returns\nPageModel PageModel with the RSES questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/sv.html",
+    "href": "library/sv.html",
+    "title": "Swedish test library",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "libtool.html",

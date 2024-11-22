@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.">
 
-<title>Library implementation tool – Veles Documentation</title>
+<title>Spanish test library – Veles Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +23,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-43df0d6f53b733b42d37fa7808e17715.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-323a1b7fe099390b9720092ebdc8f7fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6f4e50e4aa49e6eacf66e0bbb3534050.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././figs/Veles-rune-gray.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-43df0d6f53b733b42d37fa7808e17715.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-323a1b7fe099390b9720092ebdc8f7fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-6f4e50e4aa49e6eacf66e0bbb3534050.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,23 +72,71 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles/styles.css">
-<meta property="og:title" content="Library implementation tool – Veles Documentation">
-<meta property="og:description" content="This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.">
-<meta property="og:image" content="https://docs.velesweb.org/figs/libtool/fork.png">
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/styles.css">
+<meta property="og:title" content="Spanish test library – Veles Documentation">
 <meta property="og:site_name" content="Veles Documentation">
-<meta property="og:image:alt" content="The Fork button">
-<meta property="og:image:height" content="457">
-<meta property="og:image:width" content="1253">
-<meta name="twitter:title" content="Library implementation tool – Veles Documentation">
-<meta name="twitter:description" content="This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.">
-<meta name="twitter:image" content="https://docs.velesweb.org/figs/libtool/fork.png">
-<meta name="twitter:image:alt" content="The Fork button">
-<meta name="twitter:image-height" content="457">
-<meta name="twitter:image-width" content="1253">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spanish test library – Veles Documentation">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -97,10 +146,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src=".././figs/Veles-rune-gray.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Veles Documentation</span>
     </a>
   </div>
@@ -146,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./libtool.html">Implementation tool</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Spanish test library</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -168,13 +217,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
+  <a href="../getting-started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
   </div>
 </li>
@@ -189,19 +238,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/customExpressionFunctions.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/customExpressionFunctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Custom Expression Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/validators.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/validators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Validators</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ref/wrappers.html" class="sidebar-item-text sidebar-link">
+  <a href="../ref/wrappers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrappers for question types</span></a>
   </div>
 </li>
@@ -209,13 +258,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./library/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../library/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test library</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./libtool.html" class="sidebar-item-text sidebar-link active">
+  <a href="../libtool.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Implementation tool</span></a>
   </div>
 </li>
@@ -235,20 +284,21 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Library implementation tool</h1>
+<h1 class="title">Spanish test library</h1>
 </div>
 
-<div>
-  <div class="description">
-    This page can be used to generate a function’s template and (in the future) a VelesDocs entry. Fill out the necessary details to implement your questionnaire. If you want, you can also specify the items themselves here.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2024-11-22</p>
+    </div>
+  </div>
     
   </div>
   
@@ -257,104 +307,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-    #tryAgainButton {
-      background-color: #CC0000;
-    }
 
-    #tryAgainButton:hover {
-      background-color: #b30000;
-    }
 
-    .lds-dual-ring {
-      /* change color here */
-      color: #19B394 !important;
-    }
 
-    .lds-dual-ring,
-    .lds-dual-ring:after {
-      box-sizing: border-box;
-    }
 
-    .lds-dual-ring {
-      display: inline-block;
-      width: 80px;
-      height: 80px;
-    }
-
-    .lds-dual-ring:after {
-      content: " ";
-      display: block;
-      width: 64px;
-      height: 64px;
-      margin: 8px;
-      border-radius: 50%;
-      border: 6.4px solid currentColor;
-      border-color: currentColor transparent currentColor transparent;
-      animation: lds-dual-ring 1.2s linear infinite;
-    }
-
-    @keyframes lds-dual-ring {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-<noscript>
-You need to enable JavaScript to run this app.
-</noscript>
-<script>
-function downloadPython() {
-            const blob = new Blob([window.pythonCode], { type: 'text/plain' });
-            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.py` });
-            a.click();
-        }
-function downloadQuarto() {
-            const blob = new Blob([window.quartoCode], { type: 'text/plain' });
-            const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${window.abbreviation}.qmd` });
-            a.click();
-        }
-</script>
-<details>
-<summary>
-View detailed contributing manual
-</summary>
-<p>Thank you for wanting to contribute to the VelesLibrary! Here you’ll find a detailed, illustrated instruction on how to implement your questionnaires. In most cases, <b>you don’t even need to know how to code</b>! Here we assume that you don’t know anything about Git and GitHub. To even begin the implementation process, you need to create a <a href="https://github.com/">GitHub account</a> and download and install <a href="https://github.com/apps/desktop">GitHub Desktop</a> (unless you want to use Git directly).</p>
-<p>To add some code to the VelesLibrary, you need to create your own copy of the library (so called <em>fork</em>), make and confirm some changes (<em>commit</em>), send them to GitHub (<em>push</em>) and open a request to add them to the main library (open a <em>Pull Request</em> (PR)). Here we will discuss this process in detail.</p>
-<ol type="1">
-<li>The library consists of two code repositories – the code itself (VelesLibrary) and the documentation on this website (VelesDocs). The first thing we will do is to fork both repositories. Go to the <a href="https://github.com/jakub-jedrusiak/VelesLibrary">VelesLibrary GitHub page</a> and click the Fork button (see the figure). Then accept it as is. After you fork VelesLibrary, do the same with <a href="https://github.com/jakub-jedrusiak/VelesDocs">VelesDocs</a>. <img src="figs/libtool/fork.png" class="img-fluid" alt="The Fork button"></li>
-<li>Then we need to download (or <em>clone</em>) both our new forks. Open the GitHub Desktop app, login, go to File → Clone repository…, search for VelesLibrary, confirm and select a folder you want do save the library in. Do the same with VelesDocs. <img src="figs/libtool/clone.png" class="img-fluid" alt="Cloning the repository"></li>
-<li>Now you can create your code. Fill out the form on this page with all the necessary informations and click Generate. Mind the citations! You must use <a href="https://zbib.org/">ZBib</a> to create your citations. When you do that, be sure to set APA 7 citation style and actually copy the HTML. See the figure. <img src="figs/libtool/zbib.png" class="img-fluid" alt="HTML in ZBib"></li>
-<li>When you generate the files, be sure to unfold appropriate sections and check if everything looks OK in the documentation. Especially look at the reliability coefficients.</li>
-<li>Now you can download the files. The first file (with the .py extension) is the code itself. It needs to go to the VelesLibrary folder. See the text to select an appropriate subfolder. It will most probably be the <code>veleslibrary/questionnaires</code> subfolder. If your test is in English, it will go to the folder directly. If it’s in a different language, it will go so an appropriate subfolder. Just put your file there.</li>
-<li>Now you need to edit the <code>__init__.py</code> file. Open it in any text editor and at the end of the file, add an appropriate import closure. Don’t worry, the generated instructions will tell you how your closure should look like. Copy and paste the line to the file. <img src="figs/libtool/init.png" class="img-fluid" alt="Editing the __init__.py"></li>
-<li>Now download the documentation file (.qmd extension). Put it in your VelesDocs folder, in the library subfolder. Look for an appropriate language code.</li>
-<li>Now we’re ready to commit the changes in both repositories. Open the VelesLibrary repo in GitHub Desktop. On the left, you’ll see both changed files. Mark them, add a commit message (e.g.&nbsp;“Add RSES in Polish”) and commit the changes. Click the appropriate button to push the changes. See the figure. Do the same with VelesDocs. <img src="figs/libtool/commit.png" class="img-fluid" alt="Commiting and pushing to GitHub"></li>
-<li>Now we need to open Pull Requests on both repos. Start with VelesLibrary. There should be an appropriate button in GitHub Desktop, but you can also go to your fork’s GitHub page and you will see a big, bright button urging you to open a Pull Request. Click it and fill out the form. Do the same with VelesDocs.</li>
-<li>Done. A maintainer should review your changes, correct the mistakes (if any) and merge your Pull Request. After that, your contribution will serve any scientist who would want to use the questionnaire.</li>
-</ol>
-</details>
-<div id="root">
-<div style="text-align: center; padding-bottom: 2em; padding-top: 2em;">
-<div class="lds-dual-ring">
-
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+Subtitle
+</th>
+<th>
+Description
+</th>
+<th>
+Categories
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="U29jaWFsJTIwYW5kJTIwSW50ZXJwZXJzb25hbCUyMEZhY3RvcnMlMkNSZWxhdGlvbnNoaXAlMjBTYXRpc2ZhY3Rpb24=" data-listing-file-modified-sort="1732297471859" data-listing-reading-time-sort="2" data-listing-word-count-sort="230" data-listing-title-sort="Triangular Love Scale (TLS-15)" data-listing-filename-sort="tls_15.qmd">
+<td>
+<a href="../library/es/tls_15.html" class="title listing-title">Triangular Love Scale (TLS-15)</a>
+</td>
+<td>
+<span class="listing-subtitle"><code>tls_15()</code></span>
+</td>
+<td>
+<span class="listing-description">Sternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.</span>
+</td>
+<td>
+<span class="listing-categories">Social and Interpersonal Factors, Relationship Satisfaction</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
-</div>
-<div id="tryAgainDiv" style="text-align: center; padding-bottom: 2em; display: none;">
-<button id="tryAgainButton" disabled="" class="sd-btn sd-btn--action">
-Try again
-</button>
-</div>
-<script type="module" src="../libtool/main.js"></script>
-
-
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -921,4 +932,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/libtool.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/es.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
