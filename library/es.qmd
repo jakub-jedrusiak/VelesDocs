@@ -1,0 +1,9 @@
+---
+title: "Spanish test library"
+date-modified: last-modified
+date-format: iso
+listing:
+    contents: es
+    type: table
+    fields: [title, subtitle, description, categories]
+---
