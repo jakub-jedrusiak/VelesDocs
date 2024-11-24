@@ -586,7 +586,7 @@
     "href": "library/sv/tls_15.html#subscales",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Subscales",
-    "text": "Subscales\n\nIntimacy: 5\nCommitment: 5\nPassion: 5"
+    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
   },
   {
     "objectID": "library/sv/tls_15.html#reliability",
