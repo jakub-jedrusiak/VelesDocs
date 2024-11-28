@@ -617,491 +617,351 @@
     "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "library/pl/tipi.html",
-    "href": "library/pl/tipi.html",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "",
-    "text": "veleslibrary.questionnaires.pl.tipi"
-  },
-  {
-    "objectID": "library/pl/tipi.html#module",
-    "href": "library/pl/tipi.html#module",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "",
-    "text": "veleslibrary.questionnaires.pl.tipi"
-  },
-  {
-    "objectID": "library/pl/tipi.html#import",
-    "href": "library/pl/tipi.html#import",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Import",
-    "text": "Import\nfrom veleslibrary.questionnaires.pl.tipi import tipi"
-  },
-  {
-    "objectID": "library/pl/tipi.html#original",
-    "href": "library/pl/tipi.html#original",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Original",
-    "text": "Original\n\n\nGosling, S. D., Rentfrow, P. J., & Swann, W. B. (2003). A very brief measure of the Big-Five personality domains. Journal of Research in Personality, 37(6), 504–528. https://doi.org/10.1016/S0092-6566(03)00046-1"
-  },
-  {
-    "objectID": "library/pl/tipi.html#adaptation",
-    "href": "library/pl/tipi.html#adaptation",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Adaptation",
-    "text": "Adaptation\n\n\nSorokowska, A., Słowińska, A., Zbieg, A., & Sorokowski, P. (2014). Polska adaptacja testu Ten Item Personality Inventory (Tipi) – TIPI-PL – wersja standardowa i internetowa. Wrocław: WrocLab."
-  },
-  {
-    "objectID": "library/pl/tipi.html#score-calculation",
-    "href": "library/pl/tipi.html#score-calculation",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Score calculation",
-    "text": "Score calculation\nA simple sum."
-  },
-  {
-    "objectID": "library/pl/tipi.html#reverse-items",
-    "href": "library/pl/tipi.html#reverse-items",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Reverse items",
-    "text": "Reverse items\n2, 4, 6, 8, 10"
-  },
-  {
-    "objectID": "library/pl/tipi.html#subscales",
-    "href": "library/pl/tipi.html#subscales",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Subscales",
-    "text": "Subscales\n\nExtraversion: 1, 6\nAgreeableness: 2, 7\nConscientiousness: 3, 8\nEmotional Stability: 4, 9\nOpenness to Experience: 5, 10"
-  },
-  {
-    "objectID": "library/pl/tipi.html#reliability",
-    "href": "library/pl/tipi.html#reliability",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Reliability",
-    "text": "Reliability\n\nPaper and pencil\n\nExtraversion: α = .68\nAgreeableness: α = .58\nConscientiousness: α = .75\nEmotional Stability: α = .72\nOpenness to Experience: α = .44\n\n\n\nGoogle Forms\n\nExtraversion: α = .74\nAgreeableness: α = .54\nConscientiousness: α = .80\nEmotional Stability: α = .83\nOpenness to Experience: α = .45\n\n\n\nOnline application\n\nExtraversion: α = .70\nAgreeableness: α = .50\nConscientiousness: α = .76\nEmotional Stability: α = .65\nOpenness to Experience: α = .47"
-  },
-  {
-    "objectID": "library/pl/tipi.html#implemented-by",
-    "href": "library/pl/tipi.html#implemented-by",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Implemented by",
-    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
-  },
-  {
-    "objectID": "library/pl/tipi.html#args",
-    "href": "library/pl/tipi.html#args",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Args",
-    "text": "Args\nname : str Base name for pages and questions. Defaults to “TIPI”.\ninstruction : str Instruction for the questionnaire. Defaults to “Poniżej przedstawiona jest lista cech, które są lub nie są Twoimi charakterystykami. Zaznacz przy poszczególnych stwierdzeniach, do jakiego stopnia zgadzasz się lub nie zgadzasz z każdym z nich. Oceń stopień, w jakim każde z pytań odnosi się do Ciebie.”.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
-  },
-  {
-    "objectID": "library/pl/tipi.html#returns",
-    "href": "library/pl/tipi.html#returns",
-    "title": "Ten Item Personality Inventory (TIPI)",
-    "section": "Returns",
-    "text": "Returns\nPageModel PageModel with the TIPI questionnaire."
-  },
-  {
-    "objectID": "library/pl.html",
-    "href": "library/pl.html",
-    "title": "Polish test library",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nTen Item Personality Inventory (TIPI)\n\n\ntipi()\n\n\nTen item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.\n\n\nPersonality and Traits, Big Five Personality Traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism)\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "library/hu/tls_15.html",
-    "href": "library/hu/tls_15.html",
+    "objectID": "library/pl/tls_15.html",
+    "href": "library/pl/tls_15.html",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "",
-    "text": "velesresearch.questionnaires.hu.tls_15"
+    "text": "velesresearch.questionnaires.pl.tls_15"
   },
   {
-    "objectID": "library/hu/tls_15.html#module",
-    "href": "library/hu/tls_15.html#module",
+    "objectID": "library/pl/tls_15.html#module",
+    "href": "library/pl/tls_15.html#module",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "",
-    "text": "velesresearch.questionnaires.hu.tls_15"
+    "text": "velesresearch.questionnaires.pl.tls_15"
   },
   {
-    "objectID": "library/hu/tls_15.html#import",
-    "href": "library/hu/tls_15.html#import",
+    "objectID": "library/pl/tls_15.html#import",
+    "href": "library/pl/tls_15.html#import",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Import",
-    "text": "Import\nfrom velesresearch.questionnaires.hu.tls_15 import tls_15"
+    "text": "Import\nfrom velesresearch.questionnaires.pl.tls_15 import tls_15"
   },
   {
-    "objectID": "library/hu/tls_15.html#original",
-    "href": "library/hu/tls_15.html#original",
+    "objectID": "library/pl/tls_15.html#original",
+    "href": "library/pl/tls_15.html#original",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Original",
     "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
   },
   {
-    "objectID": "library/hu/tls_15.html#score-calculation",
-    "href": "library/hu/tls_15.html#score-calculation",
+    "objectID": "library/pl/tls_15.html#score-calculation",
+    "href": "library/pl/tls_15.html#score-calculation",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Score calculation",
     "text": "Score calculation\nAn average."
   },
   {
-    "objectID": "library/hu/tls_15.html#reverse-items",
-    "href": "library/hu/tls_15.html#reverse-items",
+    "objectID": "library/pl/tls_15.html#reverse-items",
+    "href": "library/pl/tls_15.html#reverse-items",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Reverse items",
     "text": "Reverse items\nNone."
   },
   {
-    "objectID": "library/hu/tls_15.html#subscales",
-    "href": "library/hu/tls_15.html#subscales",
+    "objectID": "library/pl/tls_15.html#subscales",
+    "href": "library/pl/tls_15.html#subscales",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Subscales",
-    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
+    "text": "Subscales\n\nIntimacy: 5\nPassion: 5\nCommitment: 5"
   },
   {
-    "objectID": "library/hu/tls_15.html#reliability",
-    "href": "library/hu/tls_15.html#reliability",
+    "objectID": "library/pl/tls_15.html#reliability",
+    "href": "library/pl/tls_15.html#reliability",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Reliability",
     "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α = .89\nCommitment: α = .92"
   },
   {
-    "objectID": "library/hu/tls_15.html#implemented-by",
-    "href": "library/hu/tls_15.html#implemented-by",
+    "objectID": "library/pl/tls_15.html#implemented-by",
+    "href": "library/pl/tls_15.html#implemented-by",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Implemented by",
-    "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
+    "text": "Implemented by\nJulia Jankowska (University of Wrocław)"
   },
   {
-    "objectID": "library/hu/tls_15.html#args",
-    "href": "library/hu/tls_15.html#args",
+    "objectID": "library/pl/tls_15.html#args",
+    "href": "library/pl/tls_15.html#args",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Args",
     "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
-    "objectID": "library/hu/tls_15.html#returns",
-    "href": "library/hu/tls_15.html#returns",
+    "objectID": "library/pl/tls_15.html#returns",
+    "href": "library/pl/tls_15.html#returns",
     "title": "Triangular Love Scale (TLS-15)",
     "section": "Returns",
     "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "library/es/tls_15.html",
-    "href": "library/es/tls_15.html",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "",
-    "text": "velesresearch.questionnaires.es.tls_15"
-  },
-  {
-    "objectID": "library/es/tls_15.html#module",
-    "href": "library/es/tls_15.html#module",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "",
-    "text": "velesresearch.questionnaires.es.tls_15"
-  },
-  {
-    "objectID": "library/es/tls_15.html#import",
-    "href": "library/es/tls_15.html#import",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Import",
-    "text": "Import\nfrom velesresearch.questionnaires.es.tls_15 import tls_15"
-  },
-  {
-    "objectID": "library/es/tls_15.html#original",
-    "href": "library/es/tls_15.html#original",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Original",
-    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
-  },
-  {
-    "objectID": "library/es/tls_15.html#score-calculation",
-    "href": "library/es/tls_15.html#score-calculation",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Score calculation",
-    "text": "Score calculation\nAn average."
-  },
-  {
-    "objectID": "library/es/tls_15.html#reverse-items",
-    "href": "library/es/tls_15.html#reverse-items",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Reverse items",
-    "text": "Reverse items\nNone."
-  },
-  {
-    "objectID": "library/es/tls_15.html#subscales",
-    "href": "library/es/tls_15.html#subscales",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Subscales",
-    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
-  },
-  {
-    "objectID": "library/es/tls_15.html#reliability",
-    "href": "library/es/tls_15.html#reliability",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Reliability",
-    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α = .89\nCommitment: α = .92"
-  },
-  {
-    "objectID": "library/es/tls_15.html#implemented-by",
-    "href": "library/es/tls_15.html#implemented-by",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Implemented by",
-    "text": "Implemented by\nPiotr Jędrusik (University of Wrocław)"
-  },
-  {
-    "objectID": "library/es/tls_15.html#args",
-    "href": "library/es/tls_15.html#args",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Args",
-    "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
-  },
-  {
-    "objectID": "library/es/tls_15.html#returns",
-    "href": "library/es/tls_15.html#returns",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Returns",
-    "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
-  },
-  {
-    "objectID": "library/en/tls_15.html",
-    "href": "library/en/tls_15.html",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "",
-    "text": "veleslibrary.questionnaires.tls_15"
-  },
-  {
-    "objectID": "library/en/tls_15.html#module",
-    "href": "library/en/tls_15.html#module",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "",
-    "text": "veleslibrary.questionnaires.tls_15"
-  },
-  {
-    "objectID": "library/en/tls_15.html#import",
-    "href": "library/en/tls_15.html#import",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Import",
-    "text": "Import\n\nfrom veleslibrary.questionnaires.tls_15 import tls_15"
-  },
-  {
-    "objectID": "library/en/tls_15.html#original",
-    "href": "library/en/tls_15.html#original",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Original",
-    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
-  },
-  {
-    "objectID": "library/en/tls_15.html#score-calculation",
-    "href": "library/en/tls_15.html#score-calculation",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Score calculation",
-    "text": "Score calculation\nAn average. Can be calculated separately for the subscales or for the whole questionnaire."
-  },
-  {
-    "objectID": "library/en/tls_15.html#reverse-items",
-    "href": "library/en/tls_15.html#reverse-items",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Reverse items",
-    "text": "Reverse items\nNone."
-  },
-  {
-    "objectID": "library/en/tls_15.html#subscales",
-    "href": "library/en/tls_15.html#subscales",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Subscales",
-    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
-  },
-  {
-    "objectID": "library/en/tls_15.html#reliability",
-    "href": "library/en/tls_15.html#reliability",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Reliability",
-    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α =.89\nCommitment: α = 0.92"
-  },
-  {
-    "objectID": "library/en/tls_15.html#implemented-by",
-    "href": "library/en/tls_15.html#implemented-by",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Implemented by",
-    "text": "Implemented by\nKsawery Łakomy (University of Wrocław)"
-  },
-  {
-    "objectID": "library/en/tls_15.html#args",
-    "href": "library/en/tls_15.html#args",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Args",
-    "text": "Args\n\nname : str Base name for pages and questions. Defaults to “TLS_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
-  },
-  {
-    "objectID": "library/en/tls_15.html#returns",
-    "href": "library/en/tls_15.html#returns",
-    "title": "Triangular Love Scale (TLS-15)",
-    "section": "Returns",
-    "text": "Returns\n\nPageModel PageModel with the TLS15 questionnaire."
-  },
-  {
-    "objectID": "library/en/rses.html",
-    "href": "library/en/rses.html",
+    "objectID": "library/pl/rses.html",
+    "href": "library/pl/rses.html",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "",
-    "text": "veleslibrary.questionnaires.rses"
+    "text": "velesresearch.questionnaires.pl.rses"
   },
   {
-    "objectID": "library/en/rses.html#module",
-    "href": "library/en/rses.html#module",
+    "objectID": "library/pl/rses.html#module",
+    "href": "library/pl/rses.html#module",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "",
-    "text": "veleslibrary.questionnaires.rses"
+    "text": "velesresearch.questionnaires.pl.rses"
   },
   {
-    "objectID": "library/en/rses.html#import",
-    "href": "library/en/rses.html#import",
+    "objectID": "library/pl/rses.html#import",
+    "href": "library/pl/rses.html#import",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Import",
-    "text": "Import\nfrom veleslibrary.questionnaires.rses import rses"
+    "text": "Import\nfrom velesresearch.questionnaires.pl.rses import rses"
   },
   {
-    "objectID": "library/en/rses.html#original",
-    "href": "library/en/rses.html#original",
+    "objectID": "library/pl/rses.html#original",
+    "href": "library/pl/rses.html#original",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Original",
     "text": "Original\n\n\nRosenberg, M. (2011). Rosenberg self-esteem scale [Database record]. APA PsycTests. https://doi.org/10.1037/t01038-000"
   },
   {
-    "objectID": "library/en/rses.html#score-calculation",
-    "href": "library/en/rses.html#score-calculation",
+    "objectID": "library/pl/rses.html#adaptation",
+    "href": "library/pl/rses.html#adaptation",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Adaptation:",
+    "text": "Adaptation:\n\n\nDzwonkowska, I., Lachowicz-Tabaczek, K., & Łaguna, M. (2008). Samoocena i jej pomiar. Polska adaptacja skali SES M. Rosenberga. Podręcznik. Pracownia Testów Psychologicznych Polskiego Towarzystwa Psychologicznego."
+  },
+  {
+    "objectID": "library/pl/rses.html#score-calculation",
+    "href": "library/pl/rses.html#score-calculation",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Score calculation",
     "text": "Score calculation\nA simple sum."
   },
   {
-    "objectID": "library/en/rses.html#reverse-items",
-    "href": "library/en/rses.html#reverse-items",
+    "objectID": "library/pl/rses.html#reverse-items",
+    "href": "library/pl/rses.html#reverse-items",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Reverse items",
-    "text": "Reverse items\n3, 5, 8, 10"
+    "text": "Reverse items\n3, 5, 8, 9, 10"
   },
   {
-    "objectID": "library/en/rses.html#subscales",
-    "href": "library/en/rses.html#subscales",
+    "objectID": "library/pl/rses.html#subscales",
+    "href": "library/pl/rses.html#subscales",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Subscales",
     "text": "Subscales\nNone."
   },
   {
-    "objectID": "library/en/rses.html#reliability",
-    "href": "library/en/rses.html#reliability",
+    "objectID": "library/pl/rses.html#reliability",
+    "href": "library/pl/rses.html#reliability",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Reliability",
-    "text": "Reliability\nα = .88"
+    "text": "Reliability\nα = .82"
   },
   {
-    "objectID": "library/en/rses.html#implemented-by",
-    "href": "library/en/rses.html#implemented-by",
+    "objectID": "library/pl/rses.html#implemented-by",
+    "href": "library/pl/rses.html#implemented-by",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Implemented by",
-    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+    "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
   },
   {
-    "objectID": "library/en/rses.html#args",
-    "href": "library/en/rses.html#args",
+    "objectID": "library/pl/rses.html#args",
+    "href": "library/pl/rses.html#args",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Args",
-    "text": "Args\nname : str Base name for pages and questions. Defaults to “RSES”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “rses”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
-    "objectID": "library/en/rses.html#returns",
-    "href": "library/en/rses.html#returns",
+    "objectID": "library/pl/rses.html#returns",
+    "href": "library/pl/rses.html#returns",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Returns",
     "text": "Returns\nPageModel PageModel with the RSES questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "library/en/nfcs.html",
-    "href": "library/en/nfcs.html",
+    "objectID": "library/index.html",
+    "href": "library/index.html",
+    "title": "Library overview",
+    "section": "",
+    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\n\n\n\n\nEnglish test library\n\n\n\n\nHungarian test library\n\n\n\n\nPolish test library\n\n\n\n\nSpanish test library\n\n\n\n\nSwedish test library\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Test library"
+    ]
+  },
+  {
+    "objectID": "library/hu.html",
+    "href": "library/hu.html",
+    "title": "Hungarian test library",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/es.html",
+    "href": "library/es.html",
+    "title": "Spanish test library",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/en/sd3.html",
+    "href": "library/en/sd3.html",
+    "title": "Short Dark Triad (SD3)",
+    "section": "",
+    "text": "velesresearch.questionnaires.sd3"
+  },
+  {
+    "objectID": "library/en/sd3.html#module",
+    "href": "library/en/sd3.html#module",
+    "title": "Short Dark Triad (SD3)",
+    "section": "",
+    "text": "velesresearch.questionnaires.sd3"
+  },
+  {
+    "objectID": "library/en/sd3.html#import",
+    "href": "library/en/sd3.html#import",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.sd3 import sd3"
+  },
+  {
+    "objectID": "library/en/sd3.html#original",
+    "href": "library/en/sd3.html#original",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Original",
+    "text": "Original\n\n\nJones, D. N., & Paulhus, D. L. (2014). Introducing the Short Dark Triad (SD3): A brief measure of dark personality traits. Assessment, 21(1), 28–41. https://doi.org/10.1177/1073191113514105"
+  },
+  {
+    "objectID": "library/en/sd3.html#score-calculation",
+    "href": "library/en/sd3.html#score-calculation",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Score calculation",
+    "text": "Score calculation\nA simple sum."
+  },
+  {
+    "objectID": "library/en/sd3.html#reverse-items",
+    "href": "library/en/sd3.html#reverse-items",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Reverse items",
+    "text": "Reverse items\n11, 15, 17, 20, 25"
+  },
+  {
+    "objectID": "library/en/sd3.html#subscales",
+    "href": "library/en/sd3.html#subscales",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Subscales",
+    "text": "Subscales\n\nMachiavellianism: 1, 2, 3, 4, 5, 6, 7, 8, 9\nNarcissism: 10, 11, 12, 13, 14, 15, 16, 17, 18\nPsychopathy: 19, 20, 21, 22, 23, 24, 25, 26, 27"
+  },
+  {
+    "objectID": "library/en/sd3.html#reliability",
+    "href": "library/en/sd3.html#reliability",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Reliability",
+    "text": "Reliability\n\nMachiavellianism: α = .77\nNarcissism: α = .71\nPsychopathy: α = .8"
+  },
+  {
+    "objectID": "library/en/sd3.html#implemented-by",
+    "href": "library/en/sd3.html#implemented-by",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/sd3.html#args",
+    "href": "library/en/sd3.html#args",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “sd3”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/sd3.html#returns",
+    "href": "library/en/sd3.html#returns",
+    "title": "Short Dark Triad (SD3)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the SD3 questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/en/nfcsShort.html",
+    "href": "library/en/nfcsShort.html",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "",
     "text": "veleslibrary.questionnaires.nfcs"
   },
   {
-    "objectID": "library/en/nfcs.html#module",
-    "href": "library/en/nfcs.html#module",
+    "objectID": "library/en/nfcsShort.html#module",
+    "href": "library/en/nfcsShort.html#module",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "",
     "text": "veleslibrary.questionnaires.nfcs"
   },
   {
-    "objectID": "library/en/nfcs.html#import",
-    "href": "library/en/nfcs.html#import",
+    "objectID": "library/en/nfcsShort.html#import",
+    "href": "library/en/nfcsShort.html#import",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Import",
-    "text": "Import\nfrom veleslibrary.questionnaires.nfcs import nfcs"
+    "text": "Import\nfrom veleslibrary.questionnaires.nfcs import nfcsShort"
   },
   {
-    "objectID": "library/en/nfcs.html#original",
-    "href": "library/en/nfcs.html#original",
+    "objectID": "library/en/nfcsShort.html#original",
+    "href": "library/en/nfcsShort.html#original",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Original",
-    "text": "Original\n\n\nRoets, A., & Van Hiel, A. (2007). Separating ability from need: Clarifying the dimensional structure of the need for closure scale. Personality and Social Psychology Bulletin, 33(2), 266–280. https://doi.org/10.1177/0146167206294744\n\n\nWebster, D. M., & Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. Journal of Personality and Social Psychology, 67(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049\n\n\nYou need to cite both papers if you use the NFCS in your research."
+    "text": "Original\n\n\nRoets, A., & Van Hiel, A. (2011). Item selection and validation of a brief, 15-item version of the Need for Closure Scale. Personality and Individual Differences, 50(1), 90–94. https://doi.org/10.1016/j.paid.2010.09.004\n\n\nWebster, D. M., & Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. Journal of Personality and Social Psychology, 67(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049\n\n\nYou need to cite both papers if you use the NFCS in your research."
   },
   {
-    "objectID": "library/en/nfcs.html#score-calculation",
-    "href": "library/en/nfcs.html#score-calculation",
+    "objectID": "library/en/nfcsShort.html#score-calculation",
+    "href": "library/en/nfcsShort.html#score-calculation",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Score calculation",
     "text": "Score calculation\nA simple sum."
   },
   {
-    "objectID": "library/en/nfcs.html#reverse-items",
-    "href": "library/en/nfcs.html#reverse-items",
+    "objectID": "library/en/nfcsShort.html#reverse-items",
+    "href": "library/en/nfcsShort.html#reverse-items",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Reverse items",
-    "text": "Reverse items\n2, 5, 18, 19, 20, 24, 27, 28, 34, 37, 41"
+    "text": "Reverse items\nNone."
   },
   {
-    "objectID": "library/en/nfcs.html#subscales",
-    "href": "library/en/nfcs.html#subscales",
+    "objectID": "library/en/nfcsShort.html#subscales",
+    "href": "library/en/nfcsShort.html#subscales",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Subscales",
-    "text": "Subscales\n\nNeed for order: 1, 6, 10, 20, 23, 27, 32, 33, 35, 41\nNeed for predictability: 5, 7, 11, 18, 19, 25, 26, 40\nDecisiveness: 12, 13, 15, 16, 17, 22\nAvoidance of ambiguity: 3, 8, 14, 21, 29, 30, 31, 36, 38\nClosed mindedness: 2, 4, 9, 24, 28, 34, 37, 39"
+    "text": "Subscales\nNone."
   },
   {
-    "objectID": "library/en/nfcs.html#reliability",
-    "href": "library/en/nfcs.html#reliability",
+    "objectID": "library/en/nfcsShort.html#reliability",
+    "href": "library/en/nfcsShort.html#reliability",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Reliability",
-    "text": "Reliability\nα = .84\n\nSubscales\n\nNeed for order: α = .82\nNeed for predictability: α = .79\nDecisiveness: α = .70\nAvoidance of ambiguity: α = .67\nClosed mindedness: α = .62"
+    "text": "Reliability\nα = .87"
   },
   {
-    "objectID": "library/en/nfcs.html#implemented-by",
-    "href": "library/en/nfcs.html#implemented-by",
+    "objectID": "library/en/nfcsShort.html#implemented-by",
+    "href": "library/en/nfcsShort.html#implemented-by",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Implemented by",
     "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
   },
   {
-    "objectID": "library/en/nfcs.html#args",
-    "href": "library/en/nfcs.html#args",
+    "objectID": "library/en/nfcsShort.html#args",
+    "href": "library/en/nfcsShort.html#args",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Args",
     "text": "Args\nname : str Base name for pages and questions. Defaults to “NFCS”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\ntitle : str Title for the matrix. Defaults to None.\nmatrixOptions : dict | None Additional options for the matrixDropdown as a dictionary. Defaults to None.\nratingOptions : dict | None Additional options for the rating column as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
-    "objectID": "library/en/nfcs.html#returns",
-    "href": "library/en/nfcs.html#returns",
+    "objectID": "library/en/nfcsShort.html#returns",
+    "href": "library/en/nfcsShort.html#returns",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Returns",
-    "text": "Returns\nPageModel PageModel with the NFCS long questionnaire. Use the * operator to unpack it to questions."
+    "text": "Returns\nPageModel PageModel with the NFCS short questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
+    "objectID": "library/en.html",
+    "href": "library/en.html",
+    "title": "English test library",
     "section": "",
-    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that bun is required for Veles to work. Use one of the following commands to install it:\n# Linux and MacOS\ncurl -fsSL https://bun.sh/install | bash\n\n# Windows\npowershell -c \"irm bun.sh/install.ps1|iex\"\nIf everything went well, command bun --version should return a version number. See Getting started if you get any errors.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Introduction"
-    ]
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "getting-started.html",
@@ -1258,274 +1118,491 @@
     ]
   },
   {
-    "objectID": "library/en.html",
-    "href": "library/en.html",
-    "title": "English test library",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
+    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that bun is required for Veles to work. Use one of the following commands to install it:\n# Linux and MacOS\ncurl -fsSL https://bun.sh/install | bash\n\n# Windows\npowershell -c \"irm bun.sh/install.ps1|iex\"\nIf everything went well, command bun --version should return a version number. See Getting started if you get any errors.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Introduction"
+    ]
   },
   {
-    "objectID": "library/en/nfcsShort.html",
-    "href": "library/en/nfcsShort.html",
+    "objectID": "library/en/nfcs.html",
+    "href": "library/en/nfcs.html",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "",
     "text": "veleslibrary.questionnaires.nfcs"
   },
   {
-    "objectID": "library/en/nfcsShort.html#module",
-    "href": "library/en/nfcsShort.html#module",
+    "objectID": "library/en/nfcs.html#module",
+    "href": "library/en/nfcs.html#module",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "",
     "text": "veleslibrary.questionnaires.nfcs"
   },
   {
-    "objectID": "library/en/nfcsShort.html#import",
-    "href": "library/en/nfcsShort.html#import",
+    "objectID": "library/en/nfcs.html#import",
+    "href": "library/en/nfcs.html#import",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Import",
-    "text": "Import\nfrom veleslibrary.questionnaires.nfcs import nfcsShort"
+    "text": "Import\nfrom veleslibrary.questionnaires.nfcs import nfcs"
   },
   {
-    "objectID": "library/en/nfcsShort.html#original",
-    "href": "library/en/nfcsShort.html#original",
+    "objectID": "library/en/nfcs.html#original",
+    "href": "library/en/nfcs.html#original",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Original",
-    "text": "Original\n\n\nRoets, A., & Van Hiel, A. (2011). Item selection and validation of a brief, 15-item version of the Need for Closure Scale. Personality and Individual Differences, 50(1), 90–94. https://doi.org/10.1016/j.paid.2010.09.004\n\n\nWebster, D. M., & Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. Journal of Personality and Social Psychology, 67(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049\n\n\nYou need to cite both papers if you use the NFCS in your research."
+    "text": "Original\n\n\nRoets, A., & Van Hiel, A. (2007). Separating ability from need: Clarifying the dimensional structure of the need for closure scale. Personality and Social Psychology Bulletin, 33(2), 266–280. https://doi.org/10.1177/0146167206294744\n\n\nWebster, D. M., & Kruglanski, A. W. (1994). Individual differences in need for cognitive closure. Journal of Personality and Social Psychology, 67(6), 1049–1062. https://doi.org/10.1037/0022-3514.67.6.1049\n\n\nYou need to cite both papers if you use the NFCS in your research."
   },
   {
-    "objectID": "library/en/nfcsShort.html#score-calculation",
-    "href": "library/en/nfcsShort.html#score-calculation",
+    "objectID": "library/en/nfcs.html#score-calculation",
+    "href": "library/en/nfcs.html#score-calculation",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Score calculation",
     "text": "Score calculation\nA simple sum."
   },
   {
-    "objectID": "library/en/nfcsShort.html#reverse-items",
-    "href": "library/en/nfcsShort.html#reverse-items",
+    "objectID": "library/en/nfcs.html#reverse-items",
+    "href": "library/en/nfcs.html#reverse-items",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Reverse items",
-    "text": "Reverse items\nNone."
+    "text": "Reverse items\n2, 5, 18, 19, 20, 24, 27, 28, 34, 37, 41"
   },
   {
-    "objectID": "library/en/nfcsShort.html#subscales",
-    "href": "library/en/nfcsShort.html#subscales",
+    "objectID": "library/en/nfcs.html#subscales",
+    "href": "library/en/nfcs.html#subscales",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Subscales",
-    "text": "Subscales\nNone."
+    "text": "Subscales\n\nNeed for order: 1, 6, 10, 20, 23, 27, 32, 33, 35, 41\nNeed for predictability: 5, 7, 11, 18, 19, 25, 26, 40\nDecisiveness: 12, 13, 15, 16, 17, 22\nAvoidance of ambiguity: 3, 8, 14, 21, 29, 30, 31, 36, 38\nClosed mindedness: 2, 4, 9, 24, 28, 34, 37, 39"
   },
   {
-    "objectID": "library/en/nfcsShort.html#reliability",
-    "href": "library/en/nfcsShort.html#reliability",
+    "objectID": "library/en/nfcs.html#reliability",
+    "href": "library/en/nfcs.html#reliability",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Reliability",
-    "text": "Reliability\nα = .87"
+    "text": "Reliability\nα = .84\n\nSubscales\n\nNeed for order: α = .82\nNeed for predictability: α = .79\nDecisiveness: α = .70\nAvoidance of ambiguity: α = .67\nClosed mindedness: α = .62"
   },
   {
-    "objectID": "library/en/nfcsShort.html#implemented-by",
-    "href": "library/en/nfcsShort.html#implemented-by",
+    "objectID": "library/en/nfcs.html#implemented-by",
+    "href": "library/en/nfcs.html#implemented-by",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Implemented by",
     "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
   },
   {
-    "objectID": "library/en/nfcsShort.html#args",
-    "href": "library/en/nfcsShort.html#args",
+    "objectID": "library/en/nfcs.html#args",
+    "href": "library/en/nfcs.html#args",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Args",
     "text": "Args\nname : str Base name for pages and questions. Defaults to “NFCS”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\ntitle : str Title for the matrix. Defaults to None.\nmatrixOptions : dict | None Additional options for the matrixDropdown as a dictionary. Defaults to None.\nratingOptions : dict | None Additional options for the rating column as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
-    "objectID": "library/en/nfcsShort.html#returns",
-    "href": "library/en/nfcsShort.html#returns",
+    "objectID": "library/en/nfcs.html#returns",
+    "href": "library/en/nfcs.html#returns",
     "title": "The Need for Closure Scale (NFCS)",
     "section": "Returns",
-    "text": "Returns\nPageModel PageModel with the NFCS short questionnaire. Use the * operator to unpack it to questions."
+    "text": "Returns\nPageModel PageModel with the NFCS long questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "library/en/sd3.html",
-    "href": "library/en/sd3.html",
-    "title": "Short Dark Triad (SD3)",
-    "section": "",
-    "text": "velesresearch.questionnaires.sd3"
-  },
-  {
-    "objectID": "library/en/sd3.html#module",
-    "href": "library/en/sd3.html#module",
-    "title": "Short Dark Triad (SD3)",
-    "section": "",
-    "text": "velesresearch.questionnaires.sd3"
-  },
-  {
-    "objectID": "library/en/sd3.html#import",
-    "href": "library/en/sd3.html#import",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Import",
-    "text": "Import\nfrom velesresearch.questionnaires.sd3 import sd3"
-  },
-  {
-    "objectID": "library/en/sd3.html#original",
-    "href": "library/en/sd3.html#original",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Original",
-    "text": "Original\n\n\nJones, D. N., & Paulhus, D. L. (2014). Introducing the Short Dark Triad (SD3): A brief measure of dark personality traits. Assessment, 21(1), 28–41. https://doi.org/10.1177/1073191113514105"
-  },
-  {
-    "objectID": "library/en/sd3.html#score-calculation",
-    "href": "library/en/sd3.html#score-calculation",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Score calculation",
-    "text": "Score calculation\nA simple sum."
-  },
-  {
-    "objectID": "library/en/sd3.html#reverse-items",
-    "href": "library/en/sd3.html#reverse-items",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Reverse items",
-    "text": "Reverse items\n11, 15, 17, 20, 25"
-  },
-  {
-    "objectID": "library/en/sd3.html#subscales",
-    "href": "library/en/sd3.html#subscales",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Subscales",
-    "text": "Subscales\n\nMachiavellianism: 1, 2, 3, 4, 5, 6, 7, 8, 9\nNarcissism: 10, 11, 12, 13, 14, 15, 16, 17, 18\nPsychopathy: 19, 20, 21, 22, 23, 24, 25, 26, 27"
-  },
-  {
-    "objectID": "library/en/sd3.html#reliability",
-    "href": "library/en/sd3.html#reliability",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Reliability",
-    "text": "Reliability\n\nMachiavellianism: α = .77\nNarcissism: α = .71\nPsychopathy: α = .8"
-  },
-  {
-    "objectID": "library/en/sd3.html#implemented-by",
-    "href": "library/en/sd3.html#implemented-by",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Implemented by",
-    "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
-  },
-  {
-    "objectID": "library/en/sd3.html#args",
-    "href": "library/en/sd3.html#args",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Args",
-    "text": "Args\nname : str Base name for pages and questions. Defaults to “sd3”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
-  },
-  {
-    "objectID": "library/en/sd3.html#returns",
-    "href": "library/en/sd3.html#returns",
-    "title": "Short Dark Triad (SD3)",
-    "section": "Returns",
-    "text": "Returns\nPageModel PageModel with the SD3 questionnaire. Use the * operator to unpack it to questions."
-  },
-  {
-    "objectID": "library/es.html",
-    "href": "library/es.html",
-    "title": "Spanish test library",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "library/hu.html",
-    "href": "library/hu.html",
-    "title": "Hungarian test library",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors, Relationship Satisfaction\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "library/index.html",
-    "href": "library/index.html",
-    "title": "Library overview",
-    "section": "",
-    "text": "VelesLibrary is a part of Veles that aims to simplify the surveys’ development process. The idea is that there’s no need to implement the same questionnaire time and time again, when we can create a function that implements it for us.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\n\n\n\n\nEnglish test library\n\n\n\n\nHungarian test library\n\n\n\n\nPolish test library\n\n\n\n\nSpanish test library\n\n\n\n\nSwedish test library\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Test library"
-    ]
-  },
-  {
-    "objectID": "library/pl/rses.html",
-    "href": "library/pl/rses.html",
+    "objectID": "library/en/rses.html",
+    "href": "library/en/rses.html",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "",
-    "text": "velesresearch.questionnaires.pl.rses"
+    "text": "veleslibrary.questionnaires.rses"
   },
   {
-    "objectID": "library/pl/rses.html#module",
-    "href": "library/pl/rses.html#module",
+    "objectID": "library/en/rses.html#module",
+    "href": "library/en/rses.html#module",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "",
-    "text": "velesresearch.questionnaires.pl.rses"
+    "text": "veleslibrary.questionnaires.rses"
   },
   {
-    "objectID": "library/pl/rses.html#import",
-    "href": "library/pl/rses.html#import",
+    "objectID": "library/en/rses.html#import",
+    "href": "library/en/rses.html#import",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Import",
-    "text": "Import\nfrom velesresearch.questionnaires.pl.rses import rses"
+    "text": "Import\nfrom veleslibrary.questionnaires.rses import rses"
   },
   {
-    "objectID": "library/pl/rses.html#original",
-    "href": "library/pl/rses.html#original",
+    "objectID": "library/en/rses.html#original",
+    "href": "library/en/rses.html#original",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Original",
     "text": "Original\n\n\nRosenberg, M. (2011). Rosenberg self-esteem scale [Database record]. APA PsycTests. https://doi.org/10.1037/t01038-000"
   },
   {
-    "objectID": "library/pl/rses.html#adaptation",
-    "href": "library/pl/rses.html#adaptation",
-    "title": "Rosenberg Self-Esteem Scale (RSES)",
-    "section": "Adaptation:",
-    "text": "Adaptation:\n\n\nDzwonkowska, I., Lachowicz-Tabaczek, K., & Łaguna, M. (2008). Samoocena i jej pomiar. Polska adaptacja skali SES M. Rosenberga. Podręcznik. Pracownia Testów Psychologicznych Polskiego Towarzystwa Psychologicznego."
-  },
-  {
-    "objectID": "library/pl/rses.html#score-calculation",
-    "href": "library/pl/rses.html#score-calculation",
+    "objectID": "library/en/rses.html#score-calculation",
+    "href": "library/en/rses.html#score-calculation",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Score calculation",
     "text": "Score calculation\nA simple sum."
   },
   {
-    "objectID": "library/pl/rses.html#reverse-items",
-    "href": "library/pl/rses.html#reverse-items",
+    "objectID": "library/en/rses.html#reverse-items",
+    "href": "library/en/rses.html#reverse-items",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Reverse items",
-    "text": "Reverse items\n3, 5, 8, 9, 10"
+    "text": "Reverse items\n3, 5, 8, 10"
   },
   {
-    "objectID": "library/pl/rses.html#subscales",
-    "href": "library/pl/rses.html#subscales",
+    "objectID": "library/en/rses.html#subscales",
+    "href": "library/en/rses.html#subscales",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Subscales",
     "text": "Subscales\nNone."
   },
   {
-    "objectID": "library/pl/rses.html#reliability",
-    "href": "library/pl/rses.html#reliability",
+    "objectID": "library/en/rses.html#reliability",
+    "href": "library/en/rses.html#reliability",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
     "section": "Reliability",
-    "text": "Reliability\nα = .82"
+    "text": "Reliability\nα = .88"
   },
   {
-    "objectID": "library/pl/rses.html#implemented-by",
-    "href": "library/pl/rses.html#implemented-by",
+    "objectID": "library/en/rses.html#implemented-by",
+    "href": "library/en/rses.html#implemented-by",
     "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/rses.html#args",
+    "href": "library/en/rses.html#args",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “RSES”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/rses.html#returns",
+    "href": "library/en/rses.html#returns",
+    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the RSES questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/en/tls_15.html",
+    "href": "library/en/tls_15.html",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.tls_15"
+  },
+  {
+    "objectID": "library/en/tls_15.html#module",
+    "href": "library/en/tls_15.html#module",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.tls_15"
+  },
+  {
+    "objectID": "library/en/tls_15.html#import",
+    "href": "library/en/tls_15.html#import",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Import",
+    "text": "Import\n\nfrom veleslibrary.questionnaires.tls_15 import tls_15"
+  },
+  {
+    "objectID": "library/en/tls_15.html#original",
+    "href": "library/en/tls_15.html#original",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Original",
+    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
+  },
+  {
+    "objectID": "library/en/tls_15.html#score-calculation",
+    "href": "library/en/tls_15.html#score-calculation",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average. Can be calculated separately for the subscales or for the whole questionnaire."
+  },
+  {
+    "objectID": "library/en/tls_15.html#reverse-items",
+    "href": "library/en/tls_15.html#reverse-items",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/en/tls_15.html#subscales",
+    "href": "library/en/tls_15.html#subscales",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Subscales",
+    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
+  },
+  {
+    "objectID": "library/en/tls_15.html#reliability",
+    "href": "library/en/tls_15.html#reliability",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α =.89\nCommitment: α = 0.92"
+  },
+  {
+    "objectID": "library/en/tls_15.html#implemented-by",
+    "href": "library/en/tls_15.html#implemented-by",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Implemented by",
+    "text": "Implemented by\nKsawery Łakomy (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/tls_15.html#args",
+    "href": "library/en/tls_15.html#args",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Args",
+    "text": "Args\n\nname : str Base name for pages and questions. Defaults to “TLS_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/tls_15.html#returns",
+    "href": "library/en/tls_15.html#returns",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Returns",
+    "text": "Returns\n\nPageModel PageModel with the TLS15 questionnaire."
+  },
+  {
+    "objectID": "library/es/tls_15.html",
+    "href": "library/es/tls_15.html",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.es.tls_15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#module",
+    "href": "library/es/tls_15.html#module",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.es.tls_15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#import",
+    "href": "library/es/tls_15.html#import",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.es.tls_15 import tls_15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#original",
+    "href": "library/es/tls_15.html#original",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Original",
+    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
+  },
+  {
+    "objectID": "library/es/tls_15.html#score-calculation",
+    "href": "library/es/tls_15.html#score-calculation",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average."
+  },
+  {
+    "objectID": "library/es/tls_15.html#reverse-items",
+    "href": "library/es/tls_15.html#reverse-items",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/es/tls_15.html#subscales",
+    "href": "library/es/tls_15.html#subscales",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Subscales",
+    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
+  },
+  {
+    "objectID": "library/es/tls_15.html#reliability",
+    "href": "library/es/tls_15.html#reliability",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α = .89\nCommitment: α = .92"
+  },
+  {
+    "objectID": "library/es/tls_15.html#implemented-by",
+    "href": "library/es/tls_15.html#implemented-by",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Implemented by",
+    "text": "Implemented by\nPiotr Jędrusik (University of Wrocław)"
+  },
+  {
+    "objectID": "library/es/tls_15.html#args",
+    "href": "library/es/tls_15.html#args",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/es/tls_15.html#returns",
+    "href": "library/es/tls_15.html#returns",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/hu/tls_15.html",
+    "href": "library/hu/tls_15.html",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.hu.tls_15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#module",
+    "href": "library/hu/tls_15.html#module",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "",
+    "text": "velesresearch.questionnaires.hu.tls_15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#import",
+    "href": "library/hu/tls_15.html#import",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.hu.tls_15 import tls_15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#original",
+    "href": "library/hu/tls_15.html#original",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Original",
+    "text": "Original\n\n\nKowal, M., Sorokowski, P., Dinić, B. M., Pisanski, K., Gjoneska, B., Frederick, D. A., Pfuhl, G., Milfont, T. L., Bode, A., Aguilar, L., García, F. E., Roberts, S. C., Abad-Villaverde, B., Kavčič, T., Miroshnik, K. G., Ndukaihe, I. L. G., Šafárová, K., Valentova, J. V., Aavik, T., … Sternberg, R. J. (2024). Validation of the short version (TLS-15) of the triangular love scale (TLS-45) across 37 languages. Archives of Sexual Behavior, 53(2), 839–857. https://doi.org/10.1007/s10508-023-02702-7\n\n\nSternberg, R. J. (1988). The triangle of love: Intimacy, passion, commitment. Basic Books.\n\n\nSternberg, R. J. (1997). Construct validation of a triangular love scale. European Journal of Social Psychology, 27(3), 313–335. https://doi.org/10.1002/(SICI)1099-0992(199705)27:3&lt;313::AID-EJSP824&gt;3.0.CO;2-4"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#score-calculation",
+    "href": "library/hu/tls_15.html#score-calculation",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average."
+  },
+  {
+    "objectID": "library/hu/tls_15.html#reverse-items",
+    "href": "library/hu/tls_15.html#reverse-items",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/hu/tls_15.html#subscales",
+    "href": "library/hu/tls_15.html#subscales",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Subscales",
+    "text": "Subscales\n\nIntimacy: 1, 2, 3, 4, 5\nPassion: 6, 7, 8, 9, 10\nCommitment: 11, 12, 13, 14, 15"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#reliability",
+    "href": "library/hu/tls_15.html#reliability",
+    "title": "Triangular Love Scale (TLS-15)",
+    "section": "Reliability",
+    "text": "Reliability\nα = .95\n\nSubscales\n\nIntimacy: α = .89\nPassion: α = .89\nCommitment: α = .92"
+  },
+  {
+    "objectID": "library/hu/tls_15.html#implemented-by",
+    "href": "library/hu/tls_15.html#implemented-by",
+    "title": "Triangular Love Scale (TLS-15)",
     "section": "Implemented by",
     "text": "Implemented by\nJakub Jędrusiak (University of Wrocław)"
   },
   {
-    "objectID": "library/pl/rses.html#args",
-    "href": "library/pl/rses.html#args",
-    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "objectID": "library/hu/tls_15.html#args",
+    "href": "library/hu/tls_15.html#args",
+    "title": "Triangular Love Scale (TLS-15)",
     "section": "Args",
-    "text": "Args\nname : str Base name for pages and questions. Defaults to “rses”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “tls_15”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
   },
   {
-    "objectID": "library/pl/rses.html#returns",
-    "href": "library/pl/rses.html#returns",
-    "title": "Rosenberg Self-Esteem Scale (RSES)",
+    "objectID": "library/hu/tls_15.html#returns",
+    "href": "library/hu/tls_15.html#returns",
+    "title": "Triangular Love Scale (TLS-15)",
     "section": "Returns",
-    "text": "Returns\nPageModel PageModel with the RSES questionnaire. Use the * operator to unpack it to questions."
+    "text": "Returns\nPageModel PageModel with the TLS-15 questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "library/pl.html",
+    "href": "library/pl.html",
+    "title": "Polish test library",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nTen Item Personality Inventory (TIPI)\n\n\ntipi()\n\n\nTen item adaptation of Big Five. Measures five personality traits: Extraversion, Agreeableness, Conscientiousness, Emotional Stability and Openness to Experience.\n\n\nPersonality and Traits, Big Five Personality Traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism)\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "library/pl/tipi.html",
+    "href": "library/pl/tipi.html",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.pl.tipi"
+  },
+  {
+    "objectID": "library/pl/tipi.html#module",
+    "href": "library/pl/tipi.html#module",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "",
+    "text": "veleslibrary.questionnaires.pl.tipi"
+  },
+  {
+    "objectID": "library/pl/tipi.html#import",
+    "href": "library/pl/tipi.html#import",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Import",
+    "text": "Import\nfrom veleslibrary.questionnaires.pl.tipi import tipi"
+  },
+  {
+    "objectID": "library/pl/tipi.html#original",
+    "href": "library/pl/tipi.html#original",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Original",
+    "text": "Original\n\n\nGosling, S. D., Rentfrow, P. J., & Swann, W. B. (2003). A very brief measure of the Big-Five personality domains. Journal of Research in Personality, 37(6), 504–528. https://doi.org/10.1016/S0092-6566(03)00046-1"
+  },
+  {
+    "objectID": "library/pl/tipi.html#adaptation",
+    "href": "library/pl/tipi.html#adaptation",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Adaptation",
+    "text": "Adaptation\n\n\nSorokowska, A., Słowińska, A., Zbieg, A., & Sorokowski, P. (2014). Polska adaptacja testu Ten Item Personality Inventory (Tipi) – TIPI-PL – wersja standardowa i internetowa. Wrocław: WrocLab."
+  },
+  {
+    "objectID": "library/pl/tipi.html#score-calculation",
+    "href": "library/pl/tipi.html#score-calculation",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Score calculation",
+    "text": "Score calculation\nA simple sum."
+  },
+  {
+    "objectID": "library/pl/tipi.html#reverse-items",
+    "href": "library/pl/tipi.html#reverse-items",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Reverse items",
+    "text": "Reverse items\n2, 4, 6, 8, 10"
+  },
+  {
+    "objectID": "library/pl/tipi.html#subscales",
+    "href": "library/pl/tipi.html#subscales",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Subscales",
+    "text": "Subscales\n\nExtraversion: 1, 6\nAgreeableness: 2, 7\nConscientiousness: 3, 8\nEmotional Stability: 4, 9\nOpenness to Experience: 5, 10"
+  },
+  {
+    "objectID": "library/pl/tipi.html#reliability",
+    "href": "library/pl/tipi.html#reliability",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Reliability",
+    "text": "Reliability\n\nPaper and pencil\n\nExtraversion: α = .68\nAgreeableness: α = .58\nConscientiousness: α = .75\nEmotional Stability: α = .72\nOpenness to Experience: α = .44\n\n\n\nGoogle Forms\n\nExtraversion: α = .74\nAgreeableness: α = .54\nConscientiousness: α = .80\nEmotional Stability: α = .83\nOpenness to Experience: α = .45\n\n\n\nOnline application\n\nExtraversion: α = .70\nAgreeableness: α = .50\nConscientiousness: α = .76\nEmotional Stability: α = .65\nOpenness to Experience: α = .47"
+  },
+  {
+    "objectID": "library/pl/tipi.html#implemented-by",
+    "href": "library/pl/tipi.html#implemented-by",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJędrusiak, Jakub (University of Wrocław)"
+  },
+  {
+    "objectID": "library/pl/tipi.html#args",
+    "href": "library/pl/tipi.html#args",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “TIPI”.\ninstruction : str Instruction for the questionnaire. Defaults to “Poniżej przedstawiona jest lista cech, które są lub nie są Twoimi charakterystykami. Zaznacz przy poszczególnych stwierdzeniach, do jakiego stopnia zgadzasz się lub nie zgadzasz z każdym z nich. Oceń stopień, w jakim każde z pytań odnosi się do Ciebie.”.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/pl/tipi.html#returns",
+    "href": "library/pl/tipi.html#returns",
+    "title": "Ten Item Personality Inventory (TIPI)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the TIPI questionnaire."
   },
   {
     "objectID": "library/sv.html",

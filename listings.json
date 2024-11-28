@@ -1,9 +1,24 @@
 [
   {
-    "listing": "/library/pl.html",
+    "listing": "/library/index.html",
     "items": [
-      "/library/pl/rses.html",
-      "/library/pl/tipi.html"
+      "/library/en.html",
+      "/library/hu.html",
+      "/library/pl.html",
+      "/library/es.html",
+      "/library/sv.html"
+    ]
+  },
+  {
+    "listing": "/library/hu.html",
+    "items": [
+      "/library/hu/tls_15.html"
+    ]
+  },
+  {
+    "listing": "/library/es.html",
+    "items": [
+      "/library/es/tls_15.html"
     ]
   },
   {
@@ -17,25 +32,11 @@
     ]
   },
   {
-    "listing": "/library/es.html",
+    "listing": "/library/pl.html",
     "items": [
-      "/library/es/tls_15.html"
-    ]
-  },
-  {
-    "listing": "/library/hu.html",
-    "items": [
-      "/library/hu/tls_15.html"
-    ]
-  },
-  {
-    "listing": "/library/index.html",
-    "items": [
-      "/library/en.html",
-      "/library/hu.html",
-      "/library/pl.html",
-      "/library/es.html",
-      "/library/sv.html"
+      "/library/pl/rses.html",
+      "/library/pl/tipi.html",
+      "/library/pl/tls_15.html"
     ]
   },
   {
