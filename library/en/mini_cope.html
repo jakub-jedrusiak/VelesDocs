@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="One of the most popular self-esteem scales. Measures global self-esteem.">
+<meta name="description" content="The questionnaire is used to assess ways of coping with stress. It is intended mainly for research purposes, but it can also be used in practice, in screening and preventive studies, and in assessing the effectiveness of therapeutic interventions. The Brief COPE omits two scales of the full COPE, reduces others to two items per scale, and adds one scale.">
 
-<title>Rosenberg Self-Esteem Scale (RSES) – Veles Documentation</title>
+<title>Brief COPE (Mini-COPE) – Veles Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,11 +127,11 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../../styles/styles.css">
-<meta property="og:title" content="Rosenberg Self-Esteem Scale (RSES) – Veles Documentation">
-<meta property="og:description" content="One of the most popular self-esteem scales. Measures global self-esteem.">
+<meta property="og:title" content="Brief COPE (Mini-COPE) – Veles Documentation">
+<meta property="og:description" content="The questionnaire is used to assess ways of coping with stress. It is intended mainly for research purposes, but it can also be used in practice, in screening and preventive studies, and in assessing the effectiveness of therapeutic interventions. The Brief COPE omits two scales of the full COPE, reduces others to two items per scale, and adds one scale.">
 <meta property="og:site_name" content="Veles Documentation">
-<meta name="twitter:title" content="Rosenberg Self-Esteem Scale (RSES) – Veles Documentation">
-<meta name="twitter:description" content="One of the most popular self-esteem scales. Measures global self-esteem.">
+<meta name="twitter:title" content="Brief COPE (Mini-COPE) – Veles Documentation">
+<meta name="twitter:description" content="The questionnaire is used to assess ways of coping with stress. It is intended mainly for research purposes, but it can also be used in practice, in screening and preventive studies, and in assessing the effectiveness of therapeutic interventions. The Brief COPE omits two scales of the full COPE, reduces others to two items per scale, and adds one scale.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -191,7 +191,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Rosenberg Self-Esteem Scale (RSES)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Brief COPE (Mini-COPE)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -280,7 +280,6 @@ div.csl-indent {
   <li><a href="#module" id="toc-module" class="nav-link active" data-scroll-target="#module">Module</a></li>
   <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
   <li><a href="#original" id="toc-original" class="nav-link" data-scroll-target="#original">Original</a></li>
-  <li><a href="#adaptation" id="toc-adaptation" class="nav-link" data-scroll-target="#adaptation">Adaptation:</a></li>
   <li><a href="#score-calculation" id="toc-score-calculation" class="nav-link" data-scroll-target="#score-calculation">Score calculation</a></li>
   <li><a href="#reverse-items" id="toc-reverse-items" class="nav-link" data-scroll-target="#reverse-items">Reverse items</a></li>
   <li><a href="#subscales" id="toc-subscales" class="nav-link" data-scroll-target="#subscales">Subscales</a></li>
@@ -289,24 +288,23 @@ div.csl-indent {
   <li><a href="#args" id="toc-args" class="nav-link" data-scroll-target="#args">Args</a></li>
   <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/pl/rses.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en/mini_cope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Rosenberg Self-Esteem Scale (RSES)</h1>
-<p class="subtitle lead"><code>rses()</code></p>
+<h1 class="title">Brief COPE (Mini-COPE)</h1>
+<p class="subtitle lead"><code>mini_cope()</code></p>
   <div class="quarto-categories">
-    <div class="quarto-category">Personality and Traits</div>
-    <div class="quarto-category">Self-Esteem</div>
+    <div class="quarto-category">Cognitive and Behavioral Assessments</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    One of the most popular self-esteem scales. Measures global self-esteem.
+    The questionnaire is used to assess ways of coping with stress. It is intended mainly for research purposes, but it can also be used in practice, in screening and preventive studies, and in assessing the effectiveness of therapeutic interventions. The Brief COPE omits two scales of the full COPE, reduces others to two items per scale, and adds one scale.
   </div>
 </div>
 
@@ -325,58 +323,80 @@ div.csl-indent {
 
 <section id="module" class="level2">
 <h2 class="anchored" data-anchor-id="module">Module</h2>
-<p><code>velesresearch.questionnaires.pl.rses</code></p>
+<p><code>velesresearch.questionnaires.mini_cope</code></p>
 </section>
 <section id="import" class="level2">
 <h2 class="anchored" data-anchor-id="import">Import</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch.questionnaires.pl.rses <span class="im">import</span> rses</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> velesresearch.questionnaires.mini_cope <span class="im">import</span> mini_cope</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="original" class="level2">
 <h2 class="anchored" data-anchor-id="original">Original</h2>
 <div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;" role="list">
 <div class="csl-entry" role="listitem">
-Rosenberg, M. (2011). <i>Rosenberg self-esteem scale</i> [Database record]. APA PsycTests. <a href="https://doi.org/10.1037/t01038-000" class="uri">https://doi.org/10.1037/t01038-000</a>
-</div>
-</div>
-</section>
-<section id="adaptation" class="level2">
-<h2 class="anchored" data-anchor-id="adaptation">Adaptation:</h2>
-<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;" role="list">
-<div class="csl-entry" role="listitem">
-Dzwonkowska, I., Lachowicz-Tabaczek, K., &amp; Łaguna, M. (2008). <i>Samoocena i jej pomiar. Polska adaptacja skali SES M. Rosenberga. Podręcznik</i>. Pracownia Testów Psychologicznych Polskiego Towarzystwa Psychologicznego.
+Carver, C. S. (1997). You want to measure coping but your protocol’ too long: Consider the brief cope. <i>International Journal of Behavioral Medicine</i>, <i>4</i>(1), 92–100. <a href="https://doi.org/10.1207/s15327558ijbm0401_6" class="uri">https://doi.org/10.1207/s15327558ijbm0401_6</a>
 </div>
 </div>
 </section>
 <section id="score-calculation" class="level2">
 <h2 class="anchored" data-anchor-id="score-calculation">Score calculation</h2>
-<p>A simple sum.</p>
+<p>An average.</p>
 </section>
 <section id="reverse-items" class="level2">
 <h2 class="anchored" data-anchor-id="reverse-items">Reverse items</h2>
-<p>3, 5, 8, 9, 10</p>
+<p>None.</p>
 </section>
 <section id="subscales" class="level2">
 <h2 class="anchored" data-anchor-id="subscales">Subscales</h2>
-<p>None.</p>
+<ol type="1">
+<li>Active Coping: 1, 2</li>
+<li>Planning: 3, 4</li>
+<li>Positive Refraining : 5, 6</li>
+<li>Acceptance: 7, 8</li>
+<li>Humor: 9, 10</li>
+<li>Religion: 11, 12</li>
+<li>Using Emotional Support: 13, 14</li>
+<li>Using Instrumental Support: 15, 16</li>
+<li>Self-Distraction: 17, 18</li>
+<li>Denial: 19, 20</li>
+<li>Venting: 21, 22</li>
+<li>Substance Use: 23, 24</li>
+<li>Behavioral Disengagement: 25, 26</li>
+<li>Self-Blame: 27, 28</li>
+</ol>
 </section>
 <section id="reliability" class="level2">
 <h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
-<p>α = .82</p>
+<ol type="1">
+<li>Active Coping: α = .68</li>
+<li>Planning: α = .73</li>
+<li>Positive Refraining : α = .64</li>
+<li>Acceptance: α = .57</li>
+<li>Humor: α = .73</li>
+<li>Religion: α = .82</li>
+<li>Using Emotional Support: α = .71</li>
+<li>Using Instrumental Support: α = .64</li>
+<li>Self-Distraction: α = .71</li>
+<li>Denial: α = .54</li>
+<li>Venting: α = .5</li>
+<li>Substance Use: α = .9</li>
+<li>Behavioral Disengagement: α = .65</li>
+<li>Self-Blame: α = .69</li>
+</ol>
 </section>
 <section id="implemented-by" class="level2">
 <h2 class="anchored" data-anchor-id="implemented-by">Implemented by</h2>
-<p>Jakub Jędrusiak (University of Wrocław)</p>
+<p>Julia Jankowska (University of Wrocław)</p>
 </section>
 <section id="args" class="level2">
 <h2 class="anchored" data-anchor-id="args">Args</h2>
-<p><code>name</code> : <em>str</em><br> Base name for pages and questions. Defaults to “rses”.</p>
+<p><code>name</code> : <em>str</em><br> Base name for pages and questions. Defaults to “mini_cope”.</p>
 <p><code>instruction</code> : <em>str</em><br> Instruction for the questionnaire. None means that the default instruction will be used.</p>
 <p><code>questionOptions</code> : <em>dict | None</em><br> Additional options for questions as a dictionary. Defaults to None.</p>
 <p><code>pageOptions</code> : <em>dict | None</em><br> Additional options for pages as a dictionary. Defaults to None.</p>
 </section>
 <section id="returns" class="level2">
 <h2 class="anchored" data-anchor-id="returns">Returns</h2>
-<p><code>PageModel</code><br> PageModel with the RSES questionnaire. Use the <code>*</code> operator to unpack it to questions.</p>
+<p><code>PageModel</code><br> PageModel with the Mini-COPE questionnaire. Use the <code>*</code> operator to unpack it to questions.</p>
 
 
 </section>
@@ -948,4 +968,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/pl/rses.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/edit/main/library/en/mini_cope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jakub-jedrusiak/VelesDocs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

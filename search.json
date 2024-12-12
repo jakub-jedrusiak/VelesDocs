@@ -957,11 +957,92 @@
     "text": "Returns\nPageModel PageModel with the NFCS short questionnaire. Use the * operator to unpack it to questions."
   },
   {
-    "objectID": "library/en.html",
-    "href": "library/en.html",
-    "title": "English test library",
+    "objectID": "library/en/mini_cope.html",
+    "href": "library/en/mini_cope.html",
+    "title": "Brief COPE (Mini-COPE)",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
+    "text": "velesresearch.questionnaires.mini_cope"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#module",
+    "href": "library/en/mini_cope.html#module",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "",
+    "text": "velesresearch.questionnaires.mini_cope"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#import",
+    "href": "library/en/mini_cope.html#import",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Import",
+    "text": "Import\nfrom velesresearch.questionnaires.mini_cope import mini_cope"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#original",
+    "href": "library/en/mini_cope.html#original",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Original",
+    "text": "Original\n\n\nCarver, C. S. (1997). You want to measure coping but your protocol’ too long: Consider the brief cope. International Journal of Behavioral Medicine, 4(1), 92–100. https://doi.org/10.1207/s15327558ijbm0401_6"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#score-calculation",
+    "href": "library/en/mini_cope.html#score-calculation",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Score calculation",
+    "text": "Score calculation\nAn average."
+  },
+  {
+    "objectID": "library/en/mini_cope.html#reverse-items",
+    "href": "library/en/mini_cope.html#reverse-items",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Reverse items",
+    "text": "Reverse items\nNone."
+  },
+  {
+    "objectID": "library/en/mini_cope.html#subscales",
+    "href": "library/en/mini_cope.html#subscales",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Subscales",
+    "text": "Subscales\n\nActive Coping: 1, 2\nPlanning: 3, 4\nPositive Refraining : 5, 6\nAcceptance: 7, 8\nHumor: 9, 10\nReligion: 11, 12\nUsing Emotional Support: 13, 14\nUsing Instrumental Support: 15, 16\nSelf-Distraction: 17, 18\nDenial: 19, 20\nVenting: 21, 22\nSubstance Use: 23, 24\nBehavioral Disengagement: 25, 26\nSelf-Blame: 27, 28"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#reliability",
+    "href": "library/en/mini_cope.html#reliability",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Reliability",
+    "text": "Reliability\n\nActive Coping: α = .68\nPlanning: α = .73\nPositive Refraining : α = .64\nAcceptance: α = .57\nHumor: α = .73\nReligion: α = .82\nUsing Emotional Support: α = .71\nUsing Instrumental Support: α = .64\nSelf-Distraction: α = .71\nDenial: α = .54\nVenting: α = .5\nSubstance Use: α = .9\nBehavioral Disengagement: α = .65\nSelf-Blame: α = .69"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#implemented-by",
+    "href": "library/en/mini_cope.html#implemented-by",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Implemented by",
+    "text": "Implemented by\nJulia Jankowska (University of Wrocław)"
+  },
+  {
+    "objectID": "library/en/mini_cope.html#args",
+    "href": "library/en/mini_cope.html#args",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Args",
+    "text": "Args\nname : str Base name for pages and questions. Defaults to “mini_cope”.\ninstruction : str Instruction for the questionnaire. None means that the default instruction will be used.\nquestionOptions : dict | None Additional options for questions as a dictionary. Defaults to None.\npageOptions : dict | None Additional options for pages as a dictionary. Defaults to None."
+  },
+  {
+    "objectID": "library/en/mini_cope.html#returns",
+    "href": "library/en/mini_cope.html#returns",
+    "title": "Brief COPE (Mini-COPE)",
+    "section": "Returns",
+    "text": "Returns\nPageModel PageModel with the Mini-COPE questionnaire. Use the * operator to unpack it to questions."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that bun is required for Veles to work. Use one of the following commands to install it:\n# Linux and MacOS\ncurl -fsSL https://bun.sh/install | bash\n\n# Windows\npowershell -c \"irm bun.sh/install.ps1|iex\"\nIf everything went well, command bun --version should return a version number. See Getting started if you get any errors.",
+    "crumbs": [
+      "{{< fa flask >}} VelesWeb",
+      "Introduction"
+    ]
   },
   {
     "objectID": "getting-started.html",
@@ -1118,15 +1199,11 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
+    "objectID": "library/en.html",
+    "href": "library/en.html",
+    "title": "English test library",
     "section": "",
-    "text": "Veles is a free and open source Python research package, primarly for social scientists. It’s goal is to provide an interface for surveys and chronometric experiments. It combines the power of Survey.js and PsychoJS (PsychoPy) with a Python interface to create self contained research units. They can then be self-hosted or hosted using VelesWeb free service for academics.\n\nOverview\nVeles is in alpha phase of development, but the goal features are:\n\nFree and open source.\nText-based, so automatable and easily modifiable.\nQuestionnaire library for fast creation.\nIntegration with GitHub.\nAbility to use JavaScript and CSS directly.\nOpen source documentation.\nPython-based, so every Python tool works.\nEasy to collaborate through git.\nCustom redirection in the end (for panels).\nPsychoPy integration.\nModifiable themes.\n\n\n\nUsage\nSee Getting started for an introduction.\nYou can install development version with:\npip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git\nVeles is also on PyPI but it can’t currently be considered stable anyway:\npip install velesresearch\nNote that bun is required for Veles to work. Use one of the following commands to install it:\n# Linux and MacOS\ncurl -fsSL https://bun.sh/install | bash\n\n# Windows\npowershell -c \"irm bun.sh/install.ps1|iex\"\nIf everything went well, command bun --version should return a version number. See Getting started if you get any errors.",
-    "crumbs": [
-      "{{< fa flask >}} VelesWeb",
-      "Introduction"
-    ]
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\nDescription\n\n\nCategories\n\n\n\n\n\n\nBrief COPE (Mini-COPE)\n\n\nmini_cope()\n\n\nThe questionnaire is used to assess ways of coping with stress. It is intended mainly for research purposes, but it can also be used in practice, in screening and preventive studies, and in assessing the effectiveness of therapeutic interventions. The Brief COPE omits two scales of the full COPE, reduces others to two items per scale, and adds one scale.\n\n\nCognitive and Behavioral Assessments\n\n\n\n\nRosenberg Self-Esteem Scale (RSES)\n\n\nrses()\n\n\nOne of the most popular self-esteem scales. Measures global self-esteem.\n\n\nPersonality and Traits, Self-Esteem\n\n\n\n\nShort Dark Triad (SD3)\n\n\nsd3()\n\n\nA short scale measuring the Dark Triad of personality – machiavellianism, narcissism, and psychopathy.\n\n\nPersonality and Traits, Narcissism\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcs()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the long version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nThe Need for Closure Scale (NFCS)\n\n\nnfcsShort()\n\n\nMeasures the need for cognitive closure. There are two versions – long (41 items) and short (15 items). This function returns the short version. NFCS can be divided into five subscales: the need for order, the need for predictability, decisiveness, avoidance of ambiguity, closed mindedness.\n\n\nCognitive and Behavioral Assessments, Motivation and Achievement\n\n\n\n\nTriangular Love Scale (TLS-15)\n\n\ntls_15()\n\n\nSternberg’s triangular love theory questionnaire. A shorter version of TLS-45, that measures three components of love: intimacy, passion, and commitment.\n\n\nSocial and Interpersonal Factors\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "library/en/nfcs.html",
