@@ -4,18 +4,26 @@ date-modified: last-modified
 date-format: iso
 ---
 
+::: {.callout-note}
+I'm working on a comprehensive video tutorial on how to get started with Veles, so stay tuned!
+:::
+
+
 # Prerequisites
 
 There are a few things you need to install before using Veles, as it is more a library than a program. Namely you need to install Python, some IDE like Visual Studio Code and a JavaScript framework called bun. This section will get you through the process. Whenever I refer to a terminal, I mean your system console (Powershell in Windows). To paste to a terminal, you might have to use Ctrl+Shit+V instead of the standard Ctrl+V shortcut. Same with copying, as Ctrl+C in terminals is used to stop a running process. If you get an error, read it and go to the [Troubleshooting] section.
 
 ## Python
 
-Veles is a Python library, so before using it, you need to install Python. If you're using Linux or MacOS, you already have Python installed by default. If you use Windows, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "add Python to PATH". It will enable you to run Python by writing `python` in the terminal, without the full path to python.exe.
+Veles is a Python library, so before using it, you need to install Python. If you're using Linux, you already have Python installed by default. If you use Windows or MacOS, you can download the installation bundle from [the official website](https://www.python.org/). During installation, check the box saying "add Python to PATH". It will enable you to run Python by writing `python` (or `python3`) in the terminal, without the full path to python.exe.
 
 You can verify if python works correctly by opening your terminal, writing the following command and hitting enter.
 
 ``` bash
 python --version
+
+# If doesn't work, especially on MacOS:
+python3 --version
 ```
 
 If everything went fine, you should see a version number, not an error. If there's an error, see [Troubleshooting] below.
@@ -24,7 +32,7 @@ Some really basic knowledge on how to use Python or some basic programming skill
 
 ## IDE
 
-Next you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). Alternatively you use RStudio if you want. If you want to use VS Code, it's a good idea to also download [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack), [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) and [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). They will make our life much easier. After installing the extensions, go to your preferences (Ctrl+Shift+P and search for "Open user settings"[^1]), find and check "Format on save" checkbox. It's a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program.
+Next you need an IDE which is a fancy word for programming text editor. You can use any IDE, but I highly recommend [Visual Studio Code](https://code.visualstudio.com/). Alternatively you use RStudio if you want. If you want to use VS Code, it's a good idea to also **download [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)** and [Black formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter). They will make our life much easier. After installing the extensions, go to your preferences (Ctrl+Shift+P and search for "Open user settings"[^1]), **find and check "Format on save"** checkbox. It's a quality-of-life option that ensures your code file is always pretty and readable. You can do it from within the program.
 
 [^1]: Searching in English should work despite what language you have set in VS Code.
 
@@ -56,7 +64,7 @@ There are a number of things that can go wrong in the process, especially on Win
 
 ### Executable not found
 
-You can get an error saying something aroud "python is not a recognisable script" or "bun not found". The first thing you should do (especially on Windows) is to reboot your system, so the enviroment variables could refresh.
+You can get an error saying something around "python is not a recognisable script" or "bun not found". The first thing you should do (especially on Windows) is to reboot your system, so the environment variables could refresh. If it's about Python, also try to use `python3` instead of `python` (especially on MacOS).
 
 If you use Linux and don't use bash as your main terminal (and use e.g. `zsh` or `fish`), you might need to add bun to your PATH manually. Please, google the appropriate PATH adding method for your terminal.
 
@@ -99,17 +107,17 @@ sudo dnf install unzip
 
 # Create project
 
-Veles project is just a folder with a Python script. Create a folder anywhere and open it using Visual Studio Code (File → Open folder…). From inside VS Code you can create a new file. Call with what you want but give it `.py` extension. In the file, we'll be writing the survey structure.
+Veles project is **just a folder** with a Python script. Create a folder anywhere and open it using Visual Studio Code (File → Open folder…). Please do that this way, especially if you're not proficient with the terminal; just opening files instead of folders may lead to errors. From inside VS Code you can create a new file. Call with what you want but give it `.py` extension (just name it e.g. `script.py`). In the file, we'll be writing the survey structure.
 
 ## Creating a virtual environment
 
-I recommend creating a virtual environment for every project. Virtual environments are a kind of containers with all your Python packages. If you have it, Veles will not update for that project unless you explicitly tell it to. It is important for maintaining the code stability. When you have your `.py` file opened, you should see your Python version number at the bottom of the VS Code window (see figure below). Click it, select "Create Virtual Environment", then "Venv" and select your newest Python version. A new folder called `.venv` should now be visible inside your project folder.
+I recommend creating a virtual environment for every project. Virtual environments are a kind of containers with all your Python libraries; a special folder with all "addons" to Python, such as Veles. If you have it, Veles (and other packages) will not update for that project unless you explicitly tell it to. It is important for maintaining the code stability, as Veles sometimes gets changed in such a way that old code stops working. When you have your `.py` file opened, you should see your Python version number at the bottom of the VS Code window (see figure below). Click it, select "Create Virtual Environment", then "Venv" and select your newest Python version. A new folder called `.venv` should now be visible inside your project folder.
 
 ![Creating virtual enviroments is recommended for every project.](figs/getting_started/create_venv.png){fig-align="center"}
 
 ## Installing Veles
 
-Now open a new terminal inside VS Code. Click Terminal → New Terminal or use a keyboard shortcut Ctrl+\`. This terminal is opened in your newly created virtual environment. Now we need to install Veles into this virtual environment. To install Veles, write the following command and hit enter.
+Now open a new terminal inside VS Code. Click Terminal → New Terminal or use a keyboard shortcut Ctrl+\`. **If you already had a terminal open, close it and open it again.** This new terminal is opened in your newly created virtual environment. There probably is some visual indicator for that (e.g., `venv` written somewhere, it depends on the system). Now we need to install Veles into this virtual environment. To install Veles, write the following command and hit enter.
 
 ``` bash
 pip install velesresearch
@@ -121,7 +129,7 @@ You can also choose development version (unstable but with all the newest featur
 pip install velesresearch@git+https://github.com/jakub-jedrusiak/VelesResearch.git
 ```
 
-To install the developer version from GitHub, you will need to actually have git installed. Linux comes with git already installed. Windows and MacOS users can download it from [the official website](https://git-scm.com/downloads) or use an appropriate package manager (i.e. Microsoft Store or App Store).
+To install the developer version from GitHub, you will need to actually have git installed. Linux comes with git already installed. Windows and MacOS users can download it from [the official website](https://git-scm.com/downloads) or use an appropriate package manager (i.e. Microsoft Store or App Store). Then configure git with [this tutorial](https://www.w3schools.com/git/git_config.asp?remote=github).
 
 If everything went well, you shouldn't see any errors.
 
@@ -145,7 +153,7 @@ Veles is a Python library, so there are many ways to achieve this in practice. W
 
 ## Questions
 
-In Veles, questions are a class of objects. There are two main ways of creating them -- separately or when we want to convert a whole questionnaire at once. In both cases we use an appropriate question function. See [the docs](ref/wrappers.qmd) for all available question types.
+In Veles, questions are a class of objects. There are two main ways of creating them -- each question separately or a whole questionnaire (like TIPI) at once. In both cases we use an appropriate question function. See [the docs](ref/wrappers.qmd) for all available question types.
 
 ### `radio()`
 
@@ -169,11 +177,11 @@ gender = vls.radio(
 
 ![Gender question example](figs/getting_started/gender_question_example.png)
 
-There are two things to notice here. Firstly, I have saved the created question to a variable called `gender`. We will then use the variable to put the question inside a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables. Don't worry – VS Code will scream at you if you forget the quotation marks.
+There are two things to notice here. Firstly, I have saved the created question to a variable called `gender` (as I wrote `gender =`). We will later use the variable to put the question inside a page. Secondly, all the texts are inside quotation marks. That is required, because otherwise Python will think the words are variables; for example had I wrote `Woman` instead of `"Woman"`, Python would search for a variable called `Woman` and wouldn't find it. Don't worry – VS Code will scream at you if you forget the quotation marks.
 
 ### Question options
 
-Each question can have a series of additional parameters specified. For example we can make the question required, add a subtitle, add an "Other" option that opens a textbox to specify a custom answer, hide the question number, specify when a question should be visible and so on.
+Each question can have a series of additional parameters specified. For example we can make the question required, add a subtitle, add an "Other" option that opens a textbox to specify a custom answer, specify when a question should be visible and so on.
 
 ```{python}
 gender = vls.radio(
@@ -185,14 +193,13 @@ gender = vls.radio(
     showOtherItem=True,
     showNoneItem=True,
     noneText="Prefer not to say",
-    hideNumber=True,
     description="Choose an answer from options below",
 )
 ```
 
 ![Gender questions with options specified](figs/getting_started/gender_question_options_example.png)
 
-Every type of question (as well as pages and surveys) has its set of possible options. To check the possible options you can consult [the docs](ref/wrappers.qmd) or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup.
+Every type of question (as well as pages and surveys) has a specific set of possible options. To check the possible options you can consult [the docs](ref/wrappers.qmd) or (in VS Code with Pylance installed) you can hover your mouse over the name of a function and scroll though the popup. **The popup will always have the latest documentation!**
 
 ::: light-mode
 ![The documentation you can see when you hover over a name of the function in VS Code](figs/getting_started/IDE_docs.png)
@@ -202,27 +209,21 @@ Every type of question (as well as pages and surveys) has its set of possible op
 ![The documentation you can see when you hover over a name of the function in VS Code](figs/getting_started/IDE_docs_dark.png)
 :::
 
-If you want to have some kind of default set of options (e.g. you want every question to have a hidden number and to be required), create [a dictionary](https://www.w3schools.com/python/python_dictionaries.asp) with curly braces, set all the options there and then pass the dictionary to every question with the [`**` operator](https://www.geeksforgeeks.org/what-does-the-double-star-operator-mean-in-python/#:~:text=As%20arguments%20in%20functions%20and%20methods).
+If you want to have some kind of default set of options (e.g. you want every question to be required), create [a dictionary](https://www.w3schools.com/python/python_dictionaries.asp) with curly braces, set all the options there and then pass the dictionary to every question with the [`**` operator](https://www.geeksforgeeks.org/what-does-the-double-star-operator-mean-in-python/#:~:text=As%20arguments%20in%20functions%20and%20methods). This is useful, because when we test our survey, we can set it to `False` in just this one place, so we could move around without having to constantly check random options. Then, before we publish the survey, we can change this one `False` to `True` without having to change it everywhere.
 
 ```{python}
-defaultOptions = {"hideNumber": True, "isRequired": True}
+defaultOptions = {"isRequired": True}
 
 gender = vls.radio(
     "gender",
     "What is your gender?",
     "Woman",
     "Man",
-    "Other/prefer not to answer"
-    **defaultOptions
+    "Other/prefer not to answer",
+    **defaultOptions,
 )
 
-age = vls.text(
-    "age",
-    "What is your age?",
-    inputType="number",
-    min=18,
-    **defaultOptions
-)
+age = vls.text("age", "What is your age?", inputType="number", min=18, **defaultOptions)
 ```
 
 You can use [the pipe `|` operator](https://medium.com/@chinthapooja733/python-tips-merging-dictionaries-using-pipe-operator-98150a4d40ba) to override a some default options for a single question.
@@ -233,7 +234,7 @@ gender = vls.radio(
     "What is your gender?",
     "Woman",
     "Man",
-    "Other/prefer not to answer"
+    "Other/prefer not to answer",
     **defaultOptions | {"isRequired": False}
 )
 ```
@@ -260,7 +261,7 @@ RSES_items = [
 ]
 ```
 
-…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. Notice the triple quotation marks `"""`. They allow us to create a multiline strings.
+…or use the power of programming and format it automatically. Here we have the questionnaire in a textual form, where every item is in its own line. In other words, there the items are separated by a line break. We can save the questionnaire in a variable. **Notice the triple quotation marks `"""`.** They allow us to create a multiline strings.
 
 ```{python}
 # triple quotation for multi-line strings
@@ -276,7 +277,7 @@ I certainly feel useless at times.
 At times I think I am no good at all."""
 ```
 
-So I saved the questionnaire into a variable called `RSES_items`. I can now tell python to split it, so it would become a list of items. To do this, we can use the `split()` method. Methods are functions that we write after a dot to apply them to something. `split()` takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with `"\n"`. To split the `RSES_items` string we could write `RSES_items.split("\n")`.
+So I saved the questionnaire into a variable called `RSES_items`. I can now tell python to split it, **so it would become a list of items**. To do this, we can use the `split()` method. Methods are functions that we write after a dot to apply them to something. `split()` takes one argument that is the thing that it needs to split by. In our case it is a line break, in programming denoted with `"\n"`. To split the `RSES_items` string we could write `RSES_items.split("\n")`. If the items are in separate lines, we can also use `RSES_items.splitlines()`.
 
 ```{python}
 RSES = vls.radio(
@@ -343,7 +344,7 @@ vls.info(
 
 This part is not necessary but extremely useful.
 
-The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^4] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". English being fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^5] to do just that.
+The power of Python allows us to bulk modify our questions and answers. This might be the greatest advantage Veles has over its GUI-based[^4] alternatives. Let's imagine we have a list of drinks we want to ask about in our survey. Yet we don't want the question text to be just "Tea" or "Coffee". That would disrespect tea. We need something like "How do you feel about tea?". As English is fairly uncomplicated, we just need to put the drink's name into the sentence. We can easily use a loop and an f-string[^5] to do just that.
 
 [^4]: Or WYSIWYG.
 
@@ -373,7 +374,7 @@ When we run it, the list `['tea', 'coffee', 'juice', 'water']` becomes `['How do
 
 ## Panels
 
-Panels are set of questions that have the same set of options. A common usecase is to set a random order of items without moving the instruction. If you set `questionsOrder="random"` for the whole page, the instruction will also end up in a random spot because it is technically a question. Yet we can put all the questions into a panel and set `questionsOrder` for the panel. Panels are created with `vls.panel()`.
+Panels are set of questions that have the same set of options. A common use-case is **to make the order of items random with the instruction still being first**. If you set `questionsOrder="random"` for the whole page, the instruction will also end up in a random spot because it is technically a question. But we can put all the questions into a panel and set `questionsOrder` for the panel. Panels are created with `vls.panel()`.
 
 ```{python}
 vls.page(
@@ -415,7 +416,7 @@ self_esteem = vls.page(
 
 ## Survey
 
-When all elements are created, we can combine them into the final survey. We can do this with the `survey()` function. It does two things -- returns a `Survey` object and creates your survey's structure.
+When all elements were created, we can combine them into the final survey. We can do this with the `survey()` function. It does two things -- returns a `Survey` object and creates your survey's structure.
 
 ```{python}
 vls.survey(pages, **kwargs)
@@ -430,7 +431,7 @@ vls.survey(
 )
 ```
 
-Be default, the survey will be created in a subfolder called "survey". To change the folder's name or path, use the `folderName` argument.
+Be default, the survey will be created in a subfolder called "survey". To change the folder's name, use the `folderName` argument.
 
 # Images
 
@@ -541,7 +542,7 @@ After writing your survey, you need to create it. Don't worry, it all happens au
 ![](figs/getting_started/run_script_dark.png)
 :::
 
-If everything went well, you should have a folder named "survey". To run your survey, open the folder in a terminal. In VS Code you can use Terminal \> New terminal. Then move to the survey folder with:
+If everything went well, you should have a folder named "survey". To run your survey, open the folder in a terminal. In VS Code you can use Terminal \> New terminal. It's best to create a separate terminal for that. Then move to the survey folder with:
 
 ```{bash}
 cd survey
@@ -642,4 +643,4 @@ If you use R for the analysis, you can connect to the database directly, without
 
 # PsychoJS experiments
 
-To be implemented...
+To be implemented…
