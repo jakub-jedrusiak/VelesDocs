@@ -1,0 +1,60 @@
+---
+title: "Ten-Item Personality Inventory (TIPI)"
+subtitle: "`tipi()`"
+description: "10-item measure of the Big-Five dimensions is offered for situations where very short measures are needed, personality is not the primary topic of interest, or researchers can tolerate the somewhat diminished psychometric properties associated with very brief measures."
+categories: ["Personality and Traits","Big Five Personality Traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism)"]
+---
+
+## Module
+`velesresearch.questionnaires.tipi`
+
+## Import
+``` python
+from velesresearch.questionnaires.tipi import tipi
+```
+
+## Original
+<div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
+<div class="csl-entry">Gosling, S. D., Rentfrow, P. J., &amp; Swann, W. B. (2003). A very brief measure of the Big-Five personality domains. <i>Journal of Research in Personality</i>, <i>37</i>(6), 504–528. <https://doi.org/10.1016/S0092-6566(03)00046-1></div>
+</div>
+
+## Score calculation
+An average.
+
+## Reverse items
+2, 4, 6, 8, 10
+
+## Subscales
+1. Extraversion: 1, 6
+2. Agreeableness: 2, 7
+3. Conscientiousness: 3, 8
+4.  Emotional Stability: 4, 9
+5.  Openness to Experiences: 5, 10
+
+## Reliability
+1. Extraversion: α = .68
+2. Agreeableness: α = .4
+3. Conscientiousness: α = .5
+4.  Emotional Stability: α = .73
+5.  Openness to Experiences: α = .45
+
+## Implemented by
+Julia Jankowska (University of Wrocław)
+
+## Args
+`name` : *str*<br>
+Base name for pages and questions. Defaults to "tipi".
+
+`instruction` : *str*<br>
+Instruction for the questionnaire. None means that the default instruction will be used.
+
+`questionOptions` : *dict | None*<br>
+Additional options for questions as a dictionary. Defaults to None.
+
+`pageOptions` : *dict | None*<br>
+Additional options for pages as a dictionary. Defaults to None.
+
+
+## Returns
+`PageModel`<br>
+PageModel with the TIPI questionnaire. Use the `*` operator to unpack it to questions.
